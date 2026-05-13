@@ -235,38 +235,34 @@
    icon | nombre | badge
 ══════════════════════════════════════════ */
 /* ══════════════════════════════════════════
-   MEGA MENÚ SOFTWARE — 2 columnas premium
-   620px ancho, sin texto cortado, fondo claro
+   MEGA MENÚ SOFTWARE — 2 columnas compactas
+   560px · KONEX/DAVINCI/SENSE | DANI IA/Fábrica
 ══════════════════════════════════════════ */
 .kyt-dropdown.drop-software {
-  /* Convertido en mega menú de 2 columnas */
-  min-width: 660px;
-  width: 660px;
+  width: 560px;
+  min-width: 560px;
   padding: 0;
   overflow: hidden;
   box-sizing: border-box;
-  /* Centrar respecto al trigger cuando hay espacio */
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
+  /* Anclar a la izquierda del trigger — evita salirse del viewport */
+  left: 0;
+  transform: translateY(10px);
 }
-/* Estado visible */
 .kyt-nav > li:hover > .kyt-dropdown.drop-software {
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
   opacity: 1;
   visibility: visible;
 }
 
-/* Grid de 2 columnas interno */
+/* Grid 2 columnas simétricas */
 .sw-mega-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
 }
 
-/* Cada columna */
-.sw-mega-col {
-  padding: 20px 0 18px;
-}
+/* Columnas */
+.sw-mega-col { padding: 14px 0 12px; }
 .sw-mega-col:first-child {
   border-right: 1px solid rgba(0,0,156,0.07);
 }
@@ -275,69 +271,59 @@
 .sw-col-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 4px 20px 12px;
-  margin-bottom: 4px;
+  gap: 7px;
+  padding: 2px 14px 10px;
+  margin-bottom: 2px;
   border-bottom: 1px solid rgba(0,0,156,0.06);
 }
 .sw-col-header span {
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 800;
-  letter-spacing: 1.8px;
+  letter-spacing: 1.6px;
   text-transform: uppercase;
   color: #6666c4;
 }
-.sw-col-header i {
-  font-size: 11px;
-  color: #308b1d;
-}
+.sw-col-header i { font-size: 10px; color: #308b1d; }
 
-/* Items del mega menú software */
+/* Items */
 .sw-mega-col li { list-style: none; }
 .sw-mega-col li a {
-  display: flex;
+  display: flex !important;
   align-items: center;
-  gap: 12px;
-  padding: 9px 20px;
-  margin: 1px 8px;
-  border-radius: 8px;
+  gap: 10px;
+  padding: 7px 14px;
+  margin: 1px 6px;
+  border-radius: 7px;
   text-decoration: none;
   transition: background .15s, transform .12s;
-  /* Reset del grid anterior */
-  display: flex !important;
-  grid-template-columns: unset !important;
 }
 .sw-mega-col li a:hover {
   background: #efefff;
   transform: translateX(2px);
 }
 
-/* Ícono en mega menú */
+/* Ícono */
 .sw-mega-col li a .drop-icon {
-  width: 34px; height: 34px;
-  border-radius: 9px;
+  width: 30px; height: 30px;
+  border-radius: 7px;
   background: rgba(48,139,29,0.10);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  font-size: 14px;
+  font-size: 13px;
   color: #308b1d;
   transition: background .15s, color .15s;
-  /* Reset grid */
   grid-column: unset !important;
   margin: 0;
 }
 .sw-mega-col li a:hover .drop-icon {
-  background: rgba(0,0,156,0.10);
+  background: rgba(0,0,156,0.09);
   color: #00009c;
 }
 
-/* Bloque nombre + descripción */
-.sw-item-body {
-  flex: 1;
-  min-width: 0;
-}
+/* Nombre + descripción */
+.sw-item-body { flex: 1; min-width: 0; }
 .sw-item-name {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   color: #01004e;
   white-space: nowrap;
@@ -346,7 +332,7 @@
 }
 .sw-mega-col li a:hover .sw-item-name { color: #00009c; }
 .sw-item-desc {
-  font-size: 11.5px;
+  font-size: 11px;
   color: #6666c4;
   white-space: nowrap;
   display: block;
@@ -355,69 +341,37 @@
   text-overflow: ellipsis;
 }
 
-/* Badge a la derecha */
+/* Badge compacto */
 .sw-badge {
   flex-shrink: 0;
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
   color: #00009c;
   background: #efefff;
-  border: 1px solid rgba(0,0,156,0.16);
-  border-radius: 4px;
-  padding: 2px 8px;
+  border: 1px solid rgba(0,0,156,0.15);
+  border-radius: 3px;
+  padding: 1px 6px;
   white-space: nowrap;
   transition: background .15s;
-  /* Reset grid */
   grid-column: unset !important;
   justify-self: unset !important;
 }
-.sw-mega-col li a:hover .sw-badge {
-  background: rgba(0,0,156,0.10);
-}
+.sw-mega-col li a:hover .sw-badge { background: rgba(0,0,156,0.09); }
 
-/* Footer del mega menú — franja inferior */
-.sw-mega-footer {
-  border-top: 1px solid rgba(0,0,156,0.07);
-  background: #fafafe;
-  padding: 12px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-.sw-mega-footer p {
-  font-size: 12px;
-  color: #6666c4;
-  margin: 0;
-}
-.sw-mega-footer a.sw-footer-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #308b1d;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color .15s;
-}
-.sw-mega-footer a.sw-footer-cta:hover { color: #01004e; }
-
-/* ── Responsive: en mobile vuelve a lista vertical ── */
+/* ── Responsive — lista vertical en mobile ── */
 @media (max-width: 1199px) {
-  /* En mobile el mega menú no aplica — el offcanvas toma el control */
   .kyt-dropdown.drop-software {
-    min-width: unset;
     width: unset;
+    min-width: unset;
     left: 0;
     transform: none;
   }
-  .kyt-nav > li:hover > .kyt-dropdown.drop-software {
-    transform: none;
-  }
+  .kyt-nav > li:hover > .kyt-dropdown.drop-software { transform: none; }
   .sw-mega-grid { grid-template-columns: 1fr; }
-  .sw-mega-col:first-child { border-right: none; border-bottom: 1px solid rgba(0,0,156,0.07); }
-  .sw-mega-footer { display: none; }
+  .sw-mega-col:first-child {
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,156,0.07);
+  }
 }
 
 /* ══════════════════════════════════════════
