@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://kyt3.netlify.app/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/about</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/Kioscos</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/Pos</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/autocompra</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/autopago</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/informativo</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/mesa-interactiva</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/videoconferencia</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/control-acceso</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/turnos</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/centro-autogestion</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/salud</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/banca</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/educacion</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/restaurantes</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/retail</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/hotel</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/Corporativo</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/Gobierno</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/service-modalidad</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/blog</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/news</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/que-son-los-kioscos-digitales</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/como-reducir-el-tiempo-de-espera-en-las-colas</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://kyt3.netlify.app/transformacion-digital-atencion-cliente-colombia</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+</urlset>
