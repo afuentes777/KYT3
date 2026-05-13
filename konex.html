@@ -1,96 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
-<!--<< Header Area >>-->
-
 <head>
-    <!-- ========== Meta Tags ========== -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Kioscos y Tecnología">
-    <meta name="description" content="Kioscos y Tecnología - Soluciones de Autoservicio e Innovación Digital">
-    <!-- ======== Page title ============ -->
-    <title>Kioscos Informativos - Cartelería Digital</title>
-    <!--<< Favcion >>-->
+    <meta name="description" content="KONEX® — Software de turnos y gestión de atención para optimizar filas, priorización, trazabilidad y experiencia del usuario.">
+    <title>KONEX® – Software de turnos – Kioscos y Tecnología</title>
     <link rel="shortcut icon" href="assets/img/preloader.svg">
-    <!--<< Bootstrap min.css >>-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!--<< Font Awesome.css >>-->
     <link rel="stylesheet" href="assets/css/font-awesome.css">
-    <!--<< Animate.css >>-->
     <link rel="stylesheet" href="assets/css/animate.css">
-    <!--<< Magnific Popup.css >>-->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!--<< MeanMenu.css >>-->
     <link rel="stylesheet" href="assets/css/meanmenu.css">
-    <!--<< Slick.css >>-->
     <link rel="stylesheet" href="assets/css/slick.css">
-    <!--<< Nice Select.css >>-->
     <link rel="stylesheet" href="assets/css/nice-select.css">
-    <!--<< Main.css >>-->
     <link rel="stylesheet" href="assets/css/main.css">
-    <!--<< Style.css >>-->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="assets/css/kyt-global.css">
-
 </head>
+    <style>
+    /* Estilos inline para páginas de software */
+    .kyt-eyebrow-tag {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: rgba(48,139,29,0.20); border: 1px solid rgba(48,139,29,0.45);
+        color: #d3ebb6; font-size: 11px; font-weight: 700;
+        letter-spacing: 2px; text-transform: uppercase;
+        padding: 6px 16px; border-radius: 50px; margin-bottom: 18px;
+    }
+    .kyt-hero-ctas { display:flex; flex-wrap:wrap; gap:14px; margin-top:28px; }
+    .kyt-btn-outline-white {
+        display:inline-flex; align-items:center; gap:8px;
+        border:1.5px solid rgba(255,255,255,0.40); color:#fff;
+        font-weight:600; font-size:15px; padding:13px 26px;
+        border-radius:8px; text-decoration:none;
+        transition:border-color .2s, background .2s;
+    }
+    .kyt-btn-outline-white:hover { border-color:#fff; background:rgba(255,255,255,0.10); color:#fff; }
+    .kyt-feature-card {
+        display:flex; gap:16px; align-items:flex-start;
+        background:#fff; border:1px solid rgba(0,0,156,0.09);
+        border-radius:14px; padding:24px 22px;
+        transition:box-shadow .2s, transform .2s;
+        height:100%;
+    }
+    .kyt-feature-card:hover { box-shadow:0 8px 28px rgba(0,0,156,0.11); transform:translateY(-3px); }
+    .kyt-fc-icon {
+        width:46px; height:46px; border-radius:10px;
+        background:#efefff; display:flex; align-items:center; justify-content:center;
+        font-size:20px; color:#00009c; flex-shrink:0;
+    }
+    .kyt-fc-body h4 { font-size:16px; font-weight:700; color:#01004e; margin-bottom:6px; }
+    .kyt-fc-body p  { font-size:14px; color:#5a5a8a; line-height:1.6; margin:0; }
+    .kyt-sectors-tags { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:8px; }
+    .kyt-tag {
+        background:#fff; border:1px solid rgba(0,0,156,0.14);
+        color:#01004e; font-size:13px; font-weight:600;
+        padding:8px 18px; border-radius:50px;
+        transition:background .15s, color .15s;
+    }
+    .kyt-tag:hover { background:#efefff; color:#00009c; }
+    </style>
 
 <body class="kyt-inner">
 
-    <!-- Preloader Start -->
     <div id="preloader" class="preloader">
         <div class="animation-preloader">
-            <div class="spinner">
-            </div>
+            <div class="spinner"></div>
             <div class="txt-loading">
-                <span data-text-preloader="K" class="letters-loading">
-                    K
-                </span>
-                <span data-text-preloader="I" class="letters-loading">
-                    I
-                </span>
-                <span data-text-preloader="O" class="letters-loading">
-                    O
-                </span>
-                <span data-text-preloader="S" class="letters-loading">
-                    S
-                </span>
-                <span data-text-preloader="C" class="letters-loading">
-                    C
-                </span>
-                <span data-text-preloader="O" class="letters-loading">
-                    O
-                </span>
-                <span data-text-preloader="S" class="letters-loading">
-                    S
-                </span>
+                <span data-text-preloader="K" class="letters-loading">K</span>
+                <span data-text-preloader="I" class="letters-loading">I</span>
+                <span data-text-preloader="O" class="letters-loading">O</span>
+                <span data-text-preloader="S" class="letters-loading">S</span>
+                <span data-text-preloader="C" class="letters-loading">C</span>
+                <span data-text-preloader="O" class="letters-loading">O</span>
+                <span data-text-preloader="S" class="letters-loading">S</span>
             </div>
-            <p class="text-center">Loading</p>
         </div>
         <div class="loader">
             <div class="row">
-                <div class="col-3 loader-section section-left">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-left">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-right">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-right">
-                    <div class="bg"></div>
-                </div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
             </div>
         </div>
     </div>
 
-    <!--<< Mouse Cursor Start >>-->
     <div class="mouse-cursor cursor-outer"></div>
     <div class="mouse-cursor cursor-inner"></div>
-
-    <!-- Offcanvas Area Start -->
-        <!-- ═══ OFFCANVAS MOBILE ═══ -->
+    <!-- ═══ OFFCANVAS MOBILE ═══ -->
     <div class="fix-area">
         <div class="offcanvas__info kyt-offcanvas">
             <div class="offcanvas__wrapper">
@@ -140,11 +139,9 @@
     <div class="kyt-header-wrap" id="kytHeader">
         <div class="container" style="max-width:1260px;">
             <div class="kyt-header-inner">
-                <!-- Logo -->
                 <a href="index.html" class="kyt-logo">
                     <img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología">
                 </a>
-                <!-- Nav desktop -->
                 <ul class="kyt-nav" id="kytNavDesktop">
                     <li><a href="index.html">Inicio</a></li>
                     <li>
@@ -181,7 +178,7 @@
                             <li><a href="mesa-interactiva.html"><span class="drop-icon"><i class="fas fa-th-large"></i></span>Mesa interactiva</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#">Software <i class="fas fa-angle-down"></i></a>
                         <ul class="kyt-dropdown drop-software">
                             <span class="drop-label">Suite K&amp;T</span>
@@ -204,7 +201,6 @@
                         </ul>
                     </li>
                 </ul>
-                <!-- CTA + hamburger -->
                 <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
                     <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" class="kyt-cta-btn">
                         <i class="fas fa-comment-dots"></i> Cotizar proyecto
@@ -220,220 +216,97 @@
     (function(){
         var hdr=document.getElementById('kytHeader');
         if(!hdr)return;
-        var hero=document.querySelector('.breadcrumb-wrapper, .hero-section');
-        var heroBottom=0;
-        var ticking=false;
-        function calcHero(){
-            if(hero){
-                heroBottom=hero.getBoundingClientRect().bottom+window.scrollY-10;
-            } else {
-                heroBottom=0;
-            }
-        }
-        function applyMode(){
-            var past=window.scrollY>heroBottom;
-            hdr.classList.toggle('kyt-light',past);
-            ticking=false;
-        }
+        var hero=document.querySelector('.breadcrumb-wrapper,.hero-section');
+        var heroBottom=0,ticking=false;
+        function calcHero(){heroBottom=hero?(hero.getBoundingClientRect().bottom+window.scrollY-10):0;}
+        function applyMode(){hdr.classList.toggle('kyt-light',window.scrollY>heroBottom);ticking=false;}
         function onScroll(){if(!ticking){requestAnimationFrame(applyMode);ticking=true;}}
-        function init(){
-            calcHero();
-            window.addEventListener('scroll',onScroll,{passive:true});
-            applyMode();
-        }
-        if(document.readyState==='loading'){
-            document.addEventListener('DOMContentLoaded',init);
-        }else{init();}
+        function init(){calcHero();window.addEventListener('scroll',onScroll,{passive:true});applyMode();}
+        document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
         window.addEventListener('resize',function(){calcHero();applyMode();},{passive:true});
     })();
     </script>
 
-
-    <!-- Search Area Start -->
     <div class="search-wrap">
         <div class="search-inner">
             <i class="fas fa-times search-close" id="search-close"></i>
             <div class="search-cell">
                 <form method="get">
                     <div class="search-field-holder">
-                        <input type="search" class="main-search-input" placeholder="Search...">
+                        <input type="search" class="main-search-input" placeholder="Buscar...">
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <!--<< Breadcrumb Section Start >>-->
-    <div class="breadcrumb-wrapper section-padding bg-cover"
-        style="background-image: url('assets/img/breadcrumb1.jpg');">
+    <!--<< Hero breadcrumb >>-->
+    <div class="breadcrumb-wrapper bg-cover" style="background: linear-gradient(135deg, #01004e 0%, #00009c 60%, #3a3a9e 100%);">
         <div class="container">
             <div class="page-heading">
-                <h1 class="wow fadeInUp" data-wow-delay=".3s">Soluciones Informativas</h1>
-                <p class="page-subtitle wow fadeInUp" data-wow-delay=".5s">Pantallas de señalización programadas centralmente para todos sus puntos de atención.</p>
-                <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".7s"><li><a href="index.html">Inicio</a></li><li><i class="fas fa-chevron-right"></i></li><li>Cartelería digital</li></ul>
+                <span class="kyt-eyebrow-tag"><i class="fas fa-clock"></i> Turnos</span>
+                <h1 class="wow fadeInUp" data-wow-delay=".3s">KONEX<sup>®</sup></h1>
+                <p class="page-subtitle wow fadeInUp" data-wow-delay=".5s">Software de turnos y gestión de atención para optimizar filas, priorización, trazabilidad y experiencia del usuario.</p>
+                <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".7s">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><i class="fas fa-chevron-right"></i></li>
+                    <li>Software</li>
+                    <li><i class="fas fa-chevron-right"></i></li>
+                    <li>KONEX®</li>
+                </ul>
+                <div class="kyt-hero-ctas">
+                    <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20información%20sobre%20Turnos" target="_blank" class="kyt-cta-btn">
+                        <i class="fas fa-comment-dots"></i> Solicitar información
+                    </a>
+                    <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20agendar%20una%20demo" target="_blank" class="kyt-btn-outline-white">
+                        <i class="fas fa-play-circle"></i> Agendar demo
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
-
-
-    <!-- Team Section Here -->
-    <section class="team-section-2 fix section-padding">
+    <!--<< Características principales >>-->
+    <section class="section-padding" style="background:#fff;">
         <div class="container">
-            <div class="row g-4 justify-content-between align-items-center">
-                <div class="col-xl-6 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="single-team-style-1 it-single-team-style mt-0">
-                        <div class="section-title">
-                            <span class="wow fadeInUp">
-                                Nuestras Soluciones
-                            </span>
-                            <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                                Modelos Especializados <br>
-                                en Gestión de Turnos
-                            </h2>
-                            <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
-                                Contamos con tecnología de punta diseñada para agilizar la atención <br>
-                                al cliente y optimizar los flujos de trabajo en tu negocio.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                    <div class="single-team-style-1">
-                        <div class="team-image ralt">
-                            <img src="assets/img/Modelos/MIDAS-21.jpg" alt="team-img">
-                            <div class="icon-list">
-                                <a href="kioscos/Midas21.html" class="theme-btn mt-4"><span>Funcionalidades</span></a>
-                            </div>
-                        </div>
-
-                        <div class="team-content center">
-                            <h3>
-                                <a href="kioscos/Midas21.html">
-                                    Midas 21"
-                                </a>
-                            </h3>
-                            <p>
-                                Informativo ágil y profesional.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                    <div class="single-team-style-1">
-                        <div class="team-image ralt">
-                            <img src="assets/img/Modelos/TOTEM.jpg" alt="team-img">
-                            <div class="icon-list">
-                                <a href="kioscos/Totem.html" class="theme-btn mt-4"><span>Funcionalidades</span></a>
-                            </div>
-                        </div>
-                        <div class="team-content center">
-                            <h3>
-                                <a href="kioscos/Totem.html">
-                                    Totem
-                                </a>
-                            </h3>
-                            <p>
-                                Cartelería digital de gran impacto.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                    <div class="single-team-style-1">
-                        <div class="team-image ralt">
-                            <img src="assets/img/Modelos/AURORA.jpg" alt="team-img">
-                            <div class="icon-list">
-                                <a href="kioscos/AMóvil.html" class="theme-btn mt-4"><span>Funcionalidades</span></a>
-                            </div>
-                        </div>
-                        <div class="team-content center">
-                            <h3>
-                                <a href="kioscos/AMóvil.html">
-                                    Aurora
-                                </a>
-                            </h3>
-                            <p>
-                                Solución informativa móvil y versátil.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="section-title text-center mb-5">
+                <span class="wow fadeInUp">Características principales</span>
+                <h2 class="wow fadeInUp" data-wow-delay=".3s">Todo lo que necesita<br>en una sola plataforma</h2>
             </div>
-        </div>
-    </section>
-
-    <!-- Service Section Here -->
-    <section class="service-section  section-padding pt-0" id="service">
-        <div class="bg-shape">
-            <img src="assets/img/home-4/service/bg-shape.png" alt="shape-img">
-        </div>
-        <div class="container">
-            <div class="section-title text-center">
-                <span class=" wow fadeInUp">
-                    Nuestros Beneficios
-                </span>
-                <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                    Beneficios de los <br>
-                    kioscos digitales
-                </h2>
-            </div>
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                    <div class="single-service-style-2 center">
-                        <div class="icon">
-                            <img src="assets/img/home-4/service/icon-1.svg" alt="icon-img">
-                        </div>
-                        <div class="content">
-                            <h3>
-                                <a href="#">
-                                    Reducción de tiempos de espera
-                                </a>
-                            </h3>
-                            <p>
-                                Gracias a esta tecnología, los clientes pueden acceder a sus servicios de manera
-                                autónoma, eliminando filas y reduciendo la congestión.
-                            </p>
-
+            <div class="row g-4">
+                
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="kyt-feature-card">
+                        <div class="kyt-fc-icon"><i class="fas fa-list-ol"></i></div>
+                        <div class="kyt-fc-body">
+                            <h4>Gestión de turnos</h4>
+                            <p>Asigne, priorice y transfiera turnos en tiempo real desde cualquier punto de atención.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                    <div class="single-service-style-2 active center">
-                        <div class="icon">
-                            <img src="assets/img/home-4/service/icon-2.svg" alt="icon-img">
-                        </div>
-                        <div class="content">
-                            <h3>
-                                <a href="#">
-                                    Optimización de costos operativos
-                                </a>
-                            </h3>
-                            <p>
-                                Al reducir la dependencia de personal para tareas repetitivas, las empresas pueden
-                                redirigir sus recursos hacia áreas estratégicas.
-                            </p>
-
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="kyt-feature-card">
+                        <div class="kyt-fc-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="kyt-fc-body">
+                            <h4>Métricas en vivo</h4>
+                            <p>Dashboards con tiempos de espera, productividad por agente y flujo de atención.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                    <div class="single-service-style-2 center">
-                        <div class="icon">
-                            <img src="assets/img/home-4/service/icon-3.svg" alt="icon-img">
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="kyt-feature-card">
+                        <div class="kyt-fc-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="kyt-fc-body">
+                            <h4>Turno digital</h4>
+                            <p>El usuario toma su turno desde el kiosco, la web o WhatsApp sin hacer fila física.</p>
                         </div>
-                        <div class="content">
-                            <h3>
-                                <a href="#">
-                                    Experiencia<br>personalizada
-                                </a>
-                            </h3>
-                            <p>
-                                Los kioscos digitales pueden configurarse para brindar información relevante y
-                                personalizada en cada interacción.
-                            </p>
-
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="kyt-feature-card">
+                        <div class="kyt-fc-icon"><i class="fas fa-plug"></i></div>
+                        <div class="kyt-fc-body">
+                            <h4>Integración API</h4>
+                            <p>Se conecta con su CRM, ERP o sistema de gestión a través de API REST documentada.</p>
                         </div>
                     </div>
                 </div>
@@ -441,40 +314,56 @@
         </div>
     </section>
 
-    <!--<< Footer Section Start >>-->
-    <!-- ═══════════════════════════════════════════
-         FOOTER PREMIUM KYT — Estilo enterprise
-    ═══════════════════════════════════════════ -->
+    <!--<< Sectores >>-->
+    <section class="section-padding" style="background:#efefff;">
+        <div class="container">
+            <div class="section-title text-center mb-4">
+                <span class="wow fadeInUp">Aplicación sectorial</span>
+                <h2 class="wow fadeInUp" data-wow-delay=".3s">Diseñado para organizaciones<br>que atienden personas</h2>
+            </div>
+            <div class="kyt-sectors-tags text-center wow fadeInUp" data-wow-delay=".4s">
+                <span class="kyt-tag">Banca</span><span class="kyt-tag">Salud</span><span class="kyt-tag">Gobierno</span><span class="kyt-tag">Corporativo</span><span class="kyt-tag">Educación</span>
+            </div>
+        </div>
+    </section>
+
+    <!--<< CTA Final >>-->
+    <section class="section-padding" style="background:linear-gradient(135deg,#01004e,#00009c);text-align:center;">
+        <div class="container">
+            <h2 style="color:#fff;font-size:clamp(26px,3vw,42px);font-weight:800;margin-bottom:14px;">
+                ¿Le interesa conocer KONEX®?
+            </h2>
+            <p style="color:rgba(239,239,255,0.75);font-size:17px;max-width:520px;margin:0 auto 32px;">
+                Agendemos una demostración y le mostramos cómo se adapta a su operación.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+                <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20agendar%20una%20demo" target="_blank"
+                   style="display:inline-flex;align-items:center;gap:8px;background:#308b1d;color:#fff;font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;">
+                    <i class="fas fa-calendar-check"></i> Agendar demo
+                </a>
+                <a href="index.html#soluciones"
+                   style="display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-weight:600;font-size:15px;padding:13px 26px;border-radius:8px;text-decoration:none;">
+                    <i class="fas fa-th-large"></i> Ver otras soluciones
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ═══ FOOTER PREMIUM KYT ═══ -->
     <footer class="kyt-footer" id="kytFooter">
-
-        <!-- Bloque hero-footer -->
         <div class="kf-hero">
             <div class="kf-hero-inner">
                 <div class="kf-hero-body">
                     <div class="kf-hero-text">
                         <p class="kf-eyebrow">Kioscos y Tecnología · Colombia</p>
-                        <h2 class="kf-headline">
-                            Estamos listos para<br>
-                            acompañar su operación
-                        </h2>
-                        <p class="kf-sub">
-                            Fabricamos, integramos y soportamos soluciones de autogestión, turnos, cartelería digital, POS y monitoreo para organizaciones que necesitan eficiencia, continuidad y control.
-                        </p>
+                        <h2 class="kf-headline">Estamos listos para<br>acompañar su operación</h2>
+                        <p class="kf-sub">Fabricamos, integramos y soportamos soluciones de autogestión, turnos, cartelería digital, POS y monitoreo para organizaciones que necesitan eficiencia, continuidad y control.</p>
                         <div class="kf-ctas">
-                            <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" class="kf-btn-primary">
-                                <i class="fas fa-comment-dots"></i> Cotizar proyecto
-                            </a>
-                            <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20más%20información" target="_blank" class="kf-btn-secondary">
-                                <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
-                            </a>
+                            <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20cotizar" target="_blank" class="kf-btn-primary"><i class="fas fa-comment-dots"></i> Cotizar proyecto</a>
+                            <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20más%20información" target="_blank" class="kf-btn-secondary"><i class="fab fa-whatsapp"></i> Escribir por WhatsApp</a>
                         </div>
                     </div>
-                    <div class="kf-hero-logo">
-                        <img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología">
-                    </div>
+                    <div class="kf-hero-logo"><img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología"></div>
                 </div>
-
-                <!-- Redes sociales -->
                 <div class="kf-social-bar">
                     <span class="kf-social-label">Síganos en</span>
                     <div class="kf-social-icons">
@@ -486,8 +375,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Columnas de enlaces -->
         <div class="kf-links">
             <div class="kf-links-inner">
                 <div class="kf-col">
@@ -497,17 +384,15 @@
                         <li><a href="about.html">Quiénes somos</a></li>
                         <li><a href="service-modalidad.html">Modalidad de venta</a></li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="news.html">Casos de éxito</a></li>
                     </ul>
                 </div>
                 <div class="kf-col">
                     <h6 class="kf-col-title">Soluciones</h6>
                     <ul class="kf-col-list">
-                        <li><a href="Kioscos.html">Kioscos de autogestión</a></li>
+                        <li><a href="Kioscos.html">Kioscos</a></li>
                         <li><a href="turnos.html">Software de turnos</a></li>
                         <li><a href="informativo.html">Cartelería digital</a></li>
-                        <li><a href="Pos.html">Soluciones POS</a></li>
-                        <li><a href="service-modalidad.html">Soporte y mantenimiento</a></li>
+                        <li><a href="Pos.html">POS</a></li>
                     </ul>
                 </div>
                 <div class="kf-col">
@@ -533,78 +418,43 @@
                 <div class="kf-col">
                     <h6 class="kf-col-title">Contacto</h6>
                     <ul class="kf-col-list kf-contact-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt kf-ci"></i>
-                            <span>Bogotá, Colombia</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope kf-ci"></i>
-                            <a href="mailto:info@kioscosytecnologia.com">info@kioscosytecnologia.com</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone kf-ci"></i>
-                            <a href="tel:+573113676433">+57 311 367 6433</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock kf-ci"></i>
-                            <span>Lunes a viernes, 8am – 6pm</span>
-                        </li>
+                        <li><i class="fas fa-map-marker-alt kf-ci"></i><span>Bogotá, Colombia</span></li>
+                        <li><i class="fas fa-envelope kf-ci"></i><a href="mailto:info@kioscosytecnologia.com">info@kioscosytecnologia.com</a></li>
+                        <li><i class="fas fa-phone kf-ci"></i><a href="tel:+573113676433">+57 311 367 6433</a></li>
+                        <li><i class="fas fa-clock kf-ci"></i><span>Lunes a viernes, 8am – 6pm</span></li>
                     </ul>
                 </div>
             </div>
         </div>
-
-        <!-- Franja inferior -->
         <div class="kf-bottom">
             <div class="kf-bottom-inner">
-                <p class="kf-copy">
-                    Copyright © 2026 <a href="index.html">Kioscos y Tecnología</a>. Todos los derechos reservados.
-                </p>
+                <p class="kf-copy">Copyright © 2026 <a href="index.html">Kioscos y Tecnología</a>. Todos los derechos reservados.</p>
                 <ul class="kf-legal">
                     <li><a href="#">Política de privacidad</a></li>
                     <li><a href="#">Términos y condiciones</a></li>
                 </ul>
-                <a href="#" class="kf-scroll-top" aria-label="Volver arriba">
-                    <i class="fas fa-arrow-up"></i>
-                </a>
+                <a href="#" class="kf-scroll-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></a>
             </div>
         </div>
-
     </footer>
 
-
-    <!--<< All JS Plugins >>-->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <!--<< Viewport Js >>-->
     <script src="assets/js/viewport.jquery.js"></script>
-    <!--<< Bootstrap Js >>-->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!--<< Nice Select Js >>-->
     <script src="assets/js/jquery.nice-select.min.js"></script>
-    <!--<< Waypoints Js >>-->
     <script src="assets/js/jquery.waypoints.js"></script>
-    <!--<< Counterup Js >>-->
     <script src="assets/js/jquery.counterup.min.js"></script>
-    <!--<< Slick Js >>-->
     <script src="assets/js/slick.min.js"></script>
-    <!--<< Slick Animation Js >>-->
     <script src="assets/js/slick-animation.min.js"></script>
-    <!--<< MeanMenu Js >>-->
     <script src="assets/js/jquery.meanmenu.min.js"></script>
-    <!--<< Magnific Popup Js >>-->
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!--<< Wow Animation Js >>-->
     <script src="assets/js/wow.min.js"></script>
-    <!--<< Circle Progress Js >>-->
     <script src="assets/js/circle-progress.js"></script>
-    <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
 
-    <!-- WhatsApp Floating Button CTA -->
-    <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20me%20gustaría%20conocer%20más%20sobre%20sus%20soluciones"
-        target="_blank" class="whatsapp-float" title="Contáctanos por WhatsApp">
+    <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20más%20información"
+        target="_blank" class="whatsapp-float" title="Contáctenos por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 </body>
-
 </html>
