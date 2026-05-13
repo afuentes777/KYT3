@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Kioscos y Tecnología">
+    <meta name="description" content="Contáctenos para estructurar una solución de autogestión, turnos, cartelería digital, POS o software a la medida para su organización.">
+    <meta property="og:title" content="Contacto – Kioscos y Tecnología">
+    <meta property="og:description" content="Hablemos de su proyecto. Nuestro equipo comercial le ayudará a encontrar la solución ideal.">
+    <meta property="og:url" content="https://kyt3.netlify.app/contacto.html">
+    <title>Contacto – Kioscos y Tecnología</title>
+    <link rel="shortcut icon" href="assets/img/preloader.svg">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/kyt-global.css">
+    <style>
+    /* ═══ PÁGINA CONTACTO ═══ */
+
+    /* ── Hero breadcrumb ── */
+    .contact-hero {
+        background: linear-gradient(105deg, #01004e 0%, #00009c 55%, #1a3a6e 100%);
+        min-height: 320px;
+        display: flex;
+        align-items: center;
+        padding-top: 108px;
+        padding-bottom: 56px;
+        position: relative;
+        overflow: hidden;
+    }
+    .contact-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 70% 50%, rgba(48,139,29,0.12) 0%, transparent 60%);
+        pointer-events: none;
+    }
+    .contact-hero .ch-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: rgba(48,139,29,0.18);
+        border: 1px solid rgba(48,139,29,0.40);
+        color: #d3ebb6;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 50px;
+        margin-bottom: 16px;
+    }
+    .contact-hero h1 {
+        font-size: clamp(34px, 4.5vw, 56px);
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+    }
+    .contact-hero p {
+        font-size: clamp(15px, 1.5vw, 17px);
+        color: rgba(239,239,255,0.78);
+        line-height: 1.7;
+        max-width: 580px;
+    }
+
+    /* ── Sección principal formulario + sidebar ── */
+    .contact-main {
+        background: #f8f9ff;
+        padding: 72px 0 80px;
+    }
+
+    /* ── Tarjeta formulario ── */
+    .contact-form-card {
+        background: #fff;
+        border: 1px solid rgba(0,0,156,0.08);
+        border-radius: 20px;
+        padding: 40px 40px 36px;
+        box-shadow: 0 4px 32px rgba(0,0,156,0.07);
+    }
+    .contact-form-card h2 {
+        font-size: 22px;
+        font-weight: 800;
+        color: #01004e;
+        margin-bottom: 6px;
+    }
+    .contact-form-card .form-subtitle {
+        font-size: 14px;
+        color: #6666c4;
+        margin-bottom: 28px;
+        line-height: 1.5;
+    }
+
+    /* ── Campos del formulario ── */
+    .kyt-form-group { margin-bottom: 18px; }
+    .kyt-form-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: #01004e;
+        margin-bottom: 6px;
+    }
+    .kyt-form-group label .req { color: #308b1d; }
+    .kyt-input,
+    .kyt-select,
+    .kyt-textarea {
+        width: 100%;
+        padding: 11px 15px;
+        font-size: 14px;
+        color: #1a1a3e;
+        background: #fff;
+        border: 1.5px solid rgba(0,0,156,0.14);
+        border-radius: 10px;
+        outline: none;
+        transition: border-color .2s, box-shadow .2s;
+        box-sizing: border-box;
+        font-family: inherit;
+    }
+    .kyt-input:focus,
+    .kyt-select:focus,
+    .kyt-textarea:focus {
+        border-color: #308b1d;
+        box-shadow: 0 0 0 3px rgba(48,139,29,0.10);
+    }
+    .kyt-input::placeholder,
+    .kyt-textarea::placeholder { color: #aab0cc; }
+    .kyt-select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236666c4' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        cursor: pointer;
+    }
+    .kyt-textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+
+    /* ── Checkbox ── */
+    .kyt-checkbox-group {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin: 20px 0 24px;
+    }
+    .kyt-checkbox-group input[type="checkbox"] {
+        width: 18px; height: 18px;
+        flex-shrink: 0;
+        margin-top: 2px;
+        accent-color: #308b1d;
+        cursor: pointer;
+    }
+    .kyt-checkbox-group label {
+        font-size: 13px;
+        color: #4a4a7a;
+        line-height: 1.55;
+        cursor: pointer;
+    }
+    .kyt-checkbox-group label a {
+        color: #308b1d;
+        text-decoration: underline;
+    }
+
+    /* ── Botón enviar ── */
+    .kyt-submit-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #308b1d;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 14px 32px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        transition: background .2s, transform .15s, box-shadow .2s;
+        box-shadow: 0 4px 18px rgba(48,139,29,0.28);
+        width: 100%;
+        justify-content: center;
+        letter-spacing: 0.01em;
+    }
+    .kyt-submit-btn:hover {
+        background: #236514;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(48,139,29,0.38);
+    }
+
+    /* ── Sidebar de contacto ── */
+    .contact-sidebar { padding-left: 20px; }
+    @media (max-width: 991px) { .contact-sidebar { padding-left: 0; margin-top: 36px; } }
+
+    .cs-title {
+        font-size: 18px;
+        font-weight: 800;
+        color: #01004e;
+        margin-bottom: 20px;
+    }
+    .cs-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+    .cs-icon {
+        width: 42px; height: 42px;
+        border-radius: 10px;
+        background: rgba(48,139,29,0.10);
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+        font-size: 16px;
+        color: #308b1d;
+    }
+    .cs-text p { font-size: 12px; color: #6666c4; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 2px; }
+    .cs-text a,
+    .cs-text span { font-size: 15px; font-weight: 500; color: #01004e; text-decoration: none; display: block; transition: color .15s; }
+    .cs-text a:hover { color: #308b1d; }
+
+    .cs-divider { height: 1px; background: rgba(0,0,156,0.08); margin: 24px 0; }
+
+    .cs-wa-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #25d366;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 13px 22px;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: background .2s, transform .15s;
+        box-shadow: 0 4px 16px rgba(37,211,102,0.28);
+        margin-bottom: 20px;
+    }
+    .cs-wa-btn:hover { background: #1da851; transform: translateY(-2px); color: #fff; }
+    .cs-wa-btn i { font-size: 20px; }
+
+    /* Horario destacado */
+    .cs-schedule {
+        background: #efefff;
+        border-radius: 12px;
+        padding: 16px 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .cs-schedule i { font-size: 18px; color: #00009c; }
+    .cs-schedule p { font-size: 13px; color: #01004e; margin: 0; font-weight: 500; }
+    .cs-schedule p span { display: block; font-weight: 700; }
+
+    /* ── Carrusel de imágenes ── */
+    .contact-gallery {
+        background: #fff;
+        padding: 72px 0 80px;
+    }
+    .contact-gallery .section-title { text-align: center; margin-bottom: 40px; }
+    .gallery-track-wrap {
+        overflow: hidden;
+        position: relative;
+    }
+    .gallery-track-wrap::before,
+    .gallery-track-wrap::after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0;
+        width: 80px;
+        z-index: 2;
+        pointer-events: none;
+    }
+    .gallery-track-wrap::before { left: 0; background: linear-gradient(to right, #fff, transparent); }
+    .gallery-track-wrap::after  { right: 0; background: linear-gradient(to left,  #fff, transparent); }
+
+    .gallery-track {
+        display: flex;
+        gap: 16px;
+        animation: scrollGallery 35s linear infinite;
+        width: max-content;
+    }
+    .gallery-track:hover { animation-play-state: paused; }
+
+    @keyframes scrollGallery {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .gallery-item {
+        flex-shrink: 0;
+        width: 280px;
+        height: 200px;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+        transition: transform .3s, box-shadow .3s;
+    }
+    .gallery-item:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 10px 32px rgba(0,0,156,0.15);
+    }
+    .gallery-item img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform .4s;
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+
+    /* ── Form grid responsive ── */
+    .form-row-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+    @media (max-width: 575px) { .form-row-2 { grid-template-columns: 1fr; } }
+    @media (max-width: 767px) {
+        .contact-form-card { padding: 28px 20px 24px; }
+        .gallery-item { width: 220px; height: 160px; }
+    }
+
+    /* ── Estado de envío ── */
+    .form-success {
+        display: none;
+        background: #f0fef4;
+        border: 1px solid rgba(48,139,29,0.25);
+        border-radius: 12px;
+        padding: 20px 24px;
+        text-align: center;
+        margin-top: 16px;
+    }
+    .form-success i { font-size: 28px; color: #308b1d; margin-bottom: 8px; display: block; }
+    .form-success p { font-size: 15px; color: #01004e; font-weight: 600; margin: 0; }
+    </style>
+</head>
+
+<body class="kyt-inner">
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="spinner"></div>
+            <div class="txt-loading">
+                <span data-text-preloader="K" class="letters-loading">K</span>
+                <span data-text-preloader="I" class="letters-loading">I</span>
+                <span data-text-preloader="O" class="letters-loading">O</span>
+                <span data-text-preloader="S" class="letters-loading">S</span>
+                <span data-text-preloader="C" class="letters-loading">C</span>
+                <span data-text-preloader="O" class="letters-loading">O</span>
+                <span data-text-preloader="S" class="letters-loading">S</span>
+            </div>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
+
+    <!-- ═══ OFFCANVAS MOBILE ═══ -->
+    <div class="fix-area">
+        <div class="offcanvas__info kyt-offcanvas">
+            <div class="offcanvas__wrapper">
+                <div class="offcanvas__content">
+                    <div class="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
+                        <div class="offcanvas__logo">
+                            <a href="index.html"><img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología" style="height:36px;"></a>
+                        </div>
+                        <div class="offcanvas__close">
+                            <button aria-label="Cerrar menú"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="mobile-menu fix mb-3"></div>
+                    <div class="offcanvas__contact">
+                        <h4>Información de contacto</h4>
+                        <ul>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon"><i class="fal fa-map-marker-alt"></i></div>
+                                <div class="offcanvas__contact-text"><span>Bogotá, Colombia</span></div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15"><i class="fal fa-envelope"></i></div>
+                                <div class="offcanvas__contact-text"><a href="mailto:info@kioscosytecnologia.com">info@kioscosytecnologia.com</a></div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15"><i class="fal fa-clock"></i></div>
+                                <div class="offcanvas__contact-text"><span>Lunes a viernes, 8am – 6pm</span></div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15"><i class="far fa-phone"></i></div>
+                                <div class="offcanvas__contact-text"><a href="tel:+573113676433">+57 311 367 6433</a></div>
+                            </li>
+                        </ul>
+                        <div class="header-button mt-4">
+                            <a href="contacto.html" class="theme-btn text-center">
+                                <span>Cotizar proyecto <i class="fas fa-chevron-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas__overlay"></div>
+
+    <!-- ═══ NAVBAR PREMIUM KYT ═══ -->
+    <div class="kyt-header-wrap" id="kytHeader">
+        <div class="container" style="max-width:1260px;">
+            <div class="kyt-header-inner">
+                <a href="index.html" class="kyt-logo">
+                    <img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología">
+                </a>
+                <ul class="kyt-nav" id="kytNavDesktop">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li>
+                        <a href="#">Quiénes somos <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown">
+                            <li><a href="about.html"><span class="drop-icon"><i class="fas fa-building"></i></span>La empresa</a></li>
+                            <li><a href="service-modalidad.html"><span class="drop-icon"><i class="fas fa-handshake"></i></span>Modalidad de venta</a></li>
+                            <li><a href="blog.html"><span class="drop-icon"><i class="fas fa-pen-nib"></i></span>Blog</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Sectores <i class="fas fa-angle-down"></i></a>
+                        <div class="kyt-mega">
+                            <div class="mega-grid">
+                                <div class="mega-item"><img src="assets/img/Sectores/SALUD-180X225.jpg" alt="Sector Salud"><div class="mega-label"><a href="salud.html">Salud</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/BANCA-180X225.jpg" alt="Sector Banca"><div class="mega-label"><a href="banca.html">Banca</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/EDUCATIVO-180X225.jpg" alt="Sector Educación"><div class="mega-label"><a href="educacion.html">Educación</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/RESTAURANTES-180X225.jpg" alt="Sector Restaurantes"><div class="mega-label"><a href="restaurantes.html">Restaurantes</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/RETAIL-180X225.jpg" alt="Sector Retail"><div class="mega-label"><a href="retail.html">Retail</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/HOTELES-180X225.jpg" alt="Sector Hoteles"><div class="mega-label"><a href="hotel.html">Hoteles</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/CORPOTARIVO-180X225.jpg" alt="Sector Corporativo"><div class="mega-label"><a href="Corporativo.html">Corporativo</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/GOBIERNO-180X225.jpg" alt="Sector Gobierno"><div class="mega-label"><a href="Gobierno.html">Gobierno</a></div></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-divider" aria-hidden="true"></li>
+                    <li>
+                        <a href="#">Hardware <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown">
+                            <span class="drop-label">Terminales</span>
+                            <li><a href="Kioscos.html"><span class="drop-icon"><i class="fas fa-tablet-alt"></i></span>Kioscos</a></li>
+                            <li><a href="Pos.html"><span class="drop-icon"><i class="fas fa-cash-register"></i></span>POS</a></li>
+                            <div class="drop-sep"></div>
+                            <li><a href="mesa-interactiva.html"><span class="drop-icon"><i class="fas fa-th-large"></i></span>Mesa interactiva</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Software <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown drop-software">
+                            <span class="drop-label">Suite K&amp;T</span>
+                            <div class="sw-mega-grid">
+                                <div class="sw-mega-col">
+                                    <li><a href="konex.html"><span class="drop-icon"><i class="fas fa-clock"></i></span><span class="sw-item-body"><span class="sw-item-name">KONEX<sup>®</sup></span><span class="sw-item-desc">Turnos y gestión de colas</span></span><span class="sw-badge">Turnos</span></a></li>
+                                    <li><a href="davinci.html"><span class="drop-icon"><i class="fas fa-tv"></i></span><span class="sw-item-body"><span class="sw-item-name">DAVINCI<sup>®</sup></span><span class="sw-item-desc">Cartelería digital</span></span><span class="sw-badge">Signage</span></a></li>
+                                    <li><a href="sense.html"><span class="drop-icon"><i class="fas fa-chart-bar"></i></span><span class="sw-item-body"><span class="sw-item-name">SENSE<sup>®</sup></span><span class="sw-item-desc">Analítica de experiencia</span></span><span class="sw-badge">Analítica</span></a></li>
+                                    <li><a href="dani-ia.html"><span class="drop-icon"><i class="fas fa-robot"></i></span><span class="sw-item-body"><span class="sw-item-name">DANI IA<sup>®</sup></span><span class="sw-item-desc">Asistente inteligente</span></span><span class="sw-badge">IA</span></a></li>
+                                    <li><a href="fabrica-de-software.html"><span class="drop-icon"><i class="fas fa-laptop-code"></i></span><span class="sw-item-body"><span class="sw-item-name">Fábrica de software</span><span class="sw-item-desc">Desarrollo a la medida</span></span></a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-divider" aria-hidden="true"></li>
+                    <li>
+                        <a href="#">Recursos <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown">
+                            <li><a href="blog.html"><span class="drop-icon"><i class="fas fa-pen-nib"></i></span>Blog y artículos</a></li>
+                            <li><a href="news.html"><span class="drop-icon"><i class="fas fa-trophy"></i></span>Casos de éxito</a></li>
+                            <li><a href="que-son-los-kioscos-digitales.html"><span class="drop-icon"><i class="fas fa-book-open"></i></span>¿Qué es un kiosco?</a></li>
+                            <li><a href="Pos.html"><span class="drop-icon"><i class="fas fa-question-circle"></i></span>¿Qué es un POS?</a></li>
+                            <li><a href="contacto.html"><span class="drop-icon"><i class="fas fa-envelope"></i></span>Contacto</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+                    <a href="contacto.html" class="kyt-cta-btn">
+                        <i class="fas fa-comment-dots"></i> Cotizar proyecto
+                    </a>
+                    <button class="kyt-hamburger sidebar__toggle" aria-label="Abrir menú">
+                        <i class="far fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function(){
+        var hdr=document.getElementById('kytHeader');
+        if(!hdr)return;
+        var hero=document.querySelector('.contact-hero,.breadcrumb-wrapper');
+        var heroBottom=0,ticking=false;
+        function calcHero(){heroBottom=hero?(hero.getBoundingClientRect().bottom+window.scrollY-10):0;}
+        function applyMode(){hdr.classList.toggle('kyt-light',window.scrollY>heroBottom);ticking=false;}
+        function onScroll(){if(!ticking){requestAnimationFrame(applyMode);ticking=true;}}
+        function init(){calcHero();window.addEventListener('scroll',onScroll,{passive:true});applyMode();}
+        document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
+        window.addEventListener('resize',function(){calcHero();applyMode();},{passive:true});
+    })();
+    </script>
+
+    <div class="search-wrap">
+        <div class="search-inner">
+            <i class="fas fa-times search-close" id="search-close"></i>
+            <div class="search-cell">
+                <form method="get">
+                    <div class="search-field-holder">
+                        <input type="search" class="main-search-input" placeholder="Buscar...">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="ch-eyebrow">
+                        <i class="fas fa-envelope"></i> Contacto
+                    </div>
+                    <h1>Hablemos de<br>su proyecto</h1>
+                    <p>Cuéntenos qué necesita y nuestro equipo comercial le ayudará a estructurar una solución de autogestión, turnos, cartelería digital, POS o software a la medida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FORMULARIO + SIDEBAR ═══ -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="row g-4 g-lg-5">
+
+                <!-- Formulario -->
+                <div class="col-lg-8">
+                    <div class="contact-form-card wow fadeInUp" data-wow-delay=".2s">
+                        <h2>Envíenos su consulta</h2>
+                        <p class="form-subtitle">Complete los campos y nos pondremos en contacto en menos de 24 horas hábiles.</p>
+
+                        <form id="kytContactForm" novalidate>
+
+                            <div class="form-row-2">
+                                <div class="kyt-form-group">
+                                    <label for="cf-nombre">Nombre completo <span class="req">*</span></label>
+                                    <input type="text" id="cf-nombre" class="kyt-input" placeholder="Ej. Juan Pérez" required>
+                                </div>
+                                <div class="kyt-form-group">
+                                    <label for="cf-empresa">Empresa <span class="req">*</span></label>
+                                    <input type="text" id="cf-empresa" class="kyt-input" placeholder="Nombre de su organización" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row-2">
+                                <div class="kyt-form-group">
+                                    <label for="cf-cargo">Cargo</label>
+                                    <input type="text" id="cf-cargo" class="kyt-input" placeholder="Ej. Gerente de Operaciones">
+                                </div>
+                                <div class="kyt-form-group">
+                                    <label for="cf-email">Correo electrónico <span class="req">*</span></label>
+                                    <input type="email" id="cf-email" class="kyt-input" placeholder="correo@empresa.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row-2">
+                                <div class="kyt-form-group">
+                                    <label for="cf-tel">Teléfono <span class="req">*</span></label>
+                                    <input type="tel" id="cf-tel" class="kyt-input" placeholder="+57 300 000 0000" required>
+                                </div>
+                                <div class="kyt-form-group">
+                                    <label for="cf-pais">País</label>
+                                    <select id="cf-pais" class="kyt-select kyt-input">
+                                        <option value="">Seleccionar país</option>
+                                        <option value="CO" selected>Colombia</option>
+                                        <option value="MX">México</option>
+                                        <option value="PE">Perú</option>
+                                        <option value="EC">Ecuador</option>
+                                        <option value="CL">Chile</option>
+                                        <option value="AR">Argentina</option>
+                                        <option value="VE">Venezuela</option>
+                                        <option value="PA">Panamá</option>
+                                        <option value="CR">Costa Rica</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row-2">
+                                <div class="kyt-form-group">
+                                    <label for="cf-ciudad">Ciudad</label>
+                                    <input type="text" id="cf-ciudad" class="kyt-input" placeholder="Ej. Bogotá">
+                                </div>
+                                <div class="kyt-form-group">
+                                    <label for="cf-solucion">Tipo de solución de interés <span class="req">*</span></label>
+                                    <select id="cf-solucion" class="kyt-select kyt-input" required>
+                                        <option value="">Seleccionar solución</option>
+                                        <option value="kioscos">Kioscos de autogestión</option>
+                                        <option value="konex">Software de turnos KONEX®</option>
+                                        <option value="davinci">Cartelería digital DAVINCI®</option>
+                                        <option value="sense">Analítica SENSE®</option>
+                                        <option value="dani-ia">DANI IA®</option>
+                                        <option value="pos">POS</option>
+                                        <option value="soporte">Soporte y mantenimiento</option>
+                                        <option value="fabrica">Fábrica de software</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="kyt-form-group">
+                                <label for="cf-mensaje">Mensaje</label>
+                                <textarea id="cf-mensaje" class="kyt-textarea" placeholder="Cuéntenos su proyecto, número de puntos de atención, sector o cualquier detalle relevante..."></textarea>
+                            </div>
+
+                            <div class="kyt-checkbox-group">
+                                <input type="checkbox" id="cf-acepta" required>
+                                <label for="cf-acepta">
+                                    Autorizo el tratamiento de mis datos personales conforme a la
+                                    <a href="#">Política de Privacidad</a> de Kioscos y Tecnología. <span class="req">*</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="kyt-submit-btn">
+                                <i class="fas fa-paper-plane"></i> Enviar solicitud
+                            </button>
+
+                            <div class="form-success" id="formSuccess">
+                                <i class="fas fa-check-circle"></i>
+                                <p>¡Gracias! Su solicitud fue enviada correctamente. Nos pondremos en contacto pronto.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="contact-sidebar wow fadeInUp" data-wow-delay=".4s">
+
+                        <p class="cs-title">Información de contacto</p>
+
+                        <div class="cs-item">
+                            <div class="cs-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="cs-text">
+                                <p>Ubicación</p>
+                                <span>Bogotá, Colombia</span>
+                            </div>
+                        </div>
+
+                        <div class="cs-item">
+                            <div class="cs-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="cs-text">
+                                <p>Correo electrónico</p>
+                                <a href="mailto:info@kioscosytecnologia.com">info@kioscosytecnologia.com</a>
+                            </div>
+                        </div>
+
+                        <div class="cs-item">
+                            <div class="cs-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="cs-text">
+                                <p>Línea de atención</p>
+                                <a href="tel:+573113676433">+57 311 367 6433</a>
+                            </div>
+                        </div>
+
+                        <div class="cs-divider"></div>
+
+                        <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20más%20información" target="_blank" class="cs-wa-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            Escribir por WhatsApp
+                        </a>
+
+                        <div class="cs-schedule">
+                            <i class="fas fa-clock"></i>
+                            <p>
+                                Horario de atención<br>
+                                <span>Lunes a viernes, 8am – 6pm</span>
+                            </p>
+                        </div>
+
+                        <!-- Mini mapa de soluciones -->
+                        <div style="margin-top:28px;">
+                            <p style="font-size:12px;font-weight:700;color:#9aab93;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;">Nuestras soluciones</p>
+                            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                                <a href="Kioscos.html" style="font-size:12px;font-weight:600;color:#01004e;background:#efefff;border:1px solid rgba(0,0,156,0.12);border-radius:6px;padding:4px 10px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#d3ebb6'" onmouseout="this.style.background='#efefff'">Kioscos</a>
+                                <a href="konex.html" style="font-size:12px;font-weight:600;color:#01004e;background:#efefff;border:1px solid rgba(0,0,156,0.12);border-radius:6px;padding:4px 10px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#d3ebb6'" onmouseout="this.style.background='#efefff'">KONEX®</a>
+                                <a href="davinci.html" style="font-size:12px;font-weight:600;color:#01004e;background:#efefff;border:1px solid rgba(0,0,156,0.12);border-radius:6px;padding:4px 10px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#d3ebb6'" onmouseout="this.style.background='#efefff'">DAVINCI®</a>
+                                <a href="Pos.html" style="font-size:12px;font-weight:600;color:#01004e;background:#efefff;border:1px solid rgba(0,0,156,0.12);border-radius:6px;padding:4px 10px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#d3ebb6'" onmouseout="this.style.background='#efefff'">POS</a>
+                                <a href="sense.html" style="font-size:12px;font-weight:600;color:#01004e;background:#efefff;border:1px solid rgba(0,0,156,0.12);border-radius:6px;padding:4px 10px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#d3ebb6'" onmouseout="this.style.background='#efefff'">SENSE®</a>
+                                <a href="dani-ia.html" style="font-size:12px;font-weight:600;color:#01004e;background:#efefff;border:1px solid rgba(0,0,156,0.12);border-radius:6px;padding:4px 10px;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='#d3ebb6'" onmouseout="this.style.background='#efefff'">DANI IA®</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CARRUSEL DE IMÁGENES ═══ -->
+    <section class="contact-gallery">
+        <div class="container">
+            <div class="section-title wow fadeInUp">
+                <span>Galería de soluciones</span>
+                <h2>Soluciones que transforman<br>la atención</h2>
+            </div>
+            <p class="text-center wow fadeInUp" data-wow-delay=".3s" style="font-size:16px;color:#6666c4;max-width:560px;margin:0 auto 44px;line-height:1.7;">
+                Implementamos tecnología para mejorar la experiencia del usuario y la eficiencia operativa en múltiples sectores.
+            </p>
+        </div>
+        <div class="gallery-track-wrap">
+            <div class="gallery-track" id="galleryTrack">
+                <!-- Fila 1 de imágenes (se duplica para loop infinito) -->
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Banca.jpg"       alt="Solución Banca"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Salud.jpg"       alt="Solución Salud"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Retail.jpg"      alt="Solución Retail"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Restaurante.jpg" alt="Solución Restaurantes"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Gobierno.jpg"    alt="Solución Gobierno"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Hotelero.jpg"    alt="Solución Hoteles"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Corporativo.jpg" alt="Solución Corporativo"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Educativo.jpg"   alt="Solución Educación"></div>
+                <div class="gallery-item"><img src="assets/img/about/about-3.jpg"                alt="Equipo KYT"></div>
+                <!-- Duplicado para loop infinito -->
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Banca.jpg"       alt="Solución Banca"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Salud.jpg"       alt="Solución Salud"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Retail.jpg"      alt="Solución Retail"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Restaurante.jpg" alt="Solución Restaurantes"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Gobierno.jpg"    alt="Solución Gobierno"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Hotelero.jpg"    alt="Solución Hoteles"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Corporativo.jpg" alt="Solución Corporativo"></div>
+                <div class="gallery-item"><img src="assets/img/Imagenessectores/Educativo.jpg"   alt="Solución Educación"></div>
+                <div class="gallery-item"><img src="assets/img/about/about-3.jpg"                alt="Equipo KYT"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="kyt-footer" id="kytFooter">
+        <div class="kf-hero">
+            <div class="kf-hero-inner">
+                <div class="kf-hero-body">
+                    <div class="kf-hero-text">
+                        <p class="kf-eyebrow">Kioscos y Tecnología · Colombia</p>
+                        <h2 class="kf-headline">Estamos listos para<br>acompañar su operación</h2>
+                        <p class="kf-sub">Fabricamos, integramos y soportamos soluciones de autogestión, turnos, cartelería digital, POS y monitoreo para organizaciones que necesitan eficiencia, continuidad y control.</p>
+                        <div class="kf-ctas">
+                            <a href="contacto.html" class="kf-btn-primary"><i class="fas fa-comment-dots"></i> Cotizar proyecto</a>
+                            <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20más%20información" target="_blank" class="kf-btn-secondary"><i class="fab fa-whatsapp"></i> Escribir por WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="kf-hero-logo"><img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología"></div>
+                </div>
+                <div class="kf-social-bar">
+                    <span class="kf-social-label">Síganos en</span>
+                    <div class="kf-social-icons">
+                        <a href="#" aria-label="LinkedIn KYT" class="kf-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube KYT" class="kf-social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook KYT" class="kf-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram KYT" class="kf-social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kf-links">
+            <div class="kf-links-inner">
+                <div class="kf-col">
+                    <h6 class="kf-col-title">General</h6>
+                    <ul class="kf-col-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="about.html">Quiénes somos</a></li>
+                        <li><a href="service-modalidad.html">Modalidad de venta</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="kf-col">
+                    <h6 class="kf-col-title">Soluciones</h6>
+                    <ul class="kf-col-list">
+                        <li><a href="Kioscos.html">Kioscos de autogestión</a></li>
+                        <li><a href="turnos.html">Software de turnos</a></li>
+                        <li><a href="informativo.html">Cartelería digital</a></li>
+                        <li><a href="Pos.html">Soluciones POS</a></li>
+                        <li><a href="service-modalidad.html">Soporte y mantenimiento</a></li>
+                    </ul>
+                </div>
+                <div class="kf-col">
+                    <h6 class="kf-col-title">Software</h6>
+                    <ul class="kf-col-list">
+                        <li><a href="konex.html">KONEX<sup>®</sup></a></li>
+                        <li><a href="davinci.html">DAVINCI<sup>®</sup></a></li>
+                        <li><a href="sense.html">SENSE<sup>®</sup></a></li>
+                        <li><a href="dani-ia.html">DANI IA<sup>®</sup></a></li>
+                        <li><a href="fabrica-de-software.html">Fábrica de software</a></li>
+                    </ul>
+                </div>
+                <div class="kf-col">
+                    <h6 class="kf-col-title">Sectores</h6>
+                    <ul class="kf-col-list">
+                        <li><a href="banca.html">Banca</a></li>
+                        <li><a href="salud.html">Salud</a></li>
+                        <li><a href="retail.html">Retail</a></li>
+                        <li><a href="Gobierno.html">Gobierno</a></li>
+                        <li><a href="Corporativo.html">Corporativo</a></li>
+                    </ul>
+                </div>
+                <div class="kf-col">
+                    <h6 class="kf-col-title">Contacto</h6>
+                    <ul class="kf-col-list kf-contact-list">
+                        <li><i class="fas fa-map-marker-alt kf-ci"></i><span>Bogotá, Colombia</span></li>
+                        <li><i class="fas fa-envelope kf-ci"></i><a href="mailto:info@kioscosytecnologia.com">info@kioscosytecnologia.com</a></li>
+                        <li><i class="fas fa-phone kf-ci"></i><a href="tel:+573113676433">+57 311 367 6433</a></li>
+                        <li><i class="fas fa-clock kf-ci"></i><span>Lunes a viernes, 8am – 6pm</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kf-bottom">
+            <div class="kf-bottom-inner">
+                <p class="kf-copy">Copyright © 2026 <a href="index.html">Kioscos y Tecnología</a>. Todos los derechos reservados.</p>
+                <ul class="kf-legal">
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+                <a href="#" class="kf-scroll-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/viewport.jquery.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/jquery.waypoints.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/slick-animation.min.js"></script>
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/circle-progress.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+    // Formulario — simulación de envío
+    document.getElementById('kytContactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var nombre  = document.getElementById('cf-nombre').value.trim();
+        var email   = document.getElementById('cf-email').value.trim();
+        var tel     = document.getElementById('cf-tel').value.trim();
+        var sol     = document.getElementById('cf-solucion').value;
+        var acepta  = document.getElementById('cf-acepta').checked;
+        if (!nombre || !email || !tel || !sol || !acepta) {
+            alert('Por favor complete todos los campos obligatorios y acepte la política de privacidad.');
+            return;
+        }
+        // Armar mensaje para WhatsApp como fallback funcional
+        var msg = encodeURIComponent(
+            'Hola Kioscos y Tecnología, vengo del formulario web.\n' +
+            'Nombre: ' + nombre + '\n' +
+            'Empresa: ' + document.getElementById('cf-empresa').value + '\n' +
+            'Email: ' + email + '\n' +
+            'Teléfono: ' + tel + '\n' +
+            'Solución: ' + document.getElementById('cf-solucion').options[document.getElementById('cf-solucion').selectedIndex].text + '\n' +
+            'Mensaje: ' + document.getElementById('cf-mensaje').value
+        );
+        document.getElementById('formSuccess').style.display = 'block';
+        document.getElementById('kytContactForm').style.opacity = '0.4';
+        document.getElementById('kytContactForm').style.pointerEvents = 'none';
+        setTimeout(function(){
+            window.open('https://wa.me/573113676433?text=' + msg, '_blank');
+        }, 1200);
+    });
+    </script>
+
+    <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20más%20información"
+        target="_blank" class="whatsapp-float" title="Contáctenos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>
