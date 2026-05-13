@@ -235,13 +235,13 @@
    icon | nombre | badge
 ══════════════════════════════════════════ */
 /* ══════════════════════════════════════════
-   DROPDOWN SOFTWARE — columna única 440px
-   Sin riesgo de corte ni overflow
+   DROPDOWN SOFTWARE — columna única, escala
+   homologada con Hardware y Quiénes somos
 ══════════════════════════════════════════ */
 .kyt-dropdown.drop-software {
-  width: 440px;
-  min-width: 440px;
-  max-width: 440px;
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
   box-sizing: border-box;
   padding: 8px 0 10px;
   overflow: visible;
@@ -254,98 +254,95 @@
   visibility: visible;
 }
 
-/* Etiqueta de sección única */
+/* Etiqueta superior — igual que "TERMINALES" en Hardware */
 .sw-single-label {
   font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #6666c4;
-  padding: 6px 16px 8px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  border-bottom: 1px solid rgba(0,0,156,0.07);
-  margin-bottom: 4px;
+  color: #9aab93;
+  padding: 10px 22px 4px;
+  display: block;
 }
-.sw-single-label i { font-size: 10px; color: #308b1d; }
+.sw-single-label i { display: none; }
 
-/* Ocultar la grid y columnas — no se usan en columna única */
+/* Ocultar grid y encabezados de columna */
 .sw-mega-grid { display: block; }
 .sw-mega-col  { padding: 0; border: none !important; }
 .sw-col-header { display: none; }
 
-/* Items */
+/* Items — misma proporción que Hardware */
 .sw-mega-col li { list-style: none; }
 .sw-mega-col li a {
   display: flex !important;
   align-items: center;
   gap: 10px;
-  padding: 8px 14px;
-  margin: 1px 8px;
+  padding: 9px 16px;
+  margin: 1px 6px;
   border-radius: 8px;
   text-decoration: none;
-  transition: background .15s, transform .12s;
+  color: #2c3e25;
+  transition: color .15s, background .15s;
 }
 .sw-mega-col li a:hover {
-  background: #efefff;
-  transform: translateX(2px);
+  color: #308b1d;
+  background: rgba(48,139,29,0.07);
+  transform: none;
 }
 
-/* Ícono */
+/* Ícono — mismo tamaño que Hardware */
 .sw-mega-col li a .drop-icon {
-  width: 32px; height: 32px;
+  width: 30px; height: 30px;
   border-radius: 8px;
   background: rgba(48,139,29,0.10);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   font-size: 13px;
   color: #308b1d;
-  transition: background .15s, color .15s;
+  transition: background .15s;
   margin: 0;
 }
-.sw-mega-col li a:hover .drop-icon {
-  background: rgba(0,0,156,0.09);
-  color: #00009c;
-}
+.sw-mega-col li a:hover .drop-icon { background: rgba(48,139,29,0.18); }
 
-/* Nombre + descripción */
+/* Nombre — misma escala que "Kioscos", "POS" */
 .sw-item-body { flex: 1; min-width: 0; }
 .sw-item-name {
   font-size: 13.5px;
-  font-weight: 700;
-  color: #01004e;
+  font-weight: 500;
+  color: #2c3e25;
   white-space: nowrap;
   display: block;
   line-height: 1.3;
   transition: color .15s;
 }
-.sw-mega-col li a:hover .sw-item-name { color: #00009c; }
-.sw-item-desc {
-  font-size: 11.5px;
-  color: #6666c4;
-  white-space: nowrap;
-  display: block;
-  margin-top: 2px;
-  line-height: 1.3;
-}
+.sw-mega-col li a:hover .sw-item-name { color: #308b1d; }
 
-/* Badge */
+/* Descripción — quitarla para igualar con Hardware que no tiene */
+.sw-item-desc { display: none; }
+
+/* Badge — pequeño, discreto */
 .sw-badge {
   flex-shrink: 0;
   font-size: 10px;
-  font-weight: 700;
-  color: #00009c;
-  background: #efefff;
-  border: 1px solid rgba(0,0,156,0.15);
+  font-weight: 600;
+  color: #308b1d;
+  background: rgba(48,139,29,0.10);
+  border: 1px solid rgba(48,139,29,0.18);
   border-radius: 4px;
-  padding: 2px 7px;
+  padding: 1px 6px;
   white-space: nowrap;
   transition: background .15s;
 }
-.sw-mega-col li a:hover .sw-badge { background: rgba(0,0,156,0.10); }
+.sw-mega-col li a:hover .sw-badge { background: rgba(48,139,29,0.18); }
 
-/* Responsive — sin cambios en mobile (offcanvas gestiona) */
+/* Separador entre items si existe */
+.sw-mega-col .drop-sep {
+  height: 1px;
+  background: rgba(0,0,156,0.08);
+  margin: 6px 14px;
+}
+
+/* Responsive */
 @media (max-width: 1199px) {
   .kyt-dropdown.drop-software {
     width: unset; min-width: unset; max-width: unset;
