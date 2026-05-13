@@ -24,130 +24,218 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="assets/css/kyt-global.css">
     <style>
-        /* ── Hero mejorado ── */
+        /* ═══════════════════════════════════════
+           HOME — Estilos inline exclusivos
+           Todo lo compartido está en kyt-global.css
+        ═══════════════════════════════════════ */
+
+        /* El home NO tiene padding-top — la navbar flota sobre el hero */
+        body { padding-top: 0 !important; }
+
+        /* ── Hero eyebrow ── */
         .hero-eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(48,139,29,0.18);
-            border: 1px solid rgba(48,139,29,0.45);
-            color: #7fdc5a;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 2px;
+            background: rgba(110,187,13,0.18);
+            border: 1px solid rgba(110,187,13,0.40);
+            color: #d3ebb6;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             padding: 6px 16px;
             border-radius: 50px;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
         }
-        .hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: #7fdc5a; display: inline-block; }
+        .hero-eyebrow span {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #6ebb0d;
+            display: inline-block;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%,100% { opacity:1; transform:scale(1); }
+            50%      { opacity:.5; transform:scale(1.3); }
+        }
+
+        /* ── Hero headline ── */
         .hero-headline {
-            font-size: clamp(32px, 4.5vw, 58px);
+            font-size: clamp(34px, 4.8vw, 62px);
             font-weight: 800;
-            line-height: 1.15;
+            line-height: 1.10;
             color: #ffffff;
             margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            max-width: 740px;
         }
-        .hero-headline em { font-style: normal; color: #7fdc5a; }
+        .hero-headline em { font-style: normal; color: #6ebb0d; }
+
+        /* ── Hero subline ── */
         .hero-subline {
-            font-size: clamp(15px, 1.6vw, 18px);
-            color: rgba(255,255,255,0.78);
-            line-height: 1.7;
-            max-width: 620px;
+            font-size: clamp(15px, 1.5vw, 17px);
+            color: rgba(239,239,255,0.78);
+            line-height: 1.75;
+            max-width: 600px;
             margin-bottom: 36px;
         }
+
+        /* ── CTAs del hero ── */
         .hero-cta-group { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
         .btn-cta-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #308b1d;
-            color: #fff;
-            font-weight: 700;
-            font-size: 15px;
-            padding: 14px 28px;
-            border-radius: 6px;
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #6ebb0d;
+            color: #fff; font-weight: 700; font-size: 15px;
+            padding: 14px 28px; border-radius: 8px;
             text-decoration: none;
-            transition: background .2s, transform .15s;
+            box-shadow: 0 4px 20px rgba(110,187,13,0.35);
+            transition: background .2s, transform .15s, box-shadow .2s;
         }
-        .btn-cta-primary:hover { background: #26730f; color: #fff; transform: translateY(-2px); }
+        .btn-cta-primary:hover {
+            background: #4e8a08; color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(110,187,13,0.45);
+        }
         .btn-cta-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.1);
-            border: 1.5px solid rgba(255,255,255,0.35);
-            color: #fff;
-            font-weight: 600;
-            font-size: 15px;
-            padding: 13px 26px;
-            border-radius: 6px;
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.10);
+            border: 1.5px solid rgba(255,255,255,0.32);
+            color: #fff; font-weight: 600; font-size: 15px;
+            padding: 13px 26px; border-radius: 8px;
             text-decoration: none;
             transition: background .2s, border-color .2s;
         }
-        .btn-cta-secondary:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.6); color: #fff; }
-        .hero-stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 28px;
-            margin-top: 48px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(255,255,255,0.15);
+        .btn-cta-secondary:hover {
+            background: rgba(255,255,255,0.18);
+            border-color: rgba(255,255,255,0.65);
+            color: #fff;
         }
-        .hero-stat-item .stat-num { font-size: 32px; font-weight: 800; color: #7fdc5a; line-height: 1; }
-        .hero-stat-item .stat-label { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* ── Stats bar ── */
+        .hero-stats {
+            display: flex; flex-wrap: wrap; gap: 32px;
+            margin-top: 52px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.14);
+        }
+        .hero-stat-item .stat-num {
+            font-size: 34px; font-weight: 800;
+            color: #6ebb0d; line-height: 1;
+        }
+        .hero-stat-item .stat-label {
+            font-size: 11px; color: rgba(239,239,255,0.55);
+            margin-top: 5px; text-transform: uppercase; letter-spacing: 1.2px;
+        }
 
         /* ── Soluciones cards ── */
-        .solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 40px; }
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px; margin-top: 40px;
+        }
         .solution-card {
             background: #fff;
-            border: 1px solid #e8ede6;
-            border-radius: 12px;
+            border: 1px solid rgba(0,0,156,0.09);
+            border-radius: 14px;
             padding: 28px 24px;
-            transition: box-shadow .2s, transform .2s;
+            transition: box-shadow .22s, transform .22s, border-color .22s;
         }
-        .solution-card:hover { box-shadow: 0 8px 32px rgba(48,139,29,0.12); transform: translateY(-4px); }
-        .solution-card .sol-icon { width: 52px; height: 52px; border-radius: 10px; background: #f0f9ec; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-        .solution-card .sol-icon i { font-size: 22px; color: #308b1d; }
-        .solution-card h4 { font-size: 17px; font-weight: 700; color: #1a2e14; margin-bottom: 8px; }
-        .solution-card p { font-size: 14px; color: #5a6b52; line-height: 1.6; margin-bottom: 12px; }
-        .solution-card .sol-sectors { font-size: 12px; color: #308b1d; font-weight: 600; }
-        .solution-card .sol-link { font-size: 13px; font-weight: 600; color: #308b1d; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; }
-        .solution-card .sol-link:hover { color: #26730f; }
+        .solution-card:hover {
+            box-shadow: 0 10px 36px rgba(0,0,156,0.11);
+            transform: translateY(-4px);
+            border-color: rgba(0,0,156,0.18);
+        }
+        .solution-card .sol-icon {
+            width: 52px; height: 52px; border-radius: 12px;
+            background: #efefff;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 16px;
+        }
+        .solution-card .sol-icon i { font-size: 22px; color: #00009c; }
+        .solution-card h4 { font-size: 17px; font-weight: 700; color: #01004e; margin-bottom: 8px; }
+        .solution-card p  { font-size: 14px; color: #5a5a8a; line-height: 1.6; margin-bottom: 10px; }
+        .solution-card .sol-sectors { font-size: 12px; color: #6ebb0d; font-weight: 600; }
+        .solution-card .sol-link {
+            font-size: 13px; font-weight: 600; color: #00009c;
+            text-decoration: none;
+            display: inline-flex; align-items: center; gap: 5px; margin-top: 14px;
+            transition: color .15s, gap .15s;
+        }
+        .solution-card .sol-link:hover { color: #01004e; gap: 8px; }
 
         /* ── CTA intermedio ── */
         .mid-cta-section {
-            background: linear-gradient(135deg, #1a2e14 0%, #308b1d 100%);
-            padding: 64px 0;
-            text-align: center;
+            background: linear-gradient(135deg, #01004e 0%, #00009c 100%);
+            padding: 72px 0; text-align: center;
         }
-        .mid-cta-section h2 { color: #fff; font-size: clamp(24px, 3vw, 38px); font-weight: 800; margin-bottom: 14px; }
-        .mid-cta-section p { color: rgba(255,255,255,0.78); font-size: 17px; max-width: 560px; margin: 0 auto 32px; }
+        .mid-cta-section h2 {
+            color: #fff; font-size: clamp(26px, 3vw, 40px);
+            font-weight: 800; margin-bottom: 14px;
+        }
+        .mid-cta-section p {
+            color: rgba(239,239,255,0.75); font-size: 17px;
+            max-width: 540px; margin: 0 auto 32px;
+        }
         .cta-btn-group { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
-        .btn-white { background: #fff; color: #308b1d; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 6px; text-decoration: none; transition: background .2s; display: inline-flex; align-items: center; gap: 8px; }
-        .btn-white:hover { background: #f0f9ec; color: #26730f; }
-        .btn-outline-white { border: 1.5px solid rgba(255,255,255,0.5); color: #fff; font-weight: 600; font-size: 15px; padding: 13px 26px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: border-color .2s, background .2s; }
+        .btn-white {
+            background: #fff; color: #00009c;
+            font-weight: 700; font-size: 15px; padding: 14px 28px;
+            border-radius: 8px; text-decoration: none;
+            transition: background .2s, color .2s;
+            display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn-white:hover { background: #efefff; color: #01004e; }
+        .btn-outline-white {
+            border: 1.5px solid rgba(255,255,255,0.45); color: #fff;
+            font-weight: 600; font-size: 15px; padding: 13px 26px;
+            border-radius: 8px; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 8px;
+            transition: border-color .2s, background .2s;
+        }
         .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; }
 
         /* ── Cierre final ── */
-        .close-section {
-            background: #f6faf4;
-            padding: 80px 0;
-            text-align: center;
+        .close-section { background: #efefff; padding: 88px 0; text-align: center; }
+        .close-section h2 {
+            font-size: clamp(28px, 3.2vw, 44px); font-weight: 800;
+            color: #01004e; margin-bottom: 14px;
         }
-        .close-section h2 { font-size: clamp(26px, 3vw, 40px); font-weight: 800; color: #1a2e14; margin-bottom: 14px; }
-        .close-section p { font-size: 17px; color: #4a6040; max-width: 600px; margin: 0 auto 36px; line-height: 1.7; }
+        .close-section p {
+            font-size: 17px; color: #6666c4;
+            max-width: 580px; margin: 0 auto 36px; line-height: 1.7;
+        }
         .close-cta-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
-        .btn-green { background: #308b1d; color: #fff; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background .2s, transform .15s; }
-        .btn-green:hover { background: #26730f; color: #fff; transform: translateY(-2px); }
-        .btn-green-outline { border: 1.5px solid #308b1d; color: #308b1d; font-weight: 600; font-size: 15px; padding: 13px 26px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background .2s; }
-        .btn-green-outline:hover { background: #f0f9ec; }
+        .btn-green {
+            background: #6ebb0d; color: #fff; font-weight: 700; font-size: 15px;
+            padding: 14px 28px; border-radius: 8px; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 8px;
+            transition: background .2s, transform .15s;
+            box-shadow: 0 4px 18px rgba(110,187,13,0.30);
+        }
+        .btn-green:hover { background: #4e8a08; color: #fff; transform: translateY(-2px); }
+        .btn-green-outline {
+            border: 1.5px solid #6ebb0d; color: #4e8a08; font-weight: 600;
+            font-size: 15px; padding: 13px 26px; border-radius: 8px;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+            transition: background .2s;
+        }
+        .btn-green-outline:hover { background: #d3ebb6; }
 
-        /* ── Preloader texto ── */
+        /* ── Hero responsive ── */
+        @media (max-width: 767px) {
+            .hero-headline { font-size: clamp(28px, 7vw, 40px); }
+            .hero-subline  { font-size: 15px; }
+            .hero-stats    { gap: 20px; margin-top: 36px; }
+            .hero-stat-item .stat-num { font-size: 26px; }
+            .hero-cta-group { flex-direction: column; align-items: flex-start; }
+        }
+        @media (max-width: 480px) {
+            .hero-headline { font-size: clamp(24px, 8vw, 34px); }
+        }
+
+        /* Preloader */
         #preloader p.text-center { display: none; }
-
-        /* ── Search placeholder ── */
-        .main-search-input::placeholder { content: "Buscar..."; }
     </style>
 </head>
 

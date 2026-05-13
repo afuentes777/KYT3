@@ -1210,33 +1210,62 @@ span:not([class*="fa-"]):not(.fas):not(.far):not(.fal):not(.fab) {
 }
 
 .hero-section.hero-1 {
+    /* Arranca desde el top absolute — la navbar flota encima */
+    position: relative;
     min-height: 100svh;
+    margin-top: 0;
+    padding-top: 0;
+    overflow: hidden;
 }
 
+/* Video y overlay cubren el 100% del hero */
+.hero-section.hero-1 .hero-video-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
 .hero-section.hero-1 .hero-video-background,
 .hero-section.hero-1 .video-overlay,
 .hero-section.hero-1 #heroVideo {
+    width: 100%;
     height: 100%;
 }
-
 .hero-section.hero-1 #heroVideo {
-    width: 100%;
     object-fit: cover;
-    object-position: center center;
+    object-position: center 30%;
+}
+/* Overlay con gradiente — mejor legibilidad del texto */
+.hero-section.hero-1 .video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(1,0,78,0.78) 0%,
+        rgba(0,0,40,0.55) 60%,
+        rgba(0,0,0,0.30) 100%
+    );
+    z-index: 1;
 }
 
+/* Slider ocupa 100% del hero */
 .hero-section.hero-1 .hero-slider-active,
 .hero-section.hero-1 .slick-list,
 .hero-section.hero-1 .slick-track {
     min-height: 100svh;
+    height: 100%;
 }
 
+/* Slide content centrado verticalmente, con espacio para navbar */
 .hero-section.hero-1 .slide-content {
+    position: relative;
+    z-index: 2;
     min-height: 100svh;
     display: flex;
     align-items: center;
-    padding-top: 150px;
-    padding-bottom: 80px;
+    /* top padding = altura navbar (88px) + margen visual */
+    padding-top: 120px;
+    padding-bottom: 60px;
 }
 
 .hero-section.hero-1 .slide-content .container,
@@ -1312,8 +1341,8 @@ span:not([class*="fa-"]):not(.fas):not(.far):not(.fal):not(.fab) {
     }
 
     .hero-section.hero-1 .slide-content {
-        padding-top: 120px;
-        padding-bottom: 60px;
+        padding-top: 100px;
+        padding-bottom: 48px;
     }
 }
 

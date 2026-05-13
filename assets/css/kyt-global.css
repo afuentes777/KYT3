@@ -396,8 +396,11 @@
   .kyt-header-inner { border-radius: 10px; height: 56px; }
   .kyt-logo img { height: 32px; }
 }
-body { padding-top: 88px; }
-@media (max-width: 1199px) { body { padding-top: 78px; } }
+/* Páginas internas: el body tiene padding para que el breadcrumb no quede bajo la navbar */
+body.kyt-inner { padding-top: 88px; }
+@media (max-width: 1199px) { body.kyt-inner { padding-top: 78px; } }
+/* Home y páginas con hero fullscreen: sin padding, la navbar va sobre el hero */
+body { padding-top: 0; }
 
 /* ══════════════════════════════════════════
    PALETA GLOBAL — Secciones del sitio
@@ -406,16 +409,16 @@ body { padding-top: 88px; }
 /* Hero eyebrow */
 .hero-eyebrow {
   background: rgba(110,187,13,0.18) !important;
-  border: 1px solid rgba(110,187,13,0.45) !important;
+  border: 1px solid rgba(110,187,13,0.40) !important;
   color: #d3ebb6 !important;
 }
 .hero-eyebrow span { background: #d3ebb6 !important; }
 
 /* Hero headline em */
-.hero-headline em { color: var(--kyt-green) !important; }
+.hero-headline em { color: #6ebb0d !important; }
 
 /* Stats bar */
-.hero-stat-item .stat-num { color: var(--kyt-green) !important; }
+.hero-stat-item .stat-num { color: #6ebb0d !important; }
 
 /* CTAs hero */
 .btn-cta-primary { background: var(--kyt-green) !important; }
