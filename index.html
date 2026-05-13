@@ -1,151 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
-<!--<< Header Area >>-->
-
 <head>
-    <!-- ========== Meta Tags ========== -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Kioscos y Tecnología">
-    <meta name="description" content="Kioscos y Tecnología - Soluciones de Autoservicio e Innovación Digital">
-    <!-- ======== Page title ============ -->
-    <title>Kioscos y Tecnología - Soluciones Interactivas</title>
-    <!--<< Favcion >>-->
+    <meta name="description" content="Fabricamos e integramos kioscos inteligentes, software de turnos, cartelería digital y soluciones POS para banca, salud, retail, gobierno y servicios en Colombia.">
+    <meta property="og:title" content="Kioscos y Tecnología – Fabricantes de Kioscos Inteligentes en Colombia">
+    <meta property="og:description" content="Kioscos de autogestión, software de turnos, cartelería digital y soluciones POS para organizaciones que necesitan eficiencia, trazabilidad y control.">
+    <meta property="og:image" content="https://kyt3.netlify.app/assets/img/logo/logo2.png">
+    <meta property="og:url" content="https://kyt3.netlify.app/">
+    <meta property="og:type" content="website">
+    <title>Kioscos y Tecnología – Kioscos Inteligentes y Software de Autogestión</title>
     <link rel="shortcut icon" href="assets/img/preloader.svg">
-    <!--<< Bootstrap min.css >>-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!--<< Font Awesome.css >>-->
     <link rel="stylesheet" href="assets/css/font-awesome.css">
-    <!--<< Animate.css >>-->
     <link rel="stylesheet" href="assets/css/animate.css">
-    <!--<< Magnific Popup.css >>-->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!--<< MeanMenu.css >>-->
     <link rel="stylesheet" href="assets/css/meanmenu.css">
-    <!--<< Slick.css >>-->
     <link rel="stylesheet" href="assets/css/slick.css">
-    <!--<< Nice Select.css >>-->
     <link rel="stylesheet" href="assets/css/nice-select.css">
-    <!--<< Main.css >>-->
     <link rel="stylesheet" href="assets/css/main.css">
-    <!--<< Style.css >>-->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Hero mejorado ── */
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(48,139,29,0.18);
+            border: 1px solid rgba(48,139,29,0.45);
+            color: #7fdc5a;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+        }
+        .hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: #7fdc5a; display: inline-block; }
+        .hero-headline {
+            font-size: clamp(32px, 4.5vw, 58px);
+            font-weight: 800;
+            line-height: 1.15;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .hero-headline em { font-style: normal; color: #7fdc5a; }
+        .hero-subline {
+            font-size: clamp(15px, 1.6vw, 18px);
+            color: rgba(255,255,255,0.78);
+            line-height: 1.7;
+            max-width: 620px;
+            margin-bottom: 36px;
+        }
+        .hero-cta-group { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+        .btn-cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #308b1d;
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background .2s, transform .15s;
+        }
+        .btn-cta-primary:hover { background: #26730f; color: #fff; transform: translateY(-2px); }
+        .btn-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            border: 1.5px solid rgba(255,255,255,0.35);
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 13px 26px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background .2s, border-color .2s;
+        }
+        .btn-cta-secondary:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.6); color: #fff; }
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+        .hero-stat-item .stat-num { font-size: 32px; font-weight: 800; color: #7fdc5a; line-height: 1; }
+        .hero-stat-item .stat-label { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
 
+        /* ── Soluciones cards ── */
+        .solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 40px; }
+        .solution-card {
+            background: #fff;
+            border: 1px solid #e8ede6;
+            border-radius: 12px;
+            padding: 28px 24px;
+            transition: box-shadow .2s, transform .2s;
+        }
+        .solution-card:hover { box-shadow: 0 8px 32px rgba(48,139,29,0.12); transform: translateY(-4px); }
+        .solution-card .sol-icon { width: 52px; height: 52px; border-radius: 10px; background: #f0f9ec; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+        .solution-card .sol-icon i { font-size: 22px; color: #308b1d; }
+        .solution-card h4 { font-size: 17px; font-weight: 700; color: #1a2e14; margin-bottom: 8px; }
+        .solution-card p { font-size: 14px; color: #5a6b52; line-height: 1.6; margin-bottom: 12px; }
+        .solution-card .sol-sectors { font-size: 12px; color: #308b1d; font-weight: 600; }
+        .solution-card .sol-link { font-size: 13px; font-weight: 600; color: #308b1d; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; margin-top: 14px; }
+        .solution-card .sol-link:hover { color: #26730f; }
+
+        /* ── CTA intermedio ── */
+        .mid-cta-section {
+            background: linear-gradient(135deg, #1a2e14 0%, #308b1d 100%);
+            padding: 64px 0;
+            text-align: center;
+        }
+        .mid-cta-section h2 { color: #fff; font-size: clamp(24px, 3vw, 38px); font-weight: 800; margin-bottom: 14px; }
+        .mid-cta-section p { color: rgba(255,255,255,0.78); font-size: 17px; max-width: 560px; margin: 0 auto 32px; }
+        .cta-btn-group { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+        .btn-white { background: #fff; color: #308b1d; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 6px; text-decoration: none; transition: background .2s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-white:hover { background: #f0f9ec; color: #26730f; }
+        .btn-outline-white { border: 1.5px solid rgba(255,255,255,0.5); color: #fff; font-weight: 600; font-size: 15px; padding: 13px 26px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: border-color .2s, background .2s; }
+        .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; }
+
+        /* ── Cierre final ── */
+        .close-section {
+            background: #f6faf4;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .close-section h2 { font-size: clamp(26px, 3vw, 40px); font-weight: 800; color: #1a2e14; margin-bottom: 14px; }
+        .close-section p { font-size: 17px; color: #4a6040; max-width: 600px; margin: 0 auto 36px; line-height: 1.7; }
+        .close-cta-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+        .btn-green { background: #308b1d; color: #fff; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background .2s, transform .15s; }
+        .btn-green:hover { background: #26730f; color: #fff; transform: translateY(-2px); }
+        .btn-green-outline { border: 1.5px solid #308b1d; color: #308b1d; font-weight: 600; font-size: 15px; padding: 13px 26px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background .2s; }
+        .btn-green-outline:hover { background: #f0f9ec; }
+
+        /* ── Preloader texto ── */
+        #preloader p.text-center { display: none; }
+
+        /* ── Search placeholder ── */
+        .main-search-input::placeholder { content: "Buscar..."; }
+    </style>
 </head>
 
 <body>
 
-    <!-- Preloader Start -->
+    <!-- Preloader -->
     <div id="preloader" class="preloader">
         <div class="animation-preloader">
-            <div class="spinner">
-            </div>
+            <div class="spinner"></div>
             <div class="txt-loading">
-                <span data-text-preloader="K" class="letters-loading">
-                    K
-                </span>
-                <span data-text-preloader="I" class="letters-loading">
-                    I
-                </span>
-                <span data-text-preloader="O" class="letters-loading">
-                    O
-                </span>
-                <span data-text-preloader="S" class="letters-loading">
-                    S
-                </span>
-                <span data-text-preloader="C" class="letters-loading">
-                    C
-                </span>
-                <span data-text-preloader="O" class="letters-loading">
-                    O
-                </span>
-                <span data-text-preloader="S" class="letters-loading">
-                    S
-                </span>
+                <span data-text-preloader="K" class="letters-loading">K</span>
+                <span data-text-preloader="I" class="letters-loading">I</span>
+                <span data-text-preloader="O" class="letters-loading">O</span>
+                <span data-text-preloader="S" class="letters-loading">S</span>
+                <span data-text-preloader="C" class="letters-loading">C</span>
+                <span data-text-preloader="O" class="letters-loading">O</span>
+                <span data-text-preloader="S" class="letters-loading">S</span>
             </div>
-            <p class="text-center">Loading</p>
         </div>
         <div class="loader">
             <div class="row">
-                <div class="col-3 loader-section section-left">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-left">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-right">
-                    <div class="bg"></div>
-                </div>
-                <div class="col-3 loader-section section-right">
-                    <div class="bg"></div>
-                </div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
             </div>
         </div>
     </div>
 
-    <!--<< Mouse Cursor Start >>-->
     <div class="mouse-cursor cursor-outer"></div>
     <div class="mouse-cursor cursor-inner"></div>
 
-    <!-- Offcanvas Area Start -->
+    <!-- Offcanvas -->
     <div class="fix-area">
         <div class="offcanvas__info">
             <div class="offcanvas__wrapper">
                 <div class="offcanvas__content">
                     <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                         <div class="offcanvas__logo">
-                            <a href="index.html">
-                                <img src="assets/img/logo/logo2.png" alt="logo-img">
-                            </a>
+                            <a href="index.html"><img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología"></a>
                         </div>
                         <div class="offcanvas__close">
-                            <button>
-                                <i class="fas fa-times"></i>
-                            </button>
+                            <button><i class="fas fa-times"></i></button>
                         </div>
                     </div>
-
                     <div class="mobile-menu fix mb-3"></div>
                     <div class="offcanvas__contact">
                         <h4>Información de Contacto</h4>
                         <ul>
                             <li class="d-flex align-items-center">
-                                <div class="offcanvas__contact-icon">
-                                    <i class="fal fa-map-marker-alt"></i>
-                                </div>
-                                <div class="offcanvas__contact-text">
-                                    <a target="_blank" href="#">Calle Principal, Ciudad, País</a>
-                                </div>
+                                <div class="offcanvas__contact-icon"><i class="fal fa-map-marker-alt"></i></div>
+                                <div class="offcanvas__contact-text"><a href="#">Bogotá, Colombia</a></div>
                             </li>
                             <li class="d-flex align-items-center">
-                                <div class="offcanvas__contact-icon mr-15">
-                                    <i class="fal fa-envelope"></i>
-                                </div>
-                                <div class="offcanvas__contact-text">
-                                    <a href="mailto:info@kioscosytecnologia.com">info@kioscosytecnologia.com</a>
-                                </div>
+                                <div class="offcanvas__contact-icon mr-15"><i class="fal fa-envelope"></i></div>
+                                <div class="offcanvas__contact-text"><a href="mailto:info@kioscosytecnologia.com">info@kioscosytecnologia.com</a></div>
                             </li>
                             <li class="d-flex align-items-center">
-                                <div class="offcanvas__contact-icon mr-15">
-                                    <i class="fal fa-clock"></i>
-                                </div>
-                                <div class="offcanvas__contact-text">
-                                    <a target="_blank" href="#">Lun-Vie, 09am -06pm</a>
-                                </div>
+                                <div class="offcanvas__contact-icon mr-15"><i class="fal fa-clock"></i></div>
+                                <div class="offcanvas__contact-text"><a href="#">Lunes a Viernes, 8am – 6pm</a></div>
                             </li>
                             <li class="d-flex align-items-center">
-                                <div class="offcanvas__contact-icon mr-15">
-                                    <i class="far fa-phone"></i>
-                                </div>
-                                <div class="offcanvas__contact-text">
-                                    <a href="tel:+573113676433">+57 311 367 6433</a>
-                                </div>
+                                <div class="offcanvas__contact-icon mr-15"><i class="far fa-phone"></i></div>
+                                <div class="offcanvas__contact-text"><a href="tel:+573113676433">+57 311 367 6433</a></div>
                             </li>
                         </ul>
                         <div class="header-button mt-4">
-                            <a href="contact.html" class="theme-btn text-center">
-                                <span>Contáctanos<i class="fas fa-chevron-right"></i></span>
+                            <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20me%20gustaría%20cotizar%20un%20proyecto" class="theme-btn text-center" target="_blank">
+                                <span>Cotizar proyecto <i class="fas fa-chevron-right"></i></span>
                             </a>
                         </div>
                     </div>
@@ -155,7 +225,7 @@
     </div>
     <div class="offcanvas__overlay"></div>
 
-    <!-- Header Area Start -->
+    <!-- Header -->
     <header class="header-section-2 glass-header-shell">
         <div id="header-sticky" class="header-2 glass-header">
             <div class="container">
@@ -163,7 +233,7 @@
                     <div class="header-main">
                         <div class="logo">
                             <a href="index.html" class="header-logo">
-                                <img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnologia">
+                                <img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología">
                             </a>
                         </div>
                         <div class="header-left">
@@ -171,167 +241,71 @@
                                 <div class="main-menu">
                                     <nav id="mobile-menu">
                                         <ul>
-                                            <li>
-                                                <a href="index.html">Inicio</a>
-                                            </li>
-
+                                            <li><a href="index.html">Inicio</a></li>
                                             <li class="has-dropdown quienes-somos">
-                                                <a href="#">Quienes somos <i class="fas fa-angle-down"></i></a>
+                                                <a href="#">Quiénes somos <i class="fas fa-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a href="about.html">Compañia</a></li>
+                                                    <li><a href="about.html">La empresa</a></li>
                                                     <li><a href="blog.html">Blog</a></li>
                                                     <li><a href="service-modalidad.html">Modalidad de venta</a></li>
                                                 </ul>
                                             </li>
-
                                             <li class="has-dropdown active menu-thumb">
-                                                <a href="index.html">
-                                                    Sectores
-                                                    <i class="fas fa-angle-down"></i>
-                                                </a>
+                                                <a href="#">Sectores <i class="fas fa-angle-down"></i></a>
                                                 <ul class="submenu has-home-menu">
                                                     <li class="border-none">
                                                         <div class="row g-4">
-                                                            <div class="col-lg-3 home-menu">
-                                                                <div class="home-menu-thumb">
-                                                                    <img src="assets/img/Sectores/SALUD-180X225.jpg"
-                                                                        alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="salud.html" class="theme-btn">
-                                                                            <span>Sector Salud</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-3 home-menu">
-                                                                <div class="home-menu-thumb">
-                                                                    <img src="assets/img/Sectores/BANCA-180X225.jpg"
-                                                                        alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="banca.html" class="theme-btn">
-                                                                            <span>Sector Banca</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-3 home-menu">
-                                                                <div class="home-menu-thumb">
-                                                                    <img src="assets/img/Sectores/EDUCATIVO-180X225.jpg"
-                                                                        alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="educacion.html" class="theme-btn">
-                                                                            <span>Sector Educacion</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-lg-3 home-menu">
-                                                                <div class="home-menu-thumb">
-                                                                    <img src="assets/img/Sectores/RESTAURANTES-180X225.jpg"
-                                                                        alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="restaurantes.html" class="theme-btn">
-                                                                            <span>Sector Restaurantes</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-3 home-menu">
-                                                                <div class="home-menu-thumb">
-                                                                    <img src="assets/img/Sectores/RETAIL-180X225.jpg"
-                                                                        alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="retail.html" class="theme-btn">
-                                                                            <span>Sector Retail</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-lg-3 home-menu">
-                                                                <div class="home-menu-thumb">
-                                                                    <img src="assets/img/Sectores/HOTELES-180X225.jpg"
-                                                                        alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="hotel.html" class="theme-btn">
-                                                                            <span>Sector Hotel</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-lg-3 home-menu">
-                                                                <div class="home-menu-thumb">
-                                                                    <img src="assets/img/Sectores/CORPOTARIVO-180X225.jpg"
-                                                                        alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="Corporativo.html" class="theme-btn">
-                                                                            <span>Sector Corporativo</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-lg-3 home-menu">
-                                                                <div class="home-menu-thumb">
-                                                                    <img src="assets/img/Sectores/GOBIERNO-180X225.jpg"
-                                                                        alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="Gobierno.html" class="theme-btn">
-                                                                            <span>Sector Gobierno</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
+                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/SALUD-180X225.jpg" alt="Sector Salud"><div class="demo-button"><a href="salud.html" class="theme-btn"><span>Sector Salud</span></a></div></div></div>
+                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/BANCA-180X225.jpg" alt="Sector Banca"><div class="demo-button"><a href="banca.html" class="theme-btn"><span>Sector Banca</span></a></div></div></div>
+                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/EDUCATIVO-180X225.jpg" alt="Sector Educación"><div class="demo-button"><a href="educacion.html" class="theme-btn"><span>Sector Educación</span></a></div></div></div>
+                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/RESTAURANTES-180X225.jpg" alt="Sector Restaurantes"><div class="demo-button"><a href="restaurantes.html" class="theme-btn"><span>Sector Restaurantes</span></a></div></div></div>
+                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/RETAIL-180X225.jpg" alt="Sector Retail"><div class="demo-button"><a href="retail.html" class="theme-btn"><span>Sector Retail</span></a></div></div></div>
+                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/HOTELES-180X225.jpg" alt="Sector Hoteles"><div class="demo-button"><a href="hotel.html" class="theme-btn"><span>Sector Hoteles</span></a></div></div></div>
+                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/CORPOTARIVO-180X225.jpg" alt="Sector Corporativo"><div class="demo-button"><a href="Corporativo.html" class="theme-btn"><span>Sector Corporativo</span></a></div></div></div>
+                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/GOBIERNO-180X225.jpg" alt="Sector Gobierno"><div class="demo-button"><a href="Gobierno.html" class="theme-btn"><span>Sector Gobierno</span></a></div></div></div>
                                                         </div>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li class="has-dropdown active d-lg-none">
-                                                <a href="#" class="border-none">
-                                                    Sectores
-                                                    <i class="fas fa-angle-down"></i>
-                                                </a>
+                                                <a href="#" class="border-none">Sectores <i class="fas fa-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="salud.html">Sector Salud</a></li>
                                                     <li><a href="banca.html">Sector Banca</a></li>
-                                                    <li><a href="educacion.html">Sector Educacion</a></li>
+                                                    <li><a href="educacion.html">Sector Educación</a></li>
                                                     <li><a href="restaurantes.html">Sector Restaurantes</a></li>
                                                     <li><a href="retail.html">Sector Retail</a></li>
-                                                    <li><a href="hotel.html">Sector Hotel</a></li>
+                                                    <li><a href="hotel.html">Sector Hoteles</a></li>
                                                     <li><a href="Corporativo.html">Sector Corporativo</a></li>
                                                     <li><a href="Gobierno.html">Sector Gobierno</a></li>
                                                 </ul>
                                             </li>
-                                            <li>
-                                                <a href="kyt.html">K&T Suite</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="Kioscos.html">Kioscos</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="Pos.html">POS</a>
-                                            </li>
-
-                                            <li class="has-dropdown aprende-menu">
-                                                <a href="#">
-                                                    Aprende con K&amp;T
-                                                    <i class="fas fa-angle-down"></i>
-                                                </a>
-                                                <ul class="submenu glass-dropdown-menu">
-                                                    <li class="submenu-title">Domina la autogestión</li>
-                                                    <li><a href="que-son-los-kioscos-digitales.html">Qué es un
-                                                            kiosco</a></li>
-                                                    <li><a href="blog.html">Lecciones</a></li>
-                                                    <li class="submenu-title">Domina el POS</li>
-                                                    <li><a href="Pos.html">Qué es un POS</a></li>
-                                                    <li><a href="blog.html">Lecciones</a></li>
+                                            <li class="has-dropdown">
+                                                <a href="#">Soluciones <i class="fas fa-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="Kioscos.html">Kioscos de autogestión</a></li>
+                                                    <li><a href="turnos.html">Software de turnos</a></li>
+                                                    <li><a href="informativo.html">Cartelería digital</a></li>
+                                                    <li><a href="Pos.html">Soluciones POS</a></li>
+                                                    <li><a href="autocompra.html">Autocompra y autopago</a></li>
+                                                    <li><a href="videoconferencia.html">Videoconferencia</a></li>
+                                                    <li><a href="control-acceso.html">Control de acceso</a></li>
+                                                    <li><a href="centro-autogestion.html">Centro de autogestión</a></li>
                                                 </ul>
                                             </li>
-
+                                            <li><a href="Kioscos.html">Kioscos</a></li>
+                                            <li><a href="Pos.html">POS</a></li>
+                                            <li class="has-dropdown aprende-menu">
+                                                <a href="#">Recursos <i class="fas fa-angle-down"></i></a>
+                                                <ul class="submenu glass-dropdown-menu">
+                                                    <li class="submenu-title">Autogestión</li>
+                                                    <li><a href="que-son-los-kioscos-digitales.html">¿Qué es un kiosco digital?</a></li>
+                                                    <li><a href="blog.html">Blog y artículos</a></li>
+                                                    <li class="submenu-title">Punto de venta</li>
+                                                    <li><a href="Pos.html">¿Qué es un POS?</a></li>
+                                                    <li><a href="news.html">Noticias y casos de éxito</a></li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -339,15 +313,13 @@
                         </div>
                         <div class="header-right d-flex justify-content-end align-items-center">
                             <div class="glass-header-actions d-none d-lg-flex align-items-center">
-                                <a href="Pos.html" class="glass-shop-btn">
-                                    <i class="fas fa-shopping-basket"></i>
-                                    <span>La tienda del POS</span>
+                                <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" class="glass-shop-btn">
+                                    <i class="fas fa-comment-dots"></i>
+                                    <span>Cotizar proyecto</span>
                                 </a>
                             </div>
                             <div class="header__hamburger d-lg-none my-auto">
-                                <div class="sidebar__toggle">
-                                    <i class="far fa-bars"></i>
-                                </div>
+                                <div class="sidebar__toggle"><i class="far fa-bars"></i></div>
                             </div>
                         </div>
                     </div>
@@ -356,119 +328,89 @@
         </div>
     </header>
 
-    <!-- Search Area Start -->
+    <!-- Búsqueda -->
     <div class="search-wrap">
         <div class="search-inner">
             <i class="fas fa-times search-close" id="search-close"></i>
             <div class="search-cell">
                 <form method="get">
                     <div class="search-field-holder">
-                        <input type="search" class="main-search-input" placeholder="Search...">
+                        <input type="search" class="main-search-input" placeholder="Buscar soluciones, kioscos, sectores…">
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <!--<< Hero Section Start >>-->
+    <!-- ═══════════════════════════════════════════
+         HERO SECTION – Mejorado
+    ═══════════════════════════════════════════ -->
     <section class="hero-section hero-1">
-        <!-- Video Background -->
         <div class="hero-video-background">
             <video autoplay muted loop playsinline id="heroVideo">
                 <source src="assets/img/hero/Back1.mp4" type="video/mp4">
             </video>
             <div class="video-overlay"></div>
         </div>
-
         <div class="hero-slider-active">
-
             <div class="slide-content">
                 <div class="container">
                     <div class="row g-4 justify-content-between align-items-center">
-                        <div class="col-lg-8">
+                        <div class="col-lg-9">
                             <div class="hero-content">
-                                <h4 class="fs-lg animated" data-animation-in="fadeInRight" data-delay-in="0.2">
-                                    Revoluciona tu negocio</h4>
-                                <h1 class="fs-lg animated" data-animation-in="fadeInRight" data-delay-in="0.5">
-                                    Somos un ecosistema de autogestión que
-                                    transforma la experiencia de atención
+                                <div class="hero-eyebrow">
+                                    <span></span> Fabricantes colombianos · 8+ años de experiencia
+                                </div>
+                                <h1 class="hero-headline animated" data-animation-in="fadeInRight" data-delay-in="0.3">
+                                    Kioscos inteligentes y<br>
+                                    software de autogestión para<br>
+                                    <em>transformar la atención</em>
                                 </h1>
-                                <div class="hero-button">
-
+                                <p class="hero-subline animated" data-animation-in="fadeInRight" data-delay-in="0.5">
+                                    Fabricamos, integramos y soportamos soluciones de autogestión, turnos, cartelería digital y atención omnicanal para organizaciones que necesitan operar con eficiencia, trazabilidad y control.
+                                </p>
+                                <div class="hero-cta-group animated" data-animation-in="fadeInRight" data-delay-in="0.7">
+                                    <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" class="btn-cta-primary">
+                                        <i class="fas fa-comment-dots"></i> Cotizar proyecto
+                                    </a>
+                                    <a href="Kioscos.html" class="btn-cta-secondary">
+                                        Ver soluciones <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                                <div class="hero-stats">
+                                    <div class="hero-stat-item">
+                                        <div class="stat-num">8+</div>
+                                        <div class="stat-label">Años de experiencia</div>
+                                    </div>
+                                    <div class="hero-stat-item">
+                                        <div class="stat-num">500+</div>
+                                        <div class="stat-label">Kioscos instalados</div>
+                                    </div>
+                                    <div class="hero-stat-item">
+                                        <div class="stat-num">8</div>
+                                        <div class="stat-label">Sectores atendidos</div>
+                                    </div>
+                                    <div class="hero-stat-item">
+                                        <div class="stat-num">24/7</div>
+                                        <div class="stat-label">Soporte técnico</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
-            <!--<< <div class="slide-content">
-                <div class="container">
-                    <div class="row g-4 justify-content-between align-items-center">
-                        <div class="col-lg-8">
-                            <div class="hero-content">
-                                <h4 class="fs-lg animated" data-animation-in="fadeInRight" data-delay-in="0.2">
-                                    Innovación Digital</h4>
-                                <h1 class="fs-lg animated" data-animation-in="fadeInRight" data-delay-in="0.5">
-                                    Automatización
-                                    Inteligente para
-                                    tu Empresa
-                                </h1>
-                                <div class="hero-button">
-                                    <a href="service-details.html" class="theme-btn hover-white fs-lg animated"
-                                        data-animation-in="fadeInRight" data-delay-in="0.7">
-                                        <span>
-                                            Ver Productos
-                                            <i class="fas fa-chevron-right"></i>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="slide-content">
-                <div class="container">
-                    <div class="row g-4 justify-content-between align-items-center">
-                        <div class="col-lg-8">
-                            <div class="hero-content">
-                                <h4 class="fs-lg animated" data-animation-in="fadeInRight" data-delay-in="0.2">Soporte
-                                    Integral</h4>
-                                <h1 class="fs-lg animated" data-animation-in="fadeInRight" data-delay-in="0.5">
-                                    Tecnología que
-                                    Impulsa tu
-                                    Crecimiento
-                                </h1>
-                                <div class="hero-button">
-                                    <a href="service-details.html" class="theme-btn hover-white fs-lg animated"
-                                        data-animation-in="fadeInRight" data-delay-in="0.7">
-                                        <span>
-                                            Contáctanos
-                                            <i class="fas fa-chevron-right"></i>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>>>-->
-
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44px" height="44px" id="circle"
-                fill="none" stroke="currentColor">
-                <circle r="20" cy="22" cx="22" id="translandcircle" />
+        <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+            <symbol viewBox="0 0 44 44" width="44px" height="44px" id="circle" fill="none" stroke="currentColor">
+                <circle r="20" cy="22" cx="22" id="translandcircle"/>
             </symbol>
         </svg>
     </section>
 
-    <!--<< News and Updates Section Start >>-->
+    <!-- ═══════════════════════════════════════════
+         NOVEDADES Y NOTICIAS
+    ═══════════════════════════════════════════ -->
     <section class="news-updates-section">
         <div class="container">
             <div class="row g-4 align-items-center">
@@ -476,15 +418,14 @@
                     <div class="update-box product-box">
                         <span class="vertical-label">NUEVO PRODUCTO</span>
                         <div class="box-content">
-                            <h4>Mesa INTERACTIVA Serveo</h4>
+                            <h4>Mesa Interactiva Serveo</h4>
                             <div class="box-body">
                                 <div class="product-image">
-                                    <img src="assets/img/Modelos/MESA-INTERACTIVA.jpg" alt="Mesa Interactiva Serveo">
+                                    <img src="assets/img/Modelos/MESA-INTERACTIVA.jpg" alt="Mesa Interactiva Serveo – KYT">
                                 </div>
                                 <div class="product-info">
-                                    <p>Innovación táctil para espacios colaborativos y atención premium.</p>
-                                    <a href="mesa-interactiva.html" class="theme-btn-small">Descubrir <i
-                                            class="fas fa-arrow-right"></i></a>
+                                    <p>Superficie táctil colaborativa para salas de atención premium, reuniones y espacios corporativos.</p>
+                                    <a href="mesa-interactiva.html" class="theme-btn-small">Conocer más <i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -492,17 +433,16 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
                     <div class="update-box news-box">
-                        <span class="vertical-label label-news">NOTICIAS</span>
+                        <span class="vertical-label label-news">CASO DE ÉXITO</span>
                         <div class="box-content">
-                            <h4>Entramos al Banco de Occidente</h4>
+                            <h4>Transformación digital en el Banco de Occidente</h4>
                             <div class="box-body">
                                 <div class="news-image">
-                                    <img src="assets/img/news/banco-occidente-news.png" alt="Banco de Occidente">
+                                    <img src="assets/img/news/banco-occidente-news.png" alt="Caso de éxito Banco de Occidente">
                                 </div>
                                 <div class="news-info">
-                                    <p>Caso de éxito: Transformación digital con el Banco de Occidente.</p>
-                                    <a href="news.html" class="theme-btn-small">Leer más <i
-                                            class="fas fa-arrow-right"></i></a>
+                                    <p>Implementamos kioscos de autoservicio y gestión de turnos para modernizar la atención presencial.</p>
+                                    <a href="news.html" class="theme-btn-small">Leer caso <i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -512,21 +452,21 @@
         </div>
     </section>
 
-    <!--<< About Section Start >>-->
+    <!-- ═══════════════════════════════════════════
+         ACERCA DE KYT
+    ═══════════════════════════════════════════ -->
     <section class="about-section section-padding section-bg-2">
-
         <div class="container">
             <div class="about-wrapper style-2">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="about-image-items">
                             <div class="border-shape">
-                                <img src="assets/img/about/border-shape-2.png" alt="shape-img">
+                                <img src="assets/img/about/border-shape-2.png" alt="shape">
                             </div>
-                            <div class="about-image bg-cover wow fadeInUp" data-wow-delay=".3s"
-                                style="background-image: url('assets/img/about/about-3.jpg');">
+                            <div class="about-image bg-cover wow fadeInUp" data-wow-delay=".3s" style="background-image: url('assets/img/about/about-3.jpg');">
                                 <div class="about-image-2 wow fadeInUp" data-wow-delay=".4s">
-                                    <img src="assets/img/about/about-4.jpg" alt="about-img">
+                                    <img src="assets/img/about/about-4.jpg" alt="Equipo KYT">
                                 </div>
                                 <div class="experience-text-area wow fadeInUp" data-wow-delay=".5s">
                                     <h2><span class="count">8</span>+</h2>
@@ -539,9 +479,7 @@
                                         <span class="fas fa-star me-2"></span>
                                         <span>Confianza</span>
                                     </div>
-                                    <div class="ratting">
-                                        <span>4.9</span>
-                                    </div>
+                                    <div class="ratting"><span>4.9</span></div>
                                 </div>
                             </div>
                         </div>
@@ -551,51 +489,41 @@
                             <div class="section-title">
                                 <span class="wow fadeInUp">Acerca de Kioscos y Tecnología</span>
                                 <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                                    Líderes en autogestión e innovación digital
+                                    Fabricantes e integradores de soluciones de autogestión
                                 </h2>
                             </div>
-                            <p class=" mt-4 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
-                                Somos una empresa colombiana con 8 años de experiencia en el desarrollo de soluciones de
-                                autogestión, enfocadas en la optimización de procesos interactivos de atención,
-                                mejorando la experiencia y el servicio para las empresas y sus clientes
+                            <p class="mt-4 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
+                                Somos una empresa colombiana con más de 8 años de experiencia diseñando, fabricando e implementando soluciones de autogestión. Trabajamos con bancos, entidades de salud, retail, gobierno y empresas de servicios para optimizar sus procesos de atención, reducir tiempos de espera y mejorar la experiencia del usuario final.
                             </p>
                             <div class="icon-area">
                                 <div class="icon-items wow fadeInUp" data-wow-delay=".7s">
                                     <div class="icon gif-icon-wrapper">
-                                        <img src="assets/img/icon/1.png" class="static-icon" alt="Fabricación Propia">
-                                        <img src="assets/img/icon/1.gif" class="hover-gif" alt="Fabricación Propia">
+                                        <img src="assets/img/icon/1.png" class="static-icon" alt="Fabricación propia KYT">
+                                        <img src="assets/img/icon/1.gif" class="hover-gif" alt="Fabricación propia KYT">
                                     </div>
                                     <div class="content">
-                                        <h5>Fabricación Propia</h5>
-                                        <p style="text-align: left;">
-                                            Producimos kioscos digitales.
-                                        </p>
+                                        <h5>Fabricación propia</h5>
+                                        <p style="text-align:left;">Diseñamos y producimos kioscos a medida según las necesidades de cada organización.</p>
                                     </div>
                                 </div>
                                 <div class="icon-items wow fadeInUp" data-wow-delay=".9s">
                                     <div class="icon gif-icon-wrapper">
-                                        <img src="assets/img/icon/2.png" class="static-icon"
-                                            alt="Soluciones Integrales">
-                                        <img src="assets/img/icon/2.gif" class="hover-gif" alt="Soluciones Integrales">
+                                        <img src="assets/img/icon/2.png" class="static-icon" alt="Soluciones integrales KYT">
+                                        <img src="assets/img/icon/2.gif" class="hover-gif" alt="Soluciones integrales KYT">
                                     </div>
                                     <div class="content">
-                                        <h5>Soluciones Integrales</h5>
-                                        <p style="text-align: left;">
-                                            Instalación, manejo de software y componentes POS.
-                                        </p>
+                                        <h5>Soluciones integrales</h5>
+                                        <p style="text-align:left;">Hardware, software, instalación, soporte y mantenimiento bajo un solo proveedor.</p>
                                     </div>
                                 </div>
                             </div>
                             <ul class="about-list wow fadeInUp" data-wow-delay=".4s">
-                                <li>
-                                    <i class="far fa-check me-2"></i>
-                                    Cada día nuestra producción crece.
-                                </li>
-                                <li>
-                                    <i class="far fa-check me-2"></i>
-                                    Cubrimos las exigencias de nuestros clientes.
-                                </li>
+                                <li><i class="far fa-check me-2"></i>Presencia en banca, salud, retail, gobierno y más.</li>
+                                <li><i class="far fa-check me-2"></i>Soporte técnico preventivo y correctivo 24/7.</li>
                             </ul>
+                            <div class="mt-4 wow fadeInUp" data-wow-delay=".5s">
+                                <a href="about.html" class="btn-green-outline">Conocer la empresa <i class="fas fa-chevron-right"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -603,92 +531,137 @@
         </div>
     </section>
 
-    <!--<< Service Section Start >>-->
+    <!-- ═══════════════════════════════════════════
+         SOLUCIONES – 5 líneas de producto
+    ═══════════════════════════════════════════ -->
+    <section class="section-padding" style="background:#fff;">
+        <div class="container">
+            <div class="section-title text-center">
+                <span class="wow fadeInUp">Portafolio de soluciones</span>
+                <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                    Todo lo que necesita su organización<br>para operar con eficiencia
+                </h2>
+            </div>
+            <div class="solutions-grid">
+                <!-- 1 -->
+                <div class="solution-card wow fadeInUp" data-wow-delay=".2s">
+                    <div class="sol-icon"><i class="fas fa-tablet-alt"></i></div>
+                    <h4>Kioscos de autogestión</h4>
+                    <p>Terminales táctiles para autopago, autocompra, registro, turno y consulta de información. Reducen filas y liberan a su equipo de tareas repetitivas.</p>
+                    <div class="sol-sectors">Banca · Salud · Retail · Gobierno</div>
+                    <a href="Kioscos.html" class="sol-link">Ver kioscos <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <!-- 2 -->
+                <div class="solution-card wow fadeInUp" data-wow-delay=".3s">
+                    <div class="sol-icon"><i class="fas fa-clock"></i></div>
+                    <h4>Software de turnos y atención</h4>
+                    <p>Gestione colas, priorice segmentos, mida tiempos y genere reportes en tiempo real. Mejora la experiencia del usuario y la productividad del equipo.</p>
+                    <div class="sol-sectors">Banca · Salud · Gobierno · Corporativo</div>
+                    <a href="turnos.html" class="sol-link">Ver software <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <!-- 3 -->
+                <div class="solution-card wow fadeInUp" data-wow-delay=".4s">
+                    <div class="sol-icon"><i class="fas fa-tv"></i></div>
+                    <h4>Cartelería digital</h4>
+                    <p>Pantallas de señalización e información programadas centralmente. Comunique campañas, avisos y turnos en todos sus puntos de atención.</p>
+                    <div class="sol-sectors">Retail · Hoteles · Educación · Corporativo</div>
+                    <a href="informativo.html" class="sol-link">Ver solución <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <!-- 4 -->
+                <div class="solution-card wow fadeInUp" data-wow-delay=".5s">
+                    <div class="sol-icon"><i class="fas fa-cash-register"></i></div>
+                    <h4>Soluciones POS y pagos</h4>
+                    <p>Componentes y software POS para ventas, inventarios y reportes. Integración con pasarelas de pago, impresoras fiscales y sistemas contables.</p>
+                    <div class="sol-sectors">Restaurantes · Retail · Hoteles</div>
+                    <a href="Pos.html" class="sol-link">Ver POS <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <!-- 5 -->
+                <div class="solution-card wow fadeInUp" data-wow-delay=".6s">
+                    <div class="sol-icon"><i class="fas fa-tools"></i></div>
+                    <h4>Soporte, mantenimiento y monitoreo</h4>
+                    <p>Servicio técnico preventivo y correctivo, monitoreo remoto 24/7 y gestión de repuestos. Garantizamos la continuidad operativa de su infraestructura.</p>
+                    <div class="sol-sectors">Todos los sectores</div>
+                    <a href="service-modalidad.html" class="sol-link">Ver servicio <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CTA INTERMEDIO
+    ═══════════════════════════════════════════ -->
+    <section class="mid-cta-section">
+        <div class="container">
+            <h2>¿Listo para transformar la atención en su organización?</h2>
+            <p>Cuéntenos su caso. Nuestro equipo diseña una solución a la medida de su sector, volumen de atención y presupuesto.</p>
+            <div class="cta-btn-group">
+                <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20agendar%20una%20reunión" target="_blank" class="btn-white">
+                    <i class="fas fa-calendar-check"></i> Agendar reunión
+                </a>
+                <a href="https://wa.me/573113676433?text=Hola%2C%20quiero%20solicitar%20asesoría" target="_blank" class="btn-outline-white">
+                    <i class="fas fa-headset"></i> Solicitar asesoría
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         4 PILARES
+    ═══════════════════════════════════════════ -->
     <section class="service-section-2 fix section-padding">
         <div class="container">
             <div class="section-title text-center">
-                <span class="wow fadeInUp">Soluciones Integrales</span>
+                <span class="wow fadeInUp">¿Por qué elegir KYT?</span>
                 <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                    ¿Por qué elegirnos?<br>
-                    Nuestros 4 pilares de innovación
+                    Cuatro pilares que garantizan<br>el éxito de su proyecto
                 </h2>
             </div>
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                     <div class="service-box-items h-100">
                         <div class="icon gif-icon-wrapper">
-                            <img src="assets/img/icon/3.png" class="static-icon" alt="Consultoría">
-                            <img src="assets/img/icon/3.gif" class="hover-gif" alt="Consultoría">
+                            <img src="assets/img/icon/3.png" class="static-icon" alt="Consultoría estratégica">
+                            <img src="assets/img/icon/3.gif" class="hover-gif" alt="Consultoría estratégica">
                         </div>
                         <div class="content">
-                            <h3>
-                                <a href="service-details.html">
-                                    Consultoría estratégica
-                                </a>
-                            </h3>
-                            <p style="text-align: left;">
-                                Diseñamos y producimos, kioscos de autoservicio, según la necesidad específica de cada
-                                empresa.
-                            </p>
+                            <h3>Consultoría estratégica</h3>
+                            <p style="text-align:left;">Analizamos sus procesos de atención y diseñamos una solución específica para su sector, volumen y objetivos de negocio.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                     <div class="service-box-items h-100">
                         <div class="icon gif-icon-wrapper">
-                            <img src="assets/img/icon/4.png" class="static-icon" alt="Rapidez">
-                            <img src="assets/img/icon/4.gif" class="hover-gif" alt="Rapidez">
+                            <img src="assets/img/icon/4.png" class="static-icon" alt="Velocidad y precisión">
+                            <img src="assets/img/icon/4.gif" class="hover-gif" alt="Velocidad y precisión">
                         </div>
                         <div class="content">
-                            <h3>
-                                <a href="service-details.html">
-                                    Rapidez, precisión y continuidad en cada venta
-                                </a>
-                            </h3>
-                            <p style="text-align: left;">
-                                Controla tu negocio en tiempo real con nuestros componentes POS que optimizan tus
-                                ventas, inventarios y decisiones.
-                            </p>
-
+                            <h3>Velocidad, precisión y continuidad</h3>
+                            <p style="text-align:left;">Nuestras soluciones reducen tiempos de espera, eliminan errores operativos y garantizan disponibilidad continua del servicio.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                     <div class="service-box-items h-100">
                         <div class="icon gif-icon-wrapper">
-                            <img src="assets/img/icon/5.png" class="static-icon" alt="Plataforma">
-                            <img src="assets/img/icon/5.gif" class="hover-gif" alt="Plataforma">
+                            <img src="assets/img/icon/5.png" class="static-icon" alt="Plataforma integrada">
+                            <img src="assets/img/icon/5.gif" class="hover-gif" alt="Plataforma integrada">
                         </div>
                         <div class="content">
-                            <h3>
-                                <a href="service-details.html">
-                                    Plataforma única inteligente
-                                </a>
-                            </h3>
-                            <p style="text-align: left;">
-                                K&T Suite se integra a tu ecosistema digital (CRM/ERP/POS) para entregar información
-                                clave y agilizar el servicio.
-                            </p>
-
+                            <h3>Plataforma integrada K&T Suite</h3>
+                            <p style="text-align:left;">Un ecosistema de software que conecta kioscos, turnos, cartelería y reportes con su CRM, ERP o sistema de gestión existente.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".9s">
                     <div class="service-box-items h-100">
                         <div class="icon gif-icon-wrapper">
-                            <img src="assets/img/icon/6.png" class="static-icon" alt="Soporte">
-                            <img src="assets/img/icon/6.gif" class="hover-gif" alt="Soporte">
+                            <img src="assets/img/icon/6.png" class="static-icon" alt="Soporte 24/7">
+                            <img src="assets/img/icon/6.gif" class="hover-gif" alt="Soporte 24/7">
                         </div>
                         <div class="content">
-                            <h3>
-                                <a href="service-details.html">
-                                    Cobertura y calidad en mantenimiento y soporte
-                                </a>
-                            </h3>
-                            <p style="text-align: left;">
-                                La prestación de nuestros servicios se apoya en un aliado estratégico de primer nivel.
-                            </p>
-
+                            <h3>Soporte y mantenimiento 24/7</h3>
+                            <p style="text-align:left;">Atención técnica preventiva y correctiva, monitoreo remoto permanente y cobertura nacional para mantener su operación activa.</p>
                         </div>
                     </div>
                 </div>
@@ -696,305 +669,118 @@
         </div>
     </section>
 
-    <!--<< Service Section Start >>-->
+    <!-- ═══════════════════════════════════════════
+         SECTORES
+    ═══════════════════════════════════════════ -->
     <section class="service-section fix section-padding section-bg">
-        <div class="shape-image">
-            <img src="assets/img/service/shape.png" alt="shape-img">
-        </div>
-        <div class="bottom-shape">
-            <img src="assets/img/service/bottom-shape.png" alt="shape-img">
-        </div>
+        <div class="shape-image"><img src="assets/img/service/shape.png" alt="shape"></div>
+        <div class="bottom-shape"><img src="assets/img/service/bottom-shape.png" alt="shape"></div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-3 col-lg-4 px-4 px-xl-5">
                     <div class="sector-static-content">
                         <div class="section-title">
-                            <span class="wow fadeInUp"
-                                style="color: #308b1d; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Nuestra
-                                Presencia</span>
-                            <h2 class="wow fadeInUp" data-wow-delay=".3s"
-                                style="font-size: 48px; margin-top: 15px; font-weight: 700;">
-                                Nuestros sectores
-                            </h2>
+                            <span class="wow fadeInUp" style="color:#308b1d;font-weight:600;text-transform:uppercase;letter-spacing:2px;">Presencia sectorial</span>
+                            <h2 class="wow fadeInUp" data-wow-delay=".3s" style="font-size:44px;margin-top:15px;font-weight:700;">Sectores que atendemos</h2>
                         </div>
-
                         <div class="slider-navigation mt-5 d-flex align-items-center wow fadeInUp" data-wow-delay=".5s">
-                            <button class="sector-nav-btn sector-prev">
-                                <i class="far fa-chevron-left"></i>
-                            </button>
-                            <button class="sector-nav-btn sector-next ml-3" style="margin-left: 15px;">
-                                <i class="far fa-chevron-right"></i>
-                            </button>
+                            <button class="sector-nav-btn sector-prev"><i class="far fa-chevron-left"></i></button>
+                            <button class="sector-nav-btn sector-next ml-3" style="margin-left:15px;"><i class="far fa-chevron-right"></i></button>
                         </div>
-
                         <div class="mt-5 wow fadeInUp" data-wow-delay=".7s">
-                            <a href="service-details.html" class="theme-btn wow fadeInUp" data-wow-delay=".5s"
-                                style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-                                <span>
-                                    Ver todos
-                                    <i class="fas fa-chevron-right"></i>
-                                </span>
+                            <a href="about.html" class="theme-btn">
+                                <span>Ver todos <i class="fas fa-chevron-right"></i></span>
                             </a>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-xl-9 col-lg-8">
                     <div class="service-carousel-active custom-sector-slider">
-                        <!-- item 01 -->
-                        <div class="sector-card-wrapper">
-                            <div class="sector-card">
-                                <div class="sector-bg-img" style="background-image: url('assets/img/service/01.jpg');">
-                                </div>
-                                <div class="sector-overlay"></div>
-                                <div class="sector-content">
-                                    <h3>Banca</h3>
-                                    <p style="text-align: left;">Soluciones seguras de autoservicio para la gestión
-                                        financiera moderna.</p>
-                                    <div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div>
-                                </div>
-                                <a href="banca.html" class="sector-link"></a>
-                            </div>
-                        </div>
-
-                        <!-- item 02 -->
-                        <div class="sector-card-wrapper">
-                            <div class="sector-card">
-                                <div class="sector-bg-img" style="background-image: url('assets/img/service/02.jpg');">
-                                </div>
-                                <div class="sector-overlay"></div>
-                                <div class="sector-content">
-                                    <h3>Salud</h3>
-                                    <p style="text-align: left;">Tecnología para mejorar la experiencia del paciente y
-                                        optimizar procesos médicos.
-                                    </p>
-                                    <div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div>
-                                </div>
-                                <a href="salud.html" class="sector-link"></a>
-                            </div>
-                        </div>
-
-                        <!-- item 03 -->
-                        <div class="sector-card-wrapper">
-                            <div class="sector-card">
-                                <div class="sector-bg-img" style="background-image: url('assets/img/service/03.jpg');">
-                                </div>
-                                <div class="sector-overlay"></div>
-                                <div class="sector-content">
-                                    <h3>Retail</h3>
-                                    <p style="text-align: left;">Innovación digital para transformar el punto de venta y
-                                        fidelizar clientes.</p>
-                                    <div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div>
-                                </div>
-                                <a href="retail.html" class="sector-link"></a>
-                            </div>
-                        </div>
-
-                        <!-- item 04 -->
-                        <div class="sector-card-wrapper">
-                            <div class="sector-card">
-                                <div class="sector-bg-img" style="background-image: url('assets/img/service/04.jpg');">
-                                </div>
-                                <div class="sector-overlay"></div>
-                                <div class="sector-content">
-                                    <h3>Restaurantes</h3>
-                                    <p style="text-align: left;">Sistemas de pedido inteligente que agilizan el servicio
-                                        y reducen esperas.</p>
-                                    <div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div>
-                                </div>
-                                <a href="restaurantes.html" class="sector-link"></a>
-                            </div>
-                        </div>
-
-                        <!-- item 05 -->
-                        <div class="sector-card-wrapper">
-                            <div class="sector-card">
-                                <div class="sector-bg-img" style="background-image: url('assets/img/service/05.jpg');">
-                                </div>
-                                <div class="sector-overlay"></div>
-                                <div class="sector-content">
-                                    <h3>Hoteles</h3>
-                                    <p style="text-align: left;">Check-in automatizado y servicios digitales para
-                                        estadías sin fricciones.</p>
-                                    <div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div>
-                                </div>
-                                <a href="about.html" class="sector-link"></a>
-                            </div>
-                        </div>
-
-                        <!-- item 06 -->
-                        <div class="sector-card-wrapper">
-                            <div class="sector-card">
-                                <div class="sector-bg-img" style="background-image: url('assets/img/service/06.jpg');">
-                                </div>
-                                <div class="sector-overlay"></div>
-                                <div class="sector-content">
-                                    <h3>Educación</h3>
-                                    <p style="text-align: left;">Herramientas tecnológicas que facilitan el aprendizaje
-                                        y la gestión académica.
-                                    </p>
-                                    <div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div>
-                                </div>
-                                <a href="educacion.html" class="sector-link"></a>
-                            </div>
-                        </div>
-
-                        <!-- item 07 -->
-                        <div class="sector-card-wrapper">
-                            <div class="sector-card">
-                                <div class="sector-bg-img" style="background-image: url('assets/img/service/07.jpg');">
-                                </div>
-                                <div class="sector-overlay"></div>
-                                <div class="sector-content">
-                                    <h3>Corporativo</h3>
-                                    <p style="text-align: left;">Soluciones de comunicación y gestión para empresas de
-                                        alto rendimiento.</p>
-                                    <div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div>
-                                </div>
-                                <a href="about.html" class="sector-link"></a>
-                            </div>
-                        </div>
-
-                        <!-- item 08 -->
-                        <div class="sector-card-wrapper">
-                            <div class="sector-card">
-                                <div class="sector-bg-img" style="background-image: url('assets/img/service/08.jpg');">
-                                </div>
-                                <div class="sector-overlay"></div>
-                                <div class="sector-content">
-                                    <h3>Gobierno</h3>
-                                    <p style="text-align: left;">Digitalización eficiente para acercar los servicios
-                                        públicos al ciudadano.</p>
-                                    <div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div>
-                                </div>
-                                <a href="about.html" class="sector-link"></a>
-                            </div>
-                        </div>
+                        <div class="sector-card-wrapper"><div class="sector-card"><div class="sector-bg-img" style="background-image:url('assets/img/service/01.jpg');"></div><div class="sector-overlay"></div><div class="sector-content"><h3>Banca</h3><p style="text-align:left;">Autoservicio seguro para gestión financiera, pagos, turnos y atención al cliente en sucursales.</p><div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div></div><a href="banca.html" class="sector-link"></a></div></div>
+                        <div class="sector-card-wrapper"><div class="sector-card"><div class="sector-bg-img" style="background-image:url('assets/img/service/02.jpg');"></div><div class="sector-overlay"></div><div class="sector-content"><h3>Salud</h3><p style="text-align:left;">Registro de pacientes, gestión de turnos y reducción de tiempos de espera en clínicas y hospitales.</p><div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div></div><a href="salud.html" class="sector-link"></a></div></div>
+                        <div class="sector-card-wrapper"><div class="sector-card"><div class="sector-bg-img" style="background-image:url('assets/img/service/03.jpg');"></div><div class="sector-overlay"></div><div class="sector-content"><h3>Retail</h3><p style="text-align:left;">Autopago, autocompra y cartelería digital para transformar el punto de venta y mejorar la experiencia de compra.</p><div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div></div><a href="retail.html" class="sector-link"></a></div></div>
+                        <div class="sector-card-wrapper"><div class="sector-card"><div class="sector-bg-img" style="background-image:url('assets/img/service/04.jpg');"></div><div class="sector-overlay"></div><div class="sector-content"><h3>Restaurantes</h3><p style="text-align:left;">Kioscos de autocompra y POS integrado para agilizar pedidos, reducir filas y optimizar la operación.</p><div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div></div><a href="restaurantes.html" class="sector-link"></a></div></div>
+                        <div class="sector-card-wrapper"><div class="sector-card"><div class="sector-bg-img" style="background-image:url('assets/img/service/05.jpg');"></div><div class="sector-overlay"></div><div class="sector-content"><h3>Hoteles</h3><p style="text-align:left;">Check-in automatizado, información de servicios y gestión de acceso para una estadía sin fricciones.</p><div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div></div><a href="hotel.html" class="sector-link"></a></div></div>
+                        <div class="sector-card-wrapper"><div class="sector-card"><div class="sector-bg-img" style="background-image:url('assets/img/service/06.jpg');"></div><div class="sector-overlay"></div><div class="sector-content"><h3>Educación</h3><p style="text-align:left;">Autogestión académica, carnetización, control de acceso y comunicación digital en campus.</p><div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div></div><a href="educacion.html" class="sector-link"></a></div></div>
+                        <div class="sector-card-wrapper"><div class="sector-card"><div class="sector-bg-img" style="background-image:url('assets/img/service/07.jpg');"></div><div class="sector-overlay"></div><div class="sector-content"><h3>Corporativo</h3><p style="text-align:left;">Recepción inteligente, control de visitantes, salas de videoconferencia y comunicación interna digital.</p><div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div></div><a href="Corporativo.html" class="sector-link"></a></div></div>
+                        <div class="sector-card-wrapper"><div class="sector-card"><div class="sector-bg-img" style="background-image:url('assets/img/service/08.jpg');"></div><div class="sector-overlay"></div><div class="sector-content"><h3>Gobierno</h3><p style="text-align:left;">Digitalización de trámites, turnos ciudadanos y cartelería informativa para entidades públicas.</p><div class="sector-btn">Explorar <i class="fas fa-chevron-right"></i></div></div><a href="Gobierno.html" class="sector-link"></a></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!--<< Brand Section Start >>-->
+    <!-- ═══════════════════════════════════════════
+         PARTNERS / TECNOLOGÍA
+    ═══════════════════════════════════════════ -->
     <div class="brand-section-2 fix section-bg-2">
         <div class="container brand-wrapper">
-            <h6 class="text-center wow fadeInUp">La calidad es nuestro compromiso</h6>
+            <h6 class="text-center wow fadeInUp">Tecnología respaldada por líderes del mercado</h6>
             <div class="brand-wrapper style-2">
                 <div class="brand-carousel-active-2">
-                    <div class="brand-image">
-                        <img src="assets/img/brand/01.png" alt="brand-img">
-                    </div>
-                    <div class="brand-image">
-                        <img src="assets/img/brand/02.png" alt="brand-img">
-                    </div>
-                    <div class="brand-image">
-                        <img src="assets/img/brand/03.png" alt="brand-img">
-                    </div>
-                    <div class="brand-image">
-                        <img src="assets/img/brand/04.png" alt="brand-img">
-                    </div>
-                    <div class="brand-image">
-                        <img src="assets/img/brand/05.png" alt="brand-img">
-                    </div>
-                    <div class="brand-image">
-                        <img src="assets/img/brand/01.png" alt="brand-img">
-                    </div>
-                    <div class="brand-image">
-                        <img src="assets/img/brand/02.png" alt="brand-img">
-                    </div>
-                    <div class="brand-image">
-                        <img src="assets/img/brand/03.png" alt="brand-img">
-                    </div>
-                    <div class="brand-image">
-                        <img src="assets/img/brand/04.png" alt="brand-img">
-                    </div>
-                    <div class="brand-image">
-                        <img src="assets/img/brand/05.png" alt="brand-img">
-                    </div>
-
+                    <div class="brand-image"><img src="assets/img/brand/01.png" alt="Partner tecnológico KYT"></div>
+                    <div class="brand-image"><img src="assets/img/brand/02.png" alt="Partner tecnológico KYT"></div>
+                    <div class="brand-image"><img src="assets/img/brand/03.png" alt="Partner tecnológico KYT"></div>
+                    <div class="brand-image"><img src="assets/img/brand/04.png" alt="Partner tecnológico KYT"></div>
+                    <div class="brand-image"><img src="assets/img/brand/05.png" alt="Partner tecnológico KYT"></div>
+                    <div class="brand-image"><img src="assets/img/brand/01.png" alt="Partner tecnológico KYT"></div>
+                    <div class="brand-image"><img src="assets/img/brand/02.png" alt="Partner tecnológico KYT"></div>
+                    <div class="brand-image"><img src="assets/img/brand/03.png" alt="Partner tecnológico KYT"></div>
+                    <div class="brand-image"><img src="assets/img/brand/04.png" alt="Partner tecnológico KYT"></div>
+                    <div class="brand-image"><img src="assets/img/brand/05.png" alt="Partner tecnológico KYT"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--<< Grow Section Start >>-->
+    <!-- ═══════════════════════════════════════════
+         PRODUCTOS DESTACADOS
+    ═══════════════════════════════════════════ -->
     <section class="grow-section products-showcase section-padding section-bg-3">
         <div class="container">
             <div class="grow-wrapper">
                 <div class="title-section-area">
                     <div class="section-title style-2">
-                        <span class="text-white wow fadeInUp">Nuestros productos </span>
+                        <span class="text-white wow fadeInUp">Nuestros productos</span>
                         <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">
-                            SOLUCIONES QUE TRANSFORMAN TU <br> EXPERIENCIA DIGITAL
+                            Soluciones que transforman<br>la operación de su empresa
                         </h2>
                     </div>
                 </div>
                 <div class="circle-progress-bar-wrapper mbm-10">
                     <div class="single-circle-bar products-showcase-card wow fadeInUp" data-wow-delay=".3s">
                         <div class="grow-image">
-                            <img src="assets/img/Kioscos/Suite.jpg" alt="img"
-                                style="border-radius: 10px; width: 120px; height: 120px; object-fit: cover;">
+                            <img src="assets/img/Kioscos/Suite.jpg" alt="Plataforma K&T Suite" style="border-radius:10px;width:120px;height:120px;object-fit:cover;">
                         </div>
                         <div class="content">
-                            <h6>
-                                Plataforma K&T Suite
-                            </h6>
-                            <p>
-                                Todos los software con los que
-                                contamos para tu gestión.
-                            </p>
-                            <a href="about.html" class="theme-btn theme-btn-2 hover-white mt-4"
-                                style="padding: 12px 25px; font-size: 14px;">
-                                <span>
-                                    Descubrir más
-                                    <i class="fas fa-chevron-right"></i>
-                                </span>
+                            <h6>Plataforma K&T Suite</h6>
+                            <p>Software de gestión unificado para turnos, kioscos, cartelería y reportes en tiempo real.</p>
+                            <a href="Kioscos.html" class="theme-btn theme-btn-2 hover-white mt-4" style="padding:12px 25px;font-size:14px;">
+                                <span>Ver plataforma <i class="fas fa-chevron-right"></i></span>
                             </a>
                         </div>
                     </div>
                     <div class="single-circle-bar products-showcase-card wow fadeInUp" data-wow-delay=".5s">
                         <div class="grow-image">
-                            <img src="assets/img/Kioscos/KIOSCOS.jpg" alt="img"
-                                style="border-radius: 10px; width: 120px; height: 120px; object-fit: cover;">
+                            <img src="assets/img/Kioscos/KIOSCOS.jpg" alt="Kioscos de autogestión KYT" style="border-radius:10px;width:120px;height:120px;object-fit:cover;">
                         </div>
                         <div class="content">
-                            <h6>
-                                Kioscos
-                            </h6>
-                            <p>
-                                Domina la autogestión con
-                                terminales de alta calidad.
-                            </p>
-                            <a href="about.html" class="theme-btn theme-btn-2 hover-white mt-4"
-                                style="padding: 12px 25px; font-size: 14px;">
-                                <span>
-                                    Descubrir más
-                                    <i class="fas fa-chevron-right"></i>
-                                </span>
+                            <h6>Kioscos de autogestión</h6>
+                            <p>Terminales táctiles de fabricación propia para autopago, autocompra y gestión de turnos.</p>
+                            <a href="Kioscos.html" class="theme-btn theme-btn-2 hover-white mt-4" style="padding:12px 25px;font-size:14px;">
+                                <span>Ver catálogo <i class="fas fa-chevron-right"></i></span>
                             </a>
                         </div>
                     </div>
                     <div class="single-circle-bar products-showcase-card wow fadeInUp" data-wow-delay=".7s">
                         <div class="grow-image">
-                            <img src="assets/img/Kioscos/COMPONENTES-POS.jpg" alt="img"
-                                style="border-radius: 10px; width: 120px; height: 120px; object-fit: cover;">
+                            <img src="assets/img/Kioscos/COMPONENTES-POS.jpg" alt="Componentes POS KYT" style="border-radius:10px;width:120px;height:120px;object-fit:cover;">
                         </div>
                         <div class="content">
-                            <h6>
-                                Componentes POS
-                            </h6>
-                            <p>
-                                Venta de componentes POS en la
-                                tienda del POS.
-                            </p>
-                            <a href="about.html" class="theme-btn theme-btn-2 hover-white mt-4"
-                                style="padding: 12px 25px; font-size: 14px;">
-                                <span>
-                                    Descubrir más
-                                    <i class="fas fa-chevron-right"></i>
-                                </span>
+                            <h6>Componentes POS</h6>
+                            <p>Equipos y periféricos POS certificados para ventas, facturación e inventarios.</p>
+                            <a href="Pos.html" class="theme-btn theme-btn-2 hover-white mt-4" style="padding:12px 25px;font-size:14px;">
+                                <span>Ver tienda POS <i class="fas fa-chevron-right"></i></span>
                             </a>
                         </div>
                     </div>
@@ -1003,209 +789,135 @@
         </div>
     </section>
 
-    <!--<< Brand Section Start >>-->
-    <section class="brand-section fix section-padding section-padding" style="padding-bottom: 0px;">
+    <!-- ═══════════════════════════════════════════
+         CLIENTES POR SECTOR
+    ═══════════════════════════════════════════ -->
+    <section class="brand-section fix section-padding">
         <div class="container">
             <div class="brand-wrapper">
-                <h6 class="text-center wow fadeInUp">Nuestros Partners</h6>
-                <div class="brand-carousel-active" id="brand-carousel-partners">
-
-                    <!-- Gobierno - 8 logos -->
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/Parnerts/P01.png"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/Parnerts/P02.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/Parnerts/P03.png"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/Parnerts/P04.png"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/Parnerts/P01.png"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/Parnerts/P02.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/Parnerts/P03.png"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/Parnerts/P04.png"
-                            alt="brand-img"></div>
+                <h6 class="text-center wow fadeInUp" data-wow-delay=".3s" id="brand-sector-title">CLIENTES – SECTOR EMPRESA</h6>
+                <div class="brand-sector-selector wow fadeInUp" data-wow-delay=".4s" role="tablist" aria-label="Seleccionar sector">
+                    <button class="brand-sector-btn active" type="button" data-sector="Sector Empresa" aria-pressed="true">Empresa</button>
+                    <button class="brand-sector-btn" type="button" data-sector="Sector Banca" aria-pressed="false">Banca</button>
+                    <button class="brand-sector-btn" type="button" data-sector="Sector Salud" aria-pressed="false">Salud</button>
+                    <button class="brand-sector-btn" type="button" data-sector="Sector Retail" aria-pressed="false">Retail</button>
+                    <button class="brand-sector-btn" type="button" data-sector="Sector Gobierno" aria-pressed="false">Gobierno</button>
+                </div>
+                <div class="brand-carousel-active" id="brand-carousel">
+                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E01.jpg" alt="Cliente KYT"></div>
+                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E02.jpg" alt="Cliente KYT"></div>
+                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E03.jpg" alt="Cliente KYT"></div>
+                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E04.jpg" alt="Cliente KYT"></div>
+                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E05.jpg" alt="Cliente KYT"></div>
+                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E06.jpg" alt="Cliente KYT"></div>
+                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E07.jpg" alt="Cliente KYT"></div>
+                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E08.jpg" alt="Cliente KYT"></div>
+                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E09.jpg" alt="Cliente KYT"></div>
+                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E10.jpg" alt="Cliente KYT"></div>
+                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E11.jpg" alt="Cliente KYT"></div>
+                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E12.jpg" alt="Cliente KYT"></div>
+                    <div class="brand-image" data-sector="Sector Banca"><img src="assets/img/brand/B01.jpg" alt="Cliente banca KYT"></div>
+                    <div class="brand-image" data-sector="Sector Banca"><img src="assets/img/brand/B02.jpg" alt="Cliente banca KYT"></div>
+                    <div class="brand-image" data-sector="Sector Banca"><img src="assets/img/brand/B03.jpg" alt="Cliente banca KYT"></div>
+                    <div class="brand-image" data-sector="Sector Banca"><img src="assets/img/brand/B04.jpg" alt="Cliente banca KYT"></div>
+                    <div class="brand-image" data-sector="Sector Banca"><img src="assets/img/brand/B05.jpg" alt="Cliente banca KYT"></div>
+                    <div class="brand-image" data-sector="Sector Banca"><img src="assets/img/brand/B06.jpg" alt="Cliente banca KYT"></div>
+                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S01.jpg" alt="Cliente salud KYT"></div>
+                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S02.jpg" alt="Cliente salud KYT"></div>
+                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S03.jpg" alt="Cliente salud KYT"></div>
+                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S04.jpg" alt="Cliente salud KYT"></div>
+                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S05.jpg" alt="Cliente salud KYT"></div>
+                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S06.jpg" alt="Cliente salud KYT"></div>
+                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S07.jpg" alt="Cliente salud KYT"></div>
+                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S08.jpg" alt="Cliente salud KYT"></div>
+                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R01.jpg" alt="Cliente retail KYT"></div>
+                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R02.jpg" alt="Cliente retail KYT"></div>
+                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R03.jpg" alt="Cliente retail KYT"></div>
+                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R04.jpg" alt="Cliente retail KYT"></div>
+                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R05.jpg" alt="Cliente retail KYT"></div>
+                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R06.jpg" alt="Cliente retail KYT"></div>
+                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R07.jpg" alt="Cliente retail KYT"></div>
+                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R08.jpg" alt="Cliente retail KYT"></div>
+                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R09.jpg" alt="Cliente retail KYT"></div>
+                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G01.jpg" alt="Cliente gobierno KYT"></div>
+                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G02.jpg" alt="Cliente gobierno KYT"></div>
+                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G03.jpg" alt="Cliente gobierno KYT"></div>
+                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G04.jpg" alt="Cliente gobierno KYT"></div>
+                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G05.jpg" alt="Cliente gobierno KYT"></div>
+                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G06.jpg" alt="Cliente gobierno KYT"></div>
+                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G07.jpg" alt="Cliente gobierno KYT"></div>
+                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G08.jpg" alt="Cliente gobierno KYT"></div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-    <!-- Testimonial Section Here 
-    <section class="testimonial-section-5 section-padding pt-0">
-        <div class="shape float-bob-y">
-            <img src="assets/img/home-4/about/arrow-shape.png" alt="shape-img">
-        </div>
-        <div class="bg-shape">
-            <img src="assets/img/home-4/service/bg-shape.png" alt="shape-img">
-        </div>
-        <div class="container">
-            <div class="section-title text-center">
-                <span class="wow fadeInUp">
-                    Testimonios de Clientes
-                </span>
-                <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                    La satisfacción de nuestros <br>
-                    aliados es nuestra prioridad
-                </h2>
-            </div>
-            <div class="single-testimonial-style-2 mt-5 mt-md-0">
-                <div class="testimonial-carousel-active-4">
-                    <div class="single-testimonial-items-2 video-item">
-                        <div class="video-testimonial-wrapper">
-                            <iframe src="https://www.youtube.com/embed/FE6G281lcQs" title="YouTube video player"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="single-testimonial-items-2 video-item">
-                        <div class="video-testimonial-wrapper">
-                            <iframe src="https://www.youtube.com/embed/ZBRO9xXi0oc" title="YouTube video player"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="single-testimonial-items-2 video-item">
-                        <div class="video-testimonial-wrapper">
-                            <iframe src="https://www.youtube.com/embed/TnHB2l8vmGo" title="YouTube video player"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="single-testimonial-items-2 video-item">
-                        <div class="video-testimonial-wrapper">
-                            <iframe src="https://www.youtube.com/embed/P7Q6V_5E7Pc" title="YouTube video player"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="single-testimonial-items-2 video-item">
-                        <div class="video-testimonial-wrapper">
-                            <iframe src="https://www.youtube.com/embed/sxe_sWH-7H4" title="YouTube video player"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="single-testimonial-items-2 video-item">
-                        <div class="video-testimonial-wrapper">
-                            <iframe src="https://www.youtube.com/embed/nEJkNDmulm0" title="YouTube video player"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-
-
-    <!-- News Blog Section Here -->
+    <!-- ═══════════════════════════════════════════
+         BLOG
+    ═══════════════════════════════════════════ -->
     <section class="news-section fix ralt section-padding">
         <div class="container">
             <div class="section-title text-center">
-                <span class="wow fadeInUp">
-                    Últimas Noticias y Blog
-                </span>
+                <span class="wow fadeInUp">Blog y recursos</span>
                 <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                    Entérate de lo último en tecnología <br>
-                    y soluciones interactiva
+                    Contenido especializado en<br>autogestión y tecnología empresarial
                 </h2>
             </div>
             <div class="row">
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                     <div class="single-news-style-1">
                         <div class="news-image">
-                            <img src="assets/img/home-4/news/01.jpg" alt="news-img">
-                            <div class="post-date">
-                                <h3>19</h3>
-                                <p>MAY</p>
-                            </div>
+                            <img src="assets/img/home-4/news/01.jpg" alt="Qué son los kioscos digitales">
+                            <div class="post-date"><h3>19</h3><p>MAY</p></div>
                         </div>
                         <div class="news-content">
                             <div class="author-item mb-4">
-                                <div class="post-cat">
-                                    <a href="que-son-los-kioscos-digitales.html">Innovación</a>
-                                </div>
+                                <div class="post-cat"><a href="que-son-los-kioscos-digitales.html">Innovación</a></div>
                                 <div class="post-author d-flex align-items-center">
-                                    <img src="assets/img/home-4/news/author.jpg" alt="author-img">
+                                    <img src="assets/img/home-4/news/author.jpg" alt="Equipo KYT">
                                     <p>Equipo K&T</p>
                                 </div>
                             </div>
-                            <h3>
-                                <a href="que-son-los-kioscos-digitales.html">
-                                    ¿Qué son los Kioscos <br>
-                                    Digitales? Guía Completa
-                                </a>
-                            </h3>
-                            <a href="que-son-los-kioscos-digitales.html" class="link-btn mt-4">
-                                Leer más<i class="fas fa-chevron-right"></i>
-                            </a>
+                            <h3><a href="que-son-los-kioscos-digitales.html">¿Qué son los kioscos digitales? Guía completa</a></h3>
+                            <a href="que-son-los-kioscos-digitales.html" class="link-btn mt-4">Leer artículo <i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                     <div class="single-news-style-1">
                         <div class="news-image">
-                            <img src="assets/img/home-4/news/02.jpg" alt="news-img">
-                            <div class="post-date">
-                                <h3>24</h3>
-                                <p>MAR</p>
-                            </div>
+                            <img src="assets/img/home-4/news/02.jpg" alt="Cómo reducir tiempos de espera">
+                            <div class="post-date"><h3>24</h3><p>MAR</p></div>
                         </div>
                         <div class="news-content">
                             <div class="author-item mb-4">
-                                <div class="post-cat">
-                                    <a href="como-reducir-el-tiempo-de-espera-en-las-colas.html">Eficiencia</a>
-                                </div>
+                                <div class="post-cat"><a href="como-reducir-el-tiempo-de-espera-en-las-colas.html">Eficiencia</a></div>
                                 <div class="post-author d-flex align-items-center">
-                                    <img src="assets/img/home-4/news/author.jpg" alt="author-img">
+                                    <img src="assets/img/home-4/news/author.jpg" alt="Equipo KYT">
                                     <p>Equipo K&T</p>
                                 </div>
                             </div>
-                            <h3>
-                                <a href="como-reducir-el-tiempo-de-espera-en-las-colas.html">
-                                    Cómo reducir el tiempo <br>
-                                    de espera en las colas
-                                </a>
-                            </h3>
-                            <a href="como-reducir-el-tiempo-de-espera-en-las-colas.html" class="link-btn mt-4">
-                                Leer más<i class="fas fa-chevron-right"></i>
-                            </a>
+                            <h3><a href="como-reducir-el-tiempo-de-espera-en-las-colas.html">Cómo reducir el tiempo de espera en colas de atención</a></h3>
+                            <a href="como-reducir-el-tiempo-de-espera-en-las-colas.html" class="link-btn mt-4">Leer artículo <i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                     <div class="single-news-style-1">
                         <div class="news-image">
-                            <img src="assets/img/home-4/news/03.jpg" alt="news-img">
-                            <div class="post-date">
-                                <h3>10</h3>
-                                <p>JUN</p>
-                            </div>
+                            <img src="assets/img/home-4/news/03.jpg" alt="Transformación digital en Colombia">
+                            <div class="post-date"><h3>10</h3><p>JUN</p></div>
                         </div>
                         <div class="news-content">
                             <div class="author-item mb-4">
-                                <div class="post-cat">
-                                    <a href="transformacion-digital-atencion-cliente-colombia.html">Estrategia</a>
-                                </div>
+                                <div class="post-cat"><a href="transformacion-digital-atencion-cliente-colombia.html">Estrategia</a></div>
                                 <div class="post-author d-flex align-items-center">
-                                    <img src="assets/img/home-4/news/author.jpg" alt="author-img">
+                                    <img src="assets/img/home-4/news/author.jpg" alt="Equipo KYT">
                                     <p>Equipo K&T</p>
                                 </div>
                             </div>
-                            <h3>
-                                <a href="transformacion-digital-atencion-cliente-colombia.html">
-                                    La transformación digital <br>
-                                    de la atención en Colombia
-                                </a>
-                            </h3>
-                            <a href="transformacion-digital-atencion-cliente-colombia.html" class="link-btn mt-4">
-                                Leer más<i class="fas fa-chevron-right"></i>
-                            </a>
+                            <h3><a href="transformacion-digital-atencion-cliente-colombia.html">Transformación digital de la atención al cliente en Colombia</a></h3>
+                            <a href="transformacion-digital-atencion-cliente-colombia.html" class="link-btn mt-4">Leer artículo <i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1213,180 +925,33 @@
         </div>
     </section>
 
-
-    <!--<< Brand Section Start >>-->
-    <section class="brand-section fix section-padding section-padding">
+    <!-- ═══════════════════════════════════════════
+         CIERRE FINAL – CTA
+    ═══════════════════════════════════════════ -->
+    <section class="close-section">
         <div class="container">
-            <div class="brand-wrapper">
-                <h6 class="text-center wow fadeInUp" data-wow-delay=".3s" id="brand-sector-title">SECTOR EMPRESA</h6>
-                <div class="brand-sector-selector wow fadeInUp" data-wow-delay=".4s" role="tablist"
-                    aria-label="Seleccionar sector de logos">
-                    <button class="brand-sector-btn active" type="button" data-sector="Sector Empresa"
-                        aria-pressed="true">Empresa</button>
-                    <button class="brand-sector-btn" type="button" data-sector="Sector Banca"
-                        aria-pressed="false">Banca</button>
-                    <button class="brand-sector-btn" type="button" data-sector="Sector Salud"
-                        aria-pressed="false">Salud</button>
-                    <button class="brand-sector-btn" type="button" data-sector="Sector Retail"
-                        aria-pressed="false">Retail</button>
-                    <button class="brand-sector-btn" type="button" data-sector="Sector Gobierno"
-                        aria-pressed="false">Gobierno</button>
-                </div>
-                <div class="brand-carousel-active" id="brand-carousel">
-                    <!-- Empresa - 12 logos -->
-                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E01.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E02.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E03.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E04.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E05.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E06.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E07.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E08.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E09.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E10.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E11.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Empresa"><img src="assets/img/brand/E12.jpg"
-                            alt="brand-img"></div>
-
-                    <!-- Banca - 6 logos -->
-                    <div class="brand-image" data-sector="Sector Banca"><img src="assets/img/brand/B01.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Banca"><img src="assets/img/brand/B02.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Banca"><img src="assets/img/brand/B03.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Banca"><img src="assets/img/brand/B04.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Banca"><img src="assets/img/brand/B05.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Banca"><img src="assets/img/brand/B06.jpg"
-                            alt="brand-img"></div>
-
-                    <!-- Salud - 8 logos -->
-                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S01.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S02.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S03.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S04.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S05.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S06.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S07.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Salud"><img src="assets/img/brand/S08.jpg"
-                            alt="brand-img"></div>
-
-                    <!-- Retail - 9 logos -->
-                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R01.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R02.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R03.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R04.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R05.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R06.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R07.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R08.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Retail"><img src="assets/img/brand/R09.jpg"
-                            alt="brand-img"></div>
-
-                    <!-- Gobierno - 8 logos -->
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G01.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G02.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G03.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G04.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G05.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G06.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G07.jpg"
-                            alt="brand-img"></div>
-                    <div class="brand-image" data-sector="Sector Gobierno"><img src="assets/img/brand/G08.jpg"
-                            alt="brand-img"></div>
-                </div>
+            <h2>Hablemos de su proyecto</h2>
+            <p>Cuéntenos su sector, volumen de atención y objetivos operativos. Nuestro equipo estructurará una propuesta a la medida de su organización, sin compromisos.</p>
+            <div class="close-cta-grid">
+                <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" class="btn-green">
+                    <i class="fas fa-comment-dots"></i> Cotizar proyecto
+                </a>
+                <a href="https://wa.me/573113676433?text=Hola%2C%20quiero%20agendar%20una%20reunión%20con%20KYT" target="_blank" class="btn-green">
+                    <i class="fas fa-calendar-check"></i> Agendar reunión
+                </a>
+                <a href="https://wa.me/573113676433?text=Hola%2C%20quiero%20solicitar%20asesoría" target="_blank" class="btn-green-outline">
+                    <i class="fas fa-headset"></i> Solicitar asesoría
+                </a>
+                <a href="Kioscos.html" class="btn-green-outline">
+                    <i class="fas fa-th-large"></i> Ver soluciones
+                </a>
             </div>
         </div>
     </section>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var carousel = $('#brand-carousel');
-            var sectorButtons = document.querySelectorAll('.brand-sector-btn');
-            var titleElement = document.getElementById('brand-sector-title');
 
-            function setActiveSector(sector) {
-                if (!carousel.length || !carousel.hasClass('slick-initialized')) {
-                    return;
-                }
-
-                carousel.slick('slickUnfilter');
-                carousel.slick('slickFilter', function () {
-                    return this.getAttribute('data-sector') === sector;
-                });
-                carousel.slick('slickGoTo', 0, true);
-
-                if (titleElement) {
-                    titleElement.textContent = sector.toUpperCase();
-                }
-
-                sectorButtons.forEach(function (button) {
-                    var isActive = button.getAttribute('data-sector') === sector;
-                    button.classList.toggle('active', isActive);
-                    button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-                });
-            }
-
-            function bindSectorButtons() {
-                sectorButtons.forEach(function (button) {
-                    button.addEventListener('click', function () {
-                        setActiveSector(button.getAttribute('data-sector'));
-                    });
-                });
-
-                setActiveSector('Sector Empresa');
-            }
-
-            if (carousel.length && carousel.hasClass('slick-initialized')) {
-                bindSectorButtons();
-                return;
-            }
-
-            var checkInterval = setInterval(function () {
-                if (carousel.length && carousel.hasClass('slick-initialized')) {
-                    clearInterval(checkInterval);
-                    bindSectorButtons();
-                }
-            }, 100);
-        });
-    </script>
-
-
-
-    <!--<< Footer Section Start >>-->
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════ -->
     <footer class="footer-section section-bg-3">
         <div class="container">
             <div class="footer-widgets-wrapper">
@@ -1394,87 +959,59 @@
                     <div class="col-xl-3 col-sm-6 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".2s">
                         <div class="single-footer-widget">
                             <div class="widget-head">
-                                <a href="index.html">
-                                    <img src="assets/img/logo/logo2.png" alt="logo-img">
-                                </a>
+                                <a href="index.html"><img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología"></a>
                             </div>
                             <div class="footer-content">
-                                <p>
-                                    Creemos en el poder de la tecnología <br>
-                                    para transformar negocios.
-                                </p>
-                                <span>¿Interesado en trabajar con nosotros?</span> <br>
-                                <a href="mailto:info@kioscosytecnologia.com"
-                                    class="link">info@kioscosytecnologia.com</a>
+                                <p>Fabricamos e integramos soluciones de autogestión para organizaciones que quieren operar con mayor eficiencia.</p>
+                                <span>¿Tiene un proyecto en mente?</span><br>
+                                <a href="mailto:info@kioscosytecnologia.com" class="link">info@kioscosytecnologia.com</a>
                                 <div class="social-icon d-flex align-items-center">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-vimeo-v"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    <a href="#" aria-label="Facebook KYT"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="LinkedIn KYT"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" aria-label="Instagram KYT"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="YouTube KYT"><i class="fab fa-youtube"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 ps-lg-5 col-sm-6 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay=".4s">
                         <div class="single-footer-widget">
-                            <div class="widget-head">
-                                <h5>Enlaces Rápidos</h5>
-                            </div>
+                            <div class="widget-head"><h5>Soluciones</h5></div>
                             <ul class="list-items">
-                                <li>
-                                    <a href="service-details.html">
-                                        Servicios
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="about.html">
-                                        Sobre Nosotros
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="news-details.html">
-                                        Últimas Noticias
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="team.html">
-                                        Nuestro Equipo
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="testimonial.html">
-                                        testimonials
-                                    </a>
-                                </li>
+                                <li><a href="Kioscos.html">Kioscos de autogestión</a></li>
+                                <li><a href="turnos.html">Software de turnos</a></li>
+                                <li><a href="informativo.html">Cartelería digital</a></li>
+                                <li><a href="Pos.html">Soluciones POS</a></li>
+                                <li><a href="service-modalidad.html">Soporte y mantenimiento</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".8s">
+                    <div class="col-xl-3 col-sm-6 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".6s">
                         <div class="single-footer-widget">
-                            <div class="widget-head">
-                                <h5>Dirección:</h5>
-                            </div>
-                            <div class="footer-address-text">
-                                <p>
-                                    Bogotá, Colombia
-                                </p>
+                            <div class="widget-head"><h5>La empresa</h5></div>
+                            <ul class="list-items">
+                                <li><a href="about.html">Quiénes somos</a></li>
+                                <li><a href="service-modalidad.html">Modalidad de venta</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="news.html">Casos de éxito</a></li>
+                            </ul>
+                            <div class="footer-address-text mt-3">
+                                <p><i class="fas fa-map-marker-alt me-2" style="color:#308b1d;"></i>Bogotá, Colombia</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 ps-xl-5 col-sm-6 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".9s">
+                    <div class="col-xl-3 ps-xl-5 col-sm-6 col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".8s">
                         <div class="single-footer-widget">
-                            <div class="widget-head">
-                                <h5>Contáctanos</h5>
-                            </div>
+                            <div class="widget-head"><h5>Contáctenos</h5></div>
                             <div class="footer-apps-items">
-                                <p>Llámanos para una consulta</p>
-                                <div class="apps-image d-flex align-items-center">
-                                    <!-- Apps removed as they might not be relevant, replaced with contact focus -->
-                                </div>
+                                <p>Lunes a viernes, 8am – 6pm</p>
                                 <div class="support-text">
-                                    <p>Soporte 24/7</p>
+                                    <p>Línea de atención</p>
                                     <h3><a href="tel:+573113676433">+57 311 367 6433</a></h3>
                                 </div>
+                                <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20cotizar" target="_blank" class="btn-green mt-3" style="font-size:13px;padding:10px 18px;">
+                                    <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -1488,67 +1025,64 @@
                         Copyright © 2026 <a href="index.html">Kioscos y Tecnología</a>. Todos los derechos reservados.
                     </p>
                     <ul class="footer-menu wow fadeInRight" data-wow-delay=".5s">
-                        <li>
-                            <a href="about.html">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact.html">
-                                Support
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contact.html">
-                                Privacy
-                            </a>
-                        </li>
-                        <li>
-                            <a href="faq.html">
-                                Faqs
-                            </a>
-                        </li>
+                        <li><a href="about.html">La empresa</a></li>
+                        <li><a href="service-modalidad.html">Modalidad</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
             </div>
-            <a href="#" id="scrollUp" class="scroll-icon">
-                <i class="far fa-arrow-up"></i>
-            </a>
+            <a href="#" id="scrollUp" class="scroll-icon"><i class="far fa-arrow-up"></i></a>
         </div>
     </footer>
 
-    <!--<< All JS Plugins >>-->
+    <!-- Scripts -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <!--<< Viewport Js >>-->
     <script src="assets/js/viewport.jquery.js"></script>
-    <!--<< Bootstrap Js >>-->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!--<< Nice Select Js >>-->
     <script src="assets/js/jquery.nice-select.min.js"></script>
-    <!--<< Waypoints Js >>-->
     <script src="assets/js/jquery.waypoints.js"></script>
-    <!--<< Counterup Js >>-->
     <script src="assets/js/jquery.counterup.min.js"></script>
-    <!--<< Slick Js >>-->
     <script src="assets/js/slick.min.js"></script>
-    <!--<< Slick Animation Js >>-->
     <script src="assets/js/slick-animation.min.js"></script>
-    <!--<< MeanMenu Js >>-->
     <script src="assets/js/jquery.meanmenu.min.js"></script>
-    <!--<< Magnific Popup Js >>-->
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!--<< Wow Animation Js >>-->
     <script src="assets/js/wow.min.js"></script>
-    <!--<< Circle Progress Js >>-->
     <script src="assets/js/circle-progress.js"></script>
-    <!--<< Main.js >>-->
     <script src="assets/js/main.js"></script>
 
-    <!-- WhatsApp Floating Button CTA -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var carousel = $('#brand-carousel');
+        var sectorButtons = document.querySelectorAll('.brand-sector-btn');
+        var titleElement = document.getElementById('brand-sector-title');
+        function setActiveSector(sector) {
+            if (!carousel.length || !carousel.hasClass('slick-initialized')) return;
+            carousel.slick('slickUnfilter');
+            carousel.slick('slickFilter', function () { return this.getAttribute('data-sector') === sector; });
+            carousel.slick('slickGoTo', 0, true);
+            if (titleElement) titleElement.textContent = 'CLIENTES – ' + sector.toUpperCase();
+            sectorButtons.forEach(function (btn) {
+                var active = btn.getAttribute('data-sector') === sector;
+                btn.classList.toggle('active', active);
+                btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+            });
+        }
+        function bindSectorButtons() {
+            sectorButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () { setActiveSector(btn.getAttribute('data-sector')); });
+            });
+            setActiveSector('Sector Empresa');
+        }
+        if (carousel.length && carousel.hasClass('slick-initialized')) { bindSectorButtons(); return; }
+        var checkInterval = setInterval(function () {
+            if (carousel.length && carousel.hasClass('slick-initialized')) { clearInterval(checkInterval); bindSectorButtons(); }
+        }, 100);
+    });
+    </script>
+
     <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20me%20gustaría%20conocer%20más%20sobre%20sus%20soluciones"
-        target="_blank" class="whatsapp-float" title="Contáctanos por WhatsApp">
+        target="_blank" class="whatsapp-float" title="Contáctenos por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 </body>
-
 </html>
