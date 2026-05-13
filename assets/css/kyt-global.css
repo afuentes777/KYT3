@@ -318,22 +318,17 @@
 .sw-mega-col li a:hover .sw-item-name { color: #308b1d; }
 
 /* Descripción — quitarla para igualar con Hardware que no tiene */
-.sw-item-desc { display: none; }
-
-/* Badge — discreto, igual escala que Hardware */
-.sw-badge {
-  flex-shrink: 0;
-  font-size: 9px;
-  font-weight: 600;
-  color: #308b1d;
-  background: rgba(48,139,29,0.10);
-  border: 1px solid rgba(48,139,29,0.18);
-  border-radius: 4px;
-  padding: 1px 5px;
+.sw-item-desc {
+  font-size: 11px;
+  color: #9aab93;
   white-space: nowrap;
-  transition: background .15s;
+  display: block;
+  margin-top: 1px;
+  line-height: 1.3;
 }
-.sw-mega-col li a:hover .sw-badge { background: rgba(48,139,29,0.18); }
+
+/* Badges eliminados */
+.sw-badge { display: none; }
 
 /* Separador entre items si existe */
 .sw-mega-col .drop-sep {
