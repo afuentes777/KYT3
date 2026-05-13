@@ -179,26 +179,26 @@
     <div class="mouse-cursor cursor-outer"></div>
     <div class="mouse-cursor cursor-inner"></div>
 
-    <!-- Offcanvas -->
+    <!-- ═══ OFFCANVAS MOBILE ═══ -->
     <div class="fix-area">
-        <div class="offcanvas__info">
+        <div class="offcanvas__info kyt-offcanvas">
             <div class="offcanvas__wrapper">
                 <div class="offcanvas__content">
-                    <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                    <div class="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
                         <div class="offcanvas__logo">
-                            <a href="index.html"><img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología"></a>
+                            <a href="index.html"><img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología" style="height:36px;"></a>
                         </div>
                         <div class="offcanvas__close">
-                            <button><i class="fas fa-times"></i></button>
+                            <button aria-label="Cerrar menú"><i class="fas fa-times"></i></button>
                         </div>
                     </div>
                     <div class="mobile-menu fix mb-3"></div>
                     <div class="offcanvas__contact">
-                        <h4>Información de Contacto</h4>
+                        <h4>Información de contacto</h4>
                         <ul>
                             <li class="d-flex align-items-center">
                                 <div class="offcanvas__contact-icon"><i class="fal fa-map-marker-alt"></i></div>
-                                <div class="offcanvas__contact-text"><a href="#">Bogotá, Colombia</a></div>
+                                <div class="offcanvas__contact-text"><span>Bogotá, Colombia</span></div>
                             </li>
                             <li class="d-flex align-items-center">
                                 <div class="offcanvas__contact-icon mr-15"><i class="fal fa-envelope"></i></div>
@@ -206,7 +206,7 @@
                             </li>
                             <li class="d-flex align-items-center">
                                 <div class="offcanvas__contact-icon mr-15"><i class="fal fa-clock"></i></div>
-                                <div class="offcanvas__contact-text"><a href="#">Lunes a Viernes, 8am – 6pm</a></div>
+                                <div class="offcanvas__contact-text"><span>Lunes a viernes, 8am – 6pm</span></div>
                             </li>
                             <li class="d-flex align-items-center">
                                 <div class="offcanvas__contact-icon mr-15"><i class="far fa-phone"></i></div>
@@ -214,7 +214,7 @@
                             </li>
                         </ul>
                         <div class="header-button mt-4">
-                            <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20me%20gustaría%20cotizar%20un%20proyecto" class="theme-btn text-center" target="_blank">
+                            <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20cotizar%20un%20proyecto" class="theme-btn text-center" target="_blank">
                                 <span>Cotizar proyecto <i class="fas fa-chevron-right"></i></span>
                             </a>
                         </div>
@@ -225,108 +225,375 @@
     </div>
     <div class="offcanvas__overlay"></div>
 
-    <!-- Header -->
-    <header class="header-section-2 glass-header-shell">
-        <div id="header-sticky" class="header-2 glass-header">
-            <div class="container">
-                <div class="mega-menu-wrapper">
-                    <div class="header-main">
-                        <div class="logo">
-                            <a href="index.html" class="header-logo">
-                                <img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología">
-                            </a>
-                        </div>
-                        <div class="header-left">
-                            <div class="mean__menu-wrapper">
-                                <div class="main-menu">
-                                    <nav id="mobile-menu">
-                                        <ul>
-                                            <li><a href="index.html">Inicio</a></li>
-                                            <li class="has-dropdown quienes-somos">
-                                                <a href="#">Quiénes somos <i class="fas fa-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="about.html">La empresa</a></li>
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="service-modalidad.html">Modalidad de venta</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="has-dropdown active menu-thumb">
-                                                <a href="#">Sectores <i class="fas fa-angle-down"></i></a>
-                                                <ul class="submenu has-home-menu">
-                                                    <li class="border-none">
-                                                        <div class="row g-4">
-                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/SALUD-180X225.jpg" alt="Sector Salud"><div class="demo-button"><a href="salud.html" class="theme-btn"><span>Sector Salud</span></a></div></div></div>
-                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/BANCA-180X225.jpg" alt="Sector Banca"><div class="demo-button"><a href="banca.html" class="theme-btn"><span>Sector Banca</span></a></div></div></div>
-                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/EDUCATIVO-180X225.jpg" alt="Sector Educación"><div class="demo-button"><a href="educacion.html" class="theme-btn"><span>Sector Educación</span></a></div></div></div>
-                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/RESTAURANTES-180X225.jpg" alt="Sector Restaurantes"><div class="demo-button"><a href="restaurantes.html" class="theme-btn"><span>Sector Restaurantes</span></a></div></div></div>
-                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/RETAIL-180X225.jpg" alt="Sector Retail"><div class="demo-button"><a href="retail.html" class="theme-btn"><span>Sector Retail</span></a></div></div></div>
-                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/HOTELES-180X225.jpg" alt="Sector Hoteles"><div class="demo-button"><a href="hotel.html" class="theme-btn"><span>Sector Hoteles</span></a></div></div></div>
-                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/CORPOTARIVO-180X225.jpg" alt="Sector Corporativo"><div class="demo-button"><a href="Corporativo.html" class="theme-btn"><span>Sector Corporativo</span></a></div></div></div>
-                                                            <div class="col-lg-3 home-menu"><div class="home-menu-thumb"><img src="assets/img/Sectores/GOBIERNO-180X225.jpg" alt="Sector Gobierno"><div class="demo-button"><a href="Gobierno.html" class="theme-btn"><span>Sector Gobierno</span></a></div></div></div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="has-dropdown active d-lg-none">
-                                                <a href="#" class="border-none">Sectores <i class="fas fa-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="salud.html">Sector Salud</a></li>
-                                                    <li><a href="banca.html">Sector Banca</a></li>
-                                                    <li><a href="educacion.html">Sector Educación</a></li>
-                                                    <li><a href="restaurantes.html">Sector Restaurantes</a></li>
-                                                    <li><a href="retail.html">Sector Retail</a></li>
-                                                    <li><a href="hotel.html">Sector Hoteles</a></li>
-                                                    <li><a href="Corporativo.html">Sector Corporativo</a></li>
-                                                    <li><a href="Gobierno.html">Sector Gobierno</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="has-dropdown">
-                                                <a href="#">Soluciones <i class="fas fa-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="Kioscos.html">Kioscos de autogestión</a></li>
-                                                    <li><a href="turnos.html">Software de turnos</a></li>
-                                                    <li><a href="informativo.html">Cartelería digital</a></li>
-                                                    <li><a href="Pos.html">Soluciones POS</a></li>
-                                                    <li><a href="autocompra.html">Autocompra y autopago</a></li>
-                                                    <li><a href="videoconferencia.html">Videoconferencia</a></li>
-                                                    <li><a href="control-acceso.html">Control de acceso</a></li>
-                                                    <li><a href="centro-autogestion.html">Centro de autogestión</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="Kioscos.html">Kioscos</a></li>
-                                            <li><a href="Pos.html">POS</a></li>
-                                            <li class="has-dropdown aprende-menu">
-                                                <a href="#">Recursos <i class="fas fa-angle-down"></i></a>
-                                                <ul class="submenu glass-dropdown-menu">
-                                                    <li class="submenu-title">Autogestión</li>
-                                                    <li><a href="que-son-los-kioscos-digitales.html">¿Qué es un kiosco digital?</a></li>
-                                                    <li><a href="blog.html">Blog y artículos</a></li>
-                                                    <li class="submenu-title">Punto de venta</li>
-                                                    <li><a href="Pos.html">¿Qué es un POS?</a></li>
-                                                    <li><a href="news.html">Noticias y casos de éxito</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
+    <!-- ═══ HEADER PREMIUM ═══ -->
+    <style>
+    /* ── Wrapper ── */
+    .kyt-header-wrap {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 999;
+        padding: 10px 0;
+        transition: background .3s, box-shadow .3s, padding .3s;
+    }
+    .kyt-header-wrap.scrolled {
+        background: rgba(18, 24, 16, 0.96);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 4px 32px rgba(0,0,0,0.28);
+        padding: 6px 0;
+    }
+    .kyt-header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(18, 24, 16, 0.72);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 14px;
+        padding: 0 20px;
+        height: 62px;
+        max-width: 1260px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    /* ── Logo ── */
+    .kyt-logo img { height: 38px; width: auto; display: block; }
+
+    /* ── Nav ── */
+    .kyt-nav { display: flex; align-items: center; gap: 2px; height: 100%; }
+    .kyt-nav > li {
+        list-style: none;
+        position: relative;
+        height: 62px;
+        display: flex;
+        align-items: center;
+    }
+    .kyt-nav > li > a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: rgba(255,255,255,0.85);
+        font-size: 13.5px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        padding: 0 12px;
+        height: 100%;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: color .2s;
+        border-bottom: 2px solid transparent;
+    }
+    .kyt-nav > li > a:hover,
+    .kyt-nav > li.active > a { color: #fff; border-bottom-color: #308b1d; }
+    .kyt-nav > li > a i { font-size: 10px; transition: transform .2s; }
+    .kyt-nav > li:hover > a i { transform: rotate(180deg); }
+
+    /* Divisor hardware/software */
+    .kyt-nav .nav-divider {
+        width: 1px;
+        height: 20px;
+        background: rgba(255,255,255,0.15);
+        margin: 0 4px;
+        pointer-events: none;
+    }
+
+    /* ── Submenú base ── */
+    .kyt-nav > li > .kyt-dropdown {
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        min-width: 200px;
+        background: rgba(14,20,12,0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 12px;
+        padding: 8px 0;
+        box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: opacity .2s, transform .2s, visibility .2s;
+        z-index: 1000;
+    }
+    .kyt-nav > li:hover > .kyt-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .kyt-dropdown li { list-style: none; }
+    .kyt-dropdown li a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 18px;
+        color: rgba(255,255,255,0.75);
+        font-size: 13.5px;
+        font-weight: 400;
+        text-decoration: none;
+        transition: color .15s, background .15s;
+        border-radius: 6px;
+        margin: 0 6px;
+    }
+    .kyt-dropdown li a:hover { color: #fff; background: rgba(48,139,29,0.18); }
+    .kyt-dropdown li a .drop-icon {
+        width: 28px; height: 28px;
+        border-radius: 6px;
+        background: rgba(48,139,29,0.15);
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+        font-size: 12px;
+        color: #7fdc5a;
+    }
+    .kyt-dropdown .drop-label {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.3);
+        padding: 10px 24px 4px;
+    }
+    .kyt-dropdown .drop-sep {
+        height: 1px;
+        background: rgba(255,255,255,0.08);
+        margin: 6px 12px;
+    }
+
+    /* ── Submenú Software – ancho mayor ── */
+    .kyt-dropdown.drop-software { min-width: 240px; }
+    .kyt-dropdown.drop-software .brand-badge {
+        font-size: 10px;
+        font-weight: 700;
+        color: #7fdc5a;
+        background: rgba(48,139,29,0.18);
+        border-radius: 4px;
+        padding: 1px 6px;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    /* ── Submenú Sectores – megamenú ── */
+    .kyt-nav > li > .kyt-mega {
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        width: 680px;
+        background: rgba(14,20,12,0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s, transform .2s, visibility .2s;
+        z-index: 1000;
+    }
+    .kyt-nav > li:hover > .kyt-mega {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+    .kyt-mega .mega-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    .kyt-mega .mega-item {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+        cursor: pointer;
+    }
+    .kyt-mega .mega-item img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform .3s;
+    }
+    .kyt-mega .mega-item:hover img { transform: scale(1.05); }
+    .kyt-mega .mega-item .mega-label {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        background: linear-gradient(transparent, rgba(0,0,0,0.75));
+        padding: 16px 8px 8px;
+        text-align: center;
+    }
+    .kyt-mega .mega-item .mega-label a {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        display: block;
+    }
+    .kyt-mega .mega-item .mega-label a:hover { color: #7fdc5a; }
+
+    /* ── CTA ── */
+    .kyt-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        background: #308b1d;
+        color: #fff !important;
+        font-size: 13.5px;
+        font-weight: 700;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background .2s, transform .15s;
+        flex-shrink: 0;
+    }
+    .kyt-cta-btn:hover { background: #26730f; transform: translateY(-1px); color: #fff !important; }
+
+    /* ── Hamburger mobile ── */
+    .kyt-hamburger {
+        display: none;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 8px;
+        padding: 8px 12px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1199px) {
+        .kyt-nav,
+        .kyt-cta-btn { display: none !important; }
+        .kyt-hamburger { display: flex; align-items: center; }
+        .kyt-header-inner { padding: 0 16px; }
+    }
+    @media (max-width: 575px) {
+        .kyt-header-wrap { padding: 8px 12px; }
+        .kyt-header-inner { border-radius: 10px; height: 56px; }
+        .kyt-logo img { height: 32px; }
+    }
+
+    /* ── Scroll offset para hero ── */
+    body { padding-top: 82px; }
+    @media (max-width: 1199px) { body { padding-top: 76px; } }
+    </style>
+
+    <div class="kyt-header-wrap" id="kytHeader">
+        <div class="container" style="max-width:1260px;">
+            <div class="kyt-header-inner">
+
+                <!-- Logo -->
+                <a href="index.html" class="kyt-logo">
+                    <img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología">
+                </a>
+
+                <!-- Nav desktop -->
+                <ul class="kyt-nav" id="kytNavDesktop">
+
+                    <!-- Inicio -->
+                    <li class="active">
+                        <a href="index.html">Inicio</a>
+                    </li>
+
+                    <!-- Quiénes somos -->
+                    <li>
+                        <a href="#">Quiénes somos <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown">
+                            <li><a href="about.html"><span class="drop-icon"><i class="fas fa-building"></i></span>La empresa</a></li>
+                            <li><a href="service-modalidad.html"><span class="drop-icon"><i class="fas fa-handshake"></i></span>Modalidad de venta</a></li>
+                            <li><a href="blog.html"><span class="drop-icon"><i class="fas fa-pen-nib"></i></span>Blog</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Sectores – megamenú con imágenes -->
+                    <li>
+                        <a href="#">Sectores <i class="fas fa-angle-down"></i></a>
+                        <div class="kyt-mega">
+                            <div class="mega-grid">
+                                <div class="mega-item"><img src="assets/img/Sectores/SALUD-180X225.jpg" alt="Sector Salud"><div class="mega-label"><a href="salud.html">Salud</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/BANCA-180X225.jpg" alt="Sector Banca"><div class="mega-label"><a href="banca.html">Banca</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/EDUCATIVO-180X225.jpg" alt="Sector Educación"><div class="mega-label"><a href="educacion.html">Educación</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/RESTAURANTES-180X225.jpg" alt="Sector Restaurantes"><div class="mega-label"><a href="restaurantes.html">Restaurantes</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/RETAIL-180X225.jpg" alt="Sector Retail"><div class="mega-label"><a href="retail.html">Retail</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/HOTELES-180X225.jpg" alt="Sector Hoteles"><div class="mega-label"><a href="hotel.html">Hoteles</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/CORPOTARIVO-180X225.jpg" alt="Sector Corporativo"><div class="mega-label"><a href="Corporativo.html">Corporativo</a></div></div>
+                                <div class="mega-item"><img src="assets/img/Sectores/GOBIERNO-180X225.jpg" alt="Sector Gobierno"><div class="mega-label"><a href="Gobierno.html">Gobierno</a></div></div>
                             </div>
                         </div>
-                        <div class="header-right d-flex justify-content-end align-items-center">
-                            <div class="glass-header-actions d-none d-lg-flex align-items-center">
-                                <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" class="glass-shop-btn">
-                                    <i class="fas fa-comment-dots"></i>
-                                    <span>Cotizar proyecto</span>
-                                </a>
-                            </div>
-                            <div class="header__hamburger d-lg-none my-auto">
-                                <div class="sidebar__toggle"><i class="far fa-bars"></i></div>
-                            </div>
-                        </div>
-                    </div>
+                    </li>
+
+                    <!-- Divisor -->
+                    <li class="nav-divider" aria-hidden="true"></li>
+
+                    <!-- Hardware -->
+                    <li>
+                        <a href="#">Hardware <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown">
+                            <div class="drop-label">Terminales</div>
+                            <li><a href="Kioscos.html"><span class="drop-icon"><i class="fas fa-tablet-alt"></i></span>Kioscos</a></li>
+                            <li><a href="Pos.html"><span class="drop-icon"><i class="fas fa-cash-register"></i></span>POS</a></li>
+                            <div class="drop-sep"></div>
+                            <li><a href="mesa-interactiva.html"><span class="drop-icon"><i class="fas fa-th-large"></i></span>Mesa interactiva</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Software -->
+                    <li>
+                        <a href="#">Software <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown drop-software">
+                            <div class="drop-label">Suite K&T</div>
+                            <li><a href="/konex"><span class="drop-icon"><i class="fas fa-clock"></i></span>KONEX<sup>®</sup><span class="brand-badge">Turnos</span></a></li>
+                            <li><a href="/davinci"><span class="drop-icon"><i class="fas fa-tv"></i></span>DAVINCI<sup>®</sup><span class="brand-badge">Digital Signage</span></a></li>
+                            <li><a href="/sense"><span class="drop-icon"><i class="fas fa-chart-bar"></i></span>SENSE<sup>®</sup><span class="brand-badge">Analítica</span></a></li>
+                            <li><a href="/dani-ia"><span class="drop-icon"><i class="fas fa-robot"></i></span>DANI IA<sup>®</sup><span class="brand-badge">IA</span></a></li>
+                            <div class="drop-sep"></div>
+                            <li><a href="/fabrica-de-software"><span class="drop-icon"><i class="fas fa-code"></i></span>Fábrica de software</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Divisor -->
+                    <li class="nav-divider" aria-hidden="true"></li>
+
+                    <!-- Recursos -->
+                    <li>
+                        <a href="#">Recursos <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown">
+                            <li><a href="blog.html"><span class="drop-icon"><i class="fas fa-pen-nib"></i></span>Blog y artículos</a></li>
+                            <li><a href="news.html"><span class="drop-icon"><i class="fas fa-trophy"></i></span>Casos de éxito</a></li>
+                            <li><a href="que-son-los-kioscos-digitales.html"><span class="drop-icon"><i class="fas fa-book-open"></i></span>¿Qué es un kiosco?</a></li>
+                            <li><a href="Pos.html"><span class="drop-icon"><i class="fas fa-question-circle"></i></span>¿Qué es un POS?</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <!-- CTA + hamburger -->
+                <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+                    <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" class="kyt-cta-btn">
+                        <i class="fas fa-comment-dots"></i> Cotizar proyecto
+                    </a>
+                    <button class="kyt-hamburger sidebar__toggle" aria-label="Abrir menú">
+                        <i class="far fa-bars"></i>
+                    </button>
                 </div>
+
             </div>
         </div>
-    </header>
+    </div>
+
+    <script>
+    (function(){
+        var hdr = document.getElementById('kytHeader');
+        if(!hdr) return;
+        function onScroll(){ hdr.classList.toggle('scrolled', window.scrollY > 30); }
+        window.addEventListener('scroll', onScroll, {passive:true});
+        onScroll();
+    })();
+    </script>
 
     <!-- Búsqueda -->
     <div class="search-wrap">
