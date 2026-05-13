@@ -1,14 +1,14 @@
 /* ═══════════════════════════════════════════════════════
    KYT GLOBAL — Paleta oficial + Navbar + Tipografía
-   Paleta: Verde #6ebb0d | Azul #00009c | Azul oscuro #01004e
+   Paleta: Verde #308b1d | Azul #00009c | Azul oscuro #01004e
            Azul medio #6666c4 | Verde claro #d3ebb6 | Azul muy claro #efefff
 ═══════════════════════════════════════════════════════ */
 
 /* ── Variables ── */
 :root {
-  --kyt-green:        #6ebb0d;
+  --kyt-green:        #308b1d;
   --kyt-green-light:  #d3ebb6;
-  --kyt-green-dark:   #4e8a08;
+  --kyt-green-dark:   #236514;
   --kyt-blue:         #00009c;
   --kyt-blue-dark:    #01004e;
   --kyt-blue-mid:     #6666c4;
@@ -27,14 +27,14 @@
   --nav-ham-border-dark:  rgba(255,255,255,0.22);
   --nav-ham-color-dark:   #ffffff;
 
-  /* Nav light (sobre fondo claro) */
-  --nav-bg-light:         rgba(255,255,255,0.98);
-  --nav-border-light:     rgba(0,0,156,0.10);
+  /* Nav light (páginas internas, fondo claro) */
+  --nav-bg-light:         rgba(255,255,255,1.00);
+  --nav-border-light:     rgba(1,0,78,0.10);
   --nav-link-light:       #01004e;
-  --nav-link-hover-light: #00009c;
-  --nav-divider-light:    rgba(0,0,156,0.14);
-  --nav-ham-bg-light:     rgba(0,0,156,0.07);
-  --nav-ham-border-light: rgba(0,0,156,0.22);
+  --nav-link-hover-light: #308b1d;
+  --nav-divider-light:    rgba(1,0,78,0.12);
+  --nav-ham-bg-light:     rgba(48,139,29,0.07);
+  --nav-ham-border-light: rgba(48,139,29,0.22);
   --nav-ham-color-light:  #01004e;
 }
 
@@ -93,9 +93,9 @@
               box-shadow .35s ease, border-radius .35s ease, height .35s ease;
 }
 .kyt-header-wrap.kyt-light .kyt-header-inner {
-  background: var(--nav-bg-light);
-  border-color: var(--nav-border-light);
-  box-shadow: 0 2px 20px rgba(0,0,156,0.09);
+  background: #ffffff;
+  border-color: rgba(1,0,78,0.08);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08), 0 1px 0 rgba(1,0,78,0.06);
   border-radius: 10px;
   height: 60px;
 }
@@ -106,8 +106,8 @@
   transition: filter .35s ease;
 }
 .kyt-header-wrap.kyt-light .kyt-logo img {
-  filter: brightness(0) saturate(100%) invert(8%) sepia(60%)
-          saturate(800%) hue-rotate(220deg) brightness(70%);
+  /* Logo en versión oscura limpia — sin tinte morado */
+  filter: brightness(0) saturate(100%);
 }
 
 /* ── Nav links ── */
@@ -166,7 +166,7 @@
   border: 1px solid var(--kyt-border);
   border-radius: 14px;
   padding: 8px 0 10px;
-  box-shadow: 0 12px 40px rgba(0,0,156,0.10), 0 2px 8px rgba(110,187,13,0.06);
+  box-shadow: 0 12px 40px rgba(0,0,156,0.10), 0 2px 8px rgba(48,139,29,0.06);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -200,7 +200,7 @@
 .kyt-dropdown li a .drop-icon {
   width: 30px; height: 30px;
   border-radius: 8px;
-  background: rgba(110,187,13,0.12);
+  background: rgba(48,139,29,0.12);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   font-size: 13px;
@@ -294,7 +294,7 @@
   border: 1px solid var(--kyt-border);
   border-radius: 16px;
   padding: 18px;
-  box-shadow: 0 16px 52px rgba(0,0,156,0.11), 0 2px 8px rgba(110,187,13,0.05);
+  box-shadow: 0 16px 52px rgba(0,0,156,0.11), 0 2px 8px rgba(48,139,29,0.05);
   opacity: 0;
   visibility: hidden;
   transition: opacity .22s ease, transform .22s ease, visibility .22s;
@@ -357,12 +357,12 @@
   white-space: nowrap;
   flex-shrink: 0;
   transition: background .2s, transform .15s, box-shadow .2s;
-  box-shadow: 0 2px 12px rgba(110,187,13,0.28);
+  box-shadow: 0 2px 12px rgba(48,139,29,0.28);
 }
 .kyt-cta-btn:hover {
   background: var(--kyt-green-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 18px rgba(110,187,13,0.38);
+  box-shadow: 0 4px 18px rgba(48,139,29,0.38);
   color: #fff !important;
 }
 
@@ -408,17 +408,17 @@ body { padding-top: 0; }
 
 /* Hero eyebrow */
 .hero-eyebrow {
-  background: rgba(110,187,13,0.18) !important;
-  border: 1px solid rgba(110,187,13,0.40) !important;
+  background: rgba(48,139,29,0.18) !important;
+  border: 1px solid rgba(48,139,29,0.40) !important;
   color: #d3ebb6 !important;
 }
 .hero-eyebrow span { background: #d3ebb6 !important; }
 
 /* Hero headline em */
-.hero-headline em { color: #6ebb0d !important; }
+.hero-headline em { color: #308b1d !important; }
 
 /* Stats bar */
-.hero-stat-item .stat-num { color: #6ebb0d !important; }
+.hero-stat-item .stat-num { color: #308b1d !important; }
 
 /* CTAs hero */
 .btn-cta-primary { background: var(--kyt-green) !important; }
@@ -503,7 +503,7 @@ body { padding-top: 0; }
     font-weight: 700;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: #6ebb0d;
+    color: #308b1d;
     margin-bottom: 18px;
 }
 .kf-headline {
@@ -530,7 +530,7 @@ body { padding-top: 0; }
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #6ebb0d;
+    background: #308b1d;
     color: #fff;
     font-size: 14px;
     font-weight: 700;
@@ -538,13 +538,13 @@ body { padding-top: 0; }
     border-radius: 8px;
     text-decoration: none;
     transition: background .2s, transform .15s, box-shadow .2s;
-    box-shadow: 0 4px 18px rgba(110,187,13,0.35);
+    box-shadow: 0 4px 18px rgba(48,139,29,0.35);
     white-space: nowrap;
 }
 .kf-btn-primary:hover {
-    background: #4e8a08;
+    background: #236514;
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(110,187,13,0.45);
+    box-shadow: 0 6px 24px rgba(48,139,29,0.45);
     color: #fff;
 }
 .kf-btn-secondary {
@@ -563,9 +563,9 @@ body { padding-top: 0; }
     white-space: nowrap;
 }
 .kf-btn-secondary:hover {
-    border-color: #6ebb0d;
-    color: #6ebb0d;
-    background: rgba(110,187,13,0.07);
+    border-color: #308b1d;
+    color: #308b1d;
+    background: rgba(48,139,29,0.07);
 }
 
 /* Logo hero */
@@ -614,9 +614,9 @@ body { padding-top: 0; }
     transition: background .2s, color .2s, border-color .2s, transform .15s;
 }
 .kf-social-icon:hover {
-    background: rgba(110,187,13,0.15);
-    border-color: rgba(110,187,13,0.4);
-    color: #6ebb0d;
+    background: rgba(48,139,29,0.15);
+    border-color: rgba(48,139,29,0.4);
+    color: #308b1d;
     transform: translateY(-2px);
 }
 
@@ -638,10 +638,10 @@ body { padding-top: 0; }
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #6ebb0d;
+    color: #308b1d;
     margin-bottom: 18px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(110,187,13,0.20);
+    border-bottom: 1px solid rgba(48,139,29,0.20);
 }
 .kf-col-list {
     list-style: none;
@@ -677,7 +677,7 @@ body { padding-top: 0; }
 }
 .kf-contact-list a:hover { color: #d3ebb6; }
 .kf-ci {
-    color: #6ebb0d;
+    color: #308b1d;
     font-size: 13px;
     width: 16px;
     flex-shrink: 0;
@@ -731,9 +731,9 @@ body { padding-top: 0; }
     flex-shrink: 0;
 }
 .kf-scroll-top:hover {
-    background: rgba(110,187,13,0.15);
-    border-color: rgba(110,187,13,0.4);
-    color: #6ebb0d;
+    background: rgba(48,139,29,0.15);
+    border-color: rgba(48,139,29,0.4);
+    color: #308b1d;
 }
 
 /* ── Responsive ── */
@@ -759,4 +759,58 @@ body { padding-top: 0; }
     .kf-links { padding: 36px 0 32px; }
     .kf-ctas { flex-direction: column; }
     .kf-btn-primary, .kf-btn-secondary { justify-content: center; }
+}
+
+/* ══════════════════════════════════════════
+   OVERRIDE: Neutralizar overlay negro de main.css en el hero
+   main.css aplica rgba(0,0,0,0.4) en .video-overlay — lo cancelamos
+══════════════════════════════════════════ */
+.hero-section.hero-1 .video-overlay {
+    background: linear-gradient(
+        105deg,
+        rgba(1,0,78,0.62) 0%,
+        rgba(1,0,78,0.38) 45%,
+        rgba(1,0,78,0.15) 75%,
+        rgba(0,0,0,0.08)  100%
+    ) !important;
+}
+
+/* ══════════════════════════════════════════
+   NAVBAR EN PÁGINAS INTERNAS
+   - Breadcrumb con imagen: navbar glass oscura (sin kyt-light)
+   - Páginas sin hero: navbar blanca premium (kyt-light)
+══════════════════════════════════════════ */
+
+/* Páginas internas con breadcrumb/hero oscuro:
+   el script de scroll detecta .breadcrumb-wrapper y ajusta automáticamente.
+   Pero al cargar, algunas páginas arrancan con kyt-light sobre imagen oscura.
+   Esta regla da un padding-top adecuado al breadcrumb */
+.breadcrumb-wrapper {
+    padding-top: 88px !important;
+}
+@media (max-width: 1199px) {
+    .breadcrumb-wrapper { padding-top: 78px !important; }
+}
+
+/* Hover en links del nav modo claro → verde KYT */
+.kyt-header-wrap.kyt-light .kyt-nav > li > a:hover {
+    color: #308b1d !important;
+    border-bottom-color: #308b1d !important;
+}
+
+/* CTA en modo claro — mismo verde, buen contraste */
+.kyt-header-wrap.kyt-light .kyt-cta-btn {
+    background: #308b1d;
+    box-shadow: 0 2px 10px rgba(48,139,29,0.22);
+}
+.kyt-header-wrap.kyt-light .kyt-cta-btn:hover {
+    background: #236514;
+    box-shadow: 0 4px 16px rgba(48,139,29,0.32);
+}
+
+/* Hamburger en modo claro */
+.kyt-header-wrap.kyt-light .kyt-hamburger {
+    background: rgba(48,139,29,0.06);
+    border-color: rgba(48,139,29,0.20);
+    color: #01004e;
 }

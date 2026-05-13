@@ -1235,17 +1235,23 @@ span:not([class*="fa-"]):not(.fas):not(.far):not(.fal):not(.fab) {
     object-fit: cover;
     object-position: center 30%;
 }
-/* Overlay con gradiente — mejor legibilidad del texto */
+/* Overlay gradiente — suave para que el video respire */
 .hero-section.hero-1 .video-overlay {
     position: absolute;
     inset: 0;
+    /* Anular el overlay negro de main.css */
     background: linear-gradient(
-        135deg,
-        rgba(1,0,78,0.78) 0%,
-        rgba(0,0,40,0.55) 60%,
-        rgba(0,0,0,0.30) 100%
+        105deg,
+        rgba(1,0,78,0.62) 0%,
+        rgba(1,0,78,0.38) 45%,
+        rgba(1,0,78,0.15) 75%,
+        rgba(0,0,0,0.08)  100%
     );
     z-index: 1;
+}
+/* Neutralizar el overlay oscuro genérico que viene de main.css */
+.hero-section.hero-1 .hero-video-background .video-overlay {
+    background: none;
 }
 
 /* Slider ocupa 100% del hero */
