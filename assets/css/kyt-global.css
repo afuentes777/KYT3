@@ -1,0 +1,466 @@
+/* ═══════════════════════════════════════════════════════
+   KYT GLOBAL — Paleta oficial + Navbar + Tipografía
+   Paleta: Verde #6ebb0d | Azul #00009c | Azul oscuro #01004e
+           Azul medio #6666c4 | Verde claro #d3ebb6 | Azul muy claro #efefff
+═══════════════════════════════════════════════════════ */
+
+/* ── Variables ── */
+:root {
+  --kyt-green:        #6ebb0d;
+  --kyt-green-light:  #d3ebb6;
+  --kyt-green-dark:   #4e8a08;
+  --kyt-blue:         #00009c;
+  --kyt-blue-dark:    #01004e;
+  --kyt-blue-mid:     #6666c4;
+  --kyt-blue-pale:    #efefff;
+  --kyt-text:         #1a1a3e;
+  --kyt-text-muted:   #5a5a8a;
+  --kyt-border:       rgba(0,0,156,0.10);
+
+  /* Nav dark (sobre hero) */
+  --nav-bg-dark:          rgba(1,0,78,0.55);
+  --nav-border-dark:      rgba(255,255,255,0.13);
+  --nav-link-dark:        rgba(255,255,255,0.90);
+  --nav-link-hover-dark:  #ffffff;
+  --nav-divider-dark:     rgba(255,255,255,0.18);
+  --nav-ham-bg-dark:      rgba(255,255,255,0.12);
+  --nav-ham-border-dark:  rgba(255,255,255,0.22);
+  --nav-ham-color-dark:   #ffffff;
+
+  /* Nav light (sobre fondo claro) */
+  --nav-bg-light:         rgba(255,255,255,0.98);
+  --nav-border-light:     rgba(0,0,156,0.10);
+  --nav-link-light:       #01004e;
+  --nav-link-hover-light: #00009c;
+  --nav-divider-light:    rgba(0,0,156,0.14);
+  --nav-ham-bg-light:     rgba(0,0,156,0.07);
+  --nav-ham-border-light: rgba(0,0,156,0.22);
+  --nav-ham-color-light:  #01004e;
+}
+
+/* ══════════════════════════════════════════
+   TIPOGRAFÍA GLOBAL — estilo ACF/enterprise
+══════════════════════════════════════════ */
+.section-title span,
+.kyt-eyebrow {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: var(--kyt-green) !important;
+  display: block;
+  margin-bottom: 10px;
+}
+.section-title h2 {
+  font-size: clamp(28px, 3.2vw, 46px) !important;
+  font-weight: 800 !important;
+  color: var(--kyt-blue-dark) !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.01em !important;
+}
+.section-title.light h2  { color: #ffffff !important; }
+.section-title.light span{ color: var(--kyt-green-light) !important; }
+
+/* ══════════════════════════════════════════
+   NAVBAR — Wrapper
+══════════════════════════════════════════ */
+.kyt-header-wrap {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  padding: 12px 0;
+  transition: padding .35s ease;
+}
+.kyt-header-wrap.kyt-light { padding: 6px 0; }
+
+/* ── Inner pill ── */
+.kyt-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--nav-bg-dark);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid var(--nav-border-dark);
+  border-radius: 14px;
+  padding: 0 20px;
+  height: 64px;
+  max-width: 1260px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(1,0,78,0.18);
+  transition: background .35s ease, border-color .35s ease,
+              box-shadow .35s ease, border-radius .35s ease, height .35s ease;
+}
+.kyt-header-wrap.kyt-light .kyt-header-inner {
+  background: var(--nav-bg-light);
+  border-color: var(--nav-border-light);
+  box-shadow: 0 2px 20px rgba(0,0,156,0.09);
+  border-radius: 10px;
+  height: 60px;
+}
+
+/* ── Logo ── */
+.kyt-logo img {
+  height: 38px; width: auto; display: block;
+  transition: filter .35s ease;
+}
+.kyt-header-wrap.kyt-light .kyt-logo img {
+  filter: brightness(0) saturate(100%) invert(8%) sepia(60%)
+          saturate(800%) hue-rotate(220deg) brightness(70%);
+}
+
+/* ── Nav links ── */
+.kyt-nav { display: flex; align-items: center; gap: 2px; height: 100%; }
+.kyt-nav > li {
+  list-style: none;
+  position: relative;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  transition: height .35s;
+}
+.kyt-header-wrap.kyt-light .kyt-nav > li { height: 60px; }
+
+.kyt-nav > li > a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--nav-link-dark);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 0 12px;
+  height: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color .25s ease, border-color .25s ease;
+}
+.kyt-header-wrap.kyt-light .kyt-nav > li > a { color: var(--nav-link-light); }
+.kyt-nav > li > a:hover { color: var(--nav-link-hover-dark); border-bottom-color: var(--kyt-green); }
+.kyt-header-wrap.kyt-light .kyt-nav > li > a:hover { color: var(--nav-link-hover-light); border-bottom-color: var(--kyt-blue); }
+.kyt-nav > li.active > a { border-bottom-color: var(--kyt-green); }
+.kyt-nav > li > a i { font-size: 10px; transition: transform .2s; }
+.kyt-nav > li:hover > a i { transform: rotate(180deg); }
+
+/* ── Divisor ── */
+.kyt-nav .nav-divider {
+  width: 1px; height: 20px;
+  background: var(--nav-divider-dark);
+  margin: 0 4px;
+  pointer-events: none;
+  transition: background .35s;
+}
+.kyt-header-wrap.kyt-light .kyt-nav .nav-divider { background: var(--nav-divider-light); }
+
+/* ══════════════════════════════════════════
+   DROPDOWNS — fondo claro premium
+══════════════════════════════════════════ */
+.kyt-nav > li > .kyt-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 210px;
+  background: #ffffff;
+  border: 1px solid var(--kyt-border);
+  border-radius: 14px;
+  padding: 8px 0 10px;
+  box-shadow: 0 12px 40px rgba(0,0,156,0.10), 0 2px 8px rgba(110,187,13,0.06);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .22s ease, transform .22s ease, visibility .22s;
+  z-index: 1000;
+}
+.kyt-nav > li:hover > .kyt-dropdown {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+
+.kyt-dropdown li { list-style: none; }
+.kyt-dropdown li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  color: var(--kyt-blue-dark);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 1px 6px;
+  transition: color .15s, background .15s;
+}
+.kyt-dropdown li a:hover {
+  color: var(--kyt-blue);
+  background: var(--kyt-blue-pale);
+}
+
+/* Ícono drop */
+.kyt-dropdown li a .drop-icon {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: rgba(110,187,13,0.12);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 13px;
+  color: var(--kyt-green-dark);
+  transition: background .15s;
+}
+.kyt-dropdown li a:hover .drop-icon {
+  background: rgba(0,0,156,0.10);
+  color: var(--kyt-blue);
+}
+
+/* Etiqueta sección */
+.kyt-dropdown .drop-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--kyt-blue-mid);
+  padding: 10px 22px 4px;
+  display: block;
+}
+
+/* Separador */
+.kyt-dropdown .drop-sep {
+  height: 1px;
+  background: rgba(0,0,156,0.08);
+  margin: 6px 14px;
+}
+
+/* ══════════════════════════════════════════
+   DROPDOWN SOFTWARE — grid 3 columnas
+   icon | nombre | badge
+══════════════════════════════════════════ */
+.kyt-dropdown.drop-software {
+  min-width: 500px;
+  box-sizing: border-box;
+}
+.kyt-dropdown.drop-software li a {
+  display: grid;
+  grid-template-columns: 30px minmax(0,1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+}
+.kyt-dropdown.drop-software li a .drop-icon {
+  grid-column: 1;
+  width: 30px; height: 30px;
+  margin: 0;
+}
+.kyt-dropdown.drop-software .sw-name {
+  grid-column: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  color: var(--kyt-blue-dark);
+  min-width: 0;
+}
+.kyt-dropdown.drop-software li a:hover .sw-name { color: var(--kyt-blue); }
+.kyt-dropdown.drop-software .brand-badge {
+  grid-column: 3;
+  justify-self: end;
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--kyt-blue);
+  background: var(--kyt-blue-pale);
+  border: 1px solid rgba(0,0,156,0.18);
+  border-radius: 4px;
+  padding: 2px 8px;
+  transition: background .15s;
+}
+.kyt-dropdown.drop-software li a:hover .brand-badge {
+  background: rgba(0,0,156,0.10);
+}
+/* Fábrica de software — sin badge, ocupa todo el ancho */
+.kyt-dropdown.drop-software .sw-full {
+  grid-column: 2 / 4;
+}
+
+/* ══════════════════════════════════════════
+   MEGAMENÚ SECTORES — fondo claro
+══════════════════════════════════════════ */
+.kyt-nav > li > .kyt-mega {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 700px;
+  background: #ffffff;
+  border: 1px solid var(--kyt-border);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 16px 52px rgba(0,0,156,0.11), 0 2px 8px rgba(110,187,13,0.05);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .22s ease, transform .22s ease, visibility .22s;
+  z-index: 1000;
+}
+.kyt-nav > li:hover > .kyt-mega {
+  opacity: 1; visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.kyt-mega .mega-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.kyt-mega .mega-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.kyt-mega .mega-item img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .3s;
+}
+.kyt-mega .mega-item:hover img { transform: scale(1.06); }
+.kyt-mega .mega-item .mega-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(1,0,78,0.78));
+  padding: 18px 8px 8px;
+  text-align: center;
+}
+.kyt-mega .mega-item .mega-label a {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  transition: color .15s;
+}
+.kyt-mega .mega-item .mega-label a:hover { color: var(--kyt-green-light); }
+
+/* ══════════════════════════════════════════
+   CTA BUTTON
+══════════════════════════════════════════ */
+.kyt-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--kyt-green);
+  color: #fff !important;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .2s, transform .15s, box-shadow .2s;
+  box-shadow: 0 2px 12px rgba(110,187,13,0.28);
+}
+.kyt-cta-btn:hover {
+  background: var(--kyt-green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(110,187,13,0.38);
+  color: #fff !important;
+}
+
+/* ── Hamburger mobile ── */
+.kyt-hamburger {
+  display: none;
+  background: var(--nav-ham-bg-dark);
+  border: 1px solid var(--nav-ham-border-dark);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--nav-ham-color-dark);
+  font-size: 18px;
+  line-height: 1;
+  transition: background .35s, border-color .35s, color .35s;
+}
+.kyt-header-wrap.kyt-light .kyt-hamburger {
+  background: var(--nav-ham-bg-light);
+  border-color: var(--nav-ham-border-light);
+  color: var(--nav-ham-color-light);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1199px) {
+  .kyt-nav, .kyt-cta-btn { display: none !important; }
+  .kyt-hamburger { display: flex; align-items: center; }
+  .kyt-header-inner { padding: 0 16px; }
+}
+@media (max-width: 575px) {
+  .kyt-header-wrap { padding: 8px 12px; }
+  .kyt-header-inner { border-radius: 10px; height: 56px; }
+  .kyt-logo img { height: 32px; }
+}
+body { padding-top: 88px; }
+@media (max-width: 1199px) { body { padding-top: 78px; } }
+
+/* ══════════════════════════════════════════
+   PALETA GLOBAL — Secciones del sitio
+══════════════════════════════════════════ */
+
+/* Hero eyebrow */
+.hero-eyebrow {
+  background: rgba(110,187,13,0.18) !important;
+  border: 1px solid rgba(110,187,13,0.45) !important;
+  color: #d3ebb6 !important;
+}
+.hero-eyebrow span { background: #d3ebb6 !important; }
+
+/* Hero headline em */
+.hero-headline em { color: var(--kyt-green) !important; }
+
+/* Stats bar */
+.hero-stat-item .stat-num { color: var(--kyt-green) !important; }
+
+/* CTAs hero */
+.btn-cta-primary { background: var(--kyt-green) !important; }
+.btn-cta-primary:hover { background: var(--kyt-green-dark) !important; }
+
+/* Solutions cards */
+.solution-card .sol-icon { background: var(--kyt-blue-pale) !important; }
+.solution-card .sol-icon i { color: var(--kyt-blue) !important; }
+.solution-card h4 { color: var(--kyt-blue-dark) !important; }
+.solution-card .sol-sectors { color: var(--kyt-green-dark) !important; }
+.solution-card .sol-link { color: var(--kyt-blue) !important; }
+.solution-card:hover { box-shadow: 0 8px 32px rgba(0,0,156,0.12) !important; }
+
+/* Mid CTA section */
+.mid-cta-section {
+  background: linear-gradient(135deg, var(--kyt-blue-dark) 0%, var(--kyt-blue) 100%) !important;
+}
+.btn-white { color: var(--kyt-blue) !important; }
+.btn-white:hover { background: var(--kyt-blue-pale) !important; color: var(--kyt-blue-dark) !important; }
+
+/* Service box */
+.service-box-items h3 { color: var(--kyt-blue-dark) !important; }
+.service-box-items:hover h3 { color: var(--kyt-blue) !important; }
+
+/* Close section */
+.close-section { background: var(--kyt-blue-pale) !important; }
+.close-section h2 { color: var(--kyt-blue-dark) !important; }
+.close-section p  { color: var(--kyt-blue-mid)  !important; }
+.btn-green { background: var(--kyt-green) !important; }
+.btn-green:hover { background: var(--kyt-green-dark) !important; }
+.btn-green-outline { border-color: var(--kyt-green) !important; color: var(--kyt-green-dark) !important; }
+.btn-green-outline:hover { background: var(--kyt-green-light) !important; }
+
+/* About section */
+.about-content .section-title span { color: var(--kyt-green) !important; }
+.about-content .section-title h2   { color: var(--kyt-blue-dark) !important; }
+.about-list li i { color: var(--kyt-green) !important; }
+
+/* Footer */
+.footer-section { background: var(--kyt-blue-dark) !important; }
+.single-footer-widget h5 { color: var(--kyt-green-light) !important; }
+.footer-content .link { color: var(--kyt-green-light) !important; }
+.list-items li a { color: rgba(255,255,255,0.7) !important; }
+.list-items li a:hover { color: var(--kyt-green-light) !important; }
+.footer-bottom { background: var(--kyt-blue-dark) !important; border-top: 1px solid rgba(255,255,255,0.08) !important; }
+.footer-bottom p, .footer-bottom a { color: rgba(255,255,255,0.55) !important; }
+.footer-bottom a:hover { color: var(--kyt-green-light) !important; }
+.support-text h3 a { color: var(--kyt-green-light) !important; }
