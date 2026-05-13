@@ -232,16 +232,15 @@
 
 /* ══════════════════════════════════════════
    MEGA MENÚ SOFTWARE — 2 columnas premium
-   800px · estilo ACF Technologies
+   720px · SUITE K&T | SOLUCIONES DIGITALES
 ══════════════════════════════════════════ */
 
-/* ── Contenedor ── */
 .kyt-dropdown.drop-software {
-  width: min(800px, calc(100vw - 48px));
-  max-width: 800px;
-  min-width: 480px;
+  width: min(720px, calc(100vw - 48px));
+  max-width: 720px;
+  min-width: 420px;
   box-sizing: border-box;
-  padding: 24px 28px 20px;
+  padding: 20px 24px 18px;
   overflow: visible;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
@@ -252,28 +251,16 @@
   visibility: visible;
 }
 
-/* ── Ocultar elementos heredados ── */
+/* ── Elementos heredados no usados ── */
 .sw-single-label { display: none; }
-.sw-col-header    { display: none; }
-
-/* ── Label de columna ── */
-.kyt-dropdown.drop-software .drop-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: #6666c4;
-  padding: 0 4px 10px;
-  display: block;
-  border-bottom: 1px solid rgba(102,102,196,0.12);
-  margin-bottom: 4px;
-}
+.sw-col-header   { display: none; }
+.kyt-dropdown.drop-software .drop-label { display: none; }
 
 /* ── Grid 2 columnas ── */
 .sw-mega-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0 28px;
+  gap: 0 24px;
   position: relative;
 }
 .sw-mega-grid::before {
@@ -282,23 +269,36 @@
   top: 0; bottom: 0;
   left: 50%;
   width: 1px;
-  background: rgba(102,102,196,0.10);
+  background: rgba(102,102,196,0.12);
   pointer-events: none;
 }
 
 .sw-mega-col { padding: 0; border: none !important; }
 
+/* ── Título de columna ── */
+.sw-col-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #6666c4;
+  display: block;
+  padding: 0 6px 9px;
+  border-bottom: 1px solid rgba(102,102,196,0.12);
+  margin-bottom: 4px;
+}
+
 /* ── Item ── */
 .sw-mega-col li { list-style: none; }
 .sw-mega-col li a {
   display: grid !important;
-  grid-template-columns: 38px minmax(0, 1fr) auto;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
   grid-template-rows: auto auto;
   align-items: start;
-  column-gap: 13px;
-  padding: 10px 8px;
+  column-gap: 11px;
+  padding: 8px 6px;
   margin: 2px 0;
-  border-radius: 10px;
+  border-radius: 9px;
   text-decoration: none;
   color: #01004e;
   transition: background .15s;
@@ -309,11 +309,11 @@
 .sw-mega-col li a .drop-icon {
   grid-column: 1;
   grid-row: 1 / 3;
-  width: 36px; height: 36px;
-  border-radius: 9px;
+  width: 32px; height: 32px;
+  border-radius: 8px;
   background: rgba(48,139,29,0.10);
   display: flex; align-items: center; justify-content: center;
-  font-size: 15px;
+  font-size: 13px;
   color: #308b1d;
   transition: background .15s;
   align-self: center;
@@ -321,12 +321,12 @@
 }
 .sw-mega-col li a:hover .drop-icon { background: rgba(48,139,29,0.18); }
 
-/* ── Nombre ── */
+/* ── Nombre + descripción ── */
 .sw-item-body { display: contents; }
 .sw-item-name {
   grid-column: 2;
   grid-row: 1;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: #01004e;
   white-space: nowrap;
@@ -337,11 +337,10 @@
 }
 .sw-mega-col li a:hover .sw-item-name { color: #00009c; }
 
-/* ── Descripción ── */
 .sw-item-desc {
   grid-column: 2;
   grid-row: 2;
-  font-size: 12px;
+  font-size: 11px;
   color: #6666c4;
   white-space: normal;
   display: block;
@@ -356,13 +355,13 @@
   grid-row: 1;
   align-self: center;
   justify-self: end;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
   color: #00009c;
   background: #efefff;
   border: 1px solid #c8c8f4;
   border-radius: 4px;
-  padding: 2px 8px;
+  padding: 2px 7px;
   white-space: nowrap;
   transition: background .15s;
 }
@@ -377,8 +376,8 @@
   .kyt-nav > li:hover > .kyt-dropdown.drop-software { transform: none; }
   .sw-mega-grid { grid-template-columns: 1fr; gap: 0; }
   .sw-mega-grid::before { display: none; }
-  .sw-mega-col li a { padding: 8px 14px; margin: 1px 6px; }
-  .kyt-dropdown.drop-software .drop-label { padding: 8px 20px 6px; }
+  .sw-mega-col li a { padding: 7px 14px; margin: 1px 6px; }
+  .sw-col-title { padding: 8px 20px 6px; }
 }
 
 /* ══════════════════════════════════════════
