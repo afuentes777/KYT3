@@ -137,7 +137,7 @@
     <div class="offcanvas__overlay"></div>
 
     <!-- ═══ NAVBAR PREMIUM KYT ═══ -->
-    <div class="kyt-header-wrap kyt-light" id="kytHeader">
+    <div class="kyt-header-wrap" id="kytHeader">
         <div class="container" style="max-width:1260px;">
             <div class="kyt-header-inner">
                 <!-- Logo -->
@@ -220,21 +220,30 @@
     (function(){
         var hdr=document.getElementById('kytHeader');
         if(!hdr)return;
-        var hero=document.querySelector('.hero-section, .breadcrumb-wrapper, .breadcrumb-section');
-        var heroBottom=hero?0:0;
+        var hero=document.querySelector('.breadcrumb-wrapper, .hero-section');
+        var heroBottom=0;
         var ticking=false;
         function calcHero(){
-            if(hero){ heroBottom=hero.getBoundingClientRect().bottom+window.scrollY-20; }
-            else { heroBottom=0; }
+            if(hero){
+                heroBottom=hero.getBoundingClientRect().bottom+window.scrollY-10;
+            } else {
+                heroBottom=0;
+            }
         }
         function applyMode(){
             var past=window.scrollY>heroBottom;
             hdr.classList.toggle('kyt-light',past);
             ticking=false;
         }
-        function onScroll(){ if(!ticking){requestAnimationFrame(applyMode);ticking=true;} }
-        function init(){ calcHero(); window.addEventListener('scroll',onScroll,{passive:true}); applyMode(); }
-        if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
+        function onScroll(){if(!ticking){requestAnimationFrame(applyMode);ticking=true;}}
+        function init(){
+            calcHero();
+            window.addEventListener('scroll',onScroll,{passive:true});
+            applyMode();
+        }
+        if(document.readyState==='loading'){
+            document.addEventListener('DOMContentLoaded',init);
+        }else{init();}
         window.addEventListener('resize',function(){calcHero();applyMode();},{passive:true});
     })();
     </script>
@@ -260,6 +269,8 @@
         <div class="container">
             <div class="page-heading">
                 <h1 class="wow fadeInUp" data-wow-delay=".3s">Retail</h1>
+                <p class="page-subtitle wow fadeInUp" data-wow-delay=".5s">Autopago, autocompra y cartelería digital para el punto de venta moderno.</p>
+                <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".7s"><li><a href="index.html">Inicio</a></li><li><i class="fas fa-chevron-right"></i></li><li>Sector Retail</li></ul>
             </div>
         </div>
     </div>

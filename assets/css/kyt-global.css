@@ -814,3 +814,163 @@ body { padding-top: 0; }
     border-color: rgba(48,139,29,0.20);
     color: #01004e;
 }
+
+/* ════════════════════════════════════════════════════════
+   HERO INTERNO — PageHero / breadcrumb-wrapper mejorado
+   Aplica a todas las páginas internas con imagen de fondo
+════════════════════════════════════════════════════════ */
+
+/* 1. El breadcrumb-wrapper arranca desde el top absoluto
+      (body.kyt-inner NO lleva padding-top — la navbar flota encima) */
+body.kyt-inner {
+    padding-top: 0 !important;
+}
+
+/* 2. Proporciones del hero interno */
+.breadcrumb-wrapper {
+    position: relative;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* padding-top: alto navbar + margen visual */
+    padding-top: 108px !important;
+    padding-bottom: 72px !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+@media (max-width: 1199px) {
+    .breadcrumb-wrapper {
+        min-height: 500px;
+        padding-top: 96px !important;
+        padding-bottom: 60px !important;
+    }
+}
+@media (max-width: 767px) {
+    .breadcrumb-wrapper {
+        min-height: 440px;
+        padding-top: 86px !important;
+        padding-bottom: 48px !important;
+    }
+}
+@media (max-width: 480px) {
+    .breadcrumb-wrapper {
+        min-height: 380px;
+        padding-top: 78px !important;
+        padding-bottom: 40px !important;
+    }
+}
+
+/* 3. Overlay suave — reemplaza el rgba(16,10,47,0.58) del tema */
+.breadcrumb-wrapper::before {
+    background: linear-gradient(
+        105deg,
+        rgba(1,0,78,0.68) 0%,
+        rgba(1,0,78,0.42) 45%,
+        rgba(1,0,78,0.20) 75%,
+        rgba(0,0,0,0.10)  100%
+    ) !important;
+}
+
+/* 4. Container centrado verticalmente */
+.breadcrumb-wrapper .container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+}
+
+/* 5. Page-heading — alineado a la izquierda, ancho controlado */
+.breadcrumb-wrapper .page-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    gap: 12px;
+    max-width: 760px;
+}
+
+/* 6. Título del hero interno — tipografía premium */
+.breadcrumb-wrapper .page-heading h1 {
+    font-size: clamp(42px, 5.5vw, 76px) !important;
+    font-weight: 800 !important;
+    line-height: 1.10 !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    margin-bottom: 0 !important;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.25);
+}
+@media (max-width: 991px) {
+    .breadcrumb-wrapper .page-heading h1 {
+        font-size: clamp(36px, 6vw, 56px) !important;
+    }
+}
+@media (max-width: 575px) {
+    .breadcrumb-wrapper .page-heading h1 {
+        font-size: clamp(30px, 8vw, 42px) !important;
+    }
+    .breadcrumb-wrapper .page-heading {
+        align-items: center !important;
+    }
+}
+
+/* 7. Subtítulo del hero interno (si existe) */
+.breadcrumb-wrapper .page-heading .page-subtitle {
+    font-size: clamp(14px, 1.4vw, 17px);
+    color: rgba(239,239,255,0.80);
+    line-height: 1.65;
+    max-width: 540px;
+    margin-top: 6px;
+    font-weight: 400;
+}
+
+/* 8. Breadcrumb items — más discretos */
+.breadcrumb-wrapper .page-heading .breadcrumb-items {
+    margin-top: 14px;
+}
+.breadcrumb-wrapper .page-heading .breadcrumb-items li {
+    font-size: 13px !important;
+    color: rgba(239,239,255,0.65) !important;
+}
+.breadcrumb-wrapper .page-heading .breadcrumb-items li a {
+    color: #308b1d !important;
+}
+.breadcrumb-wrapper .page-heading .breadcrumb-items li i {
+    color: rgba(239,239,255,0.45) !important;
+    font-size: 11px !important;
+}
+
+/* 9. Navbar sobre páginas internas con breadcrumb:
+      arranca en modo glass oscuro (sin kyt-light) cuando hay imagen */
+body.kyt-inner .kyt-header-wrap:not(.kyt-light) .kyt-header-inner {
+    background: rgba(1,0,78,0.50);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-color: rgba(255,255,255,0.12);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+body.kyt-inner .kyt-header-wrap:not(.kyt-light) .kyt-nav > li > a {
+    color: rgba(255,255,255,0.90);
+}
+body.kyt-inner .kyt-header-wrap:not(.kyt-light) .kyt-logo img {
+    filter: brightness(0) invert(1);
+}
+body.kyt-inner .kyt-header-wrap:not(.kyt-light) .kyt-nav .nav-divider {
+    background: rgba(255,255,255,0.18);
+}
+body.kyt-inner .kyt-header-wrap:not(.kyt-light) .kyt-hamburger {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.22);
+    color: #ffffff;
+}
+
+/* 10. Páginas sin imagen de fondo (service-modalidad, etc.) → kyt-light inmediato */
+body.kyt-inner.no-hero .kyt-header-wrap {
+    padding-top: 0;
+}
+body.kyt-inner.no-hero {
+    padding-top: 88px !important;
+}
+@media (max-width: 1199px) {
+    body.kyt-inner.no-hero { padding-top: 78px !important; }
+}
