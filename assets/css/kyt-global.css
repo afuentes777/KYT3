@@ -580,7 +580,7 @@ body { padding-top: 0; }
     padding: 0 40px 32px;
     /* Separación generosa de la sección anterior */
     margin-top: 0;
-    padding-top: 80px;
+    padding-top: 140px;
 }
 
 /* ── Contenedor con borde visible — corazón del footer ── */
@@ -597,7 +597,7 @@ body { padding-top: 0; }
 
 /* ── Bloque superior: título + logo + redes ── */
 .kf-top {
-    padding: 52px 56px 36px;
+    padding: 44px 56px 28px;
 }
 .kf-top-inner {
     display: flex;
@@ -613,9 +613,9 @@ body { padding-top: 0; }
 
 /* Título grande y fuerte — igual que TIGlobal */
 .kf-headline {
-    font-size: clamp(36px, 4.5vw, 64px);
+    font-size: clamp(28px, 3.8vw, 52px);
     font-weight: 900;
-    line-height: 1.05;
+    line-height: 1.08;
     color: #ffffff;
     margin-bottom: 24px;
     letter-spacing: -0.03em;
@@ -764,7 +764,7 @@ body { padding-top: 0; }
     .kf-top, .kf-links { padding-left: 40px; padding-right: 40px; }
 }
 @media (max-width: 768px) {
-    .kyt-footer { padding: 48px 16px 24px; }
+    .kyt-footer { padding: 110px 16px 24px; }
     .kf-container { border-radius: 16px; }
     .kf-top { padding: 32px 24px 24px; }
     .kf-top-inner { flex-direction: column; gap: 20px; }
