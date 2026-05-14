@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Kioscos y Tecnología">
-    <meta name="description" content="DANI IA® — Asistente basado en inteligencia artificial para orientar usuarios, responder preguntas y apoyar procesos de autogestión.">
-    <title>DANI IA® – Asistente inteligente – Kioscos y Tecnología</title>
+    <meta name="description" content="DANI IA® + KONEX® — La plataforma inteligente que conecta turnos, kioscos, citas y canales omnicanal para automatizar la atención y optimizar la experiencia operativa en tiempo real.">
+    <meta property="og:title" content="DANI IA® – Inteligencia artificial operacional – KYT">
+    <meta property="og:description" content="Una capa de inteligencia sobre toda la operación. DANI IA® + KONEX® transforma cada interacción en una decisión operativa inteligente.">
+    <title>DANI IA® – Inteligencia Artificial Operacional – Kioscos y Tecnología</title>
     <link rel="shortcut icon" href="assets/img/preloader.svg">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.css">
@@ -18,63 +20,459 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="assets/css/kyt-global.css">
-</head>
     <style>
-    /* Estilos inline para páginas de software */
-    .kyt-eyebrow-tag {
-        display: inline-flex; align-items: center; gap: 8px;
-        background: rgba(48,139,29,0.20); border: 1px solid rgba(48,139,29,0.45);
-        color: #d3ebb6; font-size: 11px; font-weight: 700;
-        letter-spacing: 2px; text-transform: uppercase;
-        padding: 6px 16px; border-radius: 50px; margin-bottom: 18px;
+    /* ══════════════════════════════════════════
+       DANI IA® — Estilos premium enterprise
+    ══════════════════════════════════════════ */
+    :root {
+        --dani-dark:   #01004e;
+        --dani-blue:   #00009c;
+        --dani-mid:    #6666c4;
+        --dani-green:  #308b1d;
+        --dani-pale:   #efefff;
+        --dani-glow:   rgba(102,102,196,0.35);
+        --dani-glow2:  rgba(0,0,156,0.25);
     }
-    .kyt-hero-ctas { display:flex; flex-wrap:wrap; gap:14px; margin-top:28px; }
-    .kyt-btn-outline-white {
+
+    /* ── CTA buttons ── */
+    .dani-btn-primary {
         display:inline-flex; align-items:center; gap:8px;
-        border:1.5px solid rgba(255,255,255,0.40); color:#fff;
-        font-weight:600; font-size:15px; padding:13px 26px;
-        border-radius:8px; text-decoration:none;
+        background:var(--dani-green); color:#fff;
+        font-size:15px; font-weight:700;
+        padding:14px 28px; border-radius:8px;
+        text-decoration:none;
+        box-shadow:0 4px 20px rgba(48,139,29,0.35);
+        transition:background .2s, transform .15s, box-shadow .2s;
+        white-space:nowrap;
+    }
+    .dani-btn-primary:hover { background:#236514; color:#fff; transform:translateY(-2px); box-shadow:0 6px 28px rgba(48,139,29,0.45); }
+    .dani-btn-outline {
+        display:inline-flex; align-items:center; gap:8px;
+        border:1.5px solid rgba(255,255,255,0.4); color:#fff;
+        font-size:15px; font-weight:600;
+        padding:13px 26px; border-radius:8px;
+        text-decoration:none;
         transition:border-color .2s, background .2s;
+        white-space:nowrap;
     }
-    .kyt-btn-outline-white:hover { border-color:#fff; background:rgba(255,255,255,0.10); color:#fff; }
-    .kyt-feature-card {
-        display:flex; gap:16px; align-items:flex-start;
-        background:#fff; border:1px solid rgba(0,0,156,0.09);
-        border-radius:14px; padding:24px 22px;
-        transition:box-shadow .2s, transform .2s;
-        height:100%;
+    .dani-btn-outline:hover { border-color:#fff; background:rgba(255,255,255,0.10); color:#fff; }
+    .dani-ctas { display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+
+    /* ── HERO ── */
+    .dani-hero {
+        position:relative;
+        background: linear-gradient(135deg, #01004e 0%, #1a0050 40%, #308b1d 100%);
+        min-height:620px;
+        display:flex; align-items:center;
+        overflow:hidden;
+        padding-top:110px; padding-bottom:72px;
     }
-    .kyt-feature-card:hover { box-shadow:0 8px 28px rgba(0,0,156,0.11); transform:translateY(-3px); }
-    .kyt-fc-icon {
-        width:46px; height:46px; border-radius:10px;
-        background:#efefff; display:flex; align-items:center; justify-content:center;
-        font-size:20px; color:#00009c; flex-shrink:0;
+    .dani-hero::before {
+        content:'';
+        position:absolute; inset:0;
+        background: radial-gradient(ellipse at 60% 50%, rgba(102,102,196,0.22) 0%, transparent 65%),
+                    radial-gradient(ellipse at 20% 80%, rgba(48,139,29,0.15) 0%, transparent 55%);
+        pointer-events:none;
     }
-    .kyt-fc-body h4 { font-size:16px; font-weight:700; color:#01004e; margin-bottom:6px; }
-    .kyt-fc-body p  { font-size:14px; color:#5a5a8a; line-height:1.6; margin:0; }
-    .kyt-sectors-tags { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:8px; }
-    .kyt-tag {
-        background:#fff; border:1px solid rgba(0,0,156,0.14);
-        color:#01004e; font-size:13px; font-weight:600;
-        padding:8px 18px; border-radius:50px;
-        transition:background .15s, color .15s;
+    /* Líneas luminosas decorativas */
+    .dani-hero::after {
+        content:'';
+        position:absolute; inset:0;
+        background: repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 118px,
+            rgba(102,102,196,0.04) 118px,
+            rgba(102,102,196,0.04) 120px
+        );
+        pointer-events:none;
     }
-    .kyt-tag:hover { background:#efefff; color:#00009c; }
+    .dani-hero-badge {
+        display:inline-flex; align-items:center; gap:8px;
+        background:rgba(102,102,196,0.18);
+        border:1px solid rgba(102,102,196,0.45);
+        color:#c8c8f4; font-size:10px; font-weight:700;
+        letter-spacing:2.5px; text-transform:uppercase;
+        padding:6px 16px; border-radius:50px; margin-bottom:22px;
+    }
+    .dani-hero-badge span {
+        width:6px; height:6px; border-radius:50%;
+        background:#6666c4; display:inline-block;
+        animation:pulseDot 2s ease-in-out infinite;
+    }
+    @keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+    .dani-hero h1 {
+        font-size:clamp(40px, 5.5vw, 72px);
+        font-weight:900; line-height:1.08;
+        color:#fff; letter-spacing:-0.025em; margin-bottom:18px;
+    }
+    .dani-hero h1 sup { font-size:0.45em; vertical-align:super; }
+    .dani-hero h1 .dani-plus {
+        color:var(--dani-mid); font-weight:300; margin:0 10px;
+    }
+    .dani-hero h1 .dani-konex { color:#d3ebb6; }
+    .dani-hero-sub {
+        font-size:clamp(15px,1.6vw,18px);
+        color:rgba(239,239,255,0.80); line-height:1.75;
+        max-width:640px; margin-bottom:14px;
+    }
+    .dani-hero-sub2 {
+        font-size:14px; color:rgba(239,239,255,0.55);
+        max-width:560px; margin-bottom:36px; line-height:1.6;
+    }
+    /* Floating indicator cards */
+    .dani-hero-indicators {
+        position:absolute; right:5%; top:50%; transform:translateY(-50%);
+        display:flex; flex-direction:column; gap:12px;
+        z-index:2;
+    }
+    .dani-ind {
+        background:rgba(255,255,255,0.07);
+        backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+        border:1px solid rgba(102,102,196,0.25);
+        border-radius:14px; padding:14px 18px;
+        min-width:190px;
+        transition:transform .2s, box-shadow .2s;
+    }
+    .dani-ind:hover { transform:translateX(-4px); box-shadow:0 8px 28px rgba(102,102,196,0.25); }
+    .dani-ind-label { font-size:10px; font-weight:600; color:rgba(200,200,244,0.7); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:6px; }
+    .dani-ind-val { font-size:22px; font-weight:800; color:#fff; line-height:1; }
+    .dani-ind-sub { font-size:11px; color:rgba(200,200,244,0.55); margin-top:3px; }
+    .dani-ind-dot { width:8px; height:8px; border-radius:50%; background:#308b1d; display:inline-block; margin-right:6px; box-shadow:0 0 6px rgba(48,139,29,0.7); animation:pulseDot 2s infinite; }
+
+    @media(max-width:1100px){ .dani-hero-indicators { display:none; } }
+
+    /* ── SECCIÓN 1 — Narrativa + 3 tarjetas ── */
+    .dani-s1 { background:#fff; padding:88px 0; }
+    .dani-s1-text { max-width:720px; margin:0 auto; text-align:center; }
+    .dani-eyebrow {
+        display:inline-block;
+        font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+        color:var(--dani-green); margin-bottom:14px;
+    }
+    .dani-h2 { font-size:clamp(28px,3.5vw,46px); font-weight:800; color:var(--dani-dark); line-height:1.15; margin-bottom:20px; letter-spacing:-0.015em; }
+    .dani-lead { font-size:17px; color:#4a4a7a; line-height:1.75; margin-bottom:0; }
+    .dani-s1-body { font-size:16px; color:#5a5a8a; line-height:1.8; max-width:740px; margin:0 auto 52px; text-align:center; }
+
+    .dani-3cards { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:52px; }
+    .dani-card {
+        position:relative; overflow:hidden;
+        background:linear-gradient(135deg,#fafaff 0%,#f0f0ff 100%);
+        border:1px solid rgba(102,102,196,0.15);
+        border-radius:20px; padding:36px 30px;
+        transition:transform .25s, box-shadow .25s;
+    }
+    .dani-card::before {
+        content:''; position:absolute; top:0; left:0; right:0; height:3px;
+        background:linear-gradient(90deg,var(--dani-blue),var(--dani-mid));
+        border-radius:20px 20px 0 0;
+    }
+    .dani-card:hover { transform:translateY(-6px); box-shadow:0 16px 48px rgba(0,0,156,0.12); }
+    .dani-card-icon {
+        width:52px; height:52px; border-radius:14px;
+        background:linear-gradient(135deg,var(--dani-blue),var(--dani-mid));
+        display:flex; align-items:center; justify-content:center;
+        font-size:22px; color:#fff; margin-bottom:20px;
+        box-shadow:0 6px 18px rgba(0,0,156,0.25);
+    }
+    .dani-card h4 { font-size:20px; font-weight:800; color:var(--dani-dark); margin-bottom:12px; }
+    .dani-card p { font-size:15px; color:#5a5a8a; line-height:1.7; margin:0; }
+
+    @media(max-width:768px){ .dani-3cards { grid-template-columns:1fr; } }
+    @media(max-width:992px){ .dani-3cards { grid-template-columns:1fr 1fr; } }
+
+    /* ── SECCIÓN 2 — 3 capacidades enterprise ── */
+    .dani-s2 {
+        background:linear-gradient(160deg, var(--dani-dark) 0%, #0a006e 50%, #01004e 100%);
+        padding:96px 0; position:relative; overflow:hidden;
+    }
+    .dani-s2::before {
+        content:''; position:absolute; inset:0;
+        background: radial-gradient(ellipse at 80% 20%, rgba(102,102,196,0.18) 0%, transparent 60%),
+                    radial-gradient(ellipse at 20% 80%, rgba(48,139,29,0.10) 0%, transparent 55%);
+        pointer-events:none;
+    }
+    .dani-cap-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:56px; position:relative; z-index:1; }
+    .dani-cap {
+        background:rgba(255,255,255,0.05);
+        backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+        border:1px solid rgba(102,102,196,0.20);
+        border-radius:20px; padding:40px 32px;
+        transition:transform .25s, box-shadow .25s, border-color .25s;
+        position:relative; overflow:hidden;
+    }
+    .dani-cap::after {
+        content:''; position:absolute;
+        bottom:-60px; right:-60px;
+        width:160px; height:160px;
+        border-radius:50%;
+        background:radial-gradient(circle, rgba(102,102,196,0.12) 0%, transparent 70%);
+        pointer-events:none;
+    }
+    .dani-cap:hover {
+        transform:translateY(-8px);
+        box-shadow:0 20px 60px rgba(102,102,196,0.25);
+        border-color:rgba(102,102,196,0.45);
+    }
+    .dani-cap-badge {
+        display:inline-flex; align-items:center; gap:6px;
+        background:rgba(102,102,196,0.20); border:1px solid rgba(102,102,196,0.35);
+        color:#c8c8f4; font-size:10px; font-weight:700; letter-spacing:1.8px;
+        text-transform:uppercase; padding:4px 12px; border-radius:50px; margin-bottom:20px;
+    }
+    .dani-cap-icon {
+        width:58px; height:58px; border-radius:16px;
+        display:flex; align-items:center; justify-content:center;
+        font-size:26px; color:#fff; margin-bottom:22px;
+    }
+    .ci-1 { background:linear-gradient(135deg, #00009c, #6666c4); box-shadow:0 8px 24px rgba(0,0,156,0.35); }
+    .ci-2 { background:linear-gradient(135deg, #308b1d, #00009c); box-shadow:0 8px 24px rgba(48,139,29,0.30); }
+    .ci-3 { background:linear-gradient(135deg, #6666c4, #308b1d); box-shadow:0 8px 24px rgba(102,102,196,0.30); }
+    .dani-cap h3 { font-size:24px; font-weight:800; color:#fff; margin-bottom:14px; }
+    .dani-cap > p { font-size:15px; color:rgba(239,239,255,0.72); line-height:1.75; margin-bottom:24px; }
+    .dani-cap ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+    .dani-cap ul li {
+        display:flex; align-items:center; gap:10px;
+        font-size:14px; color:rgba(239,239,255,0.80);
+    }
+    .dani-cap ul li::before {
+        content:''; width:6px; height:6px; border-radius:50%;
+        background:var(--dani-mid); flex-shrink:0;
+        box-shadow:0 0 6px rgba(102,102,196,0.6);
+    }
+
+    @media(max-width:768px){ .dani-cap-grid { grid-template-columns:1fr; } }
+    @media(max-width:992px){ .dani-cap-grid { grid-template-columns:1fr 1fr; } }
+
+    /* ── SECCIÓN 3 — Split KONEX + DANI ── */
+    .dani-s3 { background:var(--dani-pale); padding:96px 0; }
+    .dani-split { display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:24px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,156,0.12); }
+    .dani-split-left {
+        background:linear-gradient(160deg, var(--dani-dark), #0a006e);
+        padding:56px 48px; position:relative; overflow:hidden;
+    }
+    .dani-split-left::before {
+        content:''; position:absolute; bottom:-80px; left:-80px;
+        width:280px; height:280px; border-radius:50%;
+        background:radial-gradient(circle, rgba(48,139,29,0.15) 0%, transparent 70%);
+        pointer-events:none;
+    }
+    .dani-split-right {
+        background:#fff; padding:56px 48px; position:relative;
+    }
+    .dani-split-right::before {
+        content:''; position:absolute; top:-60px; right:-60px;
+        width:240px; height:240px; border-radius:50%;
+        background:radial-gradient(circle, rgba(102,102,196,0.08) 0%, transparent 70%);
+        pointer-events:none;
+    }
+    .dani-split-tag {
+        display:inline-flex; align-items:center; gap:6px;
+        font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+        padding:5px 14px; border-radius:50px; margin-bottom:24px;
+    }
+    .st-left { background:rgba(48,139,29,0.20); border:1px solid rgba(48,139,29,0.4); color:#d3ebb6; }
+    .st-right { background:rgba(0,0,156,0.10); border:1px solid rgba(0,0,156,0.25); color:#00009c; }
+    .dani-split-left h3 { font-size:28px; font-weight:800; color:#fff; margin-bottom:28px; }
+    .dani-split-right h3 { font-size:28px; font-weight:800; color:var(--dani-dark); margin-bottom:28px; }
+    .dani-split-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
+    .dani-split-list li {
+        display:flex; align-items:center; gap:12px;
+        font-size:15px;
+    }
+    .dani-split-left .dani-split-list li { color:rgba(239,239,255,0.85); }
+    .dani-split-right .dani-split-list li { color:#2a2a6e; }
+    .dani-split-list li i { width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+    .dani-split-left .dani-split-list li i { background:rgba(48,139,29,0.20); color:#d3ebb6; }
+    .dani-split-right .dani-split-list li i { background:rgba(0,0,156,0.10); color:var(--dani-blue); }
+    .dani-result {
+        background:linear-gradient(135deg, var(--dani-blue), var(--dani-mid));
+        border-radius:0 0 24px 24px; padding:32px 48px;
+        grid-column:1/3;
+    }
+    .dani-result p { font-size:16px; color:#fff; line-height:1.7; margin:0; text-align:center; font-weight:500; }
+    .dani-result strong { color:#d3ebb6; }
+
+    @media(max-width:768px){ .dani-split { grid-template-columns:1fr; } .dani-result { grid-column:1; } }
+
+    /* ── SECCIÓN 4 — Sectores ── */
+    .dani-s4 { background:#fff; padding:88px 0; }
+    .dani-sector-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:20px; margin-top:52px; }
+    .dani-sector {
+        border-radius:16px; overflow:hidden;
+        border:1px solid rgba(0,0,156,0.08);
+        transition:transform .25s, box-shadow .25s;
+        cursor:default;
+    }
+    .dani-sector:hover { transform:translateY(-6px); box-shadow:0 14px 42px rgba(0,0,156,0.14); }
+    .dani-sector-img { position:relative; height:160px; overflow:hidden; }
+    .dani-sector-img img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+    .dani-sector:hover .dani-sector-img img { transform:scale(1.06); }
+    .dani-sector-img-overlay {
+        position:absolute; inset:0;
+        background:linear-gradient(to bottom, rgba(1,0,78,0.3) 0%, rgba(1,0,78,0.65) 100%);
+    }
+    .dani-sector-body { padding:20px 18px; background:#fff; }
+    .dani-sector-body h5 { font-size:15px; font-weight:700; color:var(--dani-dark); margin-bottom:8px; }
+    .dani-sector-body p { font-size:13px; color:#5a5a8a; line-height:1.6; margin:0; }
+
+    @media(max-width:1100px){ .dani-sector-grid { grid-template-columns:repeat(3,1fr); } }
+    @media(max-width:768px){ .dani-sector-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:480px){ .dani-sector-grid { grid-template-columns:1fr; } }
+
+    /* ── SECCIÓN 5 — Métricas ── */
+    .dani-s5 {
+        background:linear-gradient(135deg, var(--dani-dark) 0%, #08006e 100%);
+        padding:88px 0; position:relative; overflow:hidden;
+    }
+    .dani-s5::before {
+        content:''; position:absolute; inset:0;
+        background:radial-gradient(ellipse at 50% 0%, rgba(102,102,196,0.20) 0%, transparent 60%);
+        pointer-events:none;
+    }
+    .dani-metrics { display:grid; grid-template-columns:repeat(5,1fr); gap:20px; margin-top:56px; position:relative; z-index:1; }
+    .dani-metric {
+        text-align:center;
+        background:rgba(255,255,255,0.06);
+        backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+        border:1px solid rgba(102,102,196,0.18);
+        border-radius:18px; padding:36px 20px;
+        transition:transform .25s, box-shadow .25s;
+    }
+    .dani-metric:hover { transform:translateY(-5px); box-shadow:0 14px 40px rgba(102,102,196,0.22); }
+    .dani-metric-icon { font-size:28px; color:var(--dani-mid); margin-bottom:16px; }
+    .dani-metric h4 { font-size:13px; font-weight:700; color:#c8c8f4; text-transform:uppercase; letter-spacing:1.2px; margin-bottom:8px; }
+    .dani-metric p { font-size:13px; color:rgba(239,239,255,0.55); margin:0; line-height:1.5; }
+    .dani-s5-footer { text-align:center; margin-top:52px; position:relative; z-index:1; }
+    .dani-s5-footer p { font-size:17px; color:rgba(239,239,255,0.65); }
+    .dani-s5-footer strong { color:#d3ebb6; }
+
+    @media(max-width:1100px){ .dani-metrics { grid-template-columns:repeat(3,1fr); } }
+    @media(max-width:768px){ .dani-metrics { grid-template-columns:1fr 1fr; } }
+    @media(max-width:480px){ .dani-metrics { grid-template-columns:1fr; } }
+
+    /* ── SECCIÓN 6 — AI Intelligence Layer ── */
+    .dani-s6 {
+        background:var(--dani-pale); padding:96px 0;
+        overflow:hidden; position:relative;
+    }
+    .dani-layer-wrapper { position:relative; max-width:960px; margin:0 auto; }
+    .dani-layer-img {
+        border-radius:20px; overflow:hidden;
+        box-shadow:0 24px 72px rgba(0,0,156,0.18);
+        position:relative;
+    }
+    .dani-layer-img img { width:100%; height:480px; object-fit:cover; display:block; }
+    .dani-layer-overlay {
+        position:absolute; inset:0;
+        background:linear-gradient(135deg, rgba(1,0,78,0.70) 0%, rgba(102,102,196,0.35) 55%, rgba(0,0,0,0.15) 100%);
+        border-radius:20px;
+    }
+    /* Nodos SVG animados */
+    .dani-nodes {
+        position:absolute; inset:0;
+        pointer-events:none;
+    }
+    .dani-node {
+        position:absolute;
+        background:rgba(255,255,255,0.10);
+        backdrop-filter:blur(8px);
+        border:1px solid rgba(102,102,196,0.40);
+        border-radius:10px;
+        padding:8px 14px;
+        font-size:11px; font-weight:600;
+        color:rgba(239,239,255,0.90);
+        white-space:nowrap;
+        animation:floatNode 4s ease-in-out infinite;
+    }
+    @keyframes floatNode {
+        0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)}
+    }
+    .dn1{top:12%;left:6%;animation-delay:0s}
+    .dn2{top:28%;left:3%;animation-delay:.5s}
+    .dn3{top:50%;left:4%;animation-delay:1s}
+    .dn4{top:68%;left:7%;animation-delay:1.5s}
+    .dn5{top:82%;left:5%;animation-delay:.8s}
+    .dn6{top:12%;right:5%;animation-delay:.3s}
+    .dn7{top:30%;right:4%;animation-delay:.9s}
+    .dn8{top:50%;right:3%;animation-delay:1.3s}
+    .dn9{top:68%;right:6%;animation-delay:.6s}
+    .dn-center {
+        position:absolute; top:50%; left:50%;
+        transform:translate(-50%,-50%);
+        background:rgba(0,0,156,0.75);
+        backdrop-filter:blur(20px);
+        border:2px solid rgba(102,102,196,0.60);
+        border-radius:16px; padding:18px 28px;
+        text-align:center;
+        box-shadow:0 0 40px rgba(102,102,196,0.35);
+    }
+    .dn-center h5 { font-size:16px; font-weight:800; color:#fff; margin:0 0 4px; }
+    .dn-center p  { font-size:11px; color:#c8c8f4; margin:0; }
+    .dani-layer-text { text-align:center; max-width:640px; margin:40px auto 0; }
+    .dani-layer-text p { font-size:16px; color:#4a4a7a; line-height:1.75; }
+
+    /* ── SECCIÓN CTA FINAL ── */
+    .dani-cta-final {
+        background:linear-gradient(135deg, var(--dani-dark) 0%, #0a006e 55%, var(--dani-blue) 100%);
+        padding:100px 0; text-align:center; position:relative; overflow:hidden;
+    }
+    .dani-cta-final::before {
+        content:''; position:absolute; inset:0;
+        background:radial-gradient(ellipse at 50% 100%, rgba(48,139,29,0.12) 0%, transparent 60%),
+                    radial-gradient(ellipse at 50% 0%, rgba(102,102,196,0.15) 0%, transparent 60%);
+        pointer-events:none;
+    }
+    .dani-cta-final h2 {
+        font-size:clamp(28px,4vw,52px); font-weight:900; color:#fff;
+        line-height:1.12; letter-spacing:-0.02em; margin-bottom:18px;
+        position:relative; z-index:1;
+    }
+    .dani-cta-final p {
+        font-size:17px; color:rgba(239,239,255,0.72);
+        max-width:640px; margin:0 auto 40px; line-height:1.75;
+        position:relative; z-index:1;
+    }
+    .dani-cta-final .dani-ctas { justify-content:center; position:relative; z-index:1; }
+
+    /* ── Imagen decorativa S1 ── */
+    .dani-s1-img-wrap {
+        border-radius:20px; overflow:hidden;
+        box-shadow:0 20px 60px rgba(0,0,156,0.15);
+        position:relative;
+    }
+    .dani-s1-img-wrap img { width:100%; height:480px; object-fit:cover; display:block; }
+    .dani-s1-img-overlay {
+        position:absolute; inset:0;
+        background:linear-gradient(135deg, rgba(1,0,78,0.30) 0%, transparent 60%);
+    }
+
+    /* ── Text section titles ── */
+    .dani-section-header { text-align:center; margin-bottom:8px; }
+    .dani-section-header.light .dani-eyebrow { color:rgba(200,200,244,0.7); }
+    .dani-section-header.light .dani-h2 { color:#fff; }
+
+    /* ── Responsive helpers ── */
+    @media(max-width:768px){
+        .dani-s1-img-wrap { margin-top:40px; }
+        .dani-split-left, .dani-split-right { padding:36px 24px; }
+        .dani-result { padding:24px; grid-column:1; }
+        .dani-hero-indicators { display:none; }
+    }
     </style>
+</head>
 
 <body class="kyt-inner">
 
+    <!-- Preloader -->
     <div id="preloader" class="preloader">
         <div class="animation-preloader">
             <div class="spinner"></div>
             <div class="txt-loading">
-                <span data-text-preloader="K" class="letters-loading">K</span>
+                <span data-text-preloader="D" class="letters-loading">D</span>
+                <span data-text-preloader="A" class="letters-loading">A</span>
+                <span data-text-preloader="N" class="letters-loading">N</span>
                 <span data-text-preloader="I" class="letters-loading">I</span>
-                <span data-text-preloader="O" class="letters-loading">O</span>
-                <span data-text-preloader="S" class="letters-loading">S</span>
-                <span data-text-preloader="C" class="letters-loading">C</span>
-                <span data-text-preloader="O" class="letters-loading">O</span>
-                <span data-text-preloader="S" class="letters-loading">S</span>
             </div>
         </div>
         <div class="loader">
@@ -89,44 +487,27 @@
 
     <div class="mouse-cursor cursor-outer"></div>
     <div class="mouse-cursor cursor-inner"></div>
-    <!-- ═══ OFFCANVAS MOBILE ═══ -->
+
+    <!-- ═══ OFFCANVAS ═══ -->
     <div class="fix-area">
         <div class="offcanvas__info kyt-offcanvas">
             <div class="offcanvas__wrapper">
                 <div class="offcanvas__content">
                     <div class="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
-                        <div class="offcanvas__logo">
-                            <a href="index.html"><img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología" style="height:36px;"></a>
-                        </div>
-                        <div class="offcanvas__close">
-                            <button aria-label="Cerrar menú"><i class="fas fa-times"></i></button>
-                        </div>
+                        <div class="offcanvas__logo"><a href="index.html"><img src="assets/img/logo/logo2.png" alt="KYT" style="height:36px;"></a></div>
+                        <div class="offcanvas__close"><button aria-label="Cerrar menú"><i class="fas fa-times"></i></button></div>
                     </div>
                     <div class="mobile-menu fix mb-3"></div>
                     <div class="offcanvas__contact">
                         <h4>Información de contacto</h4>
                         <ul>
-                            <li class="d-flex align-items-center">
-                                <div class="offcanvas__contact-icon"><i class="fal fa-map-marker-alt"></i></div>
-                                <div class="offcanvas__contact-text"><span>Bogotá, Colombia</span></div>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <div class="offcanvas__contact-icon mr-15"><i class="fal fa-envelope"></i></div>
-                                <div class="offcanvas__contact-text"><a href="mailto:info@kioscosytecnologia.com">info@kioscosytecnologia.com</a></div>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <div class="offcanvas__contact-icon mr-15"><i class="fal fa-clock"></i></div>
-                                <div class="offcanvas__contact-text"><span>Lunes a viernes, 8am – 6pm</span></div>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <div class="offcanvas__contact-icon mr-15"><i class="far fa-phone"></i></div>
-                                <div class="offcanvas__contact-text"><a href="tel:+573113676433">+57 311 367 6433</a></div>
-                            </li>
+                            <li class="d-flex align-items-center"><div class="offcanvas__contact-icon"><i class="fal fa-map-marker-alt"></i></div><div class="offcanvas__contact-text"><span>Bogotá, Colombia</span></div></li>
+                            <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-envelope"></i></div><div class="offcanvas__contact-text"><a href="mailto:info@kioscosytecnologia.com">info@kioscosytecnologia.com</a></div></li>
+                            <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-clock"></i></div><div class="offcanvas__contact-text"><span>Lunes a viernes, 8am – 6pm</span></div></li>
+                            <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="far fa-phone"></i></div><div class="offcanvas__contact-text"><a href="tel:+573113676433">+57 311 367 6433</a></div></li>
                         </ul>
                         <div class="header-button mt-4">
-                            <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20cotizar%20un%20proyecto" class="theme-btn text-center" target="_blank">
-                                <span>Cotizar proyecto <i class="fas fa-chevron-right"></i></span>
-                            </a>
+                            <a href="contacto.html" class="theme-btn text-center"><span>Cotizar proyecto <i class="fas fa-chevron-right"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -135,13 +516,11 @@
     </div>
     <div class="offcanvas__overlay"></div>
 
-    <!-- ═══ NAVBAR PREMIUM KYT ═══ -->
+    <!-- ═══ NAVBAR ═══ -->
     <div class="kyt-header-wrap" id="kytHeader">
         <div class="container" style="max-width:1260px;">
             <div class="kyt-header-inner">
-                <a href="index.html" class="kyt-logo">
-                    <img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología">
-                </a>
+                <a href="index.html" class="kyt-logo"><img src="assets/img/logo/logo2.png" alt="Kioscos y Tecnología"></a>
                 <ul class="kyt-nav" id="kytNavDesktop">
                     <li><a href="index.html">Inicio</a></li>
                     <li>
@@ -180,64 +559,18 @@
                     </li>
                     <li class="active">
                         <a href="#">Software <i class="fas fa-angle-down"></i></a>
-                                                                                                                        <ul class="kyt-dropdown drop-software">
+                        <ul class="kyt-dropdown drop-software">
                             <div class="sw-mega-grid">
-                                <!-- Columna 1: Suite K&T -->
                                 <div class="sw-mega-col">
                                     <span class="sw-col-title">Suite K&amp;T</span>
-                                    <li>
-                                        <a href="konex.html">
-                                            <span class="drop-icon"><i class="fas fa-clock"></i></span>
-                                            <span class="sw-item-body">
-                                                <span class="sw-item-name">KONEX<sup>®</sup></span>
-                                                <span class="sw-item-desc">Turnos y gestión de colas</span>
-                                            </span>
-                                            <span class="sw-badge">Turnos</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="davinci.html">
-                                            <span class="drop-icon"><i class="fas fa-tv"></i></span>
-                                            <span class="sw-item-body">
-                                                <span class="sw-item-name">DAVINCI<sup>®</sup></span>
-                                                <span class="sw-item-desc">Cartelería digital</span>
-                                            </span>
-                                            <span class="sw-badge">Signage</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="sense.html">
-                                            <span class="drop-icon"><i class="fas fa-chart-bar"></i></span>
-                                            <span class="sw-item-body">
-                                                <span class="sw-item-name">SENSE<sup>®</sup></span>
-                                                <span class="sw-item-desc">Analítica de experiencia</span>
-                                            </span>
-                                            <span class="sw-badge">Analítica</span>
-                                        </a>
-                                    </li>
+                                    <li><a href="konex.html"><span class="drop-icon"><i class="fas fa-clock"></i></span><span class="sw-item-body"><span class="sw-item-name">KONEX<sup>®</sup></span><span class="sw-item-desc">Turnos y gestión de colas</span></span><span class="sw-badge">Turnos</span></a></li>
+                                    <li><a href="davinci.html"><span class="drop-icon"><i class="fas fa-tv"></i></span><span class="sw-item-body"><span class="sw-item-name">DAVINCI<sup>®</sup></span><span class="sw-item-desc">Cartelería digital</span></span><span class="sw-badge">Signage</span></a></li>
+                                    <li><a href="sense.html"><span class="drop-icon"><i class="fas fa-chart-bar"></i></span><span class="sw-item-body"><span class="sw-item-name">SENSE<sup>®</sup></span><span class="sw-item-desc">Analítica de experiencia</span></span><span class="sw-badge">Analítica</span></a></li>
                                 </div>
-                                <!-- Columna 2: Soluciones digitales -->
                                 <div class="sw-mega-col">
                                     <span class="sw-col-title">Soluciones digitales</span>
-                                    <li>
-                                        <a href="dani-ia.html">
-                                            <span class="drop-icon"><i class="fas fa-robot"></i></span>
-                                            <span class="sw-item-body">
-                                                <span class="sw-item-name">DANI IA<sup>®</sup></span>
-                                                <span class="sw-item-desc">Asistente inteligente</span>
-                                            </span>
-                                            <span class="sw-badge">IA</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="fabrica-de-software.html">
-                                            <span class="drop-icon"><i class="fas fa-laptop-code"></i></span>
-                                            <span class="sw-item-body">
-                                                <span class="sw-item-name">Fábrica de software</span>
-                                                <span class="sw-item-desc">Desarrollo a la medida</span>
-                                            </span>
-                                        </a>
-                                    </li>
+                                    <li><a href="dani-ia.html"><span class="drop-icon"><i class="fas fa-robot"></i></span><span class="sw-item-body"><span class="sw-item-name">DANI IA<sup>®</sup></span><span class="sw-item-desc">Asistente inteligente</span></span><span class="sw-badge">IA</span></a></li>
+                                    <li><a href="fabrica-de-software.html"><span class="drop-icon"><i class="fas fa-laptop-code"></i></span><span class="sw-item-body"><span class="sw-item-name">Fábrica de software</span><span class="sw-item-desc">Desarrollo a la medida</span></span></a></li>
                                 </div>
                             </div>
                         </ul>
@@ -249,18 +582,13 @@
                             <li><a href="blog.html"><span class="drop-icon"><i class="fas fa-pen-nib"></i></span>Blog y artículos</a></li>
                             <li><a href="news.html"><span class="drop-icon"><i class="fas fa-trophy"></i></span>Casos de éxito</a></li>
                             <li><a href="que-son-los-kioscos-digitales.html"><span class="drop-icon"><i class="fas fa-book-open"></i></span>¿Qué es un kiosco?</a></li>
-                            <li><a href="Pos.html"><span class="drop-icon"><i class="fas fa-question-circle"></i></span>¿Qué es un POS?</a></li>
                             <li><a href="contacto.html"><span class="drop-icon"><i class="fas fa-envelope"></i></span>Contacto</a></li>
                         </ul>
                     </li>
                 </ul>
                 <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
-                    <a href="contacto.html" class="kyt-cta-btn">
-                        <i class="fas fa-comment-dots"></i> Cotizar proyecto
-                    </a>
-                    <button class="kyt-hamburger sidebar__toggle" aria-label="Abrir menú">
-                        <i class="far fa-bars"></i>
-                    </button>
+                    <a href="contacto.html" class="kyt-cta-btn"><i class="fas fa-comment-dots"></i> Cotizar proyecto</a>
+                    <button class="kyt-hamburger sidebar__toggle" aria-label="Abrir menú"><i class="far fa-bars"></i></button>
                 </div>
             </div>
         </div>
@@ -269,7 +597,7 @@
     (function(){
         var hdr=document.getElementById('kytHeader');
         if(!hdr)return;
-        var hero=document.querySelector('.breadcrumb-wrapper,.hero-section');
+        var hero=document.querySelector('.dani-hero');
         var heroBottom=0,ticking=false;
         function calcHero(){heroBottom=hero?(hero.getBoundingClientRect().bottom+window.scrollY-10):0;}
         function applyMode(){hdr.classList.toggle('kyt-light',window.scrollY>heroBottom);ticking=false;}
@@ -279,129 +607,384 @@
         window.addEventListener('resize',function(){calcHero();applyMode();},{passive:true});
     })();
     </script>
-
     <div class="search-wrap">
         <div class="search-inner">
             <i class="fas fa-times search-close" id="search-close"></i>
-            <div class="search-cell">
-                <form method="get">
-                    <div class="search-field-holder">
-                        <input type="search" class="main-search-input" placeholder="Buscar...">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!--<< Hero breadcrumb >>-->
-    <div class="breadcrumb-wrapper bg-cover" style="background: linear-gradient(135deg, #01004e 0%, #1a0050 40%, #308b1d 100%);">
-        <div class="container">
-            <div class="page-heading">
-                <span class="kyt-eyebrow-tag"><i class="fas fa-robot"></i> Inteligencia Artificial</span>
-                <h1 class="wow fadeInUp" data-wow-delay=".3s">DANI IA<sup>®</sup></h1>
-                <p class="page-subtitle wow fadeInUp" data-wow-delay=".5s">Asistente basado en inteligencia artificial para orientar usuarios, responder preguntas y apoyar procesos de autogestión.</p>
-                <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".7s">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><i class="fas fa-chevron-right"></i></li>
-                    <li>Software</li>
-                    <li><i class="fas fa-chevron-right"></i></li>
-                    <li>DANI IA®</li>
-                </ul>
-                <div class="kyt-hero-ctas">
-                    <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20información%20sobre%20Inteligencia Artificial" target="_blank" class="kyt-cta-btn">
-                        <i class="fas fa-comment-dots"></i> Solicitar información
-                    </a>
-                    <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20agendar%20una%20demo" target="_blank" class="kyt-btn-outline-white">
-                        <i class="fas fa-play-circle"></i> Agendar demo
-                    </a>
-                </div>
-            </div>
+            <div class="search-cell"><form method="get"><div class="search-field-holder"><input type="search" class="main-search-input" placeholder="Buscar..."></div></form></div>
         </div>
     </div>
 
-    <!--<< Características principales >>-->
-    <section class="section-padding" style="background:#fff;">
-        <div class="container">
-            <div class="section-title text-center mb-5">
-                <span class="wow fadeInUp">Características principales</span>
-                <h2 class="wow fadeInUp" data-wow-delay=".3s">Todo lo que necesita<br>en una sola plataforma</h2>
+    <!-- ═══════════════════════════════════════════
+         HERO — DANI IA® + KONEX®
+    ═══════════════════════════════════════════ -->
+    <section class="dani-hero">
+        <!-- Indicators flotantes -->
+        <div class="dani-hero-indicators">
+            <div class="dani-ind">
+                <div class="dani-ind-label"><span class="dani-ind-dot"></span>Tiempo real</div>
+                <div class="dani-ind-val">98.4<span style="font-size:14px;font-weight:400">%</span></div>
+                <div class="dani-ind-sub">Precisión predictiva</div>
             </div>
-            <div class="row g-4">
-                
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="kyt-feature-card">
-                        <div class="kyt-fc-icon"><i class="fas fa-comments"></i></div>
-                        <div class="kyt-fc-body">
-                            <h4>Conversación natural</h4>
-                            <p>DANI entiende preguntas en lenguaje natural y guía al usuario en su proceso de autoatención.</p>
-                        </div>
+            <div class="dani-ind">
+                <div class="dani-ind-label"><span class="dani-ind-dot"></span>Operación activa</div>
+                <div class="dani-ind-val">−42<span style="font-size:14px;font-weight:400">%</span></div>
+                <div class="dani-ind-sub">Reducción esperas</div>
+            </div>
+            <div class="dani-ind">
+                <div class="dani-ind-label"><span class="dani-ind-dot"></span>Automatización</div>
+                <div class="dani-ind-val">3.2<span style="font-size:14px;font-weight:400">×</span></div>
+                <div class="dani-ind-sub">Más decisiones/hora</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-xl-8">
+                    <div class="dani-hero-badge">
+                        <span></span> Inteligencia artificial empresarial
+                    </div>
+                    <h1 class="wow fadeInUp" data-wow-delay=".2s">
+                        DANI IA<sup>®</sup>
+                        <span class="dani-plus">+</span>
+                        <span class="dani-konex">KONEX<sup>®</sup></span>
+                    </h1>
+                    <p class="dani-hero-sub wow fadeInUp" data-wow-delay=".35s">
+                        La plataforma inteligente que conecta turnos, kioscos, citas, canales omnicanal y datos operativos para automatizar interacciones, anticipar necesidades y optimizar la experiencia del usuario en tiempo real.
+                    </p>
+                    <p class="dani-hero-sub2 wow fadeInUp" data-wow-delay=".45s">
+                        Transforme cada punto de atención en una fuente de inteligencia operacional, automatización y decisiones basadas en datos.
+                    </p>
+                    <div class="dani-ctas wow fadeInUp" data-wow-delay=".55s">
+                        <a href="contacto.html" class="dani-btn-primary">
+                            <i class="fas fa-comment-dots"></i> Solicitar información
+                        </a>
+                        <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20agendar%20una%20demo%20de%20DANI%20IA" target="_blank" class="dani-btn-outline">
+                            <i class="fas fa-play-circle"></i> Agendar demo
+                        </a>
+                    </div>
+                    <!-- Breadcrumb discreto -->
+                    <ul style="list-style:none;padding:0;margin:32px 0 0;display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(239,239,255,0.40);">
+                        <li><a href="index.html" style="color:rgba(239,239,255,0.55);text-decoration:none;">Inicio</a></li>
+                        <li><i class="fas fa-chevron-right" style="font-size:9px;"></i></li>
+                        <li>Software</li>
+                        <li><i class="fas fa-chevron-right" style="font-size:9px;"></i></li>
+                        <li style="color:rgba(200,200,244,0.7);">DANI IA®</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         S1 — Narrativa + imagen IA3 + 3 tarjetas
+    ═══════════════════════════════════════════ -->
+    <section class="dani-s1">
+        <div class="container">
+            <div class="row align-items-center g-5 mb-5">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
+                    <span class="dani-eyebrow">Inteligencia aplicada a la operación</span>
+                    <h2 class="dani-h2">La inteligencia que convierte cada interacción en una decisión operativa</h2>
+                    <p class="dani-lead" style="margin-bottom:20px;">
+                        Las organizaciones ya no pueden depender de reportes tardíos, procesos manuales o información aislada. Cada turno, cita, interacción en kiosco y calificación genera información valiosa que puede convertirse en acciones inteligentes.
+                    </p>
+                    <p style="font-size:16px;color:#5a5a8a;line-height:1.8;">
+                        DANI IA® integrado con KONEX® permite entender lo que ocurre en la operación, responder más rápido y ayudar a los equipos a tomar mejores decisiones mediante inteligencia artificial aplicada a la experiencia del cliente.
+                    </p>
+                </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay=".3s">
+                    <div class="dani-s1-img-wrap">
+                        <img src="assets/img/dani-ia/IA3.jpg" alt="Capa de inteligencia DANI IA®">
+                        <div class="dani-s1-img-overlay"></div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="kyt-feature-card">
-                        <div class="kyt-fc-icon"><i class="fas fa-route"></i></div>
-                        <div class="kyt-fc-body">
-                            <h4>Orientación inteligente</h4>
-                            <p>Dirige al usuario al trámite, pantalla o agente correcto según su consulta e historial.</p>
-                        </div>
+            </div>
+            <!-- 3 tarjetas -->
+            <div class="dani-3cards">
+                <div class="dani-card wow fadeInUp" data-wow-delay=".2s">
+                    <div class="dani-card-icon"><i class="fas fa-eye"></i></div>
+                    <h4>Entiende lo que ocurre</h4>
+                    <p>Procesa en tiempo real los datos de turnos, kioscos, citas y canales para construir una lectura operativa completa y actualizada de cada punto de atención.</p>
+                </div>
+                <div class="dani-card wow fadeInUp" data-wow-delay=".35s">
+                    <div class="dani-card-icon"><i class="fas fa-brain"></i></div>
+                    <h4>Anticipa lo que puede pasar</h4>
+                    <p>Detecta patrones de demanda, comportamientos y señales tempranas de congestión para anticiparse a los problemas antes de que el usuario los perciba.</p>
+                </div>
+                <div class="dani-card wow fadeInUp" data-wow-delay=".5s">
+                    <div class="dani-card-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h4>Recomienda qué hacer</h4>
+                    <p>Sugiere acciones concretas a los operadores y gerentes: redistribuir recursos, activar canales, ajustar capacidades o comunicar cambios de forma automática.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         S2 — 3 Capacidades enterprise
+    ═══════════════════════════════════════════ -->
+    <section class="dani-s2">
+        <div class="container">
+            <div class="dani-section-header light wow fadeInUp">
+                <span class="dani-eyebrow" style="color:rgba(200,200,244,0.70);">Suite de capacidades</span>
+                <h2 class="dani-h2" style="color:#fff;">Tres capacidades para transformar<br>la atención</h2>
+            </div>
+            <div class="dani-cap-grid">
+                <!-- DANI Conversa -->
+                <div class="dani-cap wow fadeInUp" data-wow-delay=".2s">
+                    <div class="dani-cap-badge"><i class="fas fa-comments" style="font-size:9px;"></i> Módulo 01</div>
+                    <div class="dani-cap-icon ci-1"><i class="fas fa-comments"></i></div>
+                    <h3>DANI Conversa</h3>
+                    <p>Asistente conversacional para orientar usuarios, responder preguntas frecuentes, explicar procesos y reducir carga operativa en cada canal de atención.</p>
+                    <ul>
+                        <li>Respuestas inmediatas 24/7</li>
+                        <li>Experiencia guiada paso a paso</li>
+                        <li>Menor dependencia del asesor humano</li>
+                        <li>Atención más clara y consistente</li>
+                    </ul>
+                </div>
+                <!-- DANI Insights -->
+                <div class="dani-cap wow fadeInUp" data-wow-delay=".35s">
+                    <div class="dani-cap-badge"><i class="fas fa-chart-network" style="font-size:9px;"></i> Módulo 02</div>
+                    <div class="dani-cap-icon ci-2"><i class="fas fa-chart-bar"></i></div>
+                    <h3>DANI Insights</h3>
+                    <p>Analiza información de turnos, citas, kioscos, tiempos de espera y experiencia operativa para convertir datos en decisiones útiles en lenguaje natural.</p>
+                    <ul>
+                        <li>Consultas en lenguaje natural</li>
+                        <li>Interpretación de indicadores clave</li>
+                        <li>Detección automática de patrones</li>
+                        <li>Lectura operacional inteligente</li>
+                    </ul>
+                </div>
+                <!-- DANI Actions -->
+                <div class="dani-cap wow fadeInUp" data-wow-delay=".5s">
+                    <div class="dani-cap-badge"><i class="fas fa-bolt" style="font-size:9px;"></i> Módulo 03</div>
+                    <div class="dani-cap-icon ci-3"><i class="fas fa-bolt"></i></div>
+                    <h3>DANI Actions</h3>
+                    <p>Sugiere y ejecuta acciones operativas basadas en comportamiento, demanda y patrones detectados para optimizar la operación en tiempo real.</p>
+                    <ul>
+                        <li>Mejor distribución de atención</li>
+                        <li>Prevención activa de congestiones</li>
+                        <li>Automatización inteligente de procesos</li>
+                        <li>Decisiones más rápidas y trazables</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         S3 — Split KONEX® + DANI IA®
+    ═══════════════════════════════════════════ -->
+    <section class="dani-s3">
+        <div class="container">
+            <div class="dani-section-header wow fadeInUp" style="text-align:center;margin-bottom:52px;">
+                <span class="dani-eyebrow">Integración nativa</span>
+                <h2 class="dani-h2">Cuando DANI IA® se integra con KONEX®,<br>la atención deja de ser reactiva</h2>
+            </div>
+            <div class="dani-split wow fadeInUp" data-wow-delay=".2s">
+                <!-- Izquierda: KONEX® -->
+                <div class="dani-split-left">
+                    <span class="dani-split-tag st-left"><i class="fas fa-cogs"></i> KONEX® gestiona</span>
+                    <h3>La infraestructura<br>de atención</h3>
+                    <ul class="dani-split-list">
+                        <li><i class="fas fa-users"></i> Turnos y filas en tiempo real</li>
+                        <li><i class="fas fa-calendar-check"></i> Citas y agendamiento</li>
+                        <li><i class="fas fa-tablet-alt"></i> Kioscos de autogestión</li>
+                        <li><i class="fas fa-concierge-bell"></i> Servicios y trámites</li>
+                        <li><i class="fas fa-route"></i> Trazabilidad operativa</li>
+                        <li><i class="fas fa-tv"></i> Cartelería digital</li>
+                    </ul>
+                </div>
+                <!-- Derecha: DANI IA® -->
+                <div class="dani-split-right">
+                    <span class="dani-split-tag st-right"><i class="fas fa-brain"></i> DANI IA® potencia</span>
+                    <h3>La inteligencia<br>de la operación</h3>
+                    <ul class="dani-split-list">
+                        <li><i class="fas fa-chart-bar"></i> Analítica operacional avanzada</li>
+                        <li><i class="fas fa-magic"></i> Predicción de demanda</li>
+                        <li><i class="fas fa-robot"></i> Automatización inteligente</li>
+                        <li><i class="fas fa-lightbulb"></i> Recomendaciones accionables</li>
+                        <li><i class="fas fa-comments"></i> Asistencia conversacional</li>
+                        <li><i class="fas fa-eye"></i> Inteligencia operacional</li>
+                    </ul>
+                </div>
+                <!-- Resultado -->
+                <div class="dani-result">
+                    <p><strong>Resultado:</strong> Una operación más inteligente, conectada y preparada para responder antes de que el usuario perciba el problema.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         S4 — Sectores
+    ═══════════════════════════════════════════ -->
+    <section class="dani-s4">
+        <div class="container">
+            <div class="dani-section-header wow fadeInUp" style="text-align:center;margin-bottom:8px;">
+                <span class="dani-eyebrow">Aplicación sectorial</span>
+                <h2 class="dani-h2">DANI IA® aplicado<br>a escenarios reales</h2>
+            </div>
+            <div class="dani-sector-grid">
+                <!-- Banca -->
+                <div class="dani-sector wow fadeInUp" data-wow-delay=".2s">
+                    <div class="dani-sector-img">
+                        <img src="assets/img/dani-ia/IA1.jpg" alt="DANI IA® en Banca">
+                        <div class="dani-sector-img-overlay"></div>
+                    </div>
+                    <div class="dani-sector-body">
+                        <h5><i class="fas fa-university" style="color:var(--dani-blue);margin-right:8px;"></i>Banca</h5>
+                        <p>Orientación automática del cliente, reducción de esperas en sucursal y análisis predictivo de demanda por canal.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="kyt-feature-card">
-                        <div class="kyt-fc-icon"><i class="fas fa-globe"></i></div>
-                        <div class="kyt-fc-body">
-                            <h4>Multicanal</h4>
-                            <p>Disponible en kiosco táctil, web, WhatsApp y aplicaciones móviles desde una misma plataforma.</p>
-                        </div>
+                <!-- Salud -->
+                <div class="dani-sector wow fadeInUp" data-wow-delay=".3s">
+                    <div class="dani-sector-img">
+                        <img src="assets/img/dani-ia/IA2.jpg" alt="DANI IA® en Salud">
+                        <div class="dani-sector-img-overlay"></div>
+                    </div>
+                    <div class="dani-sector-body">
+                        <h5><i class="fas fa-heartbeat" style="color:var(--dani-blue);margin-right:8px;"></i>Salud</h5>
+                        <p>Gestión inteligente de citas médicas, pre-clasificación de pacientes y optimización del flujo de atención en IPS y hospitales.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="kyt-feature-card">
-                        <div class="kyt-fc-icon"><i class="fas fa-sync-alt"></i></div>
-                        <div class="kyt-fc-body">
-                            <h4>Aprendizaje continuo</h4>
-                            <p>Se entrena con las interacciones reales para mejorar respuestas y reducir escalamientos.</p>
-                        </div>
+                <!-- Gobierno -->
+                <div class="dani-sector wow fadeInUp" data-wow-delay=".4s">
+                    <div class="dani-sector-img">
+                        <img src="assets/img/dani-ia/IA5.jpg" alt="DANI IA® en Gobierno">
+                        <div class="dani-sector-img-overlay"></div>
+                    </div>
+                    <div class="dani-sector-body">
+                        <h5><i class="fas fa-landmark" style="color:var(--dani-blue);margin-right:8px;"></i>Gobierno</h5>
+                        <p>Orientación ciudadana para trámites, reducción de filas en centros de servicio y analítica de demanda de servicios públicos.</p>
+                    </div>
+                </div>
+                <!-- Retail -->
+                <div class="dani-sector wow fadeInUp" data-wow-delay=".5s">
+                    <div class="dani-sector-img">
+                        <img src="assets/img/dani-ia/IA4.jpg" alt="DANI IA® en Retail">
+                        <div class="dani-sector-img-overlay"></div>
+                    </div>
+                    <div class="dani-sector-body">
+                        <h5><i class="fas fa-store" style="color:var(--dani-blue);margin-right:8px;"></i>Retail</h5>
+                        <p>Asistencia en punto de venta, predicción de tráfico por hora y optimización de personal según demanda real.</p>
+                    </div>
+                </div>
+                <!-- Corporativo -->
+                <div class="dani-sector wow fadeInUp" data-wow-delay=".6s">
+                    <div class="dani-sector-img">
+                        <img src="assets/img/dani-ia/IA6.jpg" alt="DANI IA® en Corporativo">
+                        <div class="dani-sector-img-overlay"></div>
+                    </div>
+                    <div class="dani-sector-body">
+                        <h5><i class="fas fa-building" style="color:var(--dani-blue);margin-right:8px;"></i>Corporativo</h5>
+                        <p>Recepción inteligente, control de visitantes, análisis de flujo interno y automatización de reportes de operación.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!--<< Sectores >>-->
-    <section class="section-padding" style="background:#efefff;">
+    <!-- ═══════════════════════════════════════════
+         S5 — Métricas de impacto
+    ═══════════════════════════════════════════ -->
+    <section class="dani-s5">
         <div class="container">
-            <div class="section-title text-center mb-4">
-                <span class="wow fadeInUp">Aplicación sectorial</span>
-                <h2 class="wow fadeInUp" data-wow-delay=".3s">Diseñado para organizaciones<br>que atienden personas</h2>
+            <div class="dani-section-header light wow fadeInUp" style="text-align:center;">
+                <span class="dani-eyebrow" style="color:rgba(200,200,244,0.70);">Impacto medible</span>
+                <h2 class="dani-h2" style="color:#fff;">Impacto que se puede medir</h2>
             </div>
-            <div class="kyt-sectors-tags text-center wow fadeInUp" data-wow-delay=".4s">
-                <span class="kyt-tag">Banca</span><span class="kyt-tag">Salud</span><span class="kyt-tag">Gobierno</span><span class="kyt-tag">Retail</span><span class="kyt-tag">Corporativo</span>
+            <div class="dani-metrics">
+                <div class="dani-metric wow fadeInUp" data-wow-delay=".2s">
+                    <div class="dani-metric-icon"><i class="fas fa-clock"></i></div>
+                    <h4>Tiempos de espera</h4>
+                    <p>Reducción significativa de los tiempos percibidos gracias a la anticipación y redistribución inteligente.</p>
+                </div>
+                <div class="dani-metric wow fadeInUp" data-wow-delay=".3s">
+                    <div class="dani-metric-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h4>Productividad</h4>
+                    <p>Equipos operativos más eficientes al contar con recomendaciones precisas y automatización de rutinas.</p>
+                </div>
+                <div class="dani-metric wow fadeInUp" data-wow-delay=".4s">
+                    <div class="dani-metric-icon"><i class="fas fa-star"></i></div>
+                    <h4>Experiencia del cliente</h4>
+                    <p>Mayor satisfacción gracias a la orientación proactiva, menor fricción y atención más personalizada.</p>
+                </div>
+                <div class="dani-metric wow fadeInUp" data-wow-delay=".5s">
+                    <div class="dani-metric-icon"><i class="fas fa-database"></i></div>
+                    <h4>Decisiones basadas en datos</h4>
+                    <p>De reportes tardíos a insights en tiempo real que permiten actuar en el momento correcto.</p>
+                </div>
+                <div class="dani-metric wow fadeInUp" data-wow-delay=".6s">
+                    <div class="dani-metric-icon"><i class="fas fa-robot"></i></div>
+                    <h4>Automatización operativa</h4>
+                    <p>Procesos repetitivos automatizados para que el equipo humano se concentre en lo que realmente importa.</p>
+                </div>
+            </div>
+            <div class="dani-s5-footer wow fadeInUp" data-wow-delay=".4s">
+                <p><strong>DANI IA®</strong> no reemplaza la operación. <strong>La potencia.</strong></p>
             </div>
         </div>
     </section>
 
-    <!--<< CTA Final >>-->
-    <section class="section-padding" style="background:linear-gradient(135deg,#01004e,#00009c);text-align:center;">
+    <!-- ═══════════════════════════════════════════
+         S6 — AI Intelligence Layer
+    ═══════════════════════════════════════════ -->
+    <section class="dani-s6">
         <div class="container">
-            <h2 style="color:#fff;font-size:clamp(26px,3vw,42px);font-weight:800;margin-bottom:14px;">
-                ¿Le interesa conocer DANI IA®?
-            </h2>
-            <p style="color:rgba(239,239,255,0.75);font-size:17px;max-width:520px;margin:0 auto 32px;">
-                Agendemos una demostración y le mostramos cómo se adapta a su operación.
+            <div class="dani-section-header wow fadeInUp" style="text-align:center;margin-bottom:48px;">
+                <span class="dani-eyebrow">Arquitectura de inteligencia</span>
+                <h2 class="dani-h2">Una capa de inteligencia<br>sobre toda la operación</h2>
+            </div>
+            <div class="dani-layer-wrapper wow fadeInUp" data-wow-delay=".2s">
+                <div class="dani-layer-img">
+                    <img src="assets/img/dani-ia/IA5.jpg" alt="Capa de inteligencia DANI IA® + KONEX®">
+                    <div class="dani-layer-overlay"></div>
+                    <!-- Nodos flotantes -->
+                    <div class="dani-nodes">
+                        <div class="dani-node dn1"><i class="fas fa-users" style="margin-right:6px;font-size:10px;color:#d3ebb6;"></i>Kioscos</div>
+                        <div class="dani-node dn2"><i class="fas fa-clock" style="margin-right:6px;font-size:10px;color:#c8c8f4;"></i>Turnos</div>
+                        <div class="dani-node dn3"><i class="fas fa-calendar" style="margin-right:6px;font-size:10px;color:#d3ebb6;"></i>Citas</div>
+                        <div class="dani-node dn4"><i class="fas fa-tv" style="margin-right:6px;font-size:10px;color:#c8c8f4;"></i>Señalización</div>
+                        <div class="dani-node dn5"><i class="fas fa-mobile-alt" style="margin-right:6px;font-size:10px;color:#d3ebb6;"></i>App / Web</div>
+                        <div class="dani-node dn6"><i class="fas fa-chart-bar" style="margin-right:6px;font-size:10px;color:#c8c8f4;"></i>Dashboards</div>
+                        <div class="dani-node dn7"><i class="fas fa-headset" style="margin-right:6px;font-size:10px;color:#d3ebb6;"></i>Asesores</div>
+                        <div class="dani-node dn8"><i class="fas fa-database" style="margin-right:6px;font-size:10px;color:#c8c8f4;"></i>APIs</div>
+                        <div class="dani-node dn9"><i class="fas fa-user" style="margin-right:6px;font-size:10px;color:#d3ebb6;"></i>Usuarios</div>
+                        <div class="dn-center">
+                            <h5>DANI IA® + KONEX®</h5>
+                            <p>Motor de inteligencia operacional</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dani-layer-text">
+                    <p>DANI IA® conecta los puntos de contacto de la operación y convierte datos dispersos en recomendaciones, automatizaciones y decisiones inteligentes que transforman la manera en que las organizaciones atienden a sus usuarios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CTA FINAL
+    ═══════════════════════════════════════════ -->
+    <section class="dani-cta-final">
+        <div class="container">
+            <h2 class="wow fadeInUp">El siguiente paso de la autogestión<br>es la inteligencia operativa</h2>
+            <p class="wow fadeInUp" data-wow-delay=".2s">
+                Con DANI IA® + KONEX®, KYT ayuda a las organizaciones a evolucionar desde una atención tradicional hacia una operación inteligente, automatizada y orientada a decisiones en tiempo real.
             </p>
-            <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
-                <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20agendar%20una%20demo" target="_blank"
-                   style="display:inline-flex;align-items:center;gap:8px;background:#308b1d;color:#fff;font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;">
-                    <i class="fas fa-calendar-check"></i> Agendar demo
+            <div class="dani-ctas wow fadeInUp" data-wow-delay=".35s">
+                <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20solicitar%20una%20demo%20de%20DANI%20IA" target="_blank" class="dani-btn-primary">
+                    <i class="fas fa-robot"></i> Solicitar demo de DANI IA
                 </a>
-                <a href="index.html#soluciones"
-                   style="display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-weight:600;font-size:15px;padding:13px 26px;border-radius:8px;text-decoration:none;">
-                    <i class="fas fa-th-large"></i> Ver otras soluciones
+                <a href="contacto.html" class="dani-btn-outline">
+                    <i class="fas fa-headset"></i> Hablar con un especialista
                 </a>
             </div>
         </div>
     </section>
-    <!-- ═══ FOOTER PREMIUM KYT ═══ -->
+
+    <!-- ═══ FOOTER ═══ -->
     <footer class="kyt-footer" id="kytFooter">
         <div class="kf-hero">
             <div class="kf-hero-inner">
@@ -411,7 +994,7 @@
                         <h2 class="kf-headline">Estamos listos para<br>acompañar su operación</h2>
                         <p class="kf-sub">Fabricamos, integramos y soportamos soluciones de autogestión, turnos, cartelería digital, POS y monitoreo para organizaciones que necesitan eficiencia, continuidad y control.</p>
                         <div class="kf-ctas">
-                            <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20cotizar" target="_blank" class="kf-btn-primary"><i class="fas fa-comment-dots"></i> Cotizar proyecto</a>
+                            <a href="contacto.html" class="kf-btn-primary"><i class="fas fa-comment-dots"></i> Cotizar proyecto</a>
                             <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20más%20información" target="_blank" class="kf-btn-secondary"><i class="fab fa-whatsapp"></i> Escribir por WhatsApp</a>
                         </div>
                     </div>
@@ -430,62 +1013,17 @@
         </div>
         <div class="kf-links">
             <div class="kf-links-inner">
-                <div class="kf-col">
-                    <h6 class="kf-col-title">General</h6>
-                    <ul class="kf-col-list">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="about.html">Quiénes somos</a></li>
-                        <li><a href="service-modalidad.html">Modalidad de venta</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="kf-col">
-                    <h6 class="kf-col-title">Soluciones</h6>
-                    <ul class="kf-col-list">
-                        <li><a href="Kioscos.html">Kioscos</a></li>
-                        <li><a href="turnos.html">Software de turnos</a></li>
-                        <li><a href="informativo.html">Cartelería digital</a></li>
-                        <li><a href="Pos.html">POS</a></li>
-                    </ul>
-                </div>
-                <div class="kf-col">
-                    <h6 class="kf-col-title">Software</h6>
-                    <ul class="kf-col-list">
-                        <li><a href="konex.html">KONEX<sup>®</sup></a></li>
-                        <li><a href="davinci.html">DAVINCI<sup>®</sup></a></li>
-                        <li><a href="sense.html">SENSE<sup>®</sup></a></li>
-                        <li><a href="dani-ia.html">DANI IA<sup>®</sup></a></li>
-                        <li><a href="fabrica-de-software.html">Fábrica de software</a></li>
-                    </ul>
-                </div>
-                <div class="kf-col">
-                    <h6 class="kf-col-title">Sectores</h6>
-                    <ul class="kf-col-list">
-                        <li><a href="banca.html">Banca</a></li>
-                        <li><a href="salud.html">Salud</a></li>
-                        <li><a href="retail.html">Retail</a></li>
-                        <li><a href="Gobierno.html">Gobierno</a></li>
-                        <li><a href="Corporativo.html">Corporativo</a></li>
-                    </ul>
-                </div>
-                <div class="kf-col">
-                    <h6 class="kf-col-title">Contacto</h6>
-                    <ul class="kf-col-list kf-contact-list">
-                        <li><i class="fas fa-map-marker-alt kf-ci"></i><span>Bogotá, Colombia</span></li>
-                        <li><i class="fas fa-envelope kf-ci"></i><a href="mailto:info@kioscosytecnologia.com">info@kioscosytecnologia.com</a></li>
-                        <li><i class="fas fa-phone kf-ci"></i><a href="tel:+573113676433">+57 311 367 6433</a></li>
-                        <li><i class="fas fa-clock kf-ci"></i><span>Lunes a viernes, 8am – 6pm</span></li>
-                    </ul>
-                </div>
+                <div class="kf-col"><h6 class="kf-col-title">General</h6><ul class="kf-col-list"><li><a href="index.html">Inicio</a></li><li><a href="about.html">Quiénes somos</a></li><li><a href="service-modalidad.html">Modalidad de venta</a></li><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+                <div class="kf-col"><h6 class="kf-col-title">Soluciones</h6><ul class="kf-col-list"><li><a href="Kioscos.html">Kioscos</a></li><li><a href="turnos.html">Software de turnos</a></li><li><a href="informativo.html">Cartelería digital</a></li><li><a href="Pos.html">POS</a></li></ul></div>
+                <div class="kf-col"><h6 class="kf-col-title">Software</h6><ul class="kf-col-list"><li><a href="konex.html">KONEX<sup>®</sup></a></li><li><a href="davinci.html">DAVINCI<sup>®</sup></a></li><li><a href="sense.html">SENSE<sup>®</sup></a></li><li><a href="dani-ia.html">DANI IA<sup>®</sup></a></li><li><a href="fabrica-de-software.html">Fábrica de software</a></li></ul></div>
+                <div class="kf-col"><h6 class="kf-col-title">Sectores</h6><ul class="kf-col-list"><li><a href="banca.html">Banca</a></li><li><a href="salud.html">Salud</a></li><li><a href="retail.html">Retail</a></li><li><a href="Gobierno.html">Gobierno</a></li><li><a href="Corporativo.html">Corporativo</a></li></ul></div>
+                <div class="kf-col"><h6 class="kf-col-title">Contacto</h6><ul class="kf-col-list kf-contact-list"><li><i class="fas fa-map-marker-alt kf-ci"></i><span>Bogotá, Colombia</span></li><li><i class="fas fa-envelope kf-ci"></i><a href="mailto:info@kioscosytecnologia.com">info@kioscosytecnologia.com</a></li><li><i class="fas fa-phone kf-ci"></i><a href="tel:+573113676433">+57 311 367 6433</a></li><li><i class="fas fa-clock kf-ci"></i><span>Lunes a viernes, 8am – 6pm</span></li></ul></div>
             </div>
         </div>
         <div class="kf-bottom">
             <div class="kf-bottom-inner">
                 <p class="kf-copy">Copyright © 2026 <a href="index.html">Kioscos y Tecnología</a>. Todos los derechos reservados.</p>
-                <ul class="kf-legal">
-                    <li><a href="#">Política de privacidad</a></li>
-                    <li><a href="#">Términos y condiciones</a></li>
-                </ul>
+                <ul class="kf-legal"><li><a href="#">Política de privacidad</a></li><li><a href="#">Términos y condiciones</a></li></ul>
                 <a href="#" class="kf-scroll-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></a>
             </div>
         </div>
