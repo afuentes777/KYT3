@@ -697,8 +697,8 @@ body { padding-top: 0; }
 .kf-contact-list li { display: flex; align-items: flex-start; gap: 10px; }
 .kf-contact-list span,
 .kf-contact-list a {
-    color: rgba(255,255,255,0.72); font-size: 13px;
-    text-decoration: none; transition: color .18s; line-height: 1.45;
+    color: rgba(255,255,255,0.72); font-size: 13.5px;
+    text-decoration: none; transition: color .18s; line-height: 1.4;
 }
 .kf-contact-list a:hover { color: #ffffff; }
 .kf-ci {
