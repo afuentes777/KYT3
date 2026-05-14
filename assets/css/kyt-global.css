@@ -577,7 +577,7 @@ body { padding-top: 0; }
     background: #01004e;
     font-family: inherit;
     padding: 0 24px 0;
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 /* ── Contenedor con borde ── */
@@ -592,17 +592,17 @@ body { padding-top: 0; }
 
 /* ── Bloque superior: headline + logo + redes ── */
 .kf-top {
-    padding: 24px 52px 16px;
+    padding: 20px 52px 14px;
     border-bottom: 1px solid rgba(239,239,255,0.10);
 }
 .kf-top-inner {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 32px;
-    margin-bottom: 14px;
+    gap: 28px;
+    margin-bottom: 10px;
 }
-.kf-top-text { flex: 1; min-width: 0; }
+.kf-top-text { flex: 1; min-width: 0; max-width: 560px; }
 
 .kf-eyebrow {
     font-size: 10px;
@@ -610,15 +610,15 @@ body { padding-top: 0; }
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: #308b1d;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     display: block;
 }
 .kf-headline {
-    font-size: clamp(24px, 3vw, 42px);
+    font-size: clamp(21px, 2.6vw, 36px);
     font-weight: 800;
-    line-height: 1.12;
+    line-height: 1.10;
     color: #ffffff;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     letter-spacing: -0.02em;
 }
 .kf-sub {
@@ -658,7 +658,7 @@ body { padding-top: 0; }
 /* Logo esquina superior derecha */
 .kf-hero-logo {
     flex-shrink: 0;
-    display: flex; align-items: flex-start;
+    display: flex; align-items: center; padding-top: 6px;
 }
 .kf-hero-logo img {
     height: 44px; width: auto;
@@ -669,7 +669,7 @@ body { padding-top: 0; }
 /* Redes sociales dentro del bloque superior */
 .kf-social-bar {
     display: flex; align-items: center; gap: 16px;
-    padding-top: 12px;
+    padding-top: 8px;
     border-top: 1px solid rgba(239,239,255,0.08);
 }
 .kf-social-label {
@@ -694,7 +694,7 @@ body { padding-top: 0; }
 
 /* ── Columnas de enlaces ── */
 .kf-links {
-    padding: 28px 52px 24px;
+    padding: 22px 52px 20px;
     border-bottom: 1px solid rgba(239,239,255,0.10);
 }
 .kf-links-inner {
@@ -759,7 +759,8 @@ body { padding-top: 0; }
 }
 .kf-legal li a:hover { color: #d3ebb6; }
 .kf-scroll-top {
-    width: 34px; height: 34px; border-radius: 7px;
+    order: -1;
+    width: 30px; height: 30px; border-radius: 7px;
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(239,239,255,0.12);
     display: flex; align-items: center; justify-content: center;
@@ -781,12 +782,12 @@ body { padding-top: 0; }
     .kf-top, .kf-links, .kf-bottom { padding-left: 32px; padding-right: 32px; }
 }
 @media (max-width: 768px) {
-    .kyt-footer { padding: 0 12px 0; margin-top: 60px; }
+    .kyt-footer { padding: 0 12px 0; margin-top: 100px; }
     .kf-container { border-radius: 14px; }
     .kf-top { padding: 24px 20px 20px; }
     .kf-top-inner { flex-direction: column; gap: 16px; }
     .kf-hero-logo { display: none; }
-    .kf-headline { font-size: clamp(22px, 5.5vw, 30px); }
+    .kf-headline { font-size: clamp(18px, 5vw, 26px); }
     .kf-links { padding: 22px 20px 20px; }
     .kf-links-inner { grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .kf-bottom { padding: 12px 20px; }
