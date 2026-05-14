@@ -576,7 +576,8 @@ body { padding-top: 0; }
 .kyt-footer {
     background: #01004e;
     font-family: inherit;
-    padding: 80px 24px 0;
+    padding: 0 24px 0;
+    margin-top: 80px;
 }
 
 /* ── Contenedor con borde ── */
@@ -591,15 +592,15 @@ body { padding-top: 0; }
 
 /* ── Bloque superior: headline + logo + redes ── */
 .kf-top {
-    padding: 36px 52px 28px;
+    padding: 24px 52px 16px;
     border-bottom: 1px solid rgba(239,239,255,0.10);
 }
 .kf-top-inner {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 24px;
+    gap: 32px;
+    margin-bottom: 14px;
 }
 .kf-top-text { flex: 1; min-width: 0; }
 
@@ -623,11 +624,7 @@ body { padding-top: 0; }
 .kf-sub {
     display: none;
 }
-.kf-ctas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
+.kf-ctas { display: none; }
 .kf-btn-primary {
     display: inline-flex; align-items: center; gap: 8px;
     background: #308b1d; color: #fff;
@@ -672,7 +669,7 @@ body { padding-top: 0; }
 /* Redes sociales dentro del bloque superior */
 .kf-social-bar {
     display: flex; align-items: center; gap: 16px;
-    padding-top: 18px;
+    padding-top: 12px;
     border-top: 1px solid rgba(239,239,255,0.08);
 }
 .kf-social-label {
@@ -784,7 +781,7 @@ body { padding-top: 0; }
     .kf-top, .kf-links, .kf-bottom { padding-left: 32px; padding-right: 32px; }
 }
 @media (max-width: 768px) {
-    .kyt-footer { padding: 20px 12px 0; }
+    .kyt-footer { padding: 0 12px 0; margin-top: 60px; }
     .kf-container { border-radius: 14px; }
     .kf-top { padding: 24px 20px 20px; }
     .kf-top-inner { flex-direction: column; gap: 16px; }
