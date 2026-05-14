@@ -666,27 +666,27 @@ body { padding-top: 0; }
 
 /* ── Columnas — separadas por UNA línea sutil ── */
 .kf-links {
-    padding: 32px 56px 44px;
+    padding: 22px 56px 30px;
     border-top: 1px solid rgba(255,255,255,0.10);
 }
 .kf-links-inner {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 24px;
+    gap: 16px;
 }
 .kf-col-title {
     font-size: 11px; font-weight: 700;
     letter-spacing: 2.5px; text-transform: uppercase;
     color: rgba(255,255,255,0.40);
-    margin-bottom: 18px; display: block;
+    margin-bottom: 10px; display: block;
 }
 .kf-col-list {
     list-style: none; padding: 0; margin: 0;
-    display: flex; flex-direction: column; gap: 12px;
+    display: flex; flex-direction: column; gap: 7px;
 }
 .kf-col-list li a {
     color: rgba(255,255,255,0.72);
-    font-size: 14.5px; font-weight: 400;
+    font-size: 13.5px; font-weight: 400;
     text-decoration: none;
     transition: color .18s; display: inline-block;
 }
@@ -697,8 +697,8 @@ body { padding-top: 0; }
 .kf-contact-list li { display: flex; align-items: flex-start; gap: 10px; }
 .kf-contact-list span,
 .kf-contact-list a {
-    color: rgba(255,255,255,0.72); font-size: 14px;
-    text-decoration: none; transition: color .18s; line-height: 1.55;
+    color: rgba(255,255,255,0.72); font-size: 13px;
+    text-decoration: none; transition: color .18s; line-height: 1.45;
 }
 .kf-contact-list a:hover { color: #ffffff; }
 .kf-ci {
