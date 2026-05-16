@@ -289,6 +289,23 @@
         box-shadow: 0 3px 12px rgba(48,139,29,0.25);
     }
     .pos-model-btn:hover { background: #236514; color: #fff; transform: translateY(-1px); }
+    /* ── Imágenes reales — homologadas a la altura del placeholder ── */
+    .pos-model-img-real {
+        background: linear-gradient(135deg, #efefff 0%, #e4e4f8 100%) !important;
+        display: flex; align-items: center; justify-content: center;
+        height: 180px;
+        padding: 18px 20px;
+        box-sizing: border-box;
+    }
+    .pos-model-img-real img {
+        max-width: 100%; max-height: 144px;
+        width: auto; height: auto;
+        object-fit: contain;
+        object-position: center center;
+        display: block;
+        transition: transform .3s ease;
+    }
+    .pos-model-card:hover .pos-model-img-real img { transform: scale(1.05); }
     @media (max-width: 1100px) { .pos-catalog-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 768px)  { .pos-catalog-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 480px)  { .pos-catalog-grid { grid-template-columns: 1fr; } }
@@ -658,7 +675,7 @@
                     </div>
                     <div class="pos-model-body">
                         <div class="pos-model-sku">SKU: 574589-5</div>
-                        <h4 class="pos-model-name">KYT-K1</h4>
+                        <h4 class="pos-model-name">K&T-K1</h4>
                         <p class="pos-model-desc">Terminal POS compacto para atención, ventas y autogestión en puntos de servicio de alto flujo.</p>
                         <a href="pos/kyt-k1.html" class="pos-model-btn">
                             <i class="fas fa-file-alt"></i> Detalle
@@ -673,7 +690,7 @@
                     </div>
                     <div class="pos-model-body">
                         <div class="pos-model-sku">SKU: 574590-2</div>
-                        <h4 class="pos-model-name">KYT-K1 Lite</h4>
+                        <h4 class="pos-model-name">K&T-K1 Lite</h4>
                         <p class="pos-model-desc">Versión compacta y económica del K1, ideal para negocios medianos con requerimientos de bajo peso.</p>
                         <a href="pos/kyt-k1-lite.html" class="pos-model-btn">
                             <i class="fas fa-file-alt"></i> Detalle
@@ -688,7 +705,7 @@
                     </div>
                     <div class="pos-model-body">
                         <div class="pos-model-sku">SKU: 574591-9</div>
-                        <h4 class="pos-model-name">KYT-K8</h4>
+                        <h4 class="pos-model-name">K&T-K8</h4>
                         <p class="pos-model-desc">Terminal de alto rendimiento con pantalla amplia, procesador potente y conectividad empresarial.</p>
                         <a href="pos/kyt-k8.html" class="pos-model-btn">
                             <i class="fas fa-file-alt"></i> Detalle
@@ -703,7 +720,7 @@
                     </div>
                     <div class="pos-model-body">
                         <div class="pos-model-sku">SKU: 574592-6</div>
-                        <h4 class="pos-model-name">KYT-K21 / K22</h4>
+                        <h4 class="pos-model-name">K&T-K21 / K22</h4>
                         <p class="pos-model-desc">Serie dual para configuraciones de doble pantalla; cajero y cliente con visualización simultánea.</p>
                         <a href="pos/kyt-k21-k22.html" class="pos-model-btn">
                             <i class="fas fa-file-alt"></i> Detalle
@@ -720,7 +737,7 @@
                     </div>
                     <div class="pos-model-body">
                         <div class="pos-model-sku">SKU: 574593-3</div>
-                        <h4 class="pos-model-name">KYT-K31 / K32</h4>
+                        <h4 class="pos-model-name">K&T-K31 / K32</h4>
                         <p class="pos-model-desc">Estación modular de punto de venta con soporte para impresora, lector y datáfono integrado.</p>
                         <a href="pos/kyt-k31-k32.html" class="pos-model-btn">
                             <i class="fas fa-file-alt"></i> Detalle
@@ -737,7 +754,7 @@
                     </div>
                     <div class="pos-model-body">
                         <div class="pos-model-sku">SKU: 574594-0</div>
-                        <h4 class="pos-model-name">KYT-K41 / K42</h4>
+                        <h4 class="pos-model-name">K&T-K41 / K42</h4>
                         <p class="pos-model-desc">Serie industrial para ambientes exigentes, operación 24/7 y entornos de alto volumen transaccional.</p>
                         <a href="pos/kyt-k41-k42.html" class="pos-model-btn">
                             <i class="fas fa-file-alt"></i> Detalle
@@ -754,7 +771,7 @@
                     </div>
                     <div class="pos-model-body">
                         <div class="pos-model-sku">SKU: 574595-7</div>
-                        <h4 class="pos-model-name">KYT-T2w Lite</h4>
+                        <h4 class="pos-model-name">K&T-T2w Lite</h4>
                         <p class="pos-model-desc">Terminal táctil Android ligero para restaurantes, cafeterías y puntos de venta con movilidad.</p>
                         <a href="pos/kyt-t2w-lite.html" class="pos-model-btn">
                             <i class="fas fa-file-alt"></i> Detalle
@@ -771,7 +788,7 @@
                     </div>
                     <div class="pos-model-body">
                         <div class="pos-model-sku">SKU: 574596-4</div>
-                        <h4 class="pos-model-name">KYT-T80 Plus</h4>
+                        <h4 class="pos-model-name">K&T-T80 Plus</h4>
                         <p class="pos-model-desc">Equipo todo en uno de gama alta con pantalla de gran formato, ideal para retail y banca.</p>
                         <a href="pos/kyt-t80-plus.html" class="pos-model-btn">
                             <i class="fas fa-file-alt"></i> Detalle

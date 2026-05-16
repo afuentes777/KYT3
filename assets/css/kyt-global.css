@@ -1,9 +1,10 @@
 
 /* ── Dropdown Hardware — estilo homologado al Software ── */
+/* ── Dropdown Hardware — mismo ancho y composición que Software ── */
 .kyt-dropdown.drop-hardware {
-  width: min(560px, calc(100vw - 48px));
-  max-width: 560px;
-  min-width: 360px;
+  width: min(720px, calc(100vw - 48px));
+  max-width: 720px;
+  min-width: 420px;
   box-sizing: border-box;
   padding: 20px 24px 18px;
   overflow: visible;
@@ -15,16 +16,12 @@
   opacity: 1;
   visibility: visible;
 }
-.kyt-dropdown.drop-hardware .hw-mega-grid {
-  grid-template-columns: 1fr 1fr;
-}
 .kyt-dropdown.drop-hardware .drop-label { display: none; }
-@media (max-width: 991px) {
+/* Responsive hardware dropdown */
+@media (max-width: 1199px) {
   .kyt-dropdown.drop-hardware {
-    width: 100%;
-    min-width: 0;
-    left: 0;
-    transform: none;
+    width: unset; min-width: unset; max-width: unset;
+    left: 0; transform: none; padding: 8px 0 10px;
   }
 }
 
