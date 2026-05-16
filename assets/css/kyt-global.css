@@ -1,3 +1,33 @@
+
+/* ── Dropdown Hardware — estilo homologado al Software ── */
+.kyt-dropdown.drop-hardware {
+  width: min(560px, calc(100vw - 48px));
+  max-width: 560px;
+  min-width: 360px;
+  box-sizing: border-box;
+  padding: 20px 24px 18px;
+  overflow: visible;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+}
+.kyt-nav > li:hover > .kyt-dropdown.drop-hardware {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+.kyt-dropdown.drop-hardware .hw-mega-grid {
+  grid-template-columns: 1fr 1fr;
+}
+.kyt-dropdown.drop-hardware .drop-label { display: none; }
+@media (max-width: 991px) {
+  .kyt-dropdown.drop-hardware {
+    width: 100%;
+    min-width: 0;
+    left: 0;
+    transform: none;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════
    KYT GLOBAL — Paleta oficial + Navbar + Tipografía
    Paleta: Verde #308b1d | Azul #00009c | Azul oscuro #01004e
