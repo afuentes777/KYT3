@@ -85,14 +85,18 @@
     /* ── HERO — diseño limpio 2 columnas ── */
     .atena-hero {
         display:flex; align-items:stretch;
-        padding-top:80px; padding-bottom:80px;
-        background:linear-gradient(135deg,#01004e 0%,#080055 50%,#0a006a 100%);
+        padding-top:96px; padding-bottom:96px;
+        background:url('../assets/img/atena/atena-noc.jpg') center center / cover no-repeat;
         position:relative; overflow:hidden;
         min-height:560px;
     }
     .atena-hero::before {
         content:''; position:absolute; inset:0;
-        background:radial-gradient(ellipse at 30% 60%, rgba(72,160,24,.08) 0%, transparent 55%);
+        background:linear-gradient(105deg,
+            rgba(1,0,78,0.92) 0%,
+            rgba(1,0,78,0.82) 45%,
+            rgba(0,0,100,0.60) 75%,
+            rgba(0,0,80,0.40) 100%);
         pointer-events:none;
     }
     .atena-hero-inner { position:relative; z-index:2; width:100%; }
@@ -118,37 +122,16 @@
         width:clamp(260px,32vw,420px); height:auto;
         display:block;
     }
-    .atena-hero h1 {
-        font-size:clamp(28px,3.2vw,42px); font-weight:800; color:#fff;
-        letter-spacing:-0.02em; margin-bottom:14px; line-height:1.12;
-    }
+    .atena-hero h1 { display:none; }
     .atena-hero-sub {
-        font-size:clamp(15px,1.4vw,17px);
-        color:rgba(239,239,255,.72); margin-bottom:10px;
-        line-height:1.68; max-width:520px;
+        font-size:clamp(15px,1.5vw,18px);
+        color:rgba(239,239,255,.82); margin-bottom:32px;
+        line-height:1.75; max-width:560px;
     }
-    .atena-hero-desc {
-        font-size:14px; color:rgba(239,239,255,.50);
-        line-height:1.65; max-width:480px; margin-bottom:32px;
-    }
+    .atena-hero-desc { display:none; }
     /* Columna derecha — imagen */
-    .atena-hero-right {
-        display:flex; align-items:center; justify-content:flex-end;
-    }
-    .atena-hero-img-wrap {
-        width:100%; border-radius:18px; overflow:hidden;
-        box-shadow:0 24px 64px rgba(0,0,0,.45);
-        position:relative; max-height:420px;
-    }
-    .atena-hero-img-wrap img {
-        width:100%; height:420px; object-fit:cover; object-position:center 30%;
-        display:block;
-    }
-    .atena-hero-img-wrap::after {
-        content:''; position:absolute; inset:0;
-        background:linear-gradient(135deg, rgba(1,0,78,.30) 0%, rgba(0,0,0,.10) 60%, transparent 100%);
-        border-radius:18px;
-    }
+    .atena-hero-right { display:none; }
+    .atena-hero-img-wrap { display:none; }
     /* Elementos ocultos del hero anterior */
     .atena-hero-panel { display:none; }
     .atena-panel-row, .atena-panel-icon, .atena-panel-label, .atena-panel-val, .atena-panel-ok { display:none; }
@@ -262,7 +245,7 @@
     .at-arch-item h6 { font-size:13px; font-weight:700; color:var(--at-dark); margin-bottom:6px; }
     .at-arch-item p  { font-size:12px; color:#6a6a9a; line-height:1.5; margin:0; }
     .at-arch-flow {
-        background:linear-gradient(135deg,var(--at-dark) 0%,#0a006a 100%);
+        background:linear-gradient(135deg,#0a1a4e 0%,#0f2060 100%);
         border-radius:16px; padding:28px 24px; color:#fff; margin-top:36px;
     }
     .at-arch-flow p { font-size:14.5px; color:rgba(239,239,255,.78); line-height:1.78; margin:0; }
@@ -297,15 +280,15 @@
         gap:18px; margin-top:36px;
     }
     .at-support-card {
-        background:rgba(255,255,255,.07);
-        border:1px solid rgba(102,102,196,.20);
+        background:#fff;
+        border:1px solid rgba(0,0,156,.10);
         border-radius:14px; padding:22px 18px;
-        transition:transform .2s, border-color .2s;
+        transition:transform .2s, box-shadow .2s, border-color .2s;
     }
-    .at-support-card:hover { transform:translateY(-4px); border-color:rgba(72,160,24,.40); }
+    .at-support-card:hover { transform:translateY(-4px); box-shadow:0 10px 28px rgba(0,0,156,.10); border-color:rgba(48,139,29,.30); }
     .at-support-card i { font-size:22px; color:#48a018; margin-bottom:12px; display:block; }
-    .at-support-card h5 { font-size:14px; font-weight:700; color:#fff; margin-bottom:6px; }
-    .at-support-card p  { font-size:13px; color:rgba(239,239,255,.60); line-height:1.6; margin:0; }
+    .at-support-card h5 { font-size:14px; font-weight:700; color:#01004e; margin-bottom:6px; }
+    .at-support-card p  { font-size:13px; color:#5a5a8a; line-height:1.6; margin:0; }
 
     /* ── Reportes ── */
     .at-report-grid {
@@ -588,24 +571,18 @@
     <!-- ══ HERO ══ -->
     <section class="atena-hero">
         <div class="container atena-hero-inner">
-            <div class="row align-items-center" style="gap:0;">
-                <!-- Columna izquierda: 48% -->
-                <div class="col-lg-6 atena-hero-left wow fadeInLeft" data-wow-delay=".15s" style="padding-right:40px;">
+            <div class="row justify-content-start">
+                <div class="col-lg-7 col-xl-6 atena-hero-left wow fadeInLeft" data-wow-delay=".15s">
                     <div class="atena-hero-badge">
                         <span></span> Software de Monitoreo · Soporte Remoto · Operación Técnica
                     </div>
-                    <!-- Logo grande y protagonista -->
                     <div class="atena-hero-logo">
                         <img src="../assets/img/atena/logo-atena-negativo.png" alt="ATENA Monitoring">
                     </div>
-                    <h1>ATENA Monitoring</h1>
                     <p class="atena-hero-sub">
-                        Plataforma centralizada para monitorear y soportar remotamente kioscos, mini PC, Intel NUC y equipos Windows.
+                        Plataforma centralizada para monitorear, administrar y brindar soporte remoto a equipos Windows, con operación segura, visibilidad en tiempo real y control unificado desde un portal web corporativo.
                     </p>
-                    <p class="atena-hero-desc">
-                        Alertas, reportes, auditoría y operación segura desde un portal web centralizado.
-                    </p>
-                    <div class="at-ctas" style="margin-bottom:28px;">
+                    <div class="at-ctas" style="margin-bottom:32px;">
                         <a href="../contacto.html" class="at-btn-g">
                             <i class="fas fa-play-circle"></i> Solicitar demostración
                         </a>
@@ -620,12 +597,6 @@
                         <li><i class="fas fa-chevron-right"></i></li>
                         <li style="color:rgba(200,200,244,.55)">ATENA Monitoring</li>
                     </ul>
-                </div>
-                <!-- Columna derecha: 52% — imagen NOC -->
-                <div class="col-lg-6 atena-hero-right wow fadeInRight" data-wow-delay=".3s">
-                    <div class="atena-hero-img-wrap">
-                        <img src="../assets/img/atena/atena-noc.jpg" alt="Centro de monitoreo ATENA" loading="eager">
-                    </div>
                 </div>
             </div>
         </div>
@@ -887,12 +858,12 @@
     </section>
 
     <!-- ══ S6: SOPORTE REMOTO ══ -->
-    <section style="background:linear-gradient(135deg,#01004e 0%,#0a006a 100%);padding:80px 0;">
+    <section style="background:#f0f4ff;padding:80px 0;">
         <div class="container">
             <div class="text-center wow fadeInUp" style="margin-bottom:40px;">
-                <span class="at-ey" style="color:rgba(200,200,244,.70);">Operación segura</span>
-                <h2 class="at-h2 at-h2-w">Soporte remoto con control,<br>permisos y auditoría</h2>
-                <p style="font-size:16px;color:rgba(239,239,255,.68);max-width:600px;margin:12px auto 0;line-height:1.75;">
+                <span class="at-ey">Operación segura</span>
+                <h2 class="at-h2">Soporte remoto con control,<br>permisos y auditoría</h2>
+                <p style="font-size:16px;color:#5a5a8a;max-width:600px;margin:12px auto 0;line-height:1.75;">
                     ATENA Monitoring permite ejecutar acciones remotas autorizadas bajo un modelo seguro, con lista blanca de comandos, validación por rol, justificación obligatoria y registro completo de auditoría.
                 </p>
             </div>
@@ -972,7 +943,7 @@
     </section>
 
     <!-- ══ S8: SEGURIDAD ══ -->
-    <section style="background:linear-gradient(135deg,#01004e 0%,#080055 50%,#0a006a 100%);padding:80px 0;">
+    <section style="background:linear-gradient(160deg,#0a1a4e 0%,#0f2060 100%);padding:80px 0;">
         <div class="container">
             <div class="text-center wow fadeInUp" style="margin-bottom:40px;">
                 <span class="at-ey" style="color:rgba(200,200,244,.70);">Seguridad y trazabilidad</span>
