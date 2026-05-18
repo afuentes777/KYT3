@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Kioscos y Tecnología">
+    <meta name="description" content="ATENA Monitoring es una plataforma de KYT para monitorear, administrar y soportar remotamente kioscos Windows, mini PC e Intel NUC, con alertas, reportes, auditoría y seguridad empresarial.">
+    <meta name="keywords" content="software de monitoreo de kioscos, soporte remoto de kioscos, monitoreo de hardware, monitoreo de kioscos Windows, sistema de alertas, gestión operativa de kioscos, ATENA Monitoring, KYT">
+    <meta property="og:title" content="ATENA Monitoring | Software de monitoreo y soporte remoto para kioscos">
+    <meta property="og:description" content="Plataforma centralizada para monitorear, administrar y soportar remotamente kioscos interactivos Windows, mini PC e Intel NUC.">
+    <title>ATENA Monitoring | Software de monitoreo y soporte remoto para kioscos | Kioscos y Tecnología</title>
+    <link rel="shortcut icon" href="../assets/img/preloader.svg">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.css">
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="../assets/css/meanmenu.css">
+    <link rel="stylesheet" href="../assets/css/slick.css">
+    <link rel="stylesheet" href="../assets/css/nice-select.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/css/kyt-global.css">
+    <style>
+    /* ═══════════════════════════════════
+       ATENA Monitoring — Estilos de página
+    ═══════════════════════════════════ */
+    body { padding-top: 0; }
+
+    /* Tokens de color */
+    :root {
+        --at-dark:  #01004e;
+        --at-blue:  #00009c;
+        --at-green: #308b1d;
+        --at-mid:   #6666c4;
+        --at-pale:  #efefff;
+        --at-ag:    #48a018; /* verde ATENA */
+    }
+
+    /* ── Utilidades ── */
+    .at-ey {
+        font-size:11px; font-weight:700; letter-spacing:2.2px;
+        text-transform:uppercase; color:var(--at-green);
+        display:block; margin-bottom:12px;
+    }
+    .at-h2 {
+        font-size:clamp(26px,3.2vw,42px); font-weight:800;
+        color:var(--at-dark); line-height:1.13;
+        margin-bottom:16px; letter-spacing:-0.015em;
+    }
+    .at-h2-w { color:#fff; }
+    .at-lead { font-size:16px; color:#5a5a8a; line-height:1.80; }
+    .at-sec  { padding:80px 0; }
+    .at-alt  { background:#f8f9ff; }
+    .at-ctas { display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+    .at-btn-g {
+        display:inline-flex; align-items:center; gap:8px;
+        background:var(--at-green); color:#fff;
+        font-size:14px; font-weight:700;
+        padding:12px 26px; border-radius:8px;
+        text-decoration:none;
+        box-shadow:0 4px 16px rgba(48,139,29,.30);
+        transition:background .2s, transform .15s; white-space:nowrap;
+    }
+    .at-btn-g:hover { background:#236514; color:#fff; transform:translateY(-2px); }
+    .at-btn-o {
+        display:inline-flex; align-items:center; gap:8px;
+        border:1.5px solid rgba(255,255,255,.38); color:#fff;
+        font-size:14px; font-weight:600;
+        padding:11px 24px; border-radius:8px;
+        text-decoration:none;
+        transition:border-color .2s, background .2s;
+    }
+    .at-btn-o:hover { border-color:#fff; background:rgba(255,255,255,.10); color:#fff; }
+    .at-btn-o-dark {
+        display:inline-flex; align-items:center; gap:8px;
+        border:1.5px solid rgba(0,0,156,.25); color:var(--at-dark);
+        font-size:14px; font-weight:600;
+        padding:11px 24px; border-radius:8px;
+        text-decoration:none;
+        transition:border-color .2s, background .2s;
+    }
+    .at-btn-o-dark:hover { border-color:var(--at-blue); background:#efefff; color:var(--at-dark); }
+
+    /* ── HERO ── */
+    .atena-hero {
+        min-height:600px; display:flex; align-items:center;
+        padding-top:100px; padding-bottom:70px;
+        background:linear-gradient(135deg,#01004e 0%,#080055 45%,#0a006a 100%);
+        position:relative; overflow:hidden;
+    }
+    .atena-hero::before {
+        content:''; position:absolute; inset:0;
+        background:
+            radial-gradient(ellipse at 70% 40%, rgba(72,160,24,0.12) 0%, transparent 55%),
+            radial-gradient(ellipse at 15% 80%, rgba(0,0,156,0.20) 0%, transparent 50%);
+        pointer-events:none;
+    }
+    /* Grid de puntos decorativo */
+    .atena-hero::after {
+        content:''; position:absolute; inset:0;
+        background-image: radial-gradient(circle, rgba(102,102,196,0.25) 1px, transparent 1px);
+        background-size: 32px 32px;
+        pointer-events:none; opacity:0.4;
+    }
+    .atena-hero-inner { position:relative; z-index:2; }
+    .atena-hero-badge {
+        display:inline-flex; align-items:center; gap:8px;
+        background:rgba(72,160,24,0.15);
+        border:1px solid rgba(72,160,24,0.40);
+        color:#d3ebb6; font-size:10px; font-weight:700;
+        letter-spacing:2px; text-transform:uppercase;
+        padding:5px 14px; border-radius:50px; margin-bottom:18px;
+    }
+    .atena-hero-badge span { width:6px; height:6px; border-radius:50%; background:#48a018; display:inline-block; animation:atPulse 2s ease-in-out infinite; }
+    @keyframes atPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.5)} }
+    .atena-hero h1 {
+        font-size:clamp(42px,5.5vw,72px); font-weight:900; color:#fff;
+        letter-spacing:-0.025em; margin-bottom:8px; line-height:1.05;
+    }
+    .atena-hero-sub {
+        font-size:clamp(15px,1.6vw,18px);
+        color:rgba(239,239,255,.75); margin-bottom:14px;
+        line-height:1.65; max-width:580px;
+    }
+    .atena-hero-desc {
+        font-size:14.5px; color:rgba(239,239,255,.60);
+        line-height:1.75; max-width:560px; margin-bottom:32px;
+    }
+    /* Panel de métricas flotante */
+    .atena-hero-panel {
+        background:rgba(255,255,255,.07);
+        backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+        border:1px solid rgba(102,102,196,.25);
+        border-radius:16px; padding:28px 24px;
+        display:flex; flex-direction:column; gap:16px;
+    }
+    .atena-panel-row {
+        display:flex; align-items:center; gap:12px;
+        border-bottom:1px solid rgba(255,255,255,.08); padding-bottom:14px;
+    }
+    .atena-panel-row:last-child { border-bottom:none; padding-bottom:0; }
+    .atena-panel-icon {
+        width:36px; height:36px; border-radius:8px;
+        background:rgba(72,160,24,.18);
+        display:flex; align-items:center; justify-content:center;
+        font-size:15px; color:#48a018; flex-shrink:0;
+    }
+    .atena-panel-label { font-size:11px; color:rgba(200,200,244,.55); text-transform:uppercase; letter-spacing:1.2px; }
+    .atena-panel-val { font-size:18px; font-weight:800; color:#fff; line-height:1; }
+    .atena-panel-ok { width:8px; height:8px; border-radius:50%; background:#48a018; margin-left:auto; flex-shrink:0; box-shadow:0 0 6px rgba(72,160,24,.7); }
+    /* Logo ATENA en hero */
+    .atena-logo-hero {
+        display:flex; align-items:center; justify-content:center;
+        margin-bottom:28px;
+    }
+    .atena-logo-hero img {
+        height:64px; width:auto;
+        filter: drop-shadow(0 4px 20px rgba(72,160,24,.3));
+    }
+    .at-bc {
+        list-style:none; padding:0; margin:28px 0 0;
+        display:flex; align-items:center; gap:8px;
+        font-size:12px; color:rgba(239,239,255,.38);
+    }
+    .at-bc a { color:rgba(239,239,255,.52); text-decoration:none; }
+    .at-bc i { font-size:9px; }
+
+    /* ── Sección ¿Qué es? ── */
+    .at-split { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+    .at-blist { list-style:none; padding:0; margin:18px 0 0; }
+    .at-blist li {
+        display:flex; align-items:flex-start; gap:10px;
+        font-size:15px; color:#3a3a6a;
+        margin-bottom:10px; line-height:1.5;
+    }
+    .at-blist li i { color:var(--at-green); font-size:14px; margin-top:2px; flex-shrink:0; }
+    .at-mockup {
+        border-radius:18px; overflow:hidden;
+        box-shadow:0 20px 56px rgba(0,0,156,.14);
+        background:linear-gradient(135deg,#01004e 0%,#0a006a 100%);
+        padding:32px 28px; position:relative;
+    }
+    .at-mockup-title { font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(200,200,244,.55); margin-bottom:18px; }
+    .at-metric-row { display:flex; gap:12px; margin-bottom:12px; }
+    .at-metric-card {
+        flex:1; background:rgba(255,255,255,.07); border:1px solid rgba(102,102,196,.20);
+        border-radius:10px; padding:14px 12px; text-align:center;
+    }
+    .at-metric-num { font-size:22px; font-weight:800; color:#fff; line-height:1; }
+    .at-metric-lbl { font-size:10px; color:rgba(200,200,244,.55); margin-top:4px; text-transform:uppercase; letter-spacing:1px; }
+    .at-metric-card.green .at-metric-num { color:#48a018; }
+    .at-metric-card.warn  .at-metric-num { color:#f59e0b; }
+    .at-metric-card.red   .at-metric-num { color:#ef4444; }
+    .at-status-row { display:flex; align-items:center; justify-content:space-between; padding:8px 12px; background:rgba(255,255,255,.05); border-radius:8px; margin-bottom:6px; }
+    .at-status-label { font-size:13px; color:rgba(239,239,255,.70); }
+    .at-status-dot { width:8px; height:8px; border-radius:50%; }
+    .at-dot-ok { background:#48a018; box-shadow:0 0 6px rgba(72,160,24,.6); }
+    .at-dot-warn { background:#f59e0b; }
+    .at-dot-err  { background:#ef4444; }
+
+    /* ── Tarjetas de problemas ── */
+    .at-problems { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:44px; }
+    .at-prob-card {
+        background:#fff; border:1px solid rgba(0,0,156,.09);
+        border-radius:14px; padding:22px 18px;
+        transition:transform .25s, box-shadow .25s;
+        position:relative; overflow:hidden;
+    }
+    .at-prob-card::before {
+        content:''; position:absolute; top:0; left:0; right:0; height:3px;
+        border-radius:14px 14px 0 0;
+    }
+    .at-prob-card.hw::before    { background:linear-gradient(90deg,#ef4444,#f59e0b); }
+    .at-prob-card.sw::before    { background:linear-gradient(90deg,#8b5cf6,#6366f1); }
+    .at-prob-card.app::before   { background:linear-gradient(90deg,var(--at-blue),var(--at-mid)); }
+    .at-prob-card.periph::before{ background:linear-gradient(90deg,#0ea5e9,var(--at-blue)); }
+    .at-prob-card.net::before   { background:linear-gradient(90deg,var(--at-green),#0ea5e9); }
+    .at-prob-card.ops::before   { background:linear-gradient(90deg,#f59e0b,#ef4444); }
+    .at-prob-card.sec::before   { background:linear-gradient(90deg,#1e293b,#334155); }
+    .at-prob-card:hover { transform:translateY(-4px); box-shadow:0 10px 30px rgba(0,0,156,.11); }
+    .at-prob-icon { font-size:22px; margin-bottom:12px; }
+    .at-prob-card h5 { font-size:14px; font-weight:700; color:var(--at-dark); margin-bottom:8px; }
+    .at-prob-card p  { font-size:12.5px; color:#6a6a9a; line-height:1.6; margin:0; }
+
+    /* ── Arquitectura ── */
+    .at-arch-grid {
+        display:grid; grid-template-columns:repeat(4,1fr);
+        gap:16px; margin-top:40px;
+    }
+    .at-arch-item {
+        background:#fff; border:1px solid rgba(0,0,156,.10);
+        border-radius:12px; padding:20px 16px; text-align:center;
+        transition:transform .2s, box-shadow .2s;
+    }
+    .at-arch-item:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(0,0,156,.10); }
+    .at-arch-ico {
+        width:48px; height:48px; border-radius:12px;
+        background:linear-gradient(135deg,var(--at-dark),var(--at-blue));
+        display:flex; align-items:center; justify-content:center;
+        font-size:18px; color:#fff; margin:0 auto 12px;
+        box-shadow:0 4px 14px rgba(0,0,156,.22);
+    }
+    .at-arch-item h6 { font-size:13px; font-weight:700; color:var(--at-dark); margin-bottom:6px; }
+    .at-arch-item p  { font-size:12px; color:#6a6a9a; line-height:1.5; margin:0; }
+    .at-arch-flow {
+        background:linear-gradient(135deg,var(--at-dark) 0%,#0a006a 100%);
+        border-radius:16px; padding:28px 24px; color:#fff; margin-top:36px;
+    }
+    .at-arch-flow p { font-size:14.5px; color:rgba(239,239,255,.78); line-height:1.78; margin:0; }
+
+    /* ── Dashboard ── */
+    .at-dashboard-grid {
+        display:grid; grid-template-columns:repeat(4,1fr);
+        gap:14px; margin-top:36px;
+    }
+    .at-dash-card {
+        background:#fff; border:1px solid rgba(0,0,156,.09);
+        border-radius:12px; padding:18px 16px;
+        display:flex; align-items:center; gap:12px;
+        transition:transform .2s;
+    }
+    .at-dash-card:hover { transform:translateY(-3px); }
+    .at-dash-ico {
+        width:38px; height:38px; border-radius:9px;
+        display:flex; align-items:center; justify-content:center;
+        font-size:16px; flex-shrink:0;
+    }
+    .at-dash-ico.g { background:rgba(72,160,24,.12); color:#48a018; }
+    .at-dash-ico.b { background:rgba(0,0,156,.10); color:var(--at-blue); }
+    .at-dash-ico.r { background:rgba(239,68,68,.10); color:#ef4444; }
+    .at-dash-ico.y { background:rgba(245,158,11,.10); color:#f59e0b; }
+    .at-dash-label { font-size:12px; color:#6a6a9a; }
+    .at-dash-val   { font-size:15px; font-weight:700; color:var(--at-dark); }
+
+    /* ── Soporte remoto ── */
+    .at-support-grid {
+        display:grid; grid-template-columns:repeat(3,1fr);
+        gap:18px; margin-top:36px;
+    }
+    .at-support-card {
+        background:rgba(255,255,255,.07);
+        border:1px solid rgba(102,102,196,.20);
+        border-radius:14px; padding:22px 18px;
+        transition:transform .2s, border-color .2s;
+    }
+    .at-support-card:hover { transform:translateY(-4px); border-color:rgba(72,160,24,.40); }
+    .at-support-card i { font-size:22px; color:#48a018; margin-bottom:12px; display:block; }
+    .at-support-card h5 { font-size:14px; font-weight:700; color:#fff; margin-bottom:6px; }
+    .at-support-card p  { font-size:13px; color:rgba(239,239,255,.60); line-height:1.6; margin:0; }
+
+    /* ── Reportes ── */
+    .at-report-grid {
+        display:grid; grid-template-columns:repeat(3,1fr);
+        gap:20px; margin-top:40px;
+    }
+    .at-report-card {
+        background:#fff; border:1px solid rgba(0,0,156,.09);
+        border-radius:14px; padding:24px 20px;
+        transition:transform .25s, box-shadow .25s;
+        position:relative; overflow:hidden;
+    }
+    .at-report-card::after {
+        content:'PDF · Excel';
+        position:absolute; top:14px; right:14px;
+        font-size:10px; font-weight:700; letter-spacing:1px;
+        color:rgba(72,160,24,.8);
+        background:rgba(72,160,24,.08);
+        border:1px solid rgba(72,160,24,.20);
+        padding:2px 8px; border-radius:50px;
+    }
+    .at-report-card:hover { transform:translateY(-5px); box-shadow:0 12px 36px rgba(0,0,156,.12); }
+    .at-report-ico {
+        width:46px; height:46px; border-radius:11px;
+        background:linear-gradient(135deg,var(--at-dark),var(--at-mid));
+        display:flex; align-items:center; justify-content:center;
+        font-size:18px; color:#fff; margin-bottom:14px;
+        box-shadow:0 4px 14px rgba(0,0,156,.20);
+    }
+    .at-report-card h5 { font-size:15px; font-weight:700; color:var(--at-dark); margin-bottom:8px; }
+    .at-report-card p  { font-size:13px; color:#6a6a9a; line-height:1.6; margin:0; }
+
+    /* ── Seguridad ── */
+    .at-security-grid {
+        display:grid; grid-template-columns:repeat(4,1fr);
+        gap:14px; margin-top:36px;
+    }
+    .at-sec-item {
+        display:flex; align-items:flex-start; gap:10px;
+        background:rgba(255,255,255,.06);
+        border:1px solid rgba(102,102,196,.18);
+        border-radius:10px; padding:14px;
+    }
+    .at-sec-item i { color:#48a018; font-size:14px; margin-top:2px; flex-shrink:0; }
+    .at-sec-item span { font-size:13px; color:rgba(239,239,255,.75); line-height:1.5; }
+
+    /* ── Tech stack ── */
+    .at-tech-grid {
+        display:grid; grid-template-columns:repeat(5,1fr);
+        gap:14px; margin-top:36px;
+    }
+    .at-tech-item {
+        background:#fff; border:1px solid rgba(0,0,156,.09);
+        border-radius:10px; padding:16px 12px; text-align:center;
+    }
+    .at-tech-item h6 { font-size:12px; font-weight:700; color:var(--at-dark); margin-bottom:4px; }
+    .at-tech-item p  { font-size:11px; color:#9999b8; margin:0; line-height:1.4; }
+
+    /* ── CTA final ── */
+    .at-cta-final {
+        background:linear-gradient(135deg,var(--at-dark) 0%,#0a006a 55%,var(--at-blue) 100%);
+        padding:96px 0; text-align:center; position:relative; overflow:hidden;
+    }
+    .at-cta-final::before {
+        content:''; position:absolute; inset:0;
+        background:radial-gradient(ellipse at 50% 100%, rgba(72,160,24,.12) 0%, transparent 55%);
+        pointer-events:none;
+    }
+    .at-cta-final h2 {
+        font-size:clamp(26px,3.5vw,48px); font-weight:800;
+        color:#fff; margin-bottom:16px;
+        position:relative; z-index:1;
+    }
+    .at-cta-final p {
+        font-size:16px; color:rgba(239,239,255,.72);
+        max-width:560px; margin:0 auto 36px;
+        line-height:1.75; position:relative; z-index:1;
+    }
+    .at-cta-final .at-ctas { justify-content:center; position:relative; z-index:1; }
+
+    /* ── Responsive ── */
+    @media(max-width:1100px) {
+        .at-problems { grid-template-columns:repeat(3,1fr); }
+        .at-arch-grid { grid-template-columns:repeat(2,1fr); }
+        .at-dashboard-grid { grid-template-columns:repeat(2,1fr); }
+        .at-security-grid { grid-template-columns:repeat(3,1fr); }
+        .at-tech-grid { grid-template-columns:repeat(3,1fr); }
+    }
+    @media(max-width:768px) {
+        .at-split { grid-template-columns:1fr; gap:36px; }
+        .at-problems { grid-template-columns:1fr 1fr; }
+        .at-support-grid { grid-template-columns:1fr 1fr; }
+        .at-report-grid { grid-template-columns:1fr 1fr; }
+        .at-security-grid { grid-template-columns:1fr 1fr; }
+        .at-tech-grid { grid-template-columns:repeat(2,1fr); }
+        .at-dashboard-grid { grid-template-columns:1fr 1fr; }
+        .at-arch-grid { grid-template-columns:1fr 1fr; }
+        .atena-hero-panel { margin-top:36px; }
+    }
+    @media(max-width:480px) {
+        .at-problems { grid-template-columns:1fr; }
+        .at-support-grid { grid-template-columns:1fr; }
+        .at-report-grid { grid-template-columns:1fr; }
+        .at-security-grid { grid-template-columns:1fr; }
+    }
+    </style>
+</head>
+<body class="kyt-inner">
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="spinner"></div>
+            <div class="txt-loading">
+                <span data-text-preloader="D" class="letters-loading">D</span>
+                <span data-text-preloader="A" class="letters-loading">A</span>
+                <span data-text-preloader="N" class="letters-loading">N</span>
+                <span data-text-preloader="I" class="letters-loading">I</span>
+            </div>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
+
+    <!-- ═══ OFFCANVAS ═══ -->
+    <div class="fix-area">
+        <div class="offcanvas__info kyt-offcanvas">
+            <div class="offcanvas__wrapper">
+                <div class="offcanvas__content">
+                    <div class="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
+                        <div class="offcanvas__logo"><a href="../index.html"><img src="../assets/img/logo/logo2.png" alt="KYT" style="height:36px;"></a></div>
+                        <div class="offcanvas__close"><button aria-label="Cerrar menú"><i class="fas fa-times"></i></button></div>
+                    </div>
+                    <div class="mobile-menu fix mb-3"></div>
+                    <div class="offcanvas__contact">
+                        <h4>Información de contacto</h4>
+                        <ul>
+                            <li class="d-flex align-items-center"><div class="offcanvas__contact-icon"><i class="fal fa-map-marker-alt"></i></div><div class="offcanvas__contact-text"><span>Bogotá, Colombia</span></div></li>
+                            <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-envelope"></i></div><div class="offcanvas__contact-text"><a href="mailto:contacto@kioscosytecnologia.com">contacto@kioscosytecnologia.com</a></div></li>
+                            <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-clock"></i></div><div class="offcanvas__contact-text"><span>Lunes a viernes, 8am – 6pm</span></div></li>
+                            <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="far fa-phone"></i></div><div class="offcanvas__contact-text"><a href="tel:+573113676433">+57 311 367 6433</a></div></li>
+                        </ul>
+                        <div class="header-button mt-4">
+                            <a href="../contacto.html" class="theme-btn text-center"><span>Cotizar proyecto <i class="fas fa-chevron-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas__overlay"></div>
+
+    <!-- ═══ NAVBAR ═══ -->
+    <div class="kyt-header-wrap" id="kytHeader">
+        <div class="container" style="max-width:1260px;">
+            <div class="kyt-header-inner">
+                <a href="../index.html" class="kyt-logo"><img src="../assets/img/logo/logo2.png" alt="Kioscos y Tecnología"></a>
+                <ul class="kyt-nav" id="kytNavDesktop">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li>
+                        <a href="#">Quiénes somos <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown">
+                            <li><a href="../about.html"><span class="drop-icon"><i class="fas fa-building"></i></span>La empresa</a></li>
+                            <li><a href="../service-modalidad.html"><span class="drop-icon"><i class="fas fa-handshake"></i></span>Modalidad de venta</a></li>
+                            <li><a href="../blog.html"><span class="drop-icon"><i class="fas fa-pen-nib"></i></span>Blog</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Sectores <i class="fas fa-angle-down"></i></a>
+                        <div class="kyt-mega">
+                            <div class="mega-grid">
+                                <div class="mega-item"><img src="../assets/img/Sectores/SALUD-180X225.jpg" alt="Sector Salud"><div class="mega-label"><a href="../salud.html">Salud</a></div></div>
+                                <div class="mega-item"><img src="../assets/img/Sectores/BANCA-180X225.jpg" alt="Sector Banca"><div class="mega-label"><a href="../banca.html">Banca</a></div></div>
+                                <div class="mega-item"><img src="../assets/img/Sectores/EDUCATIVO-180X225.jpg" alt="Sector Educación"><div class="mega-label"><a href="../educacion.html">Educación</a></div></div>
+                                <div class="mega-item"><img src="../assets/img/Sectores/RESTAURANTES-180X225.jpg" alt="Sector Restaurantes"><div class="mega-label"><a href="../restaurantes.html">Restaurantes</a></div></div>
+                                <div class="mega-item"><img src="../assets/img/Sectores/RETAIL-180X225.jpg" alt="Sector Retail"><div class="mega-label"><a href="../retail.html">Retail</a></div></div>
+                                <div class="mega-item"><img src="../assets/img/Sectores/HOTELES-180X225.jpg" alt="Sector Hoteles"><div class="mega-label"><a href="../hotel.html">Hoteles</a></div></div>
+                                <div class="mega-item"><img src="../assets/img/Sectores/CORPOTARIVO-180X225.jpg" alt="Sector Corporativo"><div class="mega-label"><a href="../Corporativo.html">Corporativo</a></div></div>
+                                <div class="mega-item"><img src="../assets/img/Sectores/GOBIERNO-180X225.jpg" alt="Sector Gobierno"><div class="mega-label"><a href="../Gobierno.html">Gobierno</a></div></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-divider" aria-hidden="true"></li>
+                    <li>
+                        <a href="#">Hardware <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown drop-hardware">
+                            <div class="sw-mega-grid hw-mega-grid">
+                                <div class="sw-mega-col">
+                                    <span class="sw-col-title">Terminales</span>
+                                    <li><a href="../Kioscos.html"><span class="drop-icon"><i class="fas fa-tablet-alt"></i></span><span class="sw-item-body"><span class="sw-item-name">Kioscos</span><span class="sw-item-desc">Terminales de autogestión para atención, turnos y autoservicio</span></span></a></li>
+                                    <li><a href="../Pos.html"><span class="drop-icon"><i class="fas fa-cash-register"></i></span><span class="sw-item-body"><span class="sw-item-name">POS</span><span class="sw-item-desc">Equipos punto de venta para comercios, restaurantes y servicios</span></span></a></li>
+                                </div>
+                                <div class="sw-mega-col">
+                                    <span class="sw-col-title">Experiencias digitales</span>
+                                    <li><a href="../mesa-interactiva.html"><span class="drop-icon"><i class="fas fa-th-large"></i></span><span class="sw-item-body"><span class="sw-item-name">Mesa interactiva</span><span class="sw-item-desc">Experiencias táctiles para colaboración, consulta y atención digital</span></span></a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#">Software <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown drop-software">
+                            <div class="sw-mega-grid">
+                                <div class="sw-mega-col">
+                                    <span class="sw-col-title">Suite K&amp;T</span>
+                                    <li><a href="../konex.html"><span class="drop-icon"><i class="fas fa-clock"></i></span><span class="sw-item-body"><span class="sw-item-name">KONEX<sup>®</sup></span><span class="sw-item-desc">Turnos y gestión de colas</span></span><span class="sw-badge">Turnos</span></a></li>
+                                    <li><a href="../davinci.html"><span class="drop-icon"><i class="fas fa-tv"></i></span><span class="sw-item-body"><span class="sw-item-name">DAVINCI<sup>®</sup></span><span class="sw-item-desc">Cartelería digital</span></span><span class="sw-badge">Signage</span></a></li>
+                                    <li><a href="../sense.html"><span class="drop-icon"><i class="fas fa-chart-bar"></i></span><span class="sw-item-body"><span class="sw-item-name">SENSE<sup>®</sup></span><span class="sw-item-desc">Analítica de experiencia</span></span><span class="sw-badge">Analítica</span></a></li>
+                                </div>
+                                <div class="sw-mega-col">
+                                    <span class="sw-col-title">Soluciones digitales</span>
+                                    <li><a href="../dani-ia.html"><span class="drop-icon"><i class="fas fa-robot"></i></span><span class="sw-item-body"><span class="sw-item-name">DANI IA<sup>®</sup></span><span class="sw-item-desc">Asistente inteligente</span></span><span class="sw-badge">IA</span></a></li>
+                                    <li><a href="../fabrica-de-software.html"><span class="drop-icon"><i class="fas fa-laptop-code"></i></span><span class="sw-item-body"><span class="sw-item-name">Fábrica de software</span><span class="sw-item-desc">Desarrollo a la medida</span></span></a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-divider" aria-hidden="true"></li>
+                    <li>
+                        <a href="#">Recursos <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown">
+                            <li><a href="../blog.html"><span class="drop-icon"><i class="fas fa-pen-nib"></i></span>Blog y artículos</a></li>
+                            <li><a href="../news.html"><span class="drop-icon"><i class="fas fa-trophy"></i></span>Casos de éxito</a></li>
+                            <li><a href="../que-son-los-kioscos-digitales.html"><span class="drop-icon"><i class="fas fa-book-open"></i></span>¿Qué es un kiosco?</a></li>
+                            <li><a href="../contacto.html"><span class="drop-icon"><i class="fas fa-envelope"></i></span>Contacto</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+                    <a href="../contacto.html" class="kyt-cta-btn"><i class="fas fa-comment-dots"></i> Cotizar proyecto</a>
+                    <button class="kyt-hamburger sidebar__toggle" aria-label="Abrir menú"><i class="far fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function(){
+        var hdr=document.getElementById('kytHeader');
+        if(!hdr)return;
+        var hero=document.querySelector('.atena-hero');
+        var heroBottom=0,ticking=false;
+        function calcHero(){heroBottom=hero?(hero.getBoundingClientRect().bottom+window.scrollY-10):0;}
+        function applyMode(){hdr.classList.toggle('kyt-light',window.scrollY>heroBottom);ticking=false;}
+        function onScroll(){if(!ticking){requestAnimationFrame(applyMode);ticking=true;}}
+        function init(){calcHero();window.addEventListener('scroll',onScroll,{passive:true});applyMode();}
+        document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
+        window.addEventListener('resize',function(){calcHero();applyMode();},{passive:true});
+    })();
+    </script>
+    <div class="search-wrap">
+        <div class="search-inner">
+            <i class="fas fa-times search-close" id="search-close"></i>
+            <div class="search-cell"><form method="get"><div class="search-field-holder"><input type="search" class="main-search-input" placeholder="Buscar..."></div></form></div>
+        </div>
+    </div>
+
+    <!-- ══ HERO ══ -->
+    <section class="atena-hero">
+        <div class="container atena-hero-inner">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7 wow fadeInLeft" data-wow-delay=".2s">
+                    <div class="atena-logo-hero">
+                        <img src="../assets/img/atena/logo-atena-monitoring.png" alt="ATENA Monitoring" style="height:60px;">
+                    </div>
+                    <div class="atena-hero-badge">
+                        <span></span> Software de Monitoreo · Soporte Remoto · Operación Técnica
+                    </div>
+                    <h1 class="wow fadeInUp" data-wow-delay=".25s">ATENA Monitoring</h1>
+                    <p class="atena-hero-sub wow fadeInUp" data-wow-delay=".35s">
+                        Plataforma centralizada para monitorear, administrar y soportar remotamente kioscos interactivos, mini PC, Intel NUC y equipos Windows.
+                    </p>
+                    <p class="atena-hero-desc wow fadeInUp" data-wow-delay=".45s">
+                        Supervise disponibilidad, hardware, red, aplicaciones, periféricos, alertas, reportes y acciones de soporte desde un portal web seguro, auditable y preparado para operación multicliente.
+                    </p>
+                    <div class="at-ctas wow fadeInUp" data-wow-delay=".55s">
+                        <a href="../contacto.html" class="at-btn-g">
+                            <i class="fas fa-play-circle"></i> Solicitar demostración
+                        </a>
+                        <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20información%20sobre%20ATENA%20Monitoring" target="_blank" class="at-btn-o">
+                            <i class="fas fa-headset"></i> Hablar con un especialista
+                        </a>
+                    </div>
+                    <ul class="at-bc">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><i class="fas fa-chevron-right"></i></li>
+                        <li>Software</li>
+                        <li><i class="fas fa-chevron-right"></i></li>
+                        <li style="color:rgba(200,200,244,.70)">ATENA Monitoring</li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 wow fadeInRight" data-wow-delay=".4s">
+                    <div class="atena-hero-panel">
+                        <div class="atena-panel-row">
+                            <div class="atena-panel-icon"><i class="fas fa-desktop"></i></div>
+                            <div>
+                                <div class="atena-panel-label">Kioscos monitoreados</div>
+                                <div class="atena-panel-val">Hasta 1.000+</div>
+                            </div>
+                            <div class="atena-panel-ok"></div>
+                        </div>
+                        <div class="atena-panel-row">
+                            <div class="atena-panel-icon"><i class="fas fa-heartbeat"></i></div>
+                            <div>
+                                <div class="atena-panel-label">Disponibilidad SLA</div>
+                                <div class="atena-panel-val">Medición continua</div>
+                            </div>
+                            <div class="atena-panel-ok"></div>
+                        </div>
+                        <div class="atena-panel-row">
+                            <div class="atena-panel-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div>
+                                <div class="atena-panel-label">Seguridad</div>
+                                <div class="atena-panel-val">MFA · RBAC · TLS 1.3</div>
+                            </div>
+                            <div class="atena-panel-ok"></div>
+                        </div>
+                        <div class="atena-panel-row">
+                            <div class="atena-panel-icon"><i class="fas fa-file-export"></i></div>
+                            <div>
+                                <div class="atena-panel-label">Reportes</div>
+                                <div class="atena-panel-val">PDF + Excel exportables</div>
+                            </div>
+                            <div class="atena-panel-ok"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ S1: ¿QUÉ ES ATENA? ══ -->
+    <section class="at-sec">
+        <div class="container">
+            <div class="at-split">
+                <div class="wow fadeInLeft" data-wow-delay=".2s">
+                    <span class="at-ey">Monitoreo centralizado</span>
+                    <h2 class="at-h2">Monitoreo centralizado para<br>operación crítica de kioscos</h2>
+                    <p class="at-lead">
+                        ATENA Monitoring permite conocer en tiempo real el estado de cada kiosco, detectar fallas de hardware, software, red, periféricos y servicios críticos, generar alertas automáticas y mantener evidencia auditable de eventos, accesos y acciones técnicas.
+                    </p>
+                    <ul class="at-blist">
+                        <li><i class="fas fa-check-circle"></i> Visibilidad total del parque de kioscos desde un solo portal</li>
+                        <li><i class="fas fa-check-circle"></i> Alertas en tiempo real con clasificación por severidad</li>
+                        <li><i class="fas fa-check-circle"></i> Soporte remoto controlado con auditoría completa</li>
+                        <li><i class="fas fa-check-circle"></i> Reportes ejecutivos y operativos exportables en PDF y Excel</li>
+                        <li><i class="fas fa-check-circle"></i> Arquitectura multicliente escalable de 100 a 1.000+ kioscos</li>
+                        <li><i class="fas fa-check-circle"></i> Preparada para controles ISO/IEC 27001 y principios GDPR</li>
+                    </ul>
+                </div>
+                <div class="wow fadeInRight" data-wow-delay=".3s">
+                    <!-- Dashboard mockup visual -->
+                    <div class="at-mockup">
+                        <div class="at-mockup-title">Dashboard Operativo · Tiempo Real</div>
+                        <div class="at-metric-row">
+                            <div class="at-metric-card green">
+                                <div class="at-metric-num">248</div>
+                                <div class="at-metric-lbl">En línea</div>
+                            </div>
+                            <div class="at-metric-card warn">
+                                <div class="at-metric-num">7</div>
+                                <div class="at-metric-lbl">Alertas</div>
+                            </div>
+                            <div class="at-metric-card red">
+                                <div class="at-metric-num">3</div>
+                                <div class="at-metric-lbl">Offline</div>
+                            </div>
+                            <div class="at-metric-card">
+                                <div class="at-metric-num">97.8%</div>
+                                <div class="at-metric-lbl">SLA</div>
+                            </div>
+                        </div>
+                        <div class="at-status-row"><span class="at-status-label">Kiosco BAN-001 — Banca Bogotá</span><div class="at-status-dot at-dot-ok"></div></div>
+                        <div class="at-status-row"><span class="at-status-label">Kiosco SAL-032 — Hospital Central</span><div class="at-status-dot at-dot-ok"></div></div>
+                        <div class="at-status-row"><span class="at-status-label">Kiosco RET-015 — Retail Norte</span><div class="at-status-dot at-dot-warn"></div></div>
+                        <div class="at-status-row"><span class="at-status-label">Kiosco GOB-007 — Alcaldía Sur</span><div class="at-status-dot at-dot-err"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ S2: PROBLEMAS QUE RESUELVE ══ -->
+    <section class="at-sec at-alt">
+        <div class="container">
+            <div class="text-center wow fadeInUp">
+                <span class="at-ey">Detección temprana</span>
+                <h2 class="at-h2">Problemas que ATENA Monitoring detecta y previene</h2>
+            </div>
+            <div class="at-problems">
+                <div class="at-prob-card hw wow fadeInUp" data-wow-delay=".10s">
+                    <div class="at-prob-icon" style="color:#ef4444;"><i class="fas fa-microchip"></i></div>
+                    <h5>Hardware</h5>
+                    <p>CPU elevada, memoria saturada, disco lleno, temperatura crítica y fallas SMART del almacenamiento.</p>
+                </div>
+                <div class="at-prob-card sw wow fadeInUp" data-wow-delay=".15s">
+                    <div class="at-prob-icon" style="color:#8b5cf6;"><i class="fab fa-windows"></i></div>
+                    <h5>Sistema operativo</h5>
+                    <p>Reinicios inesperados, firewall apagado, antivirus deshabilitado y eventos críticos de Windows.</p>
+                </div>
+                <div class="at-prob-card app wow fadeInUp" data-wow-delay=".20s">
+                    <div class="at-prob-icon" style="color:#00009c;"><i class="fas fa-cogs"></i></div>
+                    <h5>Aplicaciones</h5>
+                    <p>KONEX detenido, navegador cerrado, Device Manager sin respuesta y servicios críticos caídos.</p>
+                </div>
+                <div class="at-prob-card periph wow fadeInUp" data-wow-delay=".25s">
+                    <div class="at-prob-icon" style="color:#0ea5e9;"><i class="fas fa-print"></i></div>
+                    <h5>Periféricos</h5>
+                    <p>Impresora desconectada, cola de impresión bloqueada, pantalla touch no detectada, USB desconectado.</p>
+                </div>
+                <div class="at-prob-card net wow fadeInUp" data-wow-delay=".10s">
+                    <div class="at-prob-icon" style="color:#308b1d;"><i class="fas fa-wifi"></i></div>
+                    <h5>Conectividad</h5>
+                    <p>Pérdida de internet, VPN caída, latencia alta, DNS sin respuesta y kiosco en modo offline.</p>
+                </div>
+                <div class="at-prob-card ops wow fadeInUp" data-wow-delay=".15s">
+                    <div class="at-prob-icon" style="color:#f59e0b;"><i class="fas fa-exclamation-triangle"></i></div>
+                    <h5>Operación</h5>
+                    <p>Kiosco inactivo, servicio no disponible, alertas sin atender y riesgo de incumplimiento de SLA.</p>
+                </div>
+                <div class="at-prob-card sec wow fadeInUp" data-wow-delay=".20s">
+                    <div class="at-prob-icon" style="color:#1e293b;"><i class="fas fa-lock"></i></div>
+                    <h5>Seguridad</h5>
+                    <p>Accesos no trazados, comandos no autorizados, ausencia de evidencia y riesgo operativo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ S3: ARQUITECTURA ══ -->
+    <section class="at-sec">
+        <div class="container">
+            <div class="at-split">
+                <div class="wow fadeInLeft" data-wow-delay=".2s">
+                    <span class="at-ey">Arquitectura de la solución</span>
+                    <h2 class="at-h2">Arquitectura segura,<br>modular y escalable</h2>
+                    <p class="at-lead">
+                        El agente se instala en cada kiosco como servicio Windows, recolecta telemetría y reporta al servidor central mediante HTTPS/TLS. El servidor procesa eventos, genera alertas y entrega información al portal operativo para los equipos de soporte, operación, administración y auditoría.
+                    </p>
+                    <div class="at-arch-flow" style="margin-top:24px;">
+                        <p>Diseñada para crecer desde 100 hasta 1.000+ kioscos sin cambios de arquitectura, con soporte multicliente, multiusuario y multisede desde el origen.</p>
+                    </div>
+                </div>
+                <div class="wow fadeInRight" data-wow-delay=".3s">
+                    <div class="at-arch-grid">
+                        <div class="at-arch-item">
+                            <div class="at-arch-ico"><i class="fas fa-robot"></i></div>
+                            <h6>Agente Windows MSI</h6>
+                            <p>Servicio C# .NET instalado en cada kiosco, recolecta y reporta telemetría</p>
+                        </div>
+                        <div class="at-arch-item">
+                            <div class="at-arch-ico"><i class="fas fa-server"></i></div>
+                            <h6>API Central</h6>
+                            <p>ASP.NET Core 8 — recepción de telemetría, gestión y comandos</p>
+                        </div>
+                        <div class="at-arch-item">
+                            <div class="at-arch-ico"><i class="fas fa-laptop-code"></i></div>
+                            <h6>Portal Angular</h6>
+                            <p>Interfaz operativa para NOC, soporte, auditoría y dirección</p>
+                        </div>
+                        <div class="at-arch-item">
+                            <div class="at-arch-ico"><i class="fas fa-database"></i></div>
+                            <h6>Base de datos</h6>
+                            <p>PostgreSQL 15+ o SQL Server 2019+ con ORM Entity Framework</p>
+                        </div>
+                        <div class="at-arch-item">
+                            <div class="at-arch-ico"><i class="fas fa-bell"></i></div>
+                            <h6>Motor de alertas</h6>
+                            <p>Reglas, umbrales, criticidad y notificaciones por email / Teams / WhatsApp</p>
+                        </div>
+                        <div class="at-arch-item">
+                            <div class="at-arch-ico"><i class="fas fa-terminal"></i></div>
+                            <h6>Soporte remoto</h6>
+                            <p>Comandos autorizados con lista blanca, justificación y registro de auditoría</p>
+                        </div>
+                        <div class="at-arch-item">
+                            <div class="at-arch-ico"><i class="fas fa-file-chart-bar"></i></div>
+                            <h6>Módulo reportes</h6>
+                            <p>Generación de informes PDF y Excel desde el servidor central</p>
+                        </div>
+                        <div class="at-arch-item">
+                            <div class="at-arch-ico"><i class="fas fa-history"></i></div>
+                            <h6>Auditoría inmutable</h6>
+                            <p>Registro inalterable de accesos, sesiones, comandos y eventos críticos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ S4: DASHBOARD ══ -->
+    <section class="at-sec at-alt">
+        <div class="container">
+            <div class="text-center wow fadeInUp">
+                <span class="at-ey">Vista operativa</span>
+                <h2 class="at-h2">Dashboard operativo para<br>equipos NOC y soporte</h2>
+                <p class="at-lead" style="max-width:600px;margin:0 auto;">
+                    La vista principal permite monitorear en tiempo real el estado de todos los kioscos, priorizar incidentes y tomar decisiones operativas con indicadores claros.
+                </p>
+            </div>
+            <div class="at-dashboard-grid wow fadeInUp" data-wow-delay=".2s">
+                <div class="at-dash-card"><div class="at-dash-ico b"><i class="fas fa-desktop"></i></div><div><div class="at-dash-label">Total de kioscos</div><div class="at-dash-val">Parque completo</div></div></div>
+                <div class="at-dash-card"><div class="at-dash-ico g"><i class="fas fa-check-circle"></i></div><div><div class="at-dash-label">Kioscos en línea</div><div class="at-dash-val">Tiempo real</div></div></div>
+                <div class="at-dash-card"><div class="at-dash-ico r"><i class="fas fa-exclamation-circle"></i></div><div><div class="at-dash-label">Alertas críticas</div><div class="at-dash-val">Sin atender</div></div></div>
+                <div class="at-dash-card"><div class="at-dash-ico y"><i class="fas fa-times-circle"></i></div><div><div class="at-dash-label">Kioscos offline</div><div class="at-dash-val">Sin señal activa</div></div></div>
+                <div class="at-dash-card"><div class="at-dash-ico b"><i class="fas fa-chart-line"></i></div><div><div class="at-dash-label">Disponibilidad 7 días</div><div class="at-dash-val">Tendencia por sede</div></div></div>
+                <div class="at-dash-card"><div class="at-dash-ico g"><i class="fas fa-medal"></i></div><div><div class="at-dash-label">SLA del mes</div><div class="at-dash-val">% vs meta</div></div></div>
+                <div class="at-dash-card"><div class="at-dash-ico b"><i class="fas fa-building"></i></div><div><div class="at-dash-label">Estado por cliente</div><div class="at-dash-val">Tabla consolidada</div></div></div>
+                <div class="at-dash-card"><div class="at-dash-ico r"><i class="fas fa-tags"></i></div><div><div class="at-dash-label">Alertas por categoría</div><div class="at-dash-val">Hardware · Red · App</div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ S5: DETALLE KIOSCO ══ -->
+    <section class="at-sec">
+        <div class="container">
+            <div class="at-split" style="grid-template-columns:1fr 1fr;">
+                <div class="wow fadeInLeft" data-wow-delay=".2s">
+                    <!-- Mockup detalle kiosco -->
+                    <div class="at-mockup">
+                        <div class="at-mockup-title">Detalle de Kiosco — KSC-042</div>
+                        <div class="at-metric-row" style="margin-bottom:16px;">
+                            <div class="at-metric-card green"><div class="at-metric-num">23%</div><div class="at-metric-lbl">CPU</div></div>
+                            <div class="at-metric-card green"><div class="at-metric-num">61%</div><div class="at-metric-lbl">RAM</div></div>
+                            <div class="at-metric-card warn"><div class="at-metric-num">78%</div><div class="at-metric-lbl">Disco</div></div>
+                            <div class="at-metric-card green"><div class="at-metric-num">42°C</div><div class="at-metric-lbl">Temp</div></div>
+                        </div>
+                        <div class="at-status-row"><span class="at-status-label">KONEX — Servicio activo</span><div class="at-status-dot at-dot-ok"></div></div>
+                        <div class="at-status-row"><span class="at-status-label">Impresora — Conectada</span><div class="at-status-dot at-dot-ok"></div></div>
+                        <div class="at-status-row"><span class="at-status-label">Antivirus — Activo</span><div class="at-status-dot at-dot-ok"></div></div>
+                        <div class="at-status-row"><span class="at-status-label">Disco — Uso elevado</span><div class="at-status-dot at-dot-warn"></div></div>
+                    </div>
+                </div>
+                <div class="wow fadeInRight" data-wow-delay=".3s">
+                    <span class="at-ey">Vista individual</span>
+                    <h2 class="at-h2">Detalle técnico<br>de cada kiosco</h2>
+                    <ul class="at-blist">
+                        <li><i class="fas fa-id-card"></i> Modelo, serial, sistema operativo, IP, MAC y versión del agente</li>
+                        <li><i class="fas fa-tachometer-alt"></i> CPU, RAM, disco (% libre), temperatura y uptime en tiempo real</li>
+                        <li><i class="fas fa-cogs"></i> Servicios y procesos críticos con estado, PID y tiempo activo</li>
+                        <li><i class="fas fa-print"></i> Estado de impresora, pantalla, touch, USB y antivirus</li>
+                        <li><i class="fas fa-history"></i> Historial de eventos y alertas activas con línea de tiempo</li>
+                        <li><i class="fas fa-terminal"></i> Acciones remotas disponibles según el rol del usuario</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ S6: SOPORTE REMOTO ══ -->
+    <section style="background:linear-gradient(135deg,#01004e 0%,#0a006a 100%);padding:80px 0;">
+        <div class="container">
+            <div class="text-center wow fadeInUp" style="margin-bottom:40px;">
+                <span class="at-ey" style="color:rgba(200,200,244,.70);">Operación segura</span>
+                <h2 class="at-h2 at-h2-w">Soporte remoto con control,<br>permisos y auditoría</h2>
+                <p style="font-size:16px;color:rgba(239,239,255,.68);max-width:600px;margin:12px auto 0;line-height:1.75;">
+                    ATENA Monitoring permite ejecutar acciones remotas autorizadas bajo un modelo seguro, con lista blanca de comandos, validación por rol, justificación obligatoria y registro completo de auditoría.
+                </p>
+            </div>
+            <div class="at-support-grid wow fadeInUp" data-wow-delay=".2s">
+                <div class="at-support-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h5>Reinicio de servicios</h5>
+                    <p>Reiniciar servicios autorizados de la lista blanca con justificación y registro del operador.</p>
+                </div>
+                <div class="at-support-card">
+                    <i class="fas fa-search"></i>
+                    <h5>Consulta de logs</h5>
+                    <p>Acceso supervisado a logs del sistema, aplicación y agente para diagnóstico rápido.</p>
+                </div>
+                <div class="at-support-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h5>Diagnóstico remoto</h5>
+                    <p>Ejecución de herramientas de diagnóstico autorizadas sin exponer el escritorio completo.</p>
+                </div>
+                <div class="at-support-card">
+                    <i class="fas fa-terminal"></i>
+                    <h5>Terminal controlada</h5>
+                    <p>Acceso a consola de comandos con comandos explícitamente permitidos por política.</p>
+                </div>
+                <div class="at-support-card">
+                    <i class="fas fa-file-upload"></i>
+                    <h5>Transferencia controlada</h5>
+                    <p>Envío de archivos de configuración, actualizaciones y parches a kioscos autorizados.</p>
+                </div>
+                <div class="at-support-card">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h5>Evidencia completa</h5>
+                    <p>Cada acción queda registrada con usuario, timestamp, justificación y resultado de la operación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ S7: REPORTES ══ -->
+    <section class="at-sec at-alt">
+        <div class="container">
+            <div class="text-center wow fadeInUp">
+                <span class="at-ey">Inteligencia operativa</span>
+                <h2 class="at-h2">Reportes ejecutivos<br>y operativos</h2>
+                <p class="at-lead" style="max-width:580px;margin:0 auto;">
+                    Cinco tipos de reportes configurables por rango de fechas, cliente, sede y tipo de kiosco, exportables en PDF y Excel.
+                </p>
+            </div>
+            <div class="at-report-grid wow fadeInUp" data-wow-delay=".2s">
+                <div class="at-report-card">
+                    <div class="at-report-ico"><i class="fas fa-chart-bar"></i></div>
+                    <h5>Reporte de disponibilidad</h5>
+                    <p>Disponibilidad operativa de todos los kioscos comparada con la meta de SLA, con tendencia mensual y detalle por cliente.</p>
+                </div>
+                <div class="at-report-card">
+                    <div class="at-report-ico"><i class="fas fa-heartbeat"></i></div>
+                    <h5>Reporte de salud de hardware</h5>
+                    <p>Distribución de la salud del parque por CPU, RAM, disco, impresora y temperatura, con kioscos en zona de riesgo.</p>
+                </div>
+                <div class="at-report-card">
+                    <div class="at-report-ico"><i class="fas fa-exclamation-triangle"></i></div>
+                    <h5>Reporte de alertas e incidentes</h5>
+                    <p>Volumen de alertas diarias, distribución por categoría, MTTR por tipo de incidente y estado de incidentes abiertos y cerrados.</p>
+                </div>
+                <div class="at-report-card">
+                    <div class="at-report-ico"><i class="fas fa-shield-alt"></i></div>
+                    <h5>Reporte de auditoría</h5>
+                    <p>Accesos al portal, sesiones remotas realizadas, comandos ejecutados, rechazos por permisos y estado del modelo de seguridad.</p>
+                </div>
+                <div class="at-report-card">
+                    <div class="at-report-ico"><i class="fas fa-award"></i></div>
+                    <h5>Reporte ejecutivo de SLA</h5>
+                    <p>Indicadores clave del período: disponibilidad global, MTTR, cumplimiento por cliente y acciones críticas ejecutadas. Diseño ejecutivo en PDF.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ S8: SEGURIDAD ══ -->
+    <section style="background:linear-gradient(135deg,#01004e 0%,#080055 50%,#0a006a 100%);padding:80px 0;">
+        <div class="container">
+            <div class="text-center wow fadeInUp" style="margin-bottom:40px;">
+                <span class="at-ey" style="color:rgba(200,200,244,.70);">Seguridad y trazabilidad</span>
+                <h2 class="at-h2 at-h2-w">Diseñado con enfoque de<br>seguridad y trazabilidad</h2>
+                <p style="font-size:16px;color:rgba(239,239,255,.68);max-width:600px;margin:12px auto 0;line-height:1.75;">
+                    La plataforma está diseñada para operar en entornos empresariales donde la trazabilidad, la privacidad y el control de accesos son requisitos críticos.
+                </p>
+            </div>
+            <div class="at-security-grid wow fadeInUp" data-wow-delay=".2s">
+                <div class="at-sec-item"><i class="fas fa-user-shield"></i><span>MFA obligatorio para roles críticos de la plataforma</span></div>
+                <div class="at-sec-item"><i class="fas fa-users-cog"></i><span>RBAC — Control de acceso basado en roles y permisos</span></div>
+                <div class="at-sec-item"><i class="fas fa-lock"></i><span>HTTPS/TLS 1.2 mínimo, TLS 1.3 preferido en toda comunicación</span></div>
+                <div class="at-sec-item"><i class="fas fa-history"></i><span>Auditoría inmutable — registros que no se pueden modificar</span></div>
+                <div class="at-sec-item"><i class="fas fa-list-ul"></i><span>Lista blanca de comandos — solo acciones explícitamente permitidas</span></div>
+                <div class="at-sec-item"><i class="fas fa-key"></i><span>Cifrado de configuración local en cada agente de kiosco</span></div>
+                <div class="at-sec-item"><i class="fas fa-file-lock"></i><span>Cifrado de salidas de comandos en soporte remoto</span></div>
+                <div class="at-sec-item"><i class="fas fa-certificate"></i><span>Arquitectura preparada para controles ISO/IEC 27001</span></div>
+                <div class="at-sec-item"><i class="fas fa-user-secret"></i><span>Principios de privacidad GDPR — sin datos personales del ciudadano</span></div>
+                <div class="at-sec-item"><i class="fas fa-ban"></i><span>Sin grabación permanente de pantalla — política de privacidad clara</span></div>
+                <div class="at-sec-item"><i class="fas fa-eye-slash"></i><span>Sin captura de cámaras ni audio ambiental — fuera del alcance</span></div>
+                <div class="at-sec-item"><i class="fas fa-shield-check"></i><span>Retención configurable de logs con políticas de conservación</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ S9: TECNOLOGÍA ══ -->
+    <section class="at-sec at-alt">
+        <div class="container">
+            <div class="text-center wow fadeInUp">
+                <span class="at-ey">Stack tecnológico</span>
+                <h2 class="at-h2">Tecnología empresarial<br>de última generación</h2>
+                <p class="at-lead" style="max-width:580px;margin:0 auto;">
+                    Construido sobre tecnologías consolidadas, modernas y de alto rendimiento, listas para entornos productivos exigentes.
+                </p>
+            </div>
+            <div class="at-tech-grid wow fadeInUp" data-wow-delay=".2s">
+                <div class="at-tech-item"><h6>Agente Windows</h6><p>C# / .NET 8 Worker Service</p></div>
+                <div class="at-tech-item"><h6>Backend API</h6><p>ASP.NET Core 8 Web API</p></div>
+                <div class="at-tech-item"><h6>Frontend</h6><p>Angular 17+ con TypeScript</p></div>
+                <div class="at-tech-item"><h6>Base de datos</h6><p>PostgreSQL 15+ o SQL Server 2019+</p></div>
+                <div class="at-tech-item"><h6>ORM</h6><p>Entity Framework Core 8</p></div>
+                <div class="at-tech-item"><h6>Reportes PDF</h6><p>QuestPDF</p></div>
+                <div class="at-tech-item"><h6>Reportes Excel</h6><p>ClosedXML</p></div>
+                <div class="at-tech-item"><h6>Instalador MSI</h6><p>WiX Toolset 4</p></div>
+                <div class="at-tech-item"><h6>Cola local</h6><p>SQLite (offline resiliente)</p></div>
+                <div class="at-tech-item"><h6>Comunicación</h6><p>HTTPS / TLS 1.2 – 1.3</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ CTA FINAL ══ -->
+    <section class="at-cta-final">
+        <div class="container">
+            <h2 class="wow fadeInUp">Controle la operación técnica de sus<br>kioscos desde una sola plataforma</h2>
+            <p class="wow fadeInUp" data-wow-delay=".2s">
+                ATENA Monitoring convierte el monitoreo, el soporte remoto y la auditoría técnica en una operación centralizada, trazable y escalable.
+            </p>
+            <div class="at-ctas wow fadeInUp" data-wow-delay=".35s">
+                <a href="../contacto.html" class="at-btn-g">
+                    <i class="fas fa-play-circle"></i> Solicitar demostración
+                </a>
+                <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20información%20sobre%20ATENA%20Monitoring" target="_blank" class="at-btn-o">
+                    <i class="fab fa-whatsapp"></i> Hablar con un especialista
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <!-- ═══ FOOTER ENTERPRISE KYT ═══ -->
+    <!-- ═══ FOOTER ENTERPRISE KYT — estilo TIGlobal ═══ -->
+    <footer class="kyt-footer" id="kytFooter">
+
+        <!-- Contenedor principal con borde — TODO el contenido aquí -->
+        <div class="kf-container">
+
+            <!-- Bloque superior: headline + logo + redes -->
+            <div class="kf-top">
+                <div class="kf-top-inner">
+                    <div class="kf-top-text">
+                        <h2 class="kf-headline">Estamos listos para<br>acompañar su operación</h2>
+                        <p class="kf-sub">Fabricamos, integramos y soportamos soluciones de autogestión, turnos, cartelería digital, POS y monitoreo para organizaciones que necesitan eficiencia, continuidad y control.</p>
+                        <div class="kf-ctas">
+                            <a href="../contacto.html" class="kf-btn-primary"><i class="fas fa-comment-dots"></i> Cotizar proyecto</a>
+                            <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20más%20información" target="_blank" class="kf-btn-secondary"><i class="fab fa-whatsapp"></i> Escribir por WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="kf-hero-logo">
+                        <img src="../assets/img/logo/logo2.png" alt="Kioscos y Tecnología">
+                    </div>
+                </div>
+                <div class="kf-social-bar">
+                    <span class="kf-social-label">Síganos en</span>
+                    <div class="kf-social-icons">
+                        <a href="#" aria-label="LinkedIn KYT" class="kf-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube KYT" class="kf-social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook KYT" class="kf-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram KYT" class="kf-social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columnas de navegación -->
+            <div class="kf-links">
+                <div class="kf-links-inner">
+                    <div class="kf-col">
+                        <span class="kf-col-title">General</span>
+                        <ul class="kf-col-list">
+                            <li><a href="../index.html">Inicio</a></li>
+                            <li><a href="../about.html">Quiénes somos</a></li>
+                            <li><a href="../service-modalidad.html">Modalidad de venta</a></li>
+                            <li><a href="../blog.html">Blog</a></li>
+                            <li><a href="../contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="kf-col">
+                        <span class="kf-col-title">Soluciones</span>
+                        <ul class="kf-col-list">
+                            <li><a href="../Kioscos.html">Kioscos</a></li>
+                            <li><a href="../turnos.html">Software de turnos</a></li>
+                            <li><a href="../informativo.html">Cartelería digital</a></li>
+                            <li><a href="../Pos.html">POS</a></li>
+                            <li><a href="../service-modalidad.html">Soporte y mantenimiento</a></li>
+                        </ul>
+                    </div>
+                    <div class="kf-col">
+                        <span class="kf-col-title">Software</span>
+                        <ul class="kf-col-list">
+                            <li><a href="../konex.html">KONEX<sup>®</sup></a></li>
+                            <li><a href="../davinci.html">DAVINCI<sup>®</sup></a></li>
+                            <li><a href="../sense.html">SENSE<sup>®</sup></a></li>
+                            <li><a href="../dani-ia.html">DANI IA<sup>®</sup></a></li>
+                            <li><a href="../fabrica-de-software.html">Fábrica de software</a></li>
+                        </ul>
+                    </div>
+                    <div class="kf-col">
+                        <span class="kf-col-title">Sectores</span>
+                        <ul class="kf-col-list">
+                            <li><a href="../banca.html">Banca</a></li>
+                            <li><a href="../salud.html">Salud</a></li>
+                            <li><a href="../retail.html">Retail</a></li>
+                            <li><a href="../Gobierno.html">Gobierno</a></li>
+                            <li><a href="../Corporativo.html">Corporativo</a></li>
+                        </ul>
+                    </div>
+                    <div class="kf-col">
+                        <span class="kf-col-title">Contacto</span>
+                        <ul class="kf-col-list kf-contact-list">
+                            <li><i class="fas fa-map-marker-alt kf-ci"></i><span>Bogotá, Colombia</span></li>
+                            <li><i class="fas fa-envelope kf-ci"></i><a href="mailto:contacto@kioscosytecnologia.com">contacto@kioscosytecnologia.com</a></li>
+                            <li><i class="fas fa-phone kf-ci"></i><a href="tel:+573113676433">+57 311 367 6433</a></li>
+                            <li><i class="fas fa-clock kf-ci"></i><span>Lunes a viernes, 8am – 6pm</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /kf-container -->
+
+        <!-- Copyright FUERA del borde — estilo TIGlobal -->
+        <div class="kf-outside">
+            <p class="kf-copy">Copyright © 2026 <a href="../index.html">Kioscos y Tecnología</a>. Todos los derechos reservados.</p>
+            <ul class="kf-legal">
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+            </ul>
+            <a href="#" class="kf-scroll-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></a>
+        </div>
+
+    </footer>
+
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/viewport.jquery.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery.nice-select.min.js"></script>
+    <script src="../assets/js/jquery.waypoints.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/slick.min.js"></script>
+    <script src="../assets/js/slick-animation.min.js"></script>
+    <script src="../assets/js/jquery.meanmenu.min.js"></script>
+    <script src="../assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/circle-progress.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20más%20información"
+        target="_blank" class="whatsapp-float" title="Contáctenos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>
