@@ -470,16 +470,24 @@
 .kyt-mega .mega-item-link {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 5;
   display: block;
+  cursor: pointer;
 }
 .kyt-mega .mega-item .mega-label {
-  position: relative;
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(1,0,78,0.78));
+  padding: 18px 8px 8px;
+  text-align: center;
   z-index: 3;
   pointer-events: none;
 }
-.kyt-mega .mega-item .mega-label a {
-  pointer-events: auto;
+.kyt-mega .mega-item .mega-label span {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: block;
 }
 
 
