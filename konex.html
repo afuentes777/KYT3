@@ -35,9 +35,21 @@
     .kx-btn-ghost { display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.38);color:#fff;font-size:14px;font-weight:600;padding:11px 24px;border-radius:8px;text-decoration:none;transition:border-color .2s,background .2s; }
     .kx-btn-ghost:hover { border-color:#fff;background:rgba(255,255,255,.10);color:#fff; }
     /* Hero */
-    .kx-hero { min-height:580px;display:flex;align-items:center;padding-top:100px;padding-bottom:72px;background:linear-gradient(135deg,#01004e 0%,#1a0a5e 50%,#2a0a20 100%);position:relative;overflow:hidden; }
-    .kx-hero::before { content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(232,80,10,.12) 0%,transparent 55%);pointer-events:none; }
-    .kx-hero-inner { position:relative;z-index:2; }
+    /* Hero con video de fondo */
+    .kx-hero { min-height:600px;display:flex;align-items:center;padding-top:100px;padding-bottom:72px;position:relative;overflow:hidden;background:#01004e; }
+    /* Video de fondo */
+    .kx-hero-video { position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none; }
+    .kx-hero-video video { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block; }
+    /* Overlay doble capa: oscuro general + gradiente direccional */
+    .kx-hero-overlay {
+        position:absolute;inset:0;z-index:1;
+        background:
+            linear-gradient(90deg, rgba(1,0,78,0.92) 0%, rgba(1,0,78,0.75) 45%, rgba(1,0,78,0.48) 100%),
+            rgba(0,0,0,0.30);
+        pointer-events:none;
+    }
+    .kx-hero::before { content:'';position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse at 70% 40%,rgba(232,80,10,.10) 0%,transparent 55%);pointer-events:none; }
+    .kx-hero-inner { position:relative;z-index:3; }
     .kx-hero-badge { display:inline-flex;align-items:center;gap:8px;background:rgba(232,80,10,.18);border:1px solid rgba(232,80,10,.40);color:#ffd4b8;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:18px; }
     .kx-hero-badge span { width:6px;height:6px;border-radius:50%;background:#e8500a;display:inline-block;animation:kxpulse 2s ease-in-out infinite; }
     @keyframes kxpulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.5)} }
@@ -407,6 +419,15 @@
 
     <!-- ══ HERO ══ -->
     <section class="kx-hero">
+        <!-- Video de fondo -->
+        <div class="kx-hero-video">
+            <video autoplay loop muted playsinline preload="none" aria-hidden="true" tabindex="-1">
+                <source src="assets/video/KONEX.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- Overlay azul KYT -->
+        <div class="kx-hero-overlay"></div>
+        <!-- Contenido -->
         <div class="container kx-hero-inner">
             <div class="row">
                 <div class="col-lg-9 col-xl-8">
