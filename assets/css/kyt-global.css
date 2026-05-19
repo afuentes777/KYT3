@@ -465,6 +465,23 @@
   transition: color .15s;
 }
 .kyt-mega .mega-item .mega-label a:hover { color: var(--kyt-green-light); }
+/* Overlay clickeable para tarjetas del mega menú Sectores */
+.kyt-mega .mega-item { position: relative; }
+.kyt-mega .mega-item-link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+}
+.kyt-mega .mega-item .mega-label {
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+.kyt-mega .mega-item .mega-label a {
+  pointer-events: auto;
+}
+
 
 /* ══════════════════════════════════════════
    CTA BUTTON
