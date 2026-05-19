@@ -82,34 +82,59 @@
     }
     .at-btn-o-dark:hover { border-color:var(--at-blue); background:#efefff; color:var(--at-dark); }
 
-    /* ── HERO — diseño limpio 2 columnas ── */
+    /* ── HERO — imagen de fondo con overlay suave al estilo HOME ── */
     .atena-hero {
-        display:flex; align-items:stretch;
-        padding-top:96px; padding-bottom:96px;
-        background:url('../assets/img/atena/atena-noc.jpg') center center / cover no-repeat;
+        display:flex; align-items:center;
+        padding-top:108px; padding-bottom:100px;
         position:relative; overflow:hidden;
-        min-height:560px;
+        min-height:600px;
+        /* Imagen de fondo como fallback si CSS background falla */
+        background:#01004e;
     }
-    .atena-hero::before {
-        content:''; position:absolute; inset:0;
-        background:linear-gradient(105deg,
-            rgba(1,0,78,0.92) 0%,
-            rgba(1,0,78,0.82) 45%,
-            rgba(0,0,100,0.60) 75%,
-            rgba(0,0,80,0.40) 100%);
+    /* Imagen de fondo: object-fit cover, visible y reconocible */
+    .atena-hero-bg {
+        position:absolute; inset:0;
+        background:url('../assets/img/atena/atena-noc.jpg') center center / cover no-repeat;
+        width:100%; height:100%;
+        z-index:0;
+    }
+    /* Overlay suave — misma filosofía del HOME de KYT:
+       gradiente lateral que hace legible el texto izquierdo
+       pero deja ver la imagen hacia la derecha.
+       Opacidades máx 0.72 para no apagar la foto. */
+    .atena-hero-overlay {
+        position:absolute; inset:0; z-index:1;
+        background: linear-gradient(
+            100deg,
+            rgba(1,0,78,0.78) 0%,
+            rgba(1,0,78,0.55) 48%,
+            rgba(1,0,78,0.20) 100%
+        );
         pointer-events:none;
     }
-    .atena-hero-inner { position:relative; z-index:2; width:100%; }
+    /* Capa negra muy suave — refuerza legibilidad sin apagar */
+    .atena-hero-overlay::after {
+        content:''; position:absolute; inset:0;
+        background:rgba(0,0,0,0.10);
+        pointer-events:none;
+    }
+    /* Destello verde sutil — identidad ATENNA */
+    .atena-hero::before {
+        content:''; position:absolute; inset:0; z-index:2;
+        background:radial-gradient(ellipse at 72% 42%, rgba(72,160,24,.06) 0%, transparent 55%);
+        pointer-events:none;
+    }
+    .atena-hero-inner { position:relative; z-index:3; width:100%; }
     /* Columna izquierda */
     .atena-hero-left { display:flex; flex-direction:column; justify-content:center; gap:0; }
     .atena-hero-badge {
         display:inline-flex; align-items:center; gap:8px;
-        background:rgba(72,160,24,.15);
-        border:1px solid rgba(72,160,24,.38);
-        color:#d3ebb6; font-size:10px; font-weight:700;
+        background:rgba(72,160,24,.18);
+        border:1px solid rgba(72,160,24,.42);
+        color:#d8eebb; font-size:10px; font-weight:700;
         letter-spacing:2px; text-transform:uppercase;
         padding:5px 14px; border-radius:50px;
-        margin-bottom:28px; align-self:flex-start;
+        margin-bottom:22px; align-self:flex-start;
     }
     .atena-hero-badge span { width:6px; height:6px; border-radius:50%; background:#48a018; display:inline-block; animation:atPulse 2s ease-in-out infinite; }
     @keyframes atPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.5)} }
@@ -124,9 +149,9 @@
     }
     .atena-hero h1 { display:none; }
     .atena-hero-sub {
-        font-size:clamp(15px,1.5vw,18px);
-        color:rgba(239,239,255,.82); margin-bottom:32px;
-        line-height:1.75; max-width:560px;
+        font-size:clamp(15px,1.5vw,17px);
+        color:rgba(255,255,255,.88); margin-bottom:32px;
+        line-height:1.78; max-width:560px;
     }
     .atena-hero-desc { display:none; }
     /* Columna derecha — imagen */
@@ -384,9 +409,18 @@
         .atena-kpi-item:nth-child(odd) { border-right:1px solid rgba(0,0,156,.10); }
     }
     @media(max-width:768px) {
-        .atena-hero { padding-top:72px; padding-bottom:56px; }
+        .atena-hero { padding-top:88px; padding-bottom:64px; min-height:520px; }
         .atena-hero-left { padding-right:0 !important; }
         .atena-hero-img-wrap img { height:280px; }
+        /* En mobile el overlay cubre más verticalmente para legibilidad */
+        .atena-hero-overlay {
+            background: linear-gradient(
+                180deg,
+                rgba(1,0,78,0.82) 0%,
+                rgba(1,0,78,0.65) 55%,
+                rgba(1,0,78,0.48) 100%
+            );
+        }
         .atena-kpi-grid { grid-template-columns:1fr 1fr; }
         .atena-kpi-item:nth-child(odd) { border-right:1px solid rgba(0,0,156,.10); }
         .at-split { grid-template-columns:1fr; gap:36px; }
@@ -524,6 +558,7 @@
                                 <div class="sw-mega-col">
                                     <span class="sw-col-title">Soluciones digitales</span>
                                     <li><a href="../dani-ia.html"><span class="drop-icon"><i class="fas fa-robot"></i></span><span class="sw-item-body"><span class="sw-item-name">DANI IA<sup>®</sup></span><span class="sw-item-desc">Asistente inteligente</span></span><span class="sw-badge">IA</span></a></li>
+                                    <li><a href="atena-monitoring.html"><span class="drop-icon"><i class="fas fa-satellite-dish"></i></span><span class="sw-item-body"><span class="sw-item-name">ATENNA Monitoring</span><span class="sw-item-desc">Monitoreo y soporte remoto</span></span><span class="sw-badge">Nuevo</span></a></li>
                                     <li><a href="../fabrica-de-software.html"><span class="drop-icon"><i class="fas fa-laptop-code"></i></span><span class="sw-item-body"><span class="sw-item-name">Fábrica de software</span><span class="sw-item-desc">Desarrollo a la medida</span></span></a></li>
                                 </div>
                             </div>
@@ -568,8 +603,13 @@
         </div>
     </div>
 
-    <!-- ══ HERO ══ -->
+    <!-- ══ HERO ATENNA Monitoring ══ -->
     <section class="atena-hero">
+        <!-- Imagen de fondo corporativa -->
+        <div class="atena-hero-bg" aria-hidden="true"></div>
+        <!-- Overlay suave — misma filosofía del HOME -->
+        <div class="atena-hero-overlay" aria-hidden="true"></div>
+        <!-- Contenido -->
         <div class="container atena-hero-inner">
             <div class="row justify-content-start">
                 <div class="col-lg-7 col-xl-6 atena-hero-left wow fadeInLeft" data-wow-delay=".15s">
