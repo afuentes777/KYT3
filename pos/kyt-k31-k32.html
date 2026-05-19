@@ -2,10 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="K&T-K31 / K32 – Estación modular de punto de venta con soporte integrado para impresora, lector de código y datáfono.">
-    <title>K&T-K31 / K32 – Terminal POS – Kioscos y Tecnología</title>
+    <meta name="description" content="K&amp;T-K31 / K32 — Estación modular de punto de venta. Especificaciones técnicas disponibles bajo solicitud comercial.">
+    <title>K&amp;T-K31 / K32 | Terminal POS modular | Kioscos y Tecnología</title>
     <link rel="shortcut icon" href="../assets/img/preloader.svg">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/font-awesome.css">
@@ -18,134 +17,57 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../assets/css/kyt-global.css">
     <style>
-    body { padding-top: 0; }
-    /* Hero del modelo */
-    .model-hero {
-        background: linear-gradient(135deg, #01004e 0%, #00009c 60%, #1a3a6e 100%);
-        min-height: 440px;
-        display: flex; align-items: center;
-        padding-top: 108px; padding-bottom: 64px;
-        position: relative; overflow: hidden;
-    }
-    .model-hero::before {
-        content: '';
-        position: absolute; inset: 0;
-        background: radial-gradient(ellipse at 70% 50%, rgba(48,139,29,0.12) 0%, transparent 60%);
-        pointer-events: none;
-    }
-    .model-hero-inner { position: relative; z-index: 2; }
-    .model-badge {
-        display: inline-flex; align-items: center; gap: 7px;
-        background: rgba(48,139,29,0.18); border: 1px solid rgba(48,139,29,0.40);
-        color: #d3ebb6; font-size: 10px; font-weight: 700;
-        letter-spacing: 2px; text-transform: uppercase;
-        padding: 5px 14px; border-radius: 50px; margin-bottom: 16px;
-    }
-    .model-sku {
-        font-size: 12px; font-weight: 600; color: rgba(239,239,255,0.55);
-        letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px;
-    }
-    .model-hero h1 {
-        font-size: clamp(40px, 5.5vw, 68px);
-        font-weight: 900; color: #fff;
-        letter-spacing: -0.025em; margin-bottom: 16px; line-height: 1.05;
-    }
-    .model-hero-sub {
-        font-size: 17px; color: rgba(239,239,255,0.75);
-        line-height: 1.72; max-width: 580px; margin-bottom: 32px;
-    }
-    .model-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
-    .model-btn-g {
-        display: inline-flex; align-items: center; gap: 8px;
-        background: #308b1d; color: #fff;
-        font-size: 14px; font-weight: 700;
-        padding: 12px 24px; border-radius: 8px;
-        text-decoration: none;
-        box-shadow: 0 4px 16px rgba(48,139,29,0.30);
-        transition: background .2s, transform .15s;
-    }
-    .model-btn-g:hover { background: #236514; color: #fff; transform: translateY(-2px); }
-    .model-btn-o {
-        display: inline-flex; align-items: center; gap: 8px;
-        border: 1.5px solid rgba(255,255,255,0.38); color: #fff;
-        font-size: 14px; font-weight: 600;
-        padding: 11px 22px; border-radius: 8px;
-        text-decoration: none;
-        transition: border-color .2s, background .2s;
-    }
-    .model-btn-o:hover { border-color: #fff; background: rgba(255,255,255,0.10); color: #fff; }
-    .model-bc {
-        list-style: none; padding: 0; margin: 24px 0 0;
-        display: flex; align-items: center; gap: 8px;
-        font-size: 12px; color: rgba(239,239,255,0.40);
-    }
-    .model-bc a { color: rgba(239,239,255,0.55); text-decoration: none; }
-    .model-bc i { font-size: 9px; }
-
-    /* Secciones de contenido */
-    .model-section { padding: 72px 0; }
-    .model-section-alt { background: #f8f9ff; }
-    .model-section-dark {
-        background: linear-gradient(135deg, #01004e, #00009c);
-        padding: 72px 0; text-align: center;
-    }
-    .model-eyebrow {
-        font-size: 11px; font-weight: 700; letter-spacing: 2px;
-        text-transform: uppercase; color: #308b1d; margin-bottom: 12px;
-        display: block;
-    }
-    .model-h2 {
-        font-size: clamp(26px, 3vw, 40px); font-weight: 800;
-        color: #01004e; line-height: 1.15; margin-bottom: 18px;
-    }
-    .model-h2-w { color: #fff; }
-    .model-lead { font-size: 16px; color: #5a5a8a; line-height: 1.78; }
-
-    /* Placeholder de imagen */
-    .model-img-placeholder {
-        background: linear-gradient(135deg, #efefff 0%, #e4e4f8 100%);
-        border-radius: 18px;
-        display: flex; align-items: center; justify-content: center;
-        flex-direction: column; gap: 12px;
-        height: 380px;
-        border: 1px solid rgba(0,0,156,0.10);
-    }
-    .model-img-placeholder i { font-size: 64px; color: rgba(0,0,156,0.20); }
-    .model-img-placeholder span {
-        font-size: 13px; color: rgba(0,0,156,0.35);
-        font-weight: 600; letter-spacing: 1px;
-    }
-
-    /* Specs table */
-    .model-specs-wrap {
-        background: #fff; border: 1px solid rgba(0,0,156,0.09);
-        border-radius: 14px; overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0,0,156,0.07);
-    }
-    .model-specs-row {
-        display: flex; border-bottom: 1px solid rgba(0,0,156,0.07);
-    }
-    .model-specs-row:last-child { border-bottom: none; }
-    .model-specs-label {
-        width: 200px; flex-shrink: 0;
-        background: #fafaff; padding: 14px 20px;
-        font-size: 13px; font-weight: 600; color: #01004e;
-        border-right: 1px solid rgba(0,0,156,0.07);
-    }
-    .model-specs-val {
-        padding: 14px 20px; font-size: 13px;
-        color: #6666c4; line-height: 1.5;
-    }
-
-    /* CTA final */
-    .model-section-dark h2 {
-        font-size: clamp(24px, 3vw, 38px); font-weight: 800;
-        color: #fff; margin-bottom: 14px;
-    }
-    .model-section-dark p {
-        font-size: 16px; color: rgba(239,239,255,0.72);
-        max-width: 500px; margin: 0 auto 32px; line-height: 1.7;
-    }
+    body{padding-top:0;}
+    .k31-ey{font-size:11px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:#308b1d;display:block;margin-bottom:12px;}
+    .k31-h2{font-size:clamp(26px,3.2vw,42px);font-weight:800;color:#01004e;line-height:1.13;margin-bottom:18px;letter-spacing:-0.015em;}
+    .k31-hw{color:#fff;}
+    .k31-lead{font-size:16px;color:#5a5a8a;line-height:1.80;}
+    .k31-sec{padding:80px 0;}
+    .k31-alt{background:#f8f9ff;}
+    .k31-dark{background:linear-gradient(135deg,#01004e 0%,#00009c 100%);padding:88px 0;}
+    .k31-btn{display:inline-flex;align-items:center;gap:8px;background:#308b1d;color:#fff;font-size:14px;font-weight:700;padding:12px 26px;border-radius:8px;text-decoration:none;box-shadow:0 4px 16px rgba(48,139,29,.30);transition:background .2s,transform .15s;white-space:nowrap;}
+    .k31-btn:hover{background:#236514;color:#fff;transform:translateY(-2px);}
+    .k31-bo{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.38);color:#fff;font-size:14px;font-weight:600;padding:11px 24px;border-radius:8px;text-decoration:none;transition:border-color .2s,background .2s;}
+    .k31-bo:hover{border-color:#fff;background:rgba(255,255,255,.10);color:#fff;}
+    .k31-ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+    .k31-hero{min-height:580px;display:flex;align-items:center;padding-top:100px;padding-bottom:68px;position:relative;overflow:hidden;background:#01004e;}
+    .k31-hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(1,0,78,0.82) 0%,rgba(1,0,78,0.55) 45%,rgba(1,0,78,0.18) 100%);pointer-events:none;}
+    .k31-hero-inner{position:relative;z-index:3;}
+    .k31-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(48,139,29,.18);border:1px solid rgba(48,139,29,.40);color:#d3ebb6;font-size:10px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:18px;}
+    .k31-sku{font-size:12px;font-weight:600;color:rgba(239,239,255,.50);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;}
+    .k31-hero h1{font-size:clamp(42px,5.5vw,72px);font-weight:900;color:#fff;letter-spacing:-0.03em;margin-bottom:8px;line-height:1.05;}
+    .k31-hsub{font-size:clamp(16px,1.8vw,20px);color:rgba(239,239,255,.72);margin-bottom:14px;}
+    .k31-hdesc{font-size:15px;color:rgba(239,239,255,.65);line-height:1.75;max-width:560px;margin-bottom:30px;}
+    .k31-htags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px;}
+    .k31-htag{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(239,239,255,.82);font-size:12px;font-weight:600;padding:5px 14px;border-radius:6px;display:flex;align-items:center;gap:6px;}
+    .k31-htag i{color:#308b1d;font-size:11px;}
+    .k31-himg img{max-height:400px;max-width:100%;object-fit:contain;filter:drop-shadow(0 24px 48px rgba(0,0,0,.40));animation:k31f 4s ease-in-out infinite;}
+    @keyframes k31f{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .k31-bc{list-style:none;padding:0;margin:28px 0 0;display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(239,239,255,.38);}
+    .k31-bc a{color:rgba(239,239,255,.52);text-decoration:none;}
+    .k31-bc i{font-size:9px;}
+    .k31-gal{background:#fff;padding:72px 0;}
+    .k31-gmain{width:100%;max-width:520px;margin:0 auto;background:#f5f5f8;border-radius:18px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.10);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;}
+    .k31-gmain img{width:100%;height:100%;object-fit:contain;display:block;}
+    .k31-gthumbs{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;justify-content:center;}
+    .k31-gthumb{width:80px;height:80px;border-radius:10px;overflow:hidden;cursor:pointer;border:2px solid transparent;background:#f5f5f8;transition:border-color .2s,transform .15s;flex-shrink:0;}
+    .k31-gthumb img{width:100%;height:100%;object-fit:contain;display:block;}
+    .k31-gthumb:hover,.k31-gthumb.active{border-color:#308b1d;transform:translateY(-2px);}
+    .k31-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+    .k31-blist{list-style:none;padding:0;margin:20px 0 0;}
+    .k31-blist li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a3a6a;margin-bottom:10px;line-height:1.5;}
+    .k31-blist li i{color:#308b1d;font-size:14px;margin-top:2px;flex-shrink:0;}
+    .k31-notice{background:#fdf7ec;border:1px solid rgba(255,165,0,.22);border-radius:14px;padding:22px 24px;margin-top:36px;display:flex;align-items:flex-start;gap:14px;}
+    .k31-notice i{font-size:20px;color:#d4830a;flex-shrink:0;margin-top:2px;}
+    .k31-notice p{font-size:14.5px;color:#5a4a2a;line-height:1.68;margin:0;}
+    .k31-ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+    .k31-ben-card{background:#fafaff;border:1px solid rgba(0,0,156,.09);border-radius:16px;padding:28px 24px;transition:transform .25s,box-shadow .25s;}
+    .k31-ben-card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(0,0,156,.11);}
+    .k31-ben-ico{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,#01004e,#00009c);display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;margin-bottom:18px;}
+    .k31-ben-card h4{font-size:16px;font-weight:700;color:#01004e;margin-bottom:8px;}
+    .k31-ben-card p{font-size:14px;color:#5a5a8a;line-height:1.68;margin:0;}
+    @media(max-width:991px){.k31-split{grid-template-columns:1fr;gap:36px;}.k31-ben-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:767px){.k31-ben-grid{grid-template-columns:1fr;}}
     </style>
 </head>
 <body class="kyt-inner">
@@ -154,282 +76,274 @@
         <div class="animation-preloader">
             <div class="spinner"></div>
             <div class="txt-loading">
-                <span data-text-preloader="P" class="letters-loading">P</span>
-                <span data-text-preloader="O" class="letters-loading">O</span>
-                <span data-text-preloader="S" class="letters-loading">S</span>
+                <span data-text-preloader="K" class="letters-loading">K</span>
+                <span data-text-preloader="Y" class="letters-loading">Y</span>
+                <span data-text-preloader="T" class="letters-loading">T</span>
             </div>
         </div>
-        <div class="loader">
-            <div class="row">
-                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
-                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
-                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
-                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
-            </div>
-        </div>
+        <div class="loader"><div class="row"><div class="col-3 loader-section section-left"><div class="bg"></div></div><div class="col-3 loader-section section-left"><div class="bg"></div></div><div class="col-3 loader-section section-right"><div class="bg"></div></div><div class="col-3 loader-section section-right"><div class="bg"></div></div></div></div>
     </div>
     <div class="mouse-cursor cursor-outer"></div>
     <div class="mouse-cursor cursor-inner"></div>
 
-
-
-    <div class="search-wrap">
-        <div class="search-inner">
-            <i class="fas fa-times search-close" id="search-close"></i>
-            <div class="search-cell"><form method="get"><div class="search-field-holder"><input type="search" class="main-search-input" placeholder="Buscar..."></div></form></div>
+    <div class="fix-area">
+        <div class="offcanvas__info kyt-offcanvas">
+            <div class="offcanvas__wrapper"><div class="offcanvas__content">
+                <div class="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
+                    <div class="offcanvas__logo"><a href="../index.html"><img src="../assets/img/logo/logo2.png" alt="KYT" style="height:36px;"></a></div>
+                    <div class="offcanvas__close"><button aria-label="Cerrar"><i class="fas fa-times"></i></button></div>
+                </div>
+                <div class="mobile-menu fix mb-3"></div>
+                <div class="offcanvas__contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li class="d-flex align-items-center"><div class="offcanvas__contact-icon"><i class="fal fa-map-marker-alt"></i></div><div class="offcanvas__contact-text"><span>Bogotá, Colombia</span></div></li>
+                        <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-envelope"></i></div><div class="offcanvas__contact-text"><a href="mailto:contacto@kioscosytecnologia.com">contacto@kioscosytecnologia.com</a></div></li>
+                        <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="far fa-phone"></i></div><div class="offcanvas__contact-text"><a href="tel:+573113676433">+57 311 367 6433</a></div></li>
+                    </ul>
+                    <div class="header-button mt-4"><a href="../contacto.html" class="theme-btn text-center"><span>Cotizar proyecto <i class="fas fa-chevron-right"></i></span></a></div>
+                </div>
+            </div></div>
         </div>
     </div>
+    <div class="offcanvas__overlay"></div>
 
-    <!-- Hero -->
-    <section class="model-hero">
-        <div class="container model-hero-inner">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="model-badge"><i class="fas fa-tv"></i> Terminal POS · Hardware</div>
-                    <div class="model-sku">SKU: 574593-3</div>
-                    <h1>K&T-K31 / K32</h1>
-                    <p class="model-hero-sub">Estación modular de punto de venta con soporte integrado para impresora, lector de código y datáfono.</p>
-                    <div class="model-ctas">
-                        <a href="../contacto.html" class="model-btn-g"><i class="fas fa-comment-dots"></i> Solicitar cotización</a>
-                        <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20información%20sobre%20KYT-K31%20%2F%20K32" target="_blank" class="model-btn-o"><i class="fas fa-headset"></i> Hablar con un especialista</a>
+    <div class="kyt-header-wrap" id="kytHeader">
+        <div class="container" style="max-width:1260px;">
+            <div class="kyt-header-inner">
+                <a href="../index.html" class="kyt-logo"><img src="../assets/img/logo/logo2.png" alt="Kioscos y Tecnología"></a>
+                <ul class="kyt-nav">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="#">Quiénes somos <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown">
+                            <li><a href="../about.html"><span class="drop-icon"><i class="fas fa-building"></i></span>La empresa</a></li>
+                            <li><a href="../service-modalidad.html"><span class="drop-icon"><i class="fas fa-handshake"></i></span>Modalidad de venta</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Sectores <i class="fas fa-angle-down"></i></a>
+                        <div class="kyt-mega"><div class="mega-grid">
+                                <div class="mega-item"><a href="../salud.html" class="mega-item-link" aria-label="Ir a Salud" tabindex="0"></a><img src="../assets/img/Sectores/SALUD-180X225.jpg" alt="Salud" loading="lazy"><div class="mega-label"><span>Salud</span></div></div>
+                                <div class="mega-item"><a href="../banca.html" class="mega-item-link" aria-label="Ir a Banca" tabindex="0"></a><img src="../assets/img/Sectores/BANCA-180X225.jpg" alt="Banca" loading="lazy"><div class="mega-label"><span>Banca</span></div></div>
+                                <div class="mega-item"><a href="../educacion.html" class="mega-item-link" aria-label="Ir a Educación" tabindex="0"></a><img src="../assets/img/Sectores/EDUCATIVO-180X225.jpg" alt="Educación" loading="lazy"><div class="mega-label"><span>Educación</span></div></div>
+                                <div class="mega-item"><a href="../restaurantes.html" class="mega-item-link" aria-label="Ir a Restaurantes" tabindex="0"></a><img src="../assets/img/Sectores/RESTAURANTES-180X225.jpg" alt="Restaurantes" loading="lazy"><div class="mega-label"><span>Restaurantes</span></div></div>
+                                <div class="mega-item"><a href="../retail.html" class="mega-item-link" aria-label="Ir a Retail" tabindex="0"></a><img src="../assets/img/Sectores/RETAIL-180X225.jpg" alt="Retail" loading="lazy"><div class="mega-label"><span>Retail</span></div></div>
+                                <div class="mega-item"><a href="../hotel.html" class="mega-item-link" aria-label="Ir a Hoteles" tabindex="0"></a><img src="../assets/img/Sectores/HOTELES-180X225.jpg" alt="Hoteles" loading="lazy"><div class="mega-label"><span>Hoteles</span></div></div>
+                                <div class="mega-item"><a href="../Corporativo.html" class="mega-item-link" aria-label="Ir a Corporativo" tabindex="0"></a><img src="../assets/img/Sectores/CORPOTARIVO-180X225.jpg" alt="Corporativo" loading="lazy"><div class="mega-label"><span>Corporativo</span></div></div>
+                                <div class="mega-item"><a href="../Gobierno.html" class="mega-item-link" aria-label="Ir a Gobierno" tabindex="0"></a><img src="../assets/img/Sectores/GOBIERNO-180X225.jpg" alt="Gobierno" loading="lazy"><div class="mega-label"><span>Gobierno</span></div></div>
+                            </div></div>
+                    </li>
+                    <li class="nav-divider" aria-hidden="true"></li>
+                    <li><a href="#">Hardware <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown drop-hardware">
+                            <div class="sw-mega-grid hw-mega-grid">
+                                <div class="sw-mega-col">
+                                    <span class="sw-col-title">Terminales</span>
+                                    <li><a href="../Kioscos.html"><span class="drop-icon"><i class="fas fa-tablet-alt"></i></span><span class="sw-item-body"><span class="sw-item-name">Kioscos</span><span class="sw-item-desc">Terminales de autogestión para atención, turnos y autoservicio</span></span></a></li>
+                                    <li><a href="../Pos.html"><span class="drop-icon"><i class="fas fa-cash-register"></i></span><span class="sw-item-body"><span class="sw-item-name">POS</span><span class="sw-item-desc">Equipos punto de venta para comercios, restaurantes y servicios</span></span></a></li>
+                                </div>
+                                <div class="sw-mega-col">
+                                    <span class="sw-col-title">Experiencias digitales</span>
+                                    <li><a href="../mesa-interactiva.html"><span class="drop-icon"><i class="fas fa-th-large"></i></span><span class="sw-item-body"><span class="sw-item-name">Mesa interactiva</span><span class="sw-item-desc">Experiencias táctiles para colaboración, consulta y atención digital</span></span></a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li><a href="#">Software <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown drop-software">
+                            <div class="sw-mega-grid">
+                                <div class="sw-mega-col"><span class="sw-col-title">Suite K&amp;T</span>
+                                    <li><a href="../konex.html"><span class="drop-icon"><i class="fas fa-clock"></i></span><span class="sw-item-body"><span class="sw-item-name">KONEX<sup>®</sup></span><span class="sw-item-desc">Turnos y gestión de colas</span></span><span class="sw-badge">Turnos</span></a></li>
+                                    <li><a href="../davinci.html"><span class="drop-icon"><i class="fas fa-tv"></i></span><span class="sw-item-body"><span class="sw-item-name">DAVINCI<sup>®</sup></span><span class="sw-item-desc">Cartelería digital</span></span><span class="sw-badge">Signage</span></a></li>
+                                    <li><a href="../sense.html"><span class="drop-icon"><i class="fas fa-chart-bar"></i></span><span class="sw-item-body"><span class="sw-item-name">SENSE<sup>®</sup></span><span class="sw-item-desc">Analítica de experiencia</span></span><span class="sw-badge">Analítica</span></a></li>
+                                </div>
+                                <div class="sw-mega-col"><span class="sw-col-title">Soluciones digitales</span>
+                                    <li><a href="../dani-ia.html"><span class="drop-icon"><i class="fas fa-robot"></i></span><span class="sw-item-body"><span class="sw-item-name">DANI IA<sup>®</sup></span><span class="sw-item-desc">Asistente inteligente</span></span><span class="sw-badge">IA</span></a></li>
+                                    <li><a href="../fabrica-de-software.html"><span class="drop-icon"><i class="fas fa-laptop-code"></i></span><span class="sw-item-body"><span class="sw-item-name">Fábrica de software</span><span class="sw-item-desc">Desarrollo a la medida</span></span></a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="nav-divider" aria-hidden="true"></li>
+                    <li><a href="#">Recursos <i class="fas fa-angle-down"></i></a>
+                        <ul class="kyt-dropdown">
+                            <li><a href="../blog.html"><span class="drop-icon"><i class="fas fa-pen-nib"></i></span>Blog</a></li>
+                            <li><a href="../contacto.html"><span class="drop-icon"><i class="fas fa-envelope"></i></span>Contacto</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+                    <a href="../contacto.html" class="kyt-cta-btn"><i class="fas fa-comment-dots"></i> Cotizar proyecto</a>
+                    <button class="kyt-hamburger sidebar__toggle" aria-label="Abrir menú"><i class="far fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function(){
+        var hdr=document.getElementById('kytHeader');
+        if(!hdr)return;
+        var hero=document.querySelector('.k31-hero');
+        var hB=0,tick=false;
+        function calc(){hB=hero?(hero.getBoundingClientRect().bottom+window.scrollY-10):0;}
+        function apply(){hdr.classList.toggle('kyt-light',window.scrollY>hB);tick=false;}
+        function onS(){if(!tick){requestAnimationFrame(apply);tick=true;}}
+        function init(){calc();window.addEventListener('scroll',onS,{passive:true});apply();}
+        document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
+        window.addEventListener('resize',function(){calc();apply();},{passive:true});
+    })();
+    </script>
+    <div class="search-wrap"><div class="search-inner"><i class="fas fa-times search-close" id="search-close"></i><div class="search-cell"><form method="get"><div class="search-field-holder"><input type="search" class="main-search-input" placeholder="Buscar..."></div></form></div></div></div>
+
+
+    <!-- ══ HERO ══ -->
+    <section class="k31-hero">
+        <div class="k31-hero-overlay"></div>
+        <div class="container k31-hero-inner">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7 wow fadeInLeft" data-wow-delay=".2s">
+                    <div class="k31-badge"><i class="fas fa-cash-register"></i> POS Modular · Estación completa</div>
+                    <div class="k31-sku">SKU: 574593-3</div>
+                    <h1>K&amp;T-K31 / K32</h1>
+                    <p class="k31-hsub">Estación modular de punto de venta con impresora, cajón y pantalla integrados</p>
+                    <div class="k31-htags">
+                        <span class="k31-htag"><i class="fas fa-check"></i> Estación modular completa</span>
+                        <span class="k31-htag"><i class="fas fa-check"></i> Impresora integrada</span>
+                        <span class="k31-htag"><i class="fas fa-check"></i> Doble pantalla táctil</span>
+                        <span class="k31-htag"><i class="fas fa-check"></i> Cajón de efectivo incluido</span>
+                        <span class="k31-htag"><i class="fas fa-check"></i> Integración con KONEX®</span>
                     </div>
-                    <ul class="model-bc">
+                    <div class="k31-ctas">
+                        <a href="../contacto.html" class="k31-btn"><i class="fas fa-comment-dots"></i> Solicitar cotización</a>
+                        <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20información%20sobre%20el%20K31-K32" target="_blank" class="k31-bo"><i class="fas fa-headset"></i> Hablar con un especialista</a>
+                    </div>
+                    <ul class="k31-bc">
                         <li><a href="../index.html">Inicio</a></li><li><i class="fas fa-chevron-right"></i></li>
                         <li><a href="../Pos.html">POS</a></li><li><i class="fas fa-chevron-right"></i></li>
-                        <li style="color:rgba(239,239,255,.65)">K&T-K31 / K32</li>
+                        <li style="color:rgba(239,239,255,.65)">K&amp;T-K31 / K32</li>
                     </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Descripción general + imagen placeholder -->
-    <section class="model-section">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <span class="model-eyebrow">Descripción del producto</span>
-                    <h2 class="model-h2">K&T-K31 / K32</h2>
-                    <p class="model-lead">La serie K31/K32 está diseñada como estación completa de trabajo. Su arquitectura modular permite agregar o reemplazar periféricos sin interrumpir la operación, garantizando continuidad de negocio.</p>
-                    <p class="model-lead" style="margin-top:16px;color:#308b1d;font-weight:600;">SKU: 574593-3</p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="model-img-placeholder">
-                        <i class="fas fa-tv"></i>
-                        <span>Imagen del producto · Próximamente</span>
+                <div class="col-lg-5 wow fadeInRight" data-wow-delay=".35s">
+                    <div class="k31-himg text-center">
+                        <img src="../assets/img/pos/k31-k32/K31-1.png" alt="K&amp;T-K31 vista frontal">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Especificaciones técnicas -->
-    <section class="model-section model-section-alt">
+    <!-- ══ GALERÍA ══ -->
+    <section class="k31-gal">
         <div class="container">
-            <span class="model-eyebrow">Ficha técnica</span>
-            <h2 class="model-h2" style="margin-bottom:32px;">Especificaciones técnicas</h2>
-            <div class="model-specs-wrap">
-                <div class="model-specs-row">
-                    <div class="model-specs-label">Modelo</div>
-                    <div class="model-specs-val">K&T-K31 / K32 · SKU: 574593-3</div>
-                </div>
-                <div class="model-specs-row">
-                    <div class="model-specs-label">Sistema operativo</div>
-                    <div class="model-specs-val">Pendiente de diligenciar</div>
-                </div>
-                <div class="model-specs-row">
-                    <div class="model-specs-label">Pantalla</div>
-                    <div class="model-specs-val">Pendiente de diligenciar</div>
-                </div>
-                <div class="model-specs-row">
-                    <div class="model-specs-label">Procesador</div>
-                    <div class="model-specs-val">Pendiente de diligenciar</div>
-                </div>
-                <div class="model-specs-row">
-                    <div class="model-specs-label">Memoria RAM</div>
-                    <div class="model-specs-val">Pendiente de diligenciar</div>
-                </div>
-                <div class="model-specs-row">
-                    <div class="model-specs-label">Almacenamiento</div>
-                    <div class="model-specs-val">Pendiente de diligenciar</div>
-                </div>
-                <div class="model-specs-row">
-                    <div class="model-specs-label">Conectividad</div>
-                    <div class="model-specs-val">Pendiente de diligenciar</div>
-                </div>
-                <div class="model-specs-row">
-                    <div class="model-specs-label">Periféricos</div>
-                    <div class="model-specs-val">Pendiente de diligenciar</div>
-                </div>
-                <div class="model-specs-row">
-                    <div class="model-specs-label">Dimensiones</div>
-                    <div class="model-specs-val">Pendiente de diligenciar</div>
-                </div>
-                <div class="model-specs-row">
-                    <div class="model-specs-label">Garantía</div>
-                    <div class="model-specs-val">Pendiente de diligenciar</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Aplicaciones comerciales -->
-    <section class="model-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <span class="model-eyebrow">Casos de uso</span>
-                    <h2 class="model-h2">Aplicaciones comerciales</h2>
-                    <p class="model-lead">Restaurantes, hoteles, supermercados y operaciones que requieren una solución todo en uno.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galería -->
-    <section class="model-section model-section-alt">
-        <div class="container">
-            <span class="model-eyebrow">Galería visual</span>
-            <h2 class="model-h2" style="margin-bottom:32px;">Galería del producto</h2>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="model-img-placeholder" style="height:240px;">
-                        <i class="fas fa-tv" style="font-size:40px;"></i>
-                        <span>Imagen pendiente de cargar</span>
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
+                    <div class="k31-gmain">
+                        <img src="../assets/img/pos/k31-k32/K31-1.png" alt="K&amp;T-K31" id="mainImgK31">
+                    </div>
+                    <div class="k31-gthumbs">
+                        <div class="k31-gthumb active" onclick="chImgK31('../assets/img/pos/k31-k32/K31-1.png',this)"><img src="../assets/img/pos/k31-k32/K31-1.png" alt="Vista 1"></div>
+                        <div class="k31-gthumb" onclick="chImgK31('../assets/img/pos/k31-k32/K31-2.png',this)"><img src="../assets/img/pos/k31-k32/K31-2.png" alt="Vista 2"></div>
+                        <div class="k31-gthumb" onclick="chImgK31('../assets/img/pos/k31-k32/K31-3.jpg',this)"><img src="../assets/img/pos/k31-k32/K31-3.jpg" alt="Vista 3"></div>
+                        <div class="k31-gthumb" onclick="chImgK31('../assets/img/pos/k31-k32/K31-4.jpg',this)"><img src="../assets/img/pos/k31-k32/K31-4.jpg" alt="Vista 4"></div>
+                        <div class="k31-gthumb" onclick="chImgK31('../assets/img/pos/k31-k32/K31-5.jpg',this)"><img src="../assets/img/pos/k31-k32/K31-5.jpg" alt="Vista 5"></div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="model-img-placeholder" style="height:240px;">
-                        <i class="fas fa-tv" style="font-size:40px;"></i>
-                        <span>Imagen pendiente de cargar</span>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="model-img-placeholder" style="height:240px;">
-                        <i class="fas fa-tv" style="font-size:40px;"></i>
-                        <span>Imagen pendiente de cargar</span>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay=".3s">
+                    <span class="k31-ey">Descripción comercial</span>
+                    <h2 class="k31-h2">Una estación de punto<br>de venta completa y lista</h2>
+                    <p class="k31-lead">El K&amp;T-K31 / K32 es una estación POS modular que integra pantalla táctil, pantalla de cliente, impresora térmica de recibos y cajón de efectivo en un solo conjunto funcional. Diseñado para negocios que requieren una solución de punto de venta robusta, compacta y sin necesidad de periféricos externos adicionales.</p>
+                    <ul class="k31-blist">
+                        <li><i class="fas fa-check-circle"></i> Todo en uno: pantalla, impresora y cajón en una estación</li>
+                        <li><i class="fas fa-check-circle"></i> Doble pantalla táctil para cajero y cliente</li>
+                        <li><i class="fas fa-check-circle"></i> Impresora térmica de recibos de alta velocidad</li>
+                        <li><i class="fas fa-check-circle"></i> Cajón de efectivo integrado con llave de seguridad</li>
+                        <li><i class="fas fa-check-circle"></i> Diseño robusto para operaciones de alto tráfico</li>
+                        <li><i class="fas fa-check-circle"></i> Compatible con software KONEX® de K&amp;T</li>
+                    </ul>
+                    <div class="k31-notice">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>Nota sobre especificaciones técnicas:</strong> Las especificaciones detalladas de CPU, memoria, almacenamiento y sistema operativo de este modelo están disponibles bajo solicitud comercial. Contáctenos para recibir la ficha técnica completa y una cotización personalizada.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA final -->
-    <section class="model-section-dark">
+    <!-- ══ BENEFICIOS ══ -->
+    <section class="k31-sec k31-alt">
         <div class="container">
-            <h2>¿Le interesa el K&T-K31 / K32?</h2>
-            <p>Nuestro equipo le asesora en la configuración ideal para su operación, sector y volumen de ventas.</p>
-            <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-                <a href="../contacto.html" style="display:inline-flex;align-items:center;gap:8px;background:#308b1d;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;">
-                    <i class="fas fa-comment-dots"></i> Solicitar cotización
-                </a>
-                <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20información%20sobre%20KYT-K31%20%2F%20K32" target="_blank" style="display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,0.38);color:#fff;font-size:14px;font-weight:600;padding:11px 22px;border-radius:8px;text-decoration:none;">
-                    <i class="fas fa-headset"></i> Hablar con un especialista
-                </a>
+            <div class="text-center wow fadeInUp">
+                <span class="k31-ey">Ventajas del K31 / K32</span>
+                <h2 class="k31-h2">La estación más completa<br>para su punto de venta</h2>
+            </div>
+            <div class="k31-ben-grid">
+                <div class="k31-ben-card wow fadeInUp" data-wow-delay=".15s">
+                    <div class="k31-ben-ico"><i class="fas fa-layer-group"></i></div>
+                    <h4>Todo integrado</h4>
+                    <p>Pantalla táctil, pantalla de cliente, impresora de recibos y cajón de efectivo en un solo equipo. Sin cables externos, sin configuraciones complejas.</p>
+                </div>
+                <div class="k31-ben-card wow fadeInUp" data-wow-delay=".25s">
+                    <div class="k31-ben-ico"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Operación segura</h4>
+                    <p>Cajón de efectivo con llave de seguridad y apertura controlada por software. Auditoría de apertura y cierre para mayor trazabilidad operativa.</p>
+                </div>
+                <div class="k31-ben-card wow fadeInUp" data-wow-delay=".35s">
+                    <div class="k31-ben-ico"><i class="fas fa-tachometer-alt"></i></div>
+                    <h4>Alto rendimiento</h4>
+                    <p>Diseñado para soportar operaciones continuas de alto flujo. Ideal para cajas de supermercado, puntos de servicio bancario y comercios con gran volumen.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ═══ FOOTER ENTERPRISE KYT ═══ -->
-    <!-- ═══ FOOTER ENTERPRISE KYT — estilo TIGlobal ═══ -->
+    <!-- ══ CTA FINAL ══ -->
+    <section class="k31-dark text-center">
+        <div class="container">
+            <span class="k31-ey" style="color:rgba(200,255,180,.60);">Próximo paso</span>
+            <h2 class="k31-h2 k31-hw wow fadeInUp" style="margin-bottom:16px;">Solicite información<br>sobre el K&amp;T-K31 / K32</h2>
+            <p style="font-size:17px;color:rgba(239,239,255,.70);max-width:520px;margin:0 auto 36px;line-height:1.72;">Nuestro equipo comercial le enviará la ficha técnica completa, disponibilidad y condiciones de adquisición del K&amp;T-K31 / K32.</p>
+            <div class="k31-ctas justify-content-center wow fadeInUp" data-wow-delay=".2s">
+                <a href="../contacto.html" class="k31-btn"><i class="fas fa-comment-dots"></i> Solicitar información y cotización</a>
+                <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20información%20técnica%20sobre%20el%20K31-K32" target="_blank" class="k31-bo"><i class="fab fa-whatsapp"></i> Hablar por WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
     <footer class="kyt-footer" id="kytFooter">
-
-        <!-- Contenedor principal con borde — TODO el contenido aquí -->
         <div class="kf-container">
-
-            <!-- Bloque superior: headline + logo + redes -->
             <div class="kf-top">
                 <div class="kf-top-inner">
                     <div class="kf-top-text">
                         <h2 class="kf-headline">Estamos listos para<br>acompañar su operación</h2>
-                        <p class="kf-sub">Fabricamos, integramos y soportamos soluciones de autogestión, turnos, cartelería digital, POS y monitoreo para organizaciones que necesitan eficiencia, continuidad y control.</p>
-                        <div class="kf-ctas">
-                            <a href="../contacto.html" class="kf-btn-primary"><i class="fas fa-comment-dots"></i> Cotizar proyecto</a>
-                            <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20más%20información" target="_blank" class="kf-btn-secondary"><i class="fab fa-whatsapp"></i> Escribir por WhatsApp</a>
-                        </div>
+                        <div class="kf-ctas"><a href="../contacto.html" class="kf-btn-primary"><i class="fas fa-comment-dots"></i> Cotizar proyecto</a><a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20más%20información" target="_blank" class="kf-btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
                     </div>
-                    <div class="kf-hero-logo">
-                        <img src="../assets/img/logo/logo2.png" alt="Kioscos y Tecnología">
-                    </div>
+                    <div class="kf-hero-logo"><img src="../assets/img/logo/logo2.png" alt="Kioscos y Tecnología"></div>
                 </div>
                 <div class="kf-social-bar">
                     <span class="kf-social-label">Síganos en</span>
                     <div class="kf-social-icons">
-                        <a href="#" aria-label="LinkedIn KYT" class="kf-social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="YouTube KYT" class="kf-social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="Facebook KYT" class="kf-social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram KYT" class="kf-social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="kf-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube" class="kf-social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook" class="kf-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram" class="kf-social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-
-            <!-- Columnas de navegación -->
             <div class="kf-links">
                 <div class="kf-links-inner">
-                    <div class="kf-col">
-                        <span class="kf-col-title">General</span>
-                        <ul class="kf-col-list">
-                            <li><a href="../index.html">Inicio</a></li>
-                            <li><a href="../about.html">Quiénes somos</a></li>
-                            <li><a href="../service-modalidad.html">Modalidad de venta</a></li>
-                            <li><a href="../blog.html">Blog</a></li>
-                            <li><a href="../contacto.html">Contacto</a></li>
-                        </ul>
-                    </div>
-                    <div class="kf-col">
-                        <span class="kf-col-title">Soluciones</span>
-                        <ul class="kf-col-list">
-                            <li><a href="../Kioscos.html">Kioscos</a></li>
-                            <li><a href="../turnos.html">Software de turnos</a></li>
-                            <li><a href="../informativo.html">Cartelería digital</a></li>
-                            <li><a href="../Pos.html">POS</a></li>
-                            <li><a href="../service-modalidad.html">Soporte y mantenimiento</a></li>
-                        </ul>
-                    </div>
-                    <div class="kf-col">
-                        <span class="kf-col-title">Software</span>
-                        <ul class="kf-col-list">
-                            <li><a href="../konex.html">KONEX<sup>®</sup></a></li>
-                            <li><a href="../davinci.html">DAVINCI<sup>®</sup></a></li>
-                            <li><a href="../sense.html">SENSE<sup>®</sup></a></li>
-                            <li><a href="../dani-ia.html">DANI IA<sup>®</sup></a></li>
-                            <li><a href="../fabrica-de-software.html">Fábrica de software</a></li>
-                        </ul>
-                    </div>
-                    <div class="kf-col">
-                        <span class="kf-col-title">Sectores</span>
-                        <ul class="kf-col-list">
-                            <li><a href="../banca.html">Banca</a></li>
-                            <li><a href="../salud.html">Salud</a></li>
-                            <li><a href="../retail.html">Retail</a></li>
-                            <li><a href="../Gobierno.html">Gobierno</a></li>
-                            <li><a href="../Corporativo.html">Corporativo</a></li>
-                        </ul>
-                    </div>
-                    <div class="kf-col">
-                        <span class="kf-col-title">Contacto</span>
-                        <ul class="kf-col-list kf-contact-list">
-                            <li><i class="fas fa-map-marker-alt kf-ci"></i><span>Bogotá, Colombia</span></li>
-                            <li><i class="fas fa-envelope kf-ci"></i><a href="mailto:contacto@kioscosytecnologia.com">contacto@kioscosytecnologia.com</a></li>
-                            <li><i class="fas fa-phone kf-ci"></i><a href="tel:+573113676433">+57 311 367 6433</a></li>
-                            <li><i class="fas fa-clock kf-ci"></i><span>Lunes a viernes, 8am – 6pm</span></li>
-                        </ul>
-                    </div>
+                    <div class="kf-col"><span class="kf-col-title">General</span><ul class="kf-col-list"><li><a href="../index.html">Inicio</a></li><li><a href="../about.html">Quiénes somos</a></li><li><a href="../contacto.html">Contacto</a></li></ul></div>
+                    <div class="kf-col"><span class="kf-col-title">Soluciones</span><ul class="kf-col-list"><li><a href="../Kioscos.html">Kioscos</a></li><li><a href="../Pos.html">POS</a></li><li><a href="../turnos.html">Software de turnos</a></li></ul></div>
+                    <div class="kf-col"><span class="kf-col-title">Software</span><ul class="kf-col-list"><li><a href="../konex.html">KONEX®</a></li><li><a href="../davinci.html">DAVINCI®</a></li><li><a href="../dani-ia.html">DANI IA®</a></li></ul></div>
+                    <div class="kf-col"><span class="kf-col-title">Sectores</span><ul class="kf-col-list"><li><a href="../banca.html">Banca</a></li><li><a href="../salud.html">Salud</a></li><li><a href="../retail.html">Retail</a></li></ul></div>
+                    <div class="kf-col"><span class="kf-col-title">Contacto</span><ul class="kf-col-list kf-contact-list"><li><i class="fas fa-map-marker-alt kf-ci"></i><span>Bogotá, Colombia</span></li><li><i class="fas fa-envelope kf-ci"></i><a href="mailto:contacto@kioscosytecnologia.com">contacto@kioscosytecnologia.com</a></li><li><i class="fas fa-phone kf-ci"></i><a href="tel:+573113676433">+57 311 367 6433</a></li></ul></div>
                 </div>
             </div>
-
-        </div><!-- /kf-container -->
-
-        <!-- Copyright FUERA del borde — estilo TIGlobal -->
+        </div>
         <div class="kf-outside">
             <p class="kf-copy">Copyright © 2026 <a href="../index.html">Kioscos y Tecnología</a>. Todos los derechos reservados.</p>
-            <ul class="kf-legal">
-                <li><a href="#">Política de privacidad</a></li>
-                <li><a href="#">Términos y condiciones</a></li>
-            </ul>
+            <ul class="kf-legal"><li><a href="#">Política de privacidad</a></li><li><a href="#">Términos y condiciones</a></li></ul>
             <a href="#" class="kf-scroll-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></a>
         </div>
-
     </footer>
 
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
@@ -445,9 +359,12 @@
     <script src="../assets/js/wow.min.js"></script>
     <script src="../assets/js/circle-progress.js"></script>
     <script src="../assets/js/main.js"></script>
-    <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20más%20información"
-        target="_blank" class="whatsapp-float" title="Contáctenos por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <script>function chImg(src,el){document.getElementById('mainImg').src=src;document.querySelectorAll('.k1-gthumb').forEach(function(t){t.classList.remove('active');});el.classList.add('active');}</script>
+    <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20más%20información" target="_blank" class="whatsapp-float" title="Contáctenos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</body>
+</html>
+
+    <script>function chImgK31(src,el){document.getElementById('mainImgK31').src=src;document.querySelectorAll('.k31-gthumb').forEach(function(t){t.classList.remove('active');});el.classList.add('active');}</script>
+    <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20más%20información" target="_blank" class="whatsapp-float" title="Contáctenos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>
