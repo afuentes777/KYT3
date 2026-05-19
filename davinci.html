@@ -34,19 +34,82 @@
     .dv-btn:hover { background:#c04d00;color:#fff;transform:translateY(-2px); }
     .dv-ghost{ display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.38);color:#fff;font-size:14px;font-weight:600;padding:11px 24px;border-radius:8px;text-decoration:none;transition:border-color .2s,background .2s; }
     .dv-ghost:hover { border-color:#fff;background:rgba(255,255,255,.10);color:#fff; }
-    /* Hero */
-    .dv-hero { min-height:560px;display:flex;align-items:center;padding-top:100px;padding-bottom:72px;background:linear-gradient(135deg,#1a0800 0%,#2d1200 45%,#0a0030 100%);position:relative;overflow:hidden; }
-    .dv-hero::before { content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(232,93,0,.15) 0%,transparent 55%),radial-gradient(ellipse at 10% 70%,rgba(192,57,43,.10) 0%,transparent 50%);pointer-events:none; }
-    .dv-hero-inner { position:relative;z-index:2; }
-    .dv-hero-badge { display:inline-flex;align-items:center;gap:8px;background:rgba(232,93,0,.18);border:1px solid rgba(232,93,0,.40);color:#ffd4a0;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:18px; }
-    .dv-hero-badge span { width:6px;height:6px;border-radius:50%;background:#e85d00;display:inline-block;animation:dvpulse 2s ease-in-out infinite; }
+    /* ── HERO DAVINCI con video de fondo ── */
+    .dv-hero {
+        min-height:620px;
+        display:flex;align-items:center;
+        padding-top:100px;padding-bottom:80px;
+        position:relative;overflow:hidden;
+        background:#01004e; /* fallback mientras carga el video */
+    }
+    /* Contenedor de video — full bleed */
+    .dv-hero-video { position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none; }
+    .dv-hero-video video {
+        position:absolute;inset:0;
+        width:100%;height:100%;
+        object-fit:cover;object-position:center;
+        display:block;
+    }
+    /* Overlay suave — mismo tratamiento visual que el HOME de KYT.
+       Gradiente direccional izquierda→derecha para que el texto
+       izquierdo sea legible y el video se vea al lado derecho.
+       Opacidad máxima 0.72 para no apagar el video. */
+    .dv-hero-overlay {
+        position:absolute;inset:0;z-index:1;
+        background: linear-gradient(
+            90deg,
+            rgba(1,0,78,0.75) 0%,
+            rgba(1,0,78,0.55) 45%,
+            rgba(1,0,78,0.22) 100%
+        );
+        pointer-events:none;
+    }
+    /* Capa negra muy suave para reforzar legibilidad en mobile */
+    .dv-hero-overlay::after {
+        content:'';position:absolute;inset:0;
+        background:rgba(0,0,0,0.10);
+        pointer-events:none;
+    }
+    /* Destello naranja sutil — identidad DAVINCI */
+    .dv-hero::before {
+        content:'';position:absolute;inset:0;z-index:2;
+        background:radial-gradient(ellipse at 72% 38%,rgba(232,93,0,.08) 0%,transparent 55%);
+        pointer-events:none;
+    }
+    .dv-hero-inner { position:relative;z-index:3; }
+    /* Badge */
+    .dv-hero-badge {
+        display:inline-flex;align-items:center;gap:8px;
+        background:rgba(232,93,0,.18);border:1px solid rgba(232,93,0,.42);
+        color:#ffd9a0;font-size:10px;font-weight:700;
+        letter-spacing:2px;text-transform:uppercase;
+        padding:5px 14px;border-radius:50px;margin-bottom:20px;
+    }
+    .dv-hero-badge span {
+        width:6px;height:6px;border-radius:50%;
+        background:#e85d00;display:inline-block;
+        animation:dvpulse 2s ease-in-out infinite;
+    }
     @keyframes dvpulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.5)} }
-    .dv-hero h1 { font-size:clamp(36px,5vw,68px);font-weight:900;color:#fff;letter-spacing:-0.025em;margin-bottom:12px;line-height:1.05; }
-    .dv-hero-sub  { font-size:clamp(15px,1.6vw,18px);color:rgba(255,255,255,.75);margin-bottom:14px;line-height:1.65;max-width:620px; }
-    .dv-hero-desc { font-size:14.5px;color:rgba(255,255,255,.55);line-height:1.75;max-width:580px;margin-bottom:32px; }
-    .dv-bc { list-style:none;padding:0;margin:24px 0 0;display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.38); }
-    .dv-bc a { color:rgba(255,255,255,.52);text-decoration:none; }
-    .dv-bc i { font-size:9px; }
+    .dv-hero h1       { font-size:clamp(38px,5.2vw,70px);font-weight:900;color:#fff;letter-spacing:-0.025em;margin-bottom:14px;line-height:1.04; }
+    .dv-hero-sub      { font-size:clamp(15px,1.6vw,18px);color:rgba(255,255,255,.85);margin-bottom:14px;line-height:1.65;max-width:620px; }
+    .dv-hero-desc     { font-size:14.5px;color:rgba(255,255,255,.62);line-height:1.75;max-width:580px;margin-bottom:34px; }
+    .dv-bc            { list-style:none;padding:0;margin:26px 0 0;display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.38); }
+    .dv-bc a          { color:rgba(255,255,255,.52);text-decoration:none; }
+    .dv-bc i          { font-size:9px; }
+    /* Mobile: en pantallas pequeñas el video sigue siendo cover
+       y el texto se mantiene legible gracias al overlay */
+    @media(max-width:767px) {
+        .dv-hero { min-height:520px;padding-top:90px;padding-bottom:60px; }
+        .dv-hero-overlay {
+            background: linear-gradient(
+                180deg,
+                rgba(1,0,78,0.70) 0%,
+                rgba(1,0,78,0.60) 60%,
+                rgba(1,0,78,0.45) 100%
+            );
+        }
+    }
     /* Capas arquitectura */
     .dv-layers { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px; }
     .dv-layer  { border-radius:16px;padding:32px 24px;text-align:center;position:relative;overflow:hidden; }
@@ -412,8 +475,25 @@
         </div>
     </div>
 
-    <!-- ══ HERO DAVINCI ══ -->
+    <!-- ══ HERO DAVINCI — video de fondo ══ -->
     <section class="dv-hero">
+
+        <!-- Video de fondo optimizado: 3 MB, 1280×720, H.264, 20s loop, sin audio -->
+        <div class="dv-hero-video">
+            <video
+                autoplay loop muted playsinline
+                preload="none"
+                aria-hidden="true"
+                tabindex="-1"
+                poster="assets/img/hero/davinci-poster.jpg">
+                <source src="assets/video/DAVINCI1_web.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Overlay suave — igual que el HOME de KYT -->
+        <div class="dv-hero-overlay"></div>
+
+        <!-- Contenido -->
         <div class="container dv-hero-inner">
             <div class="row">
                 <div class="col-lg-9 col-xl-8">
@@ -433,6 +513,7 @@
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- ══ S1: PROPUESTA DE VALOR ══ -->
@@ -734,6 +815,33 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/circle-progress.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- Lazy-load del video hero DAVINCI — no bloquea el render inicial -->
+    <script>
+    (function(){
+        var vid = document.querySelector('.dv-hero-video video');
+        if (!vid) return;
+        /* Cargar el video solo cuando el navegador esté idle o
+           cuando el hero sea visible, para no bloquear el LCP */
+        function loadVideo() {
+            var src = vid.querySelector('source');
+            if (src && !src.src) {
+                src.src = src.getAttribute('data-src') || src.src;
+            }
+            vid.load();
+        }
+        if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function(entries, obs){
+                entries.forEach(function(e){
+                    if (e.isIntersecting) { loadVideo(); obs.disconnect(); }
+                });
+            }, { rootMargin: '200px' });
+            io.observe(vid);
+        } else {
+            /* Fallback: cargar después de que la página esté lista */
+            window.addEventListener('load', loadVideo);
+        }
+    })();
+    </script>
     <a href="https://wa.me/573113676433?text=Hola%20Kioscos%20y%20Tecnología%2C%20quiero%20más%20información" target="_blank" class="whatsapp-float" title="Contáctenos por WhatsApp"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>
