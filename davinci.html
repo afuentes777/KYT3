@@ -164,6 +164,13 @@
     @media(max-width:1100px) { .dv-caps{grid-template-columns:repeat(2,1fr);} .dv-formats{grid-template-columns:repeat(3,1fr);} .dv-monitor-grid{grid-template-columns:1fr 1fr;} .dv-benefits{grid-template-columns:1fr 1fr;} }
     @media(max-width:768px)  { .dv-split{grid-template-columns:1fr;gap:36px;} .dv-layers{grid-template-columns:1fr;} .dv-flow{flex-direction:column;} .dv-flow-arrow{transform:rotate(90deg);} .dv-formats{grid-template-columns:repeat(3,1fr);} }
     @media(max-width:480px)  { .dv-caps{grid-template-columns:1fr;} .dv-formats{grid-template-columns:repeat(2,1fr);} .dv-benefits{grid-template-columns:1fr;} .dv-monitor-grid{grid-template-columns:1fr;} }
+
+    @media(max-width:960px) {
+        .dv-feat-grid, .dv-ben-grid, .dv-kyt-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media(max-width:540px) {
+        .dv-feat-grid, .dv-ben-grid, .dv-kyt-grid { grid-template-columns: 1fr !important; }
+    }
     </style>
 </head>
 <body class="kyt-inner">

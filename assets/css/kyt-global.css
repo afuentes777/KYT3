@@ -82,8 +82,13 @@
   font-size: clamp(28px, 3.2vw, 46px) !important;
   font-weight: 800 !important;
   color: var(--kyt-blue-dark) !important;
-  line-height: 1.18 !important;
+  line-height: 1.25 !important;
   letter-spacing: -0.01em !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  max-width: 860px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .section-title.light h2  { color: #ffffff !important; }
 .section-title.light span{ color: var(--kyt-green-light) !important; }
@@ -605,7 +610,7 @@ body { padding-top: 0; }
 
 /* About section */
 .about-content .section-title span { color: var(--kyt-green) !important; }
-.about-content .section-title h2   { color: var(--kyt-blue-dark) !important; }
+.about-content .section-title h2   { color: var(--kyt-blue-dark) !important; word-break: normal !important; overflow-wrap: break-word !important; }
 .about-list li i { color: var(--kyt-green) !important; }
 
 /* Footer */

@@ -146,7 +146,9 @@
     /* Responsive */
     @media(max-width:1100px) { .kx-caps{grid-template-columns:repeat(2,1fr);} .kx-sectors{grid-template-columns:repeat(3,1fr);} .kx-kpis{grid-template-columns:repeat(2,1fr);} }
     @media(max-width:768px)  { .kx-split{grid-template-columns:1fr;gap:36px;} .kx-journey{flex-direction:column;gap:20px;} .kx-journey::before{display:none;} .kx-channels{grid-template-columns:1fr 1fr;} .kx-sectors{grid-template-columns:1fr 1fr;} .kx-integ-grid{grid-template-columns:repeat(2,1fr);} }
-    @media(max-width:480px)  { .kx-caps{grid-template-columns:1fr;} .kx-channels{grid-template-columns:1fr;} .kx-sectors{grid-template-columns:1fr 1fr;} .kx-kpis{grid-template-columns:1fr 1fr;} }
+    @media(max-width:480px)  { .kx-caps{grid-template-columns:1fr;
+        .kx-kpis { grid-template-columns: repeat(2, 1fr) !important; }
+    } .kx-channels{grid-template-columns:1fr;} .kx-sectors{grid-template-columns:1fr 1fr;} .kx-kpis{grid-template-columns:1fr 1fr;} }
     </style>
 </head>
 <body class="kyt-inner">
