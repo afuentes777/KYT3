@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Kioscos y Tecnología">
-    <meta name="description" content="SENSE® — Solución de analítica y medición de experiencia para conocer la percepción del usuario y mejorar la operación.">
-    <title>SENSE® – Analítica de experiencia – Kioscos y Tecnología</title>
+    <meta name="description" content="SENSE® — Suite Customer Experience Intelligence. SENSE Survey, encuestas omnicanal. SENSE Ear, monitoreo y grabación de atención presencial.">
+    <title>SENSE® – Customer Experience Intelligence – Kioscos y Tecnología</title>
     <link rel="shortcut icon" href="assets/img/preloader.svg">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.css">
@@ -89,6 +89,146 @@
 
     <div class="mouse-cursor cursor-outer"></div>
     <div class="mouse-cursor cursor-inner"></div>
+
+    <style>
+    body { padding-top: 0; }
+
+    /* ── Variables ── */
+    :root {
+        --sn-blue:   #01004e;
+        --sn-green:  #308b1d;
+        --sn-light:  #f8f9ff;
+        --sn-survey: #1a6b3a;
+        --sn-ear:    #0d4a7a;
+    }
+
+    /* ── Utilidades ── */
+    .sn-ey  { font-size:11px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase; color:var(--sn-green); display:block; margin-bottom:12px; }
+    .sn-h2  { font-size:clamp(26px,3.2vw,42px); font-weight:800; color:var(--sn-blue); line-height:1.13; margin-bottom:18px; letter-spacing:-0.015em; }
+    .sn-h2w { color:#fff; }
+    .sn-lead { font-size:16px; color:#5a5a8a; line-height:1.78; }
+    .sn-sec  { padding:86px 0; }
+    .sn-alt  { background:var(--sn-light); }
+    .sn-dark { background:linear-gradient(135deg,#01004e 0%,#00009c 100%); padding:86px 0; }
+
+    /* Botones */
+    .sn-btn-g { display:inline-flex; align-items:center; gap:8px; background:var(--sn-green); color:#fff; font-size:15px; font-weight:700; padding:13px 28px; border-radius:8px; text-decoration:none; box-shadow:0 4px 18px rgba(48,139,29,.30); transition:background .2s,transform .15s; white-space:nowrap; }
+    .sn-btn-g:hover { background:#236514; color:#fff; transform:translateY(-2px); }
+    .sn-btn-w { display:inline-flex; align-items:center; gap:8px; border:1.5px solid rgba(255,255,255,.40); color:#fff; font-size:15px; font-weight:600; padding:12px 26px; border-radius:8px; text-decoration:none; transition:border-color .2s,background .2s; }
+    .sn-btn-w:hover { border-color:#fff; background:rgba(255,255,255,.10); color:#fff; }
+    .sn-ctas { display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+
+    /* ── HERO ── */
+    .sn-hero { min-height:620px; display:flex; align-items:center; padding-top:106px; padding-bottom:80px; background:linear-gradient(135deg,#01004e 0%,#00009c 100%); position:relative; overflow:hidden; }
+    .sn-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 70% 30%,rgba(48,139,29,.10) 0%,transparent 55%); pointer-events:none; }
+    .sn-hero-inner { position:relative; z-index:2; }
+    .sn-hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(48,139,29,.18); border:1px solid rgba(48,139,29,.40); color:#d3ebb6; font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:50px; margin-bottom:20px; }
+    .sn-hero-badge span { width:6px; height:6px; border-radius:50%; background:var(--sn-green); display:inline-block; animation:snpulse 2s ease-in-out infinite; }
+    @keyframes snpulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.55;transform:scale(1.5)} }
+    .sn-hero h1 { font-size:clamp(56px,7vw,96px); font-weight:900; color:#fff; letter-spacing:-0.035em; margin-bottom:6px; line-height:1; }
+    .sn-hero-tagline { font-size:clamp(18px,2.2vw,26px); color:rgba(255,255,255,.72); margin-bottom:18px; font-weight:400; letter-spacing:.02em; }
+    .sn-hero-lead { font-size:clamp(15px,1.5vw,17px); color:rgba(239,239,255,.82); line-height:1.72; max-width:600px; margin-bottom:32px; }
+
+    /* Hero indicator pills */
+    .sn-hero-pills { display:flex; flex-wrap:wrap; gap:10px; margin-top:36px; }
+    .sn-hero-pill { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); color:rgba(239,239,255,.85); font-size:12px; font-weight:600; padding:6px 16px; border-radius:6px; display:flex; align-items:center; gap:7px; }
+    .sn-hero-pill i { color:var(--sn-green); font-size:11px; }
+
+    /* Hero right panel (stats card) */
+    .sn-hero-panel { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:18px; padding:28px 24px; }
+    .sn-hero-stat { text-align:center; padding:16px 12px; }
+    .sn-hero-stat-val { font-size:32px; font-weight:900; color:var(--sn-green); line-height:1; }
+    .sn-hero-stat-lbl { font-size:11px; color:rgba(239,239,255,.60); text-transform:uppercase; letter-spacing:1.2px; margin-top:5px; }
+    .sn-hero-stat + .sn-hero-stat { border-top:1px solid rgba(255,255,255,.08); }
+
+    /* ── Suite intro ── */
+    .sn-suite-cards { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:52px; }
+    .sn-suite-card { border-radius:20px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,156,.10); transition:transform .3s, box-shadow .3s; }
+    .sn-suite-card:hover { transform:translateY(-6px); box-shadow:0 18px 50px rgba(0,0,156,.18); }
+    .sn-sc-header { padding:28px 30px 22px; }
+    .sn-sc-survey .sn-sc-header { background:linear-gradient(135deg,#0b3d1e,#1a6b3a); }
+    .sn-sc-ear    .sn-sc-header { background:linear-gradient(135deg,#01004e,#0d4a7a); }
+    .sn-sc-icon { width:56px; height:56px; border-radius:14px; background:rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; font-size:24px; color:#fff; margin-bottom:14px; }
+    .sn-sc-header h3 { font-size:24px; font-weight:900; color:#fff; margin-bottom:6px; }
+    .sn-sc-header p { font-size:13px; color:rgba(255,255,255,.72); margin:0; }
+    .sn-sc-body { background:#fff; padding:24px 30px 28px; }
+    .sn-sc-body > p { font-size:14.5px; color:#5a5a8a; line-height:1.70; margin-bottom:18px; }
+    .sn-sc-list { list-style:none; padding:0; margin:0; }
+    .sn-sc-list li { display:flex; align-items:flex-start; gap:9px; font-size:13.5px; color:#3a3a6a; padding:6px 0; border-bottom:1px solid rgba(0,0,156,.06); line-height:1.45; }
+    .sn-sc-list li:last-child { border-bottom:none; }
+    .sn-sc-list li i { color:var(--sn-green); font-size:12px; margin-top:2px; flex-shrink:0; }
+
+    /* ── Feature grid (capacidades) ── */
+    .sn-feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:46px; }
+    .sn-feat-card { background:#fff; border:1px solid rgba(0,0,156,.09); border-radius:16px; padding:28px 24px; transition:transform .25s,box-shadow .25s,border-color .25s; }
+    .sn-feat-card:hover { transform:translateY(-5px); box-shadow:0 12px 36px rgba(0,0,156,.11); border-color:rgba(0,0,156,.18); }
+    .sn-feat-ico { width:50px; height:50px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:22px; color:#fff; margin-bottom:18px; }
+    .sn-feat-ico-g { background:linear-gradient(135deg,#308b1d,#48b832); }
+    .sn-feat-ico-b { background:linear-gradient(135deg,#01004e,#00009c); }
+    .sn-feat-card h4 { font-size:16px; font-weight:700; color:#01004e; margin-bottom:8px; }
+    .sn-feat-card p  { font-size:14px; color:#5a5a8a; line-height:1.68; margin:0; }
+
+    /* ── Indicadores KPI ── */
+    .sn-kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:44px; }
+    .sn-kpi-card { background:#fff; border:1px solid rgba(0,0,156,.09); border-radius:18px; padding:32px 22px; text-align:center; transition:transform .25s,box-shadow .25s; }
+    .sn-kpi-card:hover { transform:translateY(-5px); box-shadow:0 12px 36px rgba(0,0,156,.12); }
+    .sn-kpi-val { font-size:42px; font-weight:900; color:var(--sn-green); line-height:1; }
+    .sn-kpi-name { font-size:16px; font-weight:800; color:#01004e; margin:8px 0 6px; }
+    .sn-kpi-desc { font-size:13px; color:#5a5a8a; line-height:1.5; margin:0; }
+
+    /* ── Flujo operativo (Ear) ── */
+    .sn-flow { display:flex; align-items:flex-start; gap:0; margin-top:46px; position:relative; }
+    .sn-flow::before { content:''; position:absolute; top:28px; left:28px; right:28px; height:2px; background:linear-gradient(90deg,#308b1d,#00009c); z-index:0; }
+    .sn-flow-step { flex:1; text-align:center; position:relative; z-index:1; }
+    .sn-flow-num { width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,#308b1d,#00009c); display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:900; color:#fff; margin:0 auto 14px; box-shadow:0 4px 14px rgba(0,0,156,.25); }
+    .sn-flow-step h5 { font-size:13px; font-weight:700; color:#01004e; margin-bottom:6px; }
+    .sn-flow-step p  { font-size:12px; color:#5a5a8a; line-height:1.5; padding:0 6px; margin:0; }
+
+    /* ── Beneficios / impacto ── */
+    .sn-ben-cols { display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:50px; }
+    .sn-ben-col h4 { font-size:17px; font-weight:800; color:#01004e; margin-bottom:20px; padding-bottom:10px; border-bottom:3px solid var(--sn-green); display:inline-block; }
+    .sn-ben-list { list-style:none; padding:0; margin:0; }
+    .sn-ben-list li { display:flex; align-items:flex-start; gap:10px; font-size:15px; color:#3a3a6a; margin-bottom:12px; line-height:1.5; }
+    .sn-ben-list li i { color:var(--sn-green); font-size:14px; margin-top:2px; flex-shrink:0; }
+
+    /* ── Seguridad / security ── */
+    .sn-sec-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:44px; }
+    .sn-sec-item { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:22px 20px; }
+    .sn-sec-item i { font-size:22px; color:var(--sn-green); margin-bottom:12px; display:block; }
+    .sn-sec-item h5 { font-size:14px; font-weight:700; color:#fff; margin-bottom:6px; }
+    .sn-sec-item p  { font-size:13px; color:rgba(239,239,255,.65); line-height:1.6; margin:0; }
+
+    /* ── Industrias ── */
+    .sn-ind-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:46px; }
+    .sn-ind-card { background:#fff; border:1px solid rgba(0,0,156,.09); border-radius:16px; padding:28px 24px; transition:transform .25s,box-shadow .25s; position:relative; overflow:hidden; }
+    .sn-ind-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--sn-green),#00009c); border-radius:16px 16px 0 0; }
+    .sn-ind-card:hover { transform:translateY(-5px); box-shadow:0 12px 36px rgba(0,0,156,.11); }
+    .sn-ind-ico { width:52px; height:52px; border-radius:12px; background:rgba(48,139,29,.10); display:flex; align-items:center; justify-content:center; font-size:22px; color:var(--sn-green); margin-bottom:14px; }
+    .sn-ind-card h4 { font-size:16px; font-weight:700; color:#01004e; margin-bottom:8px; }
+    .sn-ind-card p  { font-size:14px; color:#5a5a8a; line-height:1.65; margin:0; }
+
+    /* ── Integración ── */
+    .sn-int-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:44px; }
+    .sn-int-item { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:20px 18px; display:flex; align-items:center; gap:14px; }
+    .sn-int-ico { width:44px; height:44px; border-radius:10px; background:rgba(48,139,29,.15); display:flex; align-items:center; justify-content:center; font-size:18px; color:var(--sn-green); flex-shrink:0; }
+    .sn-int-item h5 { font-size:14px; font-weight:700; color:#fff; margin-bottom:4px; }
+    .sn-int-item p  { font-size:13px; color:rgba(239,239,255,.60); line-height:1.5; margin:0; }
+
+    /* ── Stats hero banner ── */
+    .sn-stats-bar { display:grid; grid-template-columns:repeat(4,1fr); gap:0; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:16px; overflow:hidden; margin-top:44px; }
+    .sn-stat-box { text-align:center; padding:22px 16px; border-right:1px solid rgba(255,255,255,.10); }
+    .sn-stat-box:last-child { border-right:none; }
+    .sn-stat-val { font-size:30px; font-weight:900; color:var(--sn-green); line-height:1; }
+    .sn-stat-lbl { font-size:11px; color:rgba(239,239,255,.60); text-transform:uppercase; letter-spacing:1px; margin-top:5px; }
+
+    /* Responsive */
+    @media(max-width:1100px) { .sn-feat-grid{grid-template-columns:1fr 1fr;} .sn-kpi-grid{grid-template-columns:1fr 1fr;} .sn-ind-grid{grid-template-columns:1fr 1fr;} .sn-int-grid{grid-template-columns:1fr 1fr;} .sn-sec-grid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:768px) { .sn-suite-cards{grid-template-columns:1fr;} .sn-flow{flex-direction:column;gap:20px;} .sn-flow::before{display:none;} .sn-ben-cols{grid-template-columns:1fr;gap:28px;} .sn-stats-bar{grid-template-columns:1fr 1fr;} .sn-feat-grid{grid-template-columns:1fr;} .sn-ind-grid{grid-template-columns:1fr;} .sn-int-grid{grid-template-columns:1fr;} .sn-sec-grid{grid-template-columns:1fr;} }
+    @media(max-width:480px) { .sn-kpi-grid{grid-template-columns:1fr 1fr;} .sn-stats-bar{grid-template-columns:1fr;} }
+    </style>
+
+</head>
+<body class="kyt-inner">
     <!-- ═══ OFFCANVAS MOBILE ═══ -->
     <div class="fix-area">
         <div class="offcanvas__info kyt-offcanvas">
@@ -296,6 +436,22 @@
     })();
     </script>
 
+
+    <script>
+    (function(){
+        var hdr=document.getElementById('kytHeader');
+        if(!hdr)return;
+        var hero=document.querySelector('.sn-hero');
+        var hB=0,tick=false;
+        function calc(){hB=hero?(hero.getBoundingClientRect().bottom+window.scrollY-10):0;}
+        function apply(){hdr.classList.toggle('kyt-light',window.scrollY>hB);tick=false;}
+        function onS(){if(!tick){requestAnimationFrame(apply);tick=true;}}
+        function init(){calc();window.addEventListener('scroll',onS,{passive:true});apply();}
+        document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
+        window.addEventListener('resize',function(){calc();apply();},{passive:true});
+    })();
+    </script>
+
     <div class="search-wrap">
         <div class="search-inner">
             <i class="fas fa-times search-close" id="search-close"></i>
@@ -335,47 +491,54 @@
     </div>
 
     <!--<< Características principales >>-->
-    <section class="section-padding" style="background:#fff;">
-        <div class="container">
-            <div class="section-title text-center mb-5">
-                <span class="wow fadeInUp">Características principales</span>
-                <h2 class="wow fadeInUp" data-wow-delay=".3s">Todo lo que necesita<br>en una sola plataforma</h2>
-            </div>
-            <div class="row g-4">
-                
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="kyt-feature-card">
-                        <div class="kyt-fc-icon"><i class="fas fa-star"></i></div>
-                        <div class="kyt-fc-body">
-                            <h4>Encuestas en punto</h4>
-                            <p>Capture la satisfacción del usuario al finalizar su atención directamente en el kiosco o pantalla.</p>
-                        </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         HERO — SENSE SUITE
+    ══════════════════════════════════════════════════════ -->
+    <section class="sn-hero">
+        <div class="container sn-hero-inner">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7 col-xl-7 wow fadeInLeft" data-wow-delay=".2s">
+                    <div class="sn-hero-badge"><span></span> Customer Experience · Suite empresarial</div>
+                    <h1>SENSE<sup>®</sup></h1>
+                    <p class="sn-hero-tagline">Customer Experience Intelligence</p>
+                    <p class="sn-hero-lead">Suite inteligente para medir, monitorear y mejorar la experiencia del cliente en cada punto de contacto. SENSE integra encuestas omnicanal, analítica de satisfacción, monitoreo de atención presencial y trazabilidad operativa para convertir cada interacción en información accionable.</p>
+                    <div class="sn-ctas">
+                        <a href="contacto.html" class="sn-btn-g"><i class="fas fa-play-circle"></i> Solicitar demo</a>
+                        <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20información%20sobre%20SENSE" target="_blank" class="sn-btn-w"><i class="fas fa-headset"></i> Hablar con un especialista</a>
+                    </div>
+                    <div class="sn-hero-pills">
+                        <span class="sn-hero-pill"><i class="fas fa-check"></i> Encuestas omnicanal</span>
+                        <span class="sn-hero-pill"><i class="fas fa-check"></i> Monitoreo en tiempo real</span>
+                        <span class="sn-hero-pill"><i class="fas fa-check"></i> Analítica CX</span>
+                        <span class="sn-hero-pill"><i class="fas fa-check"></i> Trazabilidad por interacción</span>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="kyt-feature-card">
-                        <div class="kyt-fc-icon"><i class="fas fa-brain"></i></div>
-                        <div class="kyt-fc-body">
-                            <h4>Análisis de sentimiento</h4>
-                            <p>Procese respuestas abiertas con IA para detectar tendencias y alertas de experiencia negativa.</p>
+                <div class="col-lg-5 col-xl-4 offset-xl-1 wow fadeInRight" data-wow-delay=".35s">
+                    <div class="sn-hero-panel">
+                        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,200,244,.55);margin-bottom:20px;">SENSE® — Impacto medido</div>
+                        <div class="sn-hero-stat">
+                            <div class="sn-hero-stat-val">+30%</div>
+                            <div class="sn-hero-stat-lbl">Tasa de respuesta en encuestas</div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="kyt-feature-card">
-                        <div class="kyt-fc-icon"><i class="fas fa-tachometer-alt"></i></div>
-                        <div class="kyt-fc-body">
-                            <h4>Indicadores NPS y CSAT</h4>
-                            <p>Mida NPS, CSAT y CES de forma continua y compare por sede, canal y período.</p>
+                        <div class="sn-hero-stat">
+                            <div class="sn-hero-stat-val">100%</div>
+                            <div class="sn-hero-stat-lbl">Trazabilidad por interacción</div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="kyt-feature-card">
-                        <div class="kyt-fc-icon"><i class="fas fa-bell"></i></div>
-                        <div class="kyt-fc-body">
-                            <h4>Alertas automáticas</h4>
-                            <p>Reciba notificaciones cuando un indicador baje del umbral configurado por su equipo.</p>
+                        <div class="sn-hero-stat">
+                            <div class="sn-hero-stat-val">0</div>
+                            <div class="sn-hero-stat-lbl">Intervención manual requerida</div>
+                        </div>
+                        <div class="sn-hero-stat">
+                            <div class="sn-hero-stat-val">-25%</div>
+                            <div class="sn-hero-stat-lbl">Reducción de abandono de clientes</div>
+                        </div>
+                        <div style="margin-top:20px;padding:12px;background:rgba(48,139,29,.12);border-radius:10px;border:1px solid rgba(48,139,29,.25);">
+                            <div style="font-size:12px;font-weight:700;color:#d3ebb6;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;">2 soluciones integradas</div>
+                            <div style="display:flex;gap:8px;">
+                                <span style="background:rgba(26,107,58,.35);border:1px solid rgba(26,107,58,.50);color:#a8e6c0;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;">SENSE Survey</span>
+                                <span style="background:rgba(13,74,122,.35);border:1px solid rgba(13,74,122,.50);color:#a8d0f0;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;">SENSE Ear</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -383,40 +546,487 @@
         </div>
     </section>
 
-    <!--<< Sectores >>-->
-    <section class="section-padding" style="background:#efefff;">
+    <!-- ══════════════════════════════════════════════════════
+         UNA SUITE, DOS CAPACIDADES
+    ══════════════════════════════════════════════════════ -->
+    <section class="sn-sec" style="background:#fff;">
         <div class="container">
-            <div class="section-title text-center mb-4">
-                <span class="wow fadeInUp">Aplicación sectorial</span>
-                <h2 class="wow fadeInUp" data-wow-delay=".3s">Diseñado para organizaciones<br>que atienden personas</h2>
+            <div class="text-center wow fadeInUp">
+                <span class="sn-ey">La suite SENSE</span>
+                <h2 class="sn-h2">Una suite. Dos capacidades<br>complementarias.</h2>
+                <p class="sn-lead" style="max-width:620px;margin:0 auto;">SENSE agrupa dos soluciones diseñadas para cubrir la experiencia del cliente desde la captura de su voz hasta el monitoreo de la atención presencial.</p>
             </div>
-            <div class="kyt-sectors-tags text-center wow fadeInUp" data-wow-delay=".4s">
-                <span class="kyt-tag">Banca</span><span class="kyt-tag">Salud</span><span class="kyt-tag">Retail</span><span class="kyt-tag">Gobierno</span><span class="kyt-tag">Corporativo</span>
+            <div class="sn-suite-cards">
+                <!-- SENSE Survey -->
+                <div class="sn-suite-card sn-sc-survey wow fadeInLeft" data-wow-delay=".2s">
+                    <div class="sn-sc-header">
+                        <div class="sn-sc-icon"><i class="fas fa-poll"></i></div>
+                        <h3>SENSE Survey</h3>
+                        <p>Solución de encuestas omnicanal</p>
+                    </div>
+                    <div class="sn-sc-body">
+                        <p>Permite capturar la voz del cliente en kioscos, web, QR, WhatsApp, SMS, email y dispositivos móviles, centralizando respuestas, indicadores y reportes en una sola plataforma.</p>
+                        <ul class="sn-sc-list">
+                            <li><i class="fas fa-check-circle"></i> Encuestas en múltiples canales</li>
+                            <li><i class="fas fa-check-circle"></i> Indicadores CSAT, NPS, CES y SLA</li>
+                            <li><i class="fas fa-check-circle"></i> Reportes ejecutivos y operativos</li>
+                            <li><i class="fas fa-check-circle"></i> Gestión centralizada de encuestas</li>
+                            <li><i class="fas fa-check-circle"></i> Integración con turnos, CRM y canales digitales</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- SENSE Ear -->
+                <div class="sn-suite-card sn-sc-ear wow fadeInRight" data-wow-delay=".3s">
+                    <div class="sn-sc-header">
+                        <div class="sn-sc-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <h3>SENSE Ear</h3>
+                        <p>Monitoreo y grabación de atención presencial</p>
+                    </div>
+                    <div class="sn-sc-body">
+                        <p>Permite registrar, monitorear y evaluar interacciones presenciales entre cliente y ejecutivo, brindando trazabilidad, control de calidad y visibilidad operativa en tiempo real.</p>
+                        <ul class="sn-sc-list">
+                            <li><i class="fas fa-check-circle"></i> Grabación automática por reglas o campañas</li>
+                            <li><i class="fas fa-check-circle"></i> Monitoreo de estaciones y micrófonos</li>
+                            <li><i class="fas fa-check-circle"></i> Evaluación de grabaciones</li>
+                            <li><i class="fas fa-check-circle"></i> Alertas operativas</li>
+                            <li><i class="fas fa-check-circle"></i> Reportes por unidad, campaña y ejecutivo</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!--<< CTA Final >>-->
-    <section class="section-padding" style="background:linear-gradient(135deg,#01004e,#00009c);text-align:center;">
+    <!-- ══════════════════════════════════════════════════════
+         SENSE SURVEY — SECCIÓN PRINCIPAL
+    ══════════════════════════════════════════════════════ -->
+    <section class="sn-sec sn-alt" id="survey">
         <div class="container">
-            <h2 style="color:#fff;font-size:clamp(26px,3vw,42px);font-weight:800;margin-bottom:14px;">
-                ¿Le interesa conocer SENSE®?
-            </h2>
-            <p style="color:rgba(239,239,255,0.75);font-size:17px;max-width:520px;margin:0 auto 32px;">
-                Agendemos una demostración y le mostramos cómo se adapta a su operación.
-            </p>
-            <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
-                <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20agendar%20una%20demo" target="_blank"
-                   style="display:inline-flex;align-items:center;gap:8px;background:#308b1d;color:#fff;font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;">
-                    <i class="fas fa-calendar-check"></i> Agendar demo
-                </a>
-                <a href="index.html#soluciones"
-                   style="display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-weight:600;font-size:15px;padding:13px 26px;border-radius:8px;text-decoration:none;">
-                    <i class="fas fa-th-large"></i> Ver otras soluciones
-                </a>
+            <div class="row align-items-center g-5 mb-5">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
+                    <span class="sn-ey">SENSE Survey</span>
+                    <h2 class="sn-h2">Escuche la voz del cliente<br>en cada interacción.</h2>
+                    <p class="sn-lead">Capture opiniones en todos los canales, analícelas en tiempo real y convierta la retroalimentación de sus clientes en decisiones de mejora continua.</p>
+                    <ul style="list-style:none;padding:0;margin:20px 0 0;">
+                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a3a6a;margin-bottom:10px;line-height:1.5;"><i class="fas fa-check-circle" style="color:#308b1d;font-size:14px;margin-top:2px;flex-shrink:0;"></i> Encuestas omnicanal: kioscos, tablets, web, QR, SMS, email, WhatsApp y apps móviles</li>
+                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a3a6a;margin-bottom:10px;line-height:1.5;"><i class="fas fa-check-circle" style="color:#308b1d;font-size:14px;margin-top:2px;flex-shrink:0;"></i> Gestión centralizada de encuestas, plantillas, alertas, usuarios y reportes</li>
+                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a3a6a;margin-bottom:10px;line-height:1.5;"><i class="fas fa-check-circle" style="color:#308b1d;font-size:14px;margin-top:2px;flex-shrink:0;"></i> Activación automática de encuestas post-atención o post-evento</li>
+                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a3a6a;margin-bottom:10px;line-height:1.5;"><i class="fas fa-check-circle" style="color:#308b1d;font-size:14px;margin-top:2px;flex-shrink:0;"></i> Analítica CX: CSAT, NPS, CES, SLA por canal, sede, servicio y periodo</li>
+                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a3a6a;margin-bottom:0;line-height:1.5;"><i class="fas fa-check-circle" style="color:#308b1d;font-size:14px;margin-top:2px;flex-shrink:0;"></i> Exportación a Excel y PDF, dashboards por rol y comparativos entre sedes</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay=".3s">
+                    <!-- Visual mockup Survey -->
+                    <div style="background:linear-gradient(135deg,#0b3d1e,#1a6b3a);border-radius:18px;padding:32px 28px;box-shadow:0 20px 56px rgba(0,80,30,.22);">
+                        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(200,255,220,.55);margin-bottom:18px;">SENSE Survey — Dashboard</div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+                            <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:14px 12px;text-align:center;"><div style="font-size:22px;font-weight:900;color:#4ade80;">94%</div><div style="font-size:10px;color:rgba(200,255,220,.60);text-transform:uppercase;letter-spacing:1px;margin-top:4px;">CSAT</div></div>
+                            <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:14px 12px;text-align:center;"><div style="font-size:22px;font-weight:900;color:#34d399;">78</div><div style="font-size:10px;color:rgba(200,255,220,.60);text-transform:uppercase;letter-spacing:1px;margin-top:4px;">NPS</div></div>
+                            <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:14px 12px;text-align:center;"><div style="font-size:22px;font-weight:900;color:#6ee7b7;">4.7</div><div style="font-size:10px;color:rgba(200,255,220,.60);text-transform:uppercase;letter-spacing:1px;margin-top:4px;">CES</div></div>
+                            <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:14px 12px;text-align:center;"><div style="font-size:22px;font-weight:900;color:#a7f3d0;">98%</div><div style="font-size:10px;color:rgba(200,255,220,.60);text-transform:uppercase;letter-spacing:1px;margin-top:4px;">SLA</div></div>
+                        </div>
+                        <div style="background:rgba(255,255,255,.06);border-radius:8px;padding:12px 14px;margin-bottom:8px;"><div style="font-size:12px;color:rgba(200,255,220,.75);margin-bottom:6px;font-weight:600;">Canales activos</div><div style="display:flex;gap:6px;flex-wrap:wrap;"><span style="background:rgba(255,255,255,.10);color:rgba(200,255,220,.80);font-size:11px;padding:3px 9px;border-radius:4px;">Kiosco</span><span style="background:rgba(255,255,255,.10);color:rgba(200,255,220,.80);font-size:11px;padding:3px 9px;border-radius:4px;">WhatsApp</span><span style="background:rgba(255,255,255,.10);color:rgba(200,255,220,.80);font-size:11px;padding:3px 9px;border-radius:4px;">QR</span><span style="background:rgba(255,255,255,.10);color:rgba(200,255,220,.80);font-size:11px;padding:3px 9px;border-radius:4px;">Web</span><span style="background:rgba(255,255,255,.10);color:rgba(200,255,220,.80);font-size:11px;padding:3px 9px;border-radius:4px;">Email</span><span style="background:rgba(255,255,255,.10);color:rgba(200,255,220,.80);font-size:11px;padding:3px 9px;border-radius:4px;">SMS</span></div></div>
+                        <div style="background:rgba(255,255,255,.06);border-radius:8px;padding:12px 14px;"><span style="font-size:13px;color:rgba(200,255,220,.75);">Encuestas respondidas hoy</span><span style="float:right;font-size:13px;font-weight:800;color:#4ade80;">1,284</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Capacidades grid -->
+            <div class="sn-feat-grid">
+                <div class="sn-feat-card wow fadeInUp" data-wow-delay=".1s">
+                    <div class="sn-feat-ico sn-feat-ico-g"><i class="fas fa-globe"></i></div>
+                    <h4>Encuestas omnicanal</h4>
+                    <p>Kioscos, tablets, web, QR, SMS, email, WhatsApp y apps móviles. Llegue al cliente en el canal que prefiera, en el momento preciso.</p>
+                </div>
+                <div class="sn-feat-card wow fadeInUp" data-wow-delay=".2s">
+                    <div class="sn-feat-ico sn-feat-ico-b"><i class="fas fa-layer-group"></i></div>
+                    <h4>Gestión centralizada</h4>
+                    <p>Administre encuestas, plantillas, preguntas, alertas, usuarios y reportes desde un único panel con control total sobre la operación.</p>
+                </div>
+                <div class="sn-feat-card wow fadeInUp" data-wow-delay=".3s">
+                    <div class="sn-feat-ico sn-feat-ico-g"><i class="fas fa-robot"></i></div>
+                    <h4>Automatización</h4>
+                    <p>Active encuestas automáticamente después de cada atención o evento del cliente. Sin intervención manual en el flujo de captura.</p>
+                </div>
+                <div class="sn-feat-card wow fadeInUp" data-wow-delay=".1s">
+                    <div class="sn-feat-ico sn-feat-ico-b"><i class="fas fa-chart-line"></i></div>
+                    <h4>Analítica CX</h4>
+                    <p>Medición de CSAT, NPS, CES y SLA con resultados segmentados por canal, sede, servicio o periodo para decisiones basadas en datos.</p>
+                </div>
+                <div class="sn-feat-card wow fadeInUp" data-wow-delay=".2s">
+                    <div class="sn-feat-ico sn-feat-ico-g"><i class="fas fa-file-excel"></i></div>
+                    <h4>Reportes ejecutivos</h4>
+                    <p>Exportación a Excel y PDF, dashboards por rol y comparativos entre sedes para facilitar la toma de decisiones en todos los niveles.</p>
+                </div>
+                <div class="sn-feat-card wow fadeInUp" data-wow-delay=".3s">
+                    <div class="sn-feat-ico sn-feat-ico-b"><i class="fas fa-plug"></i></div>
+                    <h4>Integraciones API</h4>
+                    <p>APIs REST, CRM, sistemas de turnos, canales digitales y plataformas omnicanal. Conecte SENSE con su ecosistema tecnológico.</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         INDICADORES KPI — SENSE Survey
+    ══════════════════════════════════════════════════════ -->
+    <section class="sn-sec" style="background:#fff;">
+        <div class="container">
+            <div class="text-center wow fadeInUp">
+                <span class="sn-ey">Indicadores clave</span>
+                <h2 class="sn-h2">Decisiones basadas en la<br>experiencia del cliente</h2>
+                <p class="sn-lead" style="max-width:600px;margin:0 auto;">Los indicadores de SENSE Survey ofrecen una visión objetiva del desempeño de su organización, con datos en tiempo real para actuar cuando más importa.</p>
+            </div>
+            <div class="sn-kpi-grid">
+                <div class="sn-kpi-card wow fadeInUp" data-wow-delay=".1s">
+                    <div class="sn-kpi-val">CSAT</div>
+                    <div class="sn-kpi-name">Satisfacción del cliente</div>
+                    <p class="sn-kpi-desc">Mida la satisfacción inmediata después de cada interacción con precisión y visibilidad en tiempo real.</p>
+                </div>
+                <div class="sn-kpi-card wow fadeInUp" data-wow-delay=".2s">
+                    <div class="sn-kpi-val">NPS</div>
+                    <div class="sn-kpi-name">Lealtad y recomendación</div>
+                    <p class="sn-kpi-desc">Evalúe la probabilidad de recomendación de sus clientes y anticipe la retención a largo plazo.</p>
+                </div>
+                <div class="sn-kpi-card wow fadeInUp" data-wow-delay=".3s">
+                    <div class="sn-kpi-val">CES</div>
+                    <div class="sn-kpi-name">Esfuerzo del cliente</div>
+                    <p class="sn-kpi-desc">Mida cuánto esfuerzo requiere el cliente para resolver su necesidad y optimice la experiencia de servicio.</p>
+                </div>
+                <div class="sn-kpi-card wow fadeInUp" data-wow-delay=".4s">
+                    <div class="sn-kpi-val">SLA</div>
+                    <div class="sn-kpi-name">Nivel de servicio percibido</div>
+                    <p class="sn-kpi-desc">Monitoree el nivel de servicio percibido por sus clientes en cada canal, sede y periodo.</p>
+                </div>
+            </div>
+            <!-- Stats bar -->
+            <div class="sn-stats-bar wow fadeInUp" data-wow-delay=".3s">
+                <div class="sn-stat-box">
+                    <div class="sn-stat-val">+30%</div>
+                    <div class="sn-stat-lbl">Tasa de respuesta</div>
+                </div>
+                <div class="sn-stat-box">
+                    <div class="sn-stat-val">+20%</div>
+                    <div class="sn-stat-lbl">Mejora en CSAT y NPS</div>
+                </div>
+                <div class="sn-stat-box">
+                    <div class="sn-stat-val">-25%</div>
+                    <div class="sn-stat-lbl">Reducción de abandono</div>
+                </div>
+                <div class="sn-stat-box">
+                    <div class="sn-stat-val">+40%</div>
+                    <div class="sn-stat-lbl">Insights accionables</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         SENSE EAR — SECCIÓN PRINCIPAL
+    ══════════════════════════════════════════════════════ -->
+    <section class="sn-sec sn-alt" id="ear">
+        <div class="container">
+            <div class="row align-items-center g-5 mb-5">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
+                    <!-- Visual mockup Ear -->
+                    <div style="background:linear-gradient(135deg,#01004e,#0d4a7a);border-radius:18px;padding:32px 28px;box-shadow:0 20px 56px rgba(1,0,78,.22);">
+                        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(170,210,255,.55);margin-bottom:18px;">SENSE Ear — Monitor en vivo</div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+                            <div style="background:rgba(255,255,255,.07);border:1px solid rgba(100,180,255,.20);border-radius:10px;padding:14px 12px;text-align:center;"><div style="font-size:22px;font-weight:900;color:#60a5fa;">100%</div><div style="font-size:10px;color:rgba(170,210,255,.60);text-transform:uppercase;letter-spacing:1px;margin-top:4px;">Trazabilidad</div></div>
+                            <div style="background:rgba(255,255,255,.07);border:1px solid rgba(100,180,255,.20);border-radius:10px;padding:14px 12px;text-align:center;"><div style="font-size:22px;font-weight:900;color:#93c5fd;">24/7</div><div style="font-size:10px;color:rgba(170,210,255,.60);text-transform:uppercase;letter-spacing:1px;margin-top:4px;">Disponibilidad</div></div>
+                        </div>
+                        <div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px 14px;margin-bottom:8px;"><div style="font-size:12px;color:rgba(170,210,255,.75);margin-bottom:6px;font-weight:600;">Estaciones activas</div><div style="display:flex;gap:6px;flex-wrap:wrap;"><span style="background:rgba(48,139,29,.18);border:1px solid rgba(48,139,29,.35);color:#a7f3d0;font-size:11px;padding:3px 9px;border-radius:4px;">Módulo 01 ●</span><span style="background:rgba(48,139,29,.18);border:1px solid rgba(48,139,29,.35);color:#a7f3d0;font-size:11px;padding:3px 9px;border-radius:4px;">Módulo 02 ●</span><span style="background:rgba(48,139,29,.18);border:1px solid rgba(48,139,29,.35);color:#a7f3d0;font-size:11px;padding:3px 9px;border-radius:4px;">Módulo 03 ●</span></div></div>
+                        <div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;color:rgba(170,210,255,.75);">Grabaciones hoy</span><span style="font-size:13px;font-weight:800;color:#60a5fa;">342</span></div>
+                        <div style="background:rgba(255,255,255,.05);border-radius:8px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;color:rgba(170,210,255,.75);">Evaluaciones pendientes</span><span style="font-size:13px;font-weight:800;color:#93c5fd;">18</span></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay=".3s">
+                    <span class="sn-ey">SENSE Ear</span>
+                    <h2 class="sn-h2">Monitoreo en tiempo real<br>de la atención presencial.</h2>
+                    <p class="sn-lead">Registre y supervise cada interacción entre cliente y ejecutivo de forma automática, segura y trazable, fortaleciendo los procesos de calidad, supervisión y mejora continua.</p>
+                    <ul style="list-style:none;padding:0;margin:20px 0 0;">
+                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a3a6a;margin-bottom:10px;line-height:1.5;"><i class="fas fa-check-circle" style="color:#308b1d;font-size:14px;margin-top:2px;flex-shrink:0;"></i> Campañas configurables: reglas por unidad, perfil de servicio y grupos de usuarios</li>
+                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a3a6a;margin-bottom:10px;line-height:1.5;"><i class="fas fa-check-circle" style="color:#308b1d;font-size:14px;margin-top:2px;flex-shrink:0;"></i> Grabación automática cuando la interacción cumple las condiciones de la campaña</li>
+                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a3a6a;margin-bottom:10px;line-height:1.5;"><i class="fas fa-check-circle" style="color:#308b1d;font-size:14px;margin-top:2px;flex-shrink:0;"></i> Evaluación de grabaciones por usuarios autorizados con trazabilidad completa</li>
+                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a3a6a;margin-bottom:10px;line-height:1.5;"><i class="fas fa-check-circle" style="color:#308b1d;font-size:14px;margin-top:2px;flex-shrink:0;"></i> Gestión de micrófonos USB por estación de trabajo</li>
+                        <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:#3a3a6a;margin-bottom:0;line-height:1.5;"><i class="fas fa-check-circle" style="color:#308b1d;font-size:14px;margin-top:2px;flex-shrink:0;"></i> Plataforma web centralizada: usuarios, campañas, grabaciones y reportes</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Capacidades grid Ear -->
+            <div class="sn-feat-grid">
+                <div class="sn-feat-card wow fadeInUp" data-wow-delay=".1s">
+                    <div class="sn-feat-ico sn-feat-ico-b"><i class="fas fa-cog"></i></div>
+                    <h4>Campañas configurables</h4>
+                    <p>Defina reglas de grabación por unidad, perfil de servicio o grupos de usuarios según los requerimientos de calidad de cada área.</p>
+                </div>
+                <div class="sn-feat-card wow fadeInUp" data-wow-delay=".2s">
+                    <div class="sn-feat-ico sn-feat-ico-g"><i class="fas fa-microphone"></i></div>
+                    <h4>Grabación automática</h4>
+                    <p>El sistema activa la grabación cuando la interacción cumple las condiciones configuradas. Sin intervención del ejecutivo ni del supervisor.</p>
+                </div>
+                <div class="sn-feat-card wow fadeInUp" data-wow-delay=".3s">
+                    <div class="sn-feat-ico sn-feat-ico-b"><i class="fas fa-star-half-alt"></i></div>
+                    <h4>Evaluación de grabaciones</h4>
+                    <p>Los equipos de calidad acceden y evalúan los audios con trazabilidad completa, generando retroalimentación estructurada para mejora.</p>
+                </div>
+                <div class="sn-feat-card wow fadeInUp" data-wow-delay=".1s">
+                    <div class="sn-feat-ico sn-feat-ico-g"><i class="fas fa-satellite-dish"></i></div>
+                    <h4>Gestión de micrófonos</h4>
+                    <p>Asocie, monitoree y rastree dispositivos USB por estación de trabajo. Visibilidad del estado operativo de cada punto de atención.</p>
+                </div>
+                <div class="sn-feat-card wow fadeInUp" data-wow-delay=".2s">
+                    <div class="sn-feat-ico sn-feat-ico-b"><i class="fas fa-bell"></i></div>
+                    <h4>Alertas y seguimiento</h4>
+                    <p>Detección de eventos operativos relevantes para supervisión y auditoría. Identificación temprana de situaciones fuera del estándar.</p>
+                </div>
+                <div class="sn-feat-card wow fadeInUp" data-wow-delay=".3s">
+                    <div class="sn-feat-ico sn-feat-ico-g"><i class="fas fa-desktop"></i></div>
+                    <h4>Plataforma web centralizada</h4>
+                    <p>Administración unificada de usuarios, campañas, grabaciones, reportes y monitoreo desde un solo entorno seguro y accesible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         FLUJO OPERATIVO — SENSE Ear
+    ══════════════════════════════════════════════════════ -->
+    <section class="sn-sec" style="background:#fff;">
+        <div class="container">
+            <div class="text-center wow fadeInUp">
+                <span class="sn-ey">SENSE Ear — Cómo funciona</span>
+                <h2 class="sn-h2">Desde la atención presencial<br>hasta la evaluación de calidad</h2>
+                <p class="sn-lead" style="max-width:620px;margin:0 auto;">El flujo operativo de SENSE Ear opera en segundo plano, sin interrumpir la atención al cliente y garantizando la disponibilidad inmediata de cada grabación.</p>
+            </div>
+            <div class="sn-flow wow fadeInUp" data-wow-delay=".2s">
+                <div class="sn-flow-step">
+                    <div class="sn-flow-num">1</div>
+                    <h5>Cliente es atendido en oficina</h5>
+                    <p>El ejecutivo atiende al cliente con normalidad. SENSE Ear opera en segundo plano.</p>
+                </div>
+                <div class="sn-flow-step">
+                    <div class="sn-flow-num">2</div>
+                    <h5>Se activa la campaña aplicable</h5>
+                    <p>El sistema evalúa las condiciones de la campaña activa y decide si grabar.</p>
+                </div>
+                <div class="sn-flow-step">
+                    <div class="sn-flow-num">3</div>
+                    <h5>El micrófono captura la interacción</h5>
+                    <p>El dispositivo USB en la estación registra el audio de la interacción.</p>
+                </div>
+                <div class="sn-flow-step">
+                    <div class="sn-flow-num">4</div>
+                    <h5>El audio se transfiere al servidor</h5>
+                    <p>La grabación se envía de forma segura al servidor central de SENSE Ear.</p>
+                </div>
+                <div class="sn-flow-step">
+                    <div class="sn-flow-num">5</div>
+                    <h5>Grabación disponible para evaluación</h5>
+                    <p>Los equipos de calidad acceden al audio para evaluación y retroalimentación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         IMPACTO OPERATIVO Y ESTRATÉGICO
+    ══════════════════════════════════════════════════════ -->
+    <section class="sn-sec sn-alt">
+        <div class="container">
+            <div class="text-center wow fadeInUp">
+                <span class="sn-ey">Beneficios comprobados</span>
+                <h2 class="sn-h2">Impacto operativo<br>y estratégico</h2>
+                <p class="sn-lead" style="max-width:600px;margin:0 auto;">SENSE genera valor medible en satisfacción del cliente, control de calidad y visibilidad operativa desde los primeros meses de implementación.</p>
+            </div>
+            <div class="sn-ben-cols">
+                <div class="wow fadeInLeft" data-wow-delay=".2s">
+                    <h4><i class="fas fa-poll" style="margin-right:8px;color:#308b1d;"></i> SENSE Survey</h4>
+                    <ul class="sn-ben-list">
+                        <li><i class="fas fa-check-circle"></i> Mayor visibilidad de la satisfacción del cliente en todos los canales</li>
+                        <li><i class="fas fa-check-circle"></i> Identificación temprana de oportunidades de mejora continua</li>
+                        <li><i class="fas fa-check-circle"></i> Decisiones basadas en datos reales y medibles</li>
+                        <li><i class="fas fa-check-circle"></i> Comparación objetiva entre sedes, servicios y canales</li>
+                        <li><i class="fas fa-check-circle"></i> Mayor control sobre la experiencia del cliente</li>
+                        <li><i class="fas fa-check-circle"></i> Dashboards en funcionamiento desde el día 1</li>
+                        <li><i class="fas fa-check-circle"></i> ROI visible en el primer trimestre de operación</li>
+                    </ul>
+                </div>
+                <div class="wow fadeInRight" data-wow-delay=".3s">
+                    <h4><i class="fas fa-microphone-alt" style="margin-right:8px;color:#308b1d;"></i> SENSE Ear</h4>
+                    <ul class="sn-ben-list">
+                        <li><i class="fas fa-check-circle"></i> Control de calidad sistemático en la atención presencial</li>
+                        <li><i class="fas fa-check-circle"></i> Trazabilidad completa por interacción, campaña y ejecutivo</li>
+                        <li><i class="fas fa-check-circle"></i> Menor dependencia de supervisión manual y rondas dispersas</li>
+                        <li><i class="fas fa-check-circle"></i> Insumos estructurados para capacitación y retroalimentación</li>
+                        <li><i class="fas fa-check-circle"></i> Detección temprana de desviaciones operativas</li>
+                        <li><i class="fas fa-check-circle"></i> Reportes especializados por perfil, unidad y campaña</li>
+                        <li><i class="fas fa-check-circle"></i> Visibilidad 360° de la operación presencial</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         SEGURIDAD Y CUMPLIMIENTO
+    ══════════════════════════════════════════════════════ -->
+    <section class="sn-sec sn-dark">
+        <div class="container">
+            <div class="text-center wow fadeInUp">
+                <span class="sn-ey" style="color:rgba(200,255,180,.60);">Arquitectura empresarial</span>
+                <h2 class="sn-h2 sn-h2w">Diseñado para operación<br>empresarial segura</h2>
+                <p style="font-size:16px;color:rgba(239,239,255,.70);max-width:600px;margin:0 auto 8px;line-height:1.75;">SENSE está construido bajo buenas prácticas de seguridad empresarial, con controles de acceso, trazabilidad y administración centralizada. <em>Alineado con buenas prácticas de seguridad empresarial.</em></p>
+            </div>
+            <div class="sn-sec-grid wow fadeInUp" data-wow-delay=".2s">
+                <div class="sn-sec-item">
+                    <i class="fas fa-user-shield"></i>
+                    <h5>Acceso basado en roles</h5>
+                    <p>Permisos y accesos diferenciados por perfil de usuario. Cada persona accede solo a lo que corresponde a su rol.</p>
+                </div>
+                <div class="sn-sec-item">
+                    <i class="fas fa-lock"></i>
+                    <h5>Autenticación JWT</h5>
+                    <p>Panel administrativo protegido con autenticación mediante token JWT. Sesiones controladas y expirables por configuración.</p>
+                </div>
+                <div class="sn-sec-item">
+                    <i class="fas fa-history"></i>
+                    <h5>Trazabilidad de cambios</h5>
+                    <p>Auditoría completa de eventos, cambios y accesos en la plataforma. Historial operativo disponible para revisión.</p>
+                </div>
+                <div class="sn-sec-item">
+                    <i class="fas fa-server"></i>
+                    <h5>Arquitectura web centralizada</h5>
+                    <p>Administración unificada desde un entorno seguro. No se requiere software adicional en los equipos del cliente.</p>
+                </div>
+                <div class="sn-sec-item">
+                    <i class="fas fa-building"></i>
+                    <h5>Multi-tenant</h5>
+                    <p>Separación lógica por cliente o tenant. Los datos de cada organización permanecen aislados de otros clientes.</p>
+                </div>
+                <div class="sn-sec-item">
+                    <i class="fas fa-key"></i>
+                    <h5>API protegida por API Key</h5>
+                    <p>La API de integración requiere autenticación por API Key en cabecera HTTP. Acceso controlado para sistemas externos.</p>
+                </div>
+                <div class="sn-sec-item">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h5>Reportes y auditoría</h5>
+                    <p>Control de usuarios, campañas, encuestas, grabaciones y respuestas con reportes operativos disponibles por perfil.</p>
+                </div>
+                <div class="sn-sec-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h5>Contraseñas protegidas</h5>
+                    <p>Almacenamiento de credenciales con hash PBKDF2. Las contraseñas nunca se almacenan en texto plano.</p>
+                </div>
+                <div class="sn-sec-item">
+                    <i class="fas fa-sitemap"></i>
+                    <h5>Administración centralizada</h5>
+                    <p>Panel único para gestión de usuarios, configuraciones, campañas y reportes de toda la organización.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         INDUSTRIAS
+    ══════════════════════════════════════════════════════ -->
+    <section class="sn-sec sn-alt">
+        <div class="container">
+            <div class="text-center wow fadeInUp">
+                <span class="sn-ey">Casos de uso por industria</span>
+                <h2 class="sn-h2">SENSE opera con excelencia<br>en todos estos sectores</h2>
+                <p class="sn-lead" style="max-width:600px;margin:0 auto;">SENSE adapta sus flujos de captura, indicadores y reportes al contexto operativo de cada industria.</p>
+            </div>
+            <div class="sn-ind-grid">
+                <div class="sn-ind-card wow fadeInUp" data-wow-delay=".1s">
+                    <div class="sn-ind-ico"><i class="fas fa-university"></i></div>
+                    <h4>Banca</h4>
+                    <p>Medición de satisfacción en sucursales, turnos y atención presencial. Supervisión de calidad en agencias y centros de servicio. NPS y CSAT por ejecutivo y canal.</p>
+                </div>
+                <div class="sn-ind-card wow fadeInUp" data-wow-delay=".2s">
+                    <div class="sn-ind-ico"><i class="fas fa-hospital"></i></div>
+                    <h4>Salud</h4>
+                    <p>Experiencia del paciente en clínicas, hospitales y puntos de atención. Monitoreo de interacciones en consultorios y módulos de servicio presencial.</p>
+                </div>
+                <div class="sn-ind-card wow fadeInUp" data-wow-delay=".3s">
+                    <div class="sn-ind-ico"><i class="fas fa-landmark"></i></div>
+                    <h4>Gobierno</h4>
+                    <p>Percepción ciudadana en trámites y ventanillas. Trazabilidad en módulos de servicio público. Encuestas post-atención en oficinas gubernamentales.</p>
+                </div>
+                <div class="sn-ind-card wow fadeInUp" data-wow-delay=".1s">
+                    <div class="sn-ind-ico"><i class="fas fa-shopping-cart"></i></div>
+                    <h4>Retail</h4>
+                    <p>Voz del cliente en tiendas físicas, puntos de venta y servicio postventa. Evaluación de calidad de atención en tiendas y almacenes de alto flujo.</p>
+                </div>
+                <div class="sn-ind-card wow fadeInUp" data-wow-delay=".2s">
+                    <div class="sn-ind-ico"><i class="fas fa-wifi"></i></div>
+                    <h4>Telecomunicaciones</h4>
+                    <p>Supervisión de centros de atención y tiendas. Medición de experiencia post-servicio en canales digitales y presenciales.</p>
+                </div>
+                <div class="sn-ind-card wow fadeInUp" data-wow-delay=".3s">
+                    <div class="sn-ind-ico"><i class="fas fa-building"></i></div>
+                    <h4>Corporativo</h4>
+                    <p>Medición interna, atención a usuarios y control de calidad en servicios corporativos. Benchmarking entre sedes y reportes por unidad de negocio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         INTEGRACIÓN CON ECOSISTEMA KYT
+    ══════════════════════════════════════════════════════ -->
+    <section class="sn-sec sn-dark">
+        <div class="container">
+            <div class="text-center wow fadeInUp">
+                <span class="sn-ey" style="color:rgba(200,255,180,.60);">Ecosistema KYT</span>
+                <h2 class="sn-h2 sn-h2w">Integración con el<br>ecosistema K&T</h2>
+                <p style="font-size:16px;color:rgba(239,239,255,.70);max-width:620px;margin:0 auto;line-height:1.75;">SENSE puede integrarse con soluciones de turnos, kioscos, canales digitales y plataformas corporativas, permitiendo activar encuestas, monitorear interacciones y consolidar información de experiencia desde múltiples puntos de contacto.</p>
+            </div>
+            <div class="sn-int-grid wow fadeInUp" data-wow-delay=".2s">
+                <div class="sn-int-item">
+                    <div class="sn-int-ico"><i class="fas fa-clock"></i></div>
+                    <div><h5>KONEX®</h5><p>Activación automática de encuestas post-atención directamente desde el sistema de turnos.</p></div>
+                </div>
+                <div class="sn-int-item">
+                    <div class="sn-int-ico"><i class="fas fa-tablet-alt"></i></div>
+                    <div><h5>Kioscos K&T</h5><p>Despliegue de encuestas en kioscos de autogestión para captura inmediata en el punto de atención.</p></div>
+                </div>
+                <div class="sn-int-item">
+                    <div class="sn-int-ico"><i class="fab fa-whatsapp"></i></div>
+                    <div><h5>WhatsApp · SMS · Email</h5><p>Envío automático de encuestas por canales digitales tras cada evento de servicio al cliente.</p></div>
+                </div>
+                <div class="sn-int-item">
+                    <div class="sn-int-ico"><i class="fas fa-code"></i></div>
+                    <div><h5>APIs REST</h5><p>Integración abierta con sistemas corporativos mediante APIs RESTful documentadas y protegidas por API Key.</p></div>
+                </div>
+                <div class="sn-int-item">
+                    <div class="sn-int-ico"><i class="fas fa-address-book"></i></div>
+                    <div><h5>CRM corporativos</h5><p>Sincronización de datos de satisfacción con plataformas de gestión de clientes y herramientas de análisis.</p></div>
+                </div>
+                <div class="sn-int-item">
+                    <div class="sn-int-ico"><i class="fas fa-chart-bar"></i></div>
+                    <div><h5>Dashboards y reportes</h5><p>Exportación a Excel y PDF. Integración con plataformas de inteligencia de negocio para reportes ejecutivos.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CTA FINAL
+    ══════════════════════════════════════════════════════ -->
+    <section class="sn-sec" style="background:linear-gradient(135deg,#308b1d 0%,#1a6b3a 50%,#01004e 100%);text-align:center;position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(0,0,156,.15) 0%,transparent 60%);pointer-events:none;"></div>
+        <div class="container" style="position:relative;z-index:1;">
+            <span class="sn-ey" style="color:rgba(200,255,180,.70);" class="wow fadeInUp">Próximo paso</span>
+            <h2 class="sn-h2 sn-h2w wow fadeInUp" style="margin-bottom:16px;">Transforme cada interacción<br>en información accionable</h2>
+            <p style="font-size:17px;color:rgba(239,239,255,.78);max-width:560px;margin:0 auto 38px;line-height:1.75;" class="wow fadeInUp" data-wow-delay=".2s">Con SENSE, su organización puede medir la experiencia del cliente, monitorear la calidad de la atención y tomar decisiones basadas en datos reales desde los primeros días de operación.</p>
+            <div class="sn-ctas justify-content-center wow fadeInUp" data-wow-delay=".35s">
+                <a href="contacto.html" class="sn-btn-g"><i class="fas fa-play-circle"></i> Solicitar demo</a>
+                <a href="https://wa.me/573113676433?text=Hola%20KYT%2C%20quiero%20información%20sobre%20SENSE" target="_blank" class="sn-btn-w"><i class="fas fa-headset"></i> Hablar con un especialista</a>
+            </div>
+        </div>
+    </section>
+
     <!-- ═══ FOOTER PREMIUM KYT ═══ -->
     <!-- ═══ FOOTER ENTERPRISE KYT ═══ -->
     <!-- ═══ FOOTER ENTERPRISE KYT — estilo TIGlobal ═══ -->
